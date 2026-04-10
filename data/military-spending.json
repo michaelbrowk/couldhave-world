@@ -1,0 +1,15 @@
+{
+  "currentYear": 2026,
+  "projection": {
+    "totalUsd": 0,
+    "basedOnYear": 0,
+    "baseAmountUsd": 0,
+    "growthFactor": 0,
+    "growthBasis": "PLACEHOLDER — agent will overwrite with real SIPRI data"
+  },
+  "historical": [],
+  "topCountries": [],
+  "source": "SIPRI Military Expenditure Database",
+  "sourceUrl": "https://sipri.org/databases/milex",
+  "lastUpdated": "2026-04-10"
+}
