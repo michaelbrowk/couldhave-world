@@ -8,14 +8,6 @@ describe("formatCurrency", () => {
     expect(result).toMatch(/2[\s,.]600[\s,.]000[\s,.]000[\s,.]000/);
   });
 
-  it("formats in Russian with grouping", () => {
-    const result = formatCurrency(2_600_000_000_000, "ru");
-    // Russian uses narrow no-break space (U+202F) or regular space
-    expect(result).toMatch(
-      /2[\s\u00a0\u202f]600[\s\u00a0\u202f]000[\s\u00a0\u202f]000[\s\u00a0\u202f]000/,
-    );
-  });
-
   it("formats in German with dot thousands", () => {
     const result = formatCurrency(2_600_000_000_000, "de");
     expect(result).toMatch(/2\.600\.000\.000\.000/);

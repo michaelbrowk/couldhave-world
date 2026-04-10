@@ -1,4 +1,4 @@
-export type SupportedLocale = "en" | "ru" | "es" | "de" | "fr";
+export type SupportedLocale = "en" | "es" | "de" | "fr";
 
 export function formatCurrency(amount: number, locale: SupportedLocale): string {
   return new Intl.NumberFormat(locale, {
