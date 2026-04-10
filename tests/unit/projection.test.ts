@@ -7,12 +7,28 @@ import {
 } from "@/lib/projection";
 
 describe("projectCurrentYearTotal", () => {
-  it("multiplies base by growth factor", () => {
+  it("multiplies base by growth factor for one year by default", () => {
     expect(projectCurrentYearTotal(1_000_000, 1.05)).toBeCloseTo(1_050_000, 5);
   });
 
   it("returns base when growth factor is 1", () => {
     expect(projectCurrentYearTotal(2_443_000_000_000, 1)).toBe(2_443_000_000_000);
+  });
+
+  it("compounds growth across multiple years", () => {
+    expect(projectCurrentYearTotal(1_000_000, 1.1, 2)).toBeCloseTo(1_210_000, 5);
+    expect(projectCurrentYearTotal(1_000_000, 1.1, 3)).toBeCloseTo(1_331_000, 5);
+  });
+
+  it("matches the SIPRI 2024 → 2026 case (2 years at 1.0823)", () => {
+    const result = projectCurrentYearTotal(2_718_000_000_000, 1.0823, 2);
+    // 2718B * 1.0823^2 ≈ 3184B
+    expect(result).toBeGreaterThan(3_180_000_000_000);
+    expect(result).toBeLessThan(3_190_000_000_000);
+  });
+
+  it("returns base when yearsToProject is 0", () => {
+    expect(projectCurrentYearTotal(1_000_000, 1.05, 0)).toBe(1_000_000);
   });
 });
 

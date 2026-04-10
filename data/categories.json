@@ -1,1 +1,212 @@
-[]
+[
+  {
+    "id": "cancer-treatment",
+    "titleKey": "categories.cancer.title",
+    "unitLabelKey": "categories.cancer.unit",
+    "symbol": "cross",
+    "scaleHint": "perUnit",
+    "unitCostUsd": 60000,
+    "sources": [
+      {
+        "name": "The Lancet Oncology Commission — Global cancer care costs",
+        "url": "https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(21)00149-2/fulltext",
+        "year": 2021
+      },
+      {
+        "name": "American Cancer Society — Cancer Treatment & Survivorship Facts and Figures",
+        "url": "https://www.cancer.org/research/cancer-facts-statistics/survivor-facts-figures.html",
+        "year": 2022
+      }
+    ],
+    "methodology": "Approximate average per-patient cost of a full first-course cancer treatment (surgery, chemotherapy, radiotherapy and follow-up) in a high-income setting, drawn from Lancet Oncology Commission and ACS cost-of-care estimates."
+  },
+  {
+    "id": "malaria-eradication",
+    "titleKey": "categories.malaria.title",
+    "unitLabelKey": "categories.malaria.unit",
+    "symbol": "drop",
+    "scaleHint": "totalSolution",
+    "unitCostUsd": 90000000000,
+    "sources": [
+      {
+        "name": "The Lancet Commission on Malaria Eradication",
+        "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(19)31139-0/fulltext",
+        "year": 2019
+      },
+      {
+        "name": "WHO Global Technical Strategy for Malaria 2016-2030 (2021 update)",
+        "url": "https://www.who.int/publications/i/item/9789240031357",
+        "year": 2021
+      }
+    ],
+    "methodology": "Total cumulative additional global investment required to eradicate malaria by 2030, per the Lancet Commission's modelled additional funding of roughly USD 90-120 billion on top of current spending."
+  },
+  {
+    "id": "world-hunger",
+    "titleKey": "categories.hunger.title",
+    "unitLabelKey": "categories.hunger.unit",
+    "symbol": "grain",
+    "scaleHint": "annualNeed",
+    "unitCostUsd": 33000000000,
+    "sources": [
+      {
+        "name": "Ceres2030 / Nature Research — Ending hunger sustainably",
+        "url": "https://ceres2030.org/shorthand_story/ceres2030-sustainable-solutions-to-end-hunger/",
+        "year": 2020
+      },
+      {
+        "name": "IFPRI / Nature Food — Investment needs to end hunger by 2030",
+        "url": "https://www.nature.com/articles/s43016-020-00181-w",
+        "year": 2020
+      }
+    ],
+    "methodology": "Average additional annual public expenditure (approximately USD 33 billion) required from donors and low/middle-income governments through 2030 to end hunger (SDG 2), per Ceres2030 / IFPRI models published in Nature Food."
+  },
+  {
+    "id": "clean-water",
+    "titleKey": "categories.water.title",
+    "unitLabelKey": "categories.water.unit",
+    "symbol": "drop",
+    "scaleHint": "annualNeed",
+    "unitCostUsd": 114000000000,
+    "sources": [
+      {
+        "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
+        "url": "https://openknowledge.worldbank.org/handle/10986/23681",
+        "year": 2016
+      },
+      {
+        "name": "WHO / UNICEF JMP — Progress on household drinking water, sanitation and hygiene 2000-2022",
+        "url": "https://washdata.org/reports/jmp-2023-wash-households",
+        "year": 2023
+      }
+    ],
+    "methodology": "Annual capital investment of approximately USD 114 billion needed through 2030 to achieve universal safely managed drinking water, per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
+  },
+  {
+    "id": "schools-lmic",
+    "titleKey": "categories.schools.title",
+    "unitLabelKey": "categories.schools.unit",
+    "symbol": "roof",
+    "scaleHint": "perUnit",
+    "unitCostUsd": 5000,
+    "sources": [
+      {
+        "name": "UNESCO Global Education Monitoring Report — Pricing the right to education",
+        "url": "https://unesdoc.unesco.org/ark:/48223/pf0000232197",
+        "year": 2015
+      },
+      {
+        "name": "Global Partnership for Education — Results Report",
+        "url": "https://www.globalpartnership.org/content/results-report-2022",
+        "year": 2022
+      }
+    ],
+    "methodology": "Approximate per-pupil capital cost (construction plus basic equipment) of creating one new school place in a low- or lower-middle-income country, derived from UNESCO GEM Report and GPE infrastructure costings."
+  },
+  {
+    "id": "child-vaccination",
+    "titleKey": "categories.vaccination.title",
+    "unitLabelKey": "categories.vaccination.unit",
+    "symbol": "drop",
+    "scaleHint": "annualNeed",
+    "unitCostUsd": 9500000000,
+    "sources": [
+      {
+        "name": "Gavi, The Vaccine Alliance — Investment Opportunity 2021-2025",
+        "url": "https://www.gavi.org/investing-gavi/funding/resource-mobilisation-process/gavi-investment-opportunity-2021-2025",
+        "year": 2020
+      },
+      {
+        "name": "WHO Immunization Agenda 2030",
+        "url": "https://www.who.int/publications/i/item/immunization-agenda-2030-a-global-strategy-to-leave-no-one-behind",
+        "year": 2020
+      }
+    ],
+    "methodology": "Estimated annual global cost of delivering a full routine childhood immunization schedule to every child (approximately USD 9-10 billion), combining Gavi replenishment figures and WHO IA2030 costing."
+  },
+  {
+    "id": "extreme-poverty",
+    "titleKey": "categories.poverty.title",
+    "unitLabelKey": "categories.poverty.unit",
+    "symbol": "coin",
+    "scaleHint": "annualNeed",
+    "unitCostUsd": 100000000000,
+    "sources": [
+      {
+        "name": "World Bank — Poverty and Shared Prosperity 2022: Correcting Course",
+        "url": "https://www.worldbank.org/en/publication/poverty-and-shared-prosperity",
+        "year": 2022
+      },
+      {
+        "name": "Our World in Data — The economic cost of ending extreme poverty",
+        "url": "https://ourworldindata.org/poverty-cost-of-ending",
+        "year": 2021
+      }
+    ],
+    "methodology": "Annual income transfer required to lift everyone above the USD 2.15/day international poverty line (the 'poverty gap'), estimated at roughly USD 100 billion per year using World Bank PIP data."
+  },
+  {
+    "id": "rainforest-protection",
+    "titleKey": "categories.rainforest.title",
+    "unitLabelKey": "categories.rainforest.unit",
+    "symbol": "leaf",
+    "scaleHint": "totalSolution",
+    "unitCostUsd": 45000000000,
+    "sources": [
+      {
+        "name": "Rainforest Trust — Cost per acre protected",
+        "url": "https://www.rainforesttrust.org/our-impact/",
+        "year": 2023
+      },
+      {
+        "name": "FAO — Global Forest Resources Assessment (tropical forest area)",
+        "url": "https://www.fao.org/forest-resources-assessment/2020/en",
+        "year": 2020
+      }
+    ],
+    "methodology": "Total cost to place all of Earth's remaining tropical rainforest under durable legal protection. Computed as USD 25 per hectare (Rainforest Trust per-acre averages scaled to a hectare) multiplied by approximately 1.8 billion hectares of remaining tropical forest (FAO Global Forest Resources Assessment 2020)."
+  },
+  {
+    "id": "renewable-transition",
+    "titleKey": "categories.renewable.title",
+    "unitLabelKey": "categories.renewable.unit",
+    "symbol": "ray",
+    "scaleHint": "perUnit",
+    "unitCostUsd": 1000000000,
+    "sources": [
+      {
+        "name": "IRENA — Renewable Power Generation Costs in 2023",
+        "url": "https://www.irena.org/Publications/2024/Sep/Renewable-power-generation-costs-in-2023",
+        "year": 2024
+      },
+      {
+        "name": "IEA — Renewables 2023 Analysis and Forecast to 2028",
+        "url": "https://www.iea.org/reports/renewables-2023",
+        "year": 2023
+      }
+    ],
+    "methodology": "Approximate capital cost to install one gigawatt (1 GW) of new utility-scale solar PV capacity, per IRENA's Renewable Power Generation Costs in 2023 (global weighted-average ~USD 0.8-1.1 billion per GW installed). 1 GW powers roughly 200,000 European homes."
+  },
+  {
+    "id": "humanitarian-aid",
+    "titleKey": "categories.humanitarian.title",
+    "unitLabelKey": "categories.humanitarian.unit",
+    "symbol": "coin",
+    "scaleHint": "annualNeed",
+    "unitCostUsd": 46400000000,
+    "sources": [
+      {
+        "name": "UN OCHA — Global Humanitarian Overview 2024",
+        "url": "https://humanitarianaction.info/document/global-humanitarian-overview-2024",
+        "year": 2023
+      },
+      {
+        "name": "UN OCHA — Global Humanitarian Overview 2023",
+        "url": "https://humanitarianaction.info/document/global-humanitarian-overview-2023",
+        "year": 2022
+      }
+    ],
+    "methodology": "Total funding requirement of the UN-coordinated Global Humanitarian Appeal for 2024 (USD 46.4 billion to assist roughly 181 million people), as stated by UN OCHA."
+  }
+]

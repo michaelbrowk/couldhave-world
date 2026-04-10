@@ -1,14 +1,36 @@
 {
   "currentYear": 2026,
   "projection": {
-    "totalUsd": 0,
-    "basedOnYear": 0,
-    "baseAmountUsd": 0,
-    "growthFactor": 0,
-    "growthBasis": "PLACEHOLDER — agent will overwrite with real SIPRI data"
+    "totalUsd": 3183792600000,
+    "basedOnYear": 2024,
+    "baseAmountUsd": 2718000000000,
+    "growthFactor": 1.0823,
+    "growthBasis": "5-data-point geometric mean of annual growth, SIPRI 2020-2024 (4 compounding years), then compounded 2 years from basedOnYear (2024) to currentYear (2026). SIPRI 2025 data not yet published as of 2026-04-10."
   },
-  "historical": [],
-  "topCountries": [],
+  "historical": [
+    { "year": 2024, "totalUsd": 2718000000000, "actual": true },
+    { "year": 2023, "totalUsd": 2443000000000, "actual": true },
+    { "year": 2022, "totalUsd": 2240000000000, "actual": true },
+    { "year": 2021, "totalUsd": 2113000000000, "actual": true },
+    { "year": 2020, "totalUsd": 1981000000000, "actual": true }
+  ],
+  "topCountries": [
+    { "country": "United States", "countryCode": "US", "amountUsd": 997000000000 },
+    { "country": "China", "countryCode": "CN", "amountUsd": 314000000000 },
+    { "country": "Russia", "countryCode": "RU", "amountUsd": 149000000000 },
+    { "country": "Germany", "countryCode": "DE", "amountUsd": 88500000000 },
+    { "country": "India", "countryCode": "IN", "amountUsd": 86100000000 },
+    { "country": "United Kingdom", "countryCode": "GB", "amountUsd": 81800000000 },
+    { "country": "Saudi Arabia", "countryCode": "SA", "amountUsd": 80300000000 },
+    { "country": "Ukraine", "countryCode": "UA", "amountUsd": 64700000000 },
+    { "country": "France", "countryCode": "FR", "amountUsd": 64700000000 },
+    { "country": "Japan", "countryCode": "JP", "amountUsd": 55300000000 },
+    { "country": "South Korea", "countryCode": "KR", "amountUsd": 47600000000 },
+    { "country": "Israel", "countryCode": "IL", "amountUsd": 46500000000 },
+    { "country": "Poland", "countryCode": "PL", "amountUsd": 38000000000 },
+    { "country": "Italy", "countryCode": "IT", "amountUsd": 38000000000 },
+    { "country": "Australia", "countryCode": "AU", "amountUsd": 33800000000 }
+  ],
   "source": "SIPRI Military Expenditure Database",
   "sourceUrl": "https://sipri.org/databases/milex",
   "lastUpdated": "2026-04-10"
