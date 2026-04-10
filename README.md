@@ -76,6 +76,42 @@ When SIPRI releases its annual fact sheet (late April), edit two values in `data
 
 Add the new year to `historical[]`, run `npm run build`, and the projected total + per-day + per-second rates update everywhere automatically.
 
+## Deploy
+
+The site is deployed to a DigitalOcean droplet at `46.101.216.23`, served by nginx as static files (no Node process). Production URL: [couldhave.world](https://couldhave.world).
+
+### Initial deploy
+
+```bash
+# Local build
+npm run build
+
+# Sync the static export to the droplet
+rsync -avz --delete out/ root@46.101.216.23:/opt/couldhave-world/out/
+```
+
+The nginx vhost lives at `/etc/nginx/sites-available/couldhave-world` on the droplet, with `root /opt/couldhave-world/out` and `try_files` for the locale routes. SSL is handled by Certbot with auto-renew.
+
+### Updating data
+
+When SIPRI publishes a new fact sheet (late April annually), edit `data/military-spending.json`, then rebuild and rsync:
+
+```bash
+npm run build && rsync -avz --delete out/ root@46.101.216.23:/opt/couldhave-world/out/
+```
+
+### Daily Open Graph refresh
+
+The `og:image` meta tag points at `/og.png?v=YYYY-MM-DD`. The PNG is regenerated daily by the GitHub Actions workflow `.github/workflows/daily-og-refresh.yml` (cron `5 0 * * *` UTC), which runs only the OG generator script and rsyncs the resulting file. The site itself is not rebuilt — only the single PNG is overwritten on the droplet.
+
+The workflow needs one repo secret:
+
+| Secret | Value |
+|---|---|
+| `DROPLET_SSH_KEY` | OpenSSH private key whose public half is in `/root/.ssh/authorized_keys` on the droplet |
+
+Set it under **Settings → Secrets and variables → Actions → New repository secret**.
+
 ## License
 
 [MIT](./LICENSE) — do whatever you want with it. Data sources are credited in `data/categories.json` and on the methodology section of the page.
