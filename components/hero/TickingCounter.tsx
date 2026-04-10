@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducedMotion } from "framer-motion";
+import { useMotionValue, useMotionValueEvent, useReducedMotion, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 import { formatCurrency, type SupportedLocale } from "@/lib/formatters";
 import { currentSpendEstimate, type Projection } from "@/lib/projection";
@@ -13,31 +13,39 @@ type Props = {
 
 export function TickingCounter({ projection, currentYear, locale }: Props) {
   const reduceMotion = useReducedMotion();
-  const [value, setValue] = useState<number>(() =>
-    currentSpendEstimate(projection, new Date(), currentYear),
-  );
+  const initial = currentSpendEstimate(projection, new Date(), currentYear);
+
+  // Target updates 10×/sec from a wall-clock probe; the spring smooths the
+  // jump so the rendered integer dollar value flows at native frame rate
+  // (~60fps) instead of stepping every 100ms.
+  const target = useMotionValue(initial);
+  const smoothed = useSpring(target, {
+    damping: 28,
+    stiffness: 140,
+    mass: 0.4,
+  });
+
+  const [displayed, setDisplayed] = useState<number>(initial);
+  useMotionValueEvent(smoothed, "change", (v) => {
+    setDisplayed(v);
+  });
 
   useEffect(() => {
     if (reduceMotion) return;
-    // Tick at 10fps (every 100ms), not every animation frame. At 60fps the
-    // last 4-5 digits change so fast they read as visual noise. At 10fps
-    // each tick advances by ~$10k, which the eye can actually follow.
     const tick = () => {
-      setValue(currentSpendEstimate(projection, new Date(), currentYear));
+      target.set(currentSpendEstimate(projection, new Date(), currentYear));
     };
     tick();
     const interval = window.setInterval(tick, 100);
     return () => window.clearInterval(interval);
-  }, [projection, currentYear, reduceMotion]);
+  }, [projection, currentYear, reduceMotion, target]);
 
-  const formatted = formatCurrency(value, locale);
+  const formatted = formatCurrency(reduceMotion ? initial : displayed, locale);
   const yearTotalLabel = formatCurrency(projection.totalUsd, locale);
 
   // The server renders one value (server time), the client a slightly larger
   // value (client time, ~ms later). Suppress the hydration warning so React
   // accepts the client value without aborting hydration of this subtree.
-  // Without this, the entire client-side hydration of children below the
-  // counter (framer-motion fade-ins, useEffect tickers) silently fails.
   return (
     <div
       className="font-serif text-[var(--accent)] leading-none tabular-nums tracking-tight"

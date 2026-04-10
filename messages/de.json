@@ -3,8 +3,7 @@
   "hero": {
     "caption": "Seit 1. Januar {year} für Kriege ausgegeben",
     "rate": "{perDay} pro Tag · {perSecond} pro Sekunde",
-    "methodology": "Prognose für {year}, basierend auf SIPRI-Istdaten von {basedOnYear} und der durchschnittlichen 5-Jahres-Wachstumsrate. Die tatsächlichen Zahlen werden jährlich Ende April veröffentlicht.",
-    "scrollHint": "Scrollen"
+    "methodology": "Prognose für {year}, basierend auf SIPRI-Istdaten von {basedOnYear} und der durchschnittlichen 5-Jahres-Wachstumsrate. Die tatsächlichen Zahlen werden jährlich Ende April veröffentlicht."
   },
   "transition": {
     "headline": "Stattdessen hätte dieses Geld…"

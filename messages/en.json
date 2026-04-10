@@ -3,8 +3,7 @@
   "hero": {
     "caption": "Spent on war since January 1, {year}",
     "rate": "{perDay} per day · {perSecond} per second",
-    "methodology": "Projected {year}, based on SIPRI {basedOnYear} actuals and a 5-year average growth rate. Actual figures are published annually in late April.",
-    "scrollHint": "Scroll"
+    "methodology": "Projected {year}, based on SIPRI {basedOnYear} actuals and a 5-year average growth rate. Actual figures are published annually in late April."
   },
   "transition": {
     "headline": "Instead, this money could have…"

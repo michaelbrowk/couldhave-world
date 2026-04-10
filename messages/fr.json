@@ -3,8 +3,7 @@
   "hero": {
     "caption": "Dépensé pour la guerre depuis le 1er janvier {year}",
     "rate": "{perDay} par jour · {perSecond} par seconde",
-    "methodology": "Projection pour {year}, basée sur les données réelles de SIPRI pour {basedOnYear} et le taux de croissance moyen sur 5 ans. Les chiffres réels sont publiés chaque année fin avril.",
-    "scrollHint": "Défiler"
+    "methodology": "Projection pour {year}, basée sur les données réelles de SIPRI pour {basedOnYear} et le taux de croissance moyen sur 5 ans. Les chiffres réels sont publiés chaque année fin avril."
   },
   "transition": {
     "headline": "À la place, cet argent aurait pu…"
