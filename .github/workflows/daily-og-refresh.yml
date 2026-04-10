@@ -1,0 +1,70 @@
+name: Daily Open Graph image refresh
+
+# Regenerates the og.png with the current day's spend value and copies it
+# to the production droplet without rebuilding the site. The HTML on the
+# site is unchanged — only the single PNG file is overwritten.
+#
+# Why daily, not on every visit: the site is fully static and served by
+# nginx; there is no runtime to call. So the og:image stays stale unless
+# someone replaces the file. Once a day is enough for social-media
+# previews to feel "alive" without burning CI minutes or churning the
+# droplet.
+
+on:
+  schedule:
+    # 00:05 UTC every day. Slightly after midnight so the date in the
+    # cache-buster (?v=YYYY-MM-DD) flips to the new day cleanly.
+    - cron: "5 0 * * *"
+  # Allow manual runs from the Actions tab for testing and one-off refreshes.
+  workflow_dispatch:
+
+# Cancel an in-progress run if a new one starts (e.g. manual + cron collision).
+concurrency:
+  group: og-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh-og:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Open Graph image
+        run: npm run og
+
+      - name: Configure SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DROPLET_SSH_KEY }}
+
+      - name: Trust droplet host key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 46.101.216.23 >> ~/.ssh/known_hosts
+
+      - name: Upload og.png to droplet
+        run: |
+          rsync -avz --checksum \
+            public/og.png \
+            root@46.101.216.23:/opt/couldhave-world/out/og.png
+
+      - name: Smoke check
+        run: |
+          # Confirm nginx serves the new file with HTTP 200 and the right
+          # content type. We do not assert byte-for-byte equality because
+          # nginx may compress on the fly.
+          curl -sI https://couldhave.world/og.png | head -5
+          curl -s -o /dev/null -w "HTTP %{http_code}, type %{content_type}, %{size_download} bytes\n" \
+            https://couldhave.world/og.png
