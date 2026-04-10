@@ -45,6 +45,7 @@ export function CategoryRow({ category, militaryTotalUsd, locale, strings }: Pro
   return (
     <details
       open
+      data-category-id={category.id}
       className="group border-t border-[var(--border-color)] last:border-b last:border-[var(--border-color)]"
     >
       <summary className="cursor-pointer py-6 md:py-8 flex items-baseline justify-between gap-6 hover:opacity-100 opacity-95 transition-opacity">

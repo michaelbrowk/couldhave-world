@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Analytics } from "@/components/analytics/Analytics";
 import { militarySpending } from "@/data/military-spending.schema";
 import { ogImageUrl, SITE_NAME, SITE_URL } from "@/lib/site-config";
 import "../globals.css";
@@ -151,6 +152,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
     >
       <body className="bg-[var(--bg)] text-[var(--text-primary)] font-sans antialiased">
         {children}
+        <Analytics locale={locale} />
         <script
           type="application/ld+json"
           // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD requires raw JSON
