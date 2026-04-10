@@ -1,8 +1,7 @@
 import { interpolate } from "@/app/[locale]/dictionaries";
 import { militarySpending } from "@/data/military-spending.schema";
 
-// Update this once the GitHub repo is pushed.
-const REPO_URL = "https://github.com/michaelbrowk/war-cost-landing";
+const REPO_URL = "https://github.com/michaelbrowk/couldhave-world";
 
 type Props = {
   strings: {
