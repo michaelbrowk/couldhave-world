@@ -2,7 +2,56 @@
   "hello": "Hello",
   "hero": {
     "caption": "Spent on war since January 1, {year}",
+    "rate": "{perDay} per day · {perSecond} per second",
     "methodology": "Projected {year}, based on SIPRI {basedOnYear} actuals and a 5-year average growth rate. Actual figures are published annually in late April.",
     "scrollHint": "Scroll"
+  },
+  "transition": {
+    "headline": "Instead, this money could have…"
+  },
+  "categories": {
+    "military": "Military spending {year}",
+    "sourcesToggle": "See sources",
+    "cancer": {
+      "title": "Cured cancer worldwide",
+      "unit": "people",
+      "compareUnit": "One cancer treatment"
+    },
+    "malaria": {
+      "title": "Eradicated malaria globally",
+      "unit": "times over"
+    },
+    "hunger": {
+      "title": "Ended world hunger",
+      "unit": "years"
+    },
+    "water": {
+      "title": "Clean water for everyone",
+      "unit": "years"
+    },
+    "schools": {
+      "title": "Built schools in poor countries",
+      "unit": "school places"
+    },
+    "vaccination": {
+      "title": "Vaccinated every child on Earth",
+      "unit": "annual campaigns"
+    },
+    "poverty": {
+      "title": "Eliminated extreme poverty",
+      "unit": "years"
+    },
+    "rainforest": {
+      "title": "Protected all tropical rainforest",
+      "unit": "times over"
+    },
+    "renewable": {
+      "title": "Doubled the world's solar capacity",
+      "unit": "GW of new solar"
+    },
+    "humanitarian": {
+      "title": "Funded all humanitarian appeals",
+      "unit": "years"
+    }
   }
 }

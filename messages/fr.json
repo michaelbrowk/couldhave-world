@@ -2,7 +2,56 @@
   "hello": "Bonjour",
   "hero": {
     "caption": "Dépensé pour la guerre depuis le 1er janvier {year}",
+    "rate": "{perDay} par jour · {perSecond} par seconde",
     "methodology": "Projection pour {year}, basée sur les données réelles de SIPRI pour {basedOnYear} et le taux de croissance moyen sur 5 ans. Les chiffres réels sont publiés chaque année fin avril.",
     "scrollHint": "Défiler"
+  },
+  "transition": {
+    "headline": "À la place, cet argent aurait pu…"
+  },
+  "categories": {
+    "military": "Dépenses militaires {year}",
+    "sourcesToggle": "Voir les sources",
+    "cancer": {
+      "title": "Guéri du cancer dans le monde",
+      "unit": "personnes",
+      "compareUnit": "Un traitement contre le cancer"
+    },
+    "malaria": {
+      "title": "Éradiqué le paludisme mondialement",
+      "unit": "fois"
+    },
+    "hunger": {
+      "title": "Mis fin à la faim dans le monde",
+      "unit": "années"
+    },
+    "water": {
+      "title": "Eau potable pour tous",
+      "unit": "années"
+    },
+    "schools": {
+      "title": "Construit des écoles dans les pays pauvres",
+      "unit": "places scolaires"
+    },
+    "vaccination": {
+      "title": "Vacciné chaque enfant sur Terre",
+      "unit": "campagnes annuelles"
+    },
+    "poverty": {
+      "title": "Éliminé l'extrême pauvreté",
+      "unit": "années"
+    },
+    "rainforest": {
+      "title": "Protégé toutes les forêts tropicales",
+      "unit": "fois"
+    },
+    "renewable": {
+      "title": "Doublé la capacité solaire mondiale",
+      "unit": "GW de nouveau solaire"
+    },
+    "humanitarian": {
+      "title": "Couvert tous les appels humanitaires",
+      "unit": "années"
+    }
   }
 }

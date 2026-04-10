@@ -26,6 +26,14 @@ body {
   color: var(--text-primary);
 }
 
+/* Suppress the default disclosure triangle on <details> across browsers. */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

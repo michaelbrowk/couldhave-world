@@ -30,3 +30,30 @@ export function interpolate(template: string, values: Record<string, string | nu
     return v === undefined ? `{${key}}` : String(v);
   });
 }
+
+/**
+ * Map a `Category.id` (kebab-case, full descriptor) to the short dict key
+ * used in `messages/*.json` under the `categories.*` namespace. The two
+ * naming systems exist because data ids describe the topic precisely while
+ * dict keys are short editorial labels.
+ */
+export const CATEGORY_DICT_KEYS = {
+  "cancer-treatment": "cancer",
+  "malaria-eradication": "malaria",
+  "world-hunger": "hunger",
+  "clean-water": "water",
+  "schools-lmic": "schools",
+  "child-vaccination": "vaccination",
+  "extreme-poverty": "poverty",
+  "rainforest-protection": "rainforest",
+  "renewable-transition": "renewable",
+  "humanitarian-aid": "humanitarian",
+} as const satisfies Record<string, string>;
+
+export type CategoryDictKey = (typeof CATEGORY_DICT_KEYS)[keyof typeof CATEGORY_DICT_KEYS];
+
+export function getCategoryDictKey(categoryId: string): CategoryDictKey {
+  const key = CATEGORY_DICT_KEYS[categoryId as keyof typeof CATEGORY_DICT_KEYS];
+  if (!key) throw new Error(`No dict key mapping for category id: ${categoryId}`);
+  return key;
+}
