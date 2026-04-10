@@ -16,7 +16,10 @@ export default defineConfig({
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
     command: `next dev -p ${PORT}`,
-    url: baseURL,
+    // Use a real route as the readiness probe — the bare root `/` returns
+    // 404 because the app only has `/[locale]/` pages, which would make
+    // Playwright always think the server is down and try to spawn its own.
+    url: `${baseURL}/en/`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },

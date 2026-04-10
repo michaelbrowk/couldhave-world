@@ -116,7 +116,13 @@ function ProgressBar({
     <div>
       <div className="flex justify-between items-baseline mb-2 font-mono text-[11px] uppercase tracking-widest text-[var(--text-secondary)]">
         <span>{label}</span>
-        <span className="text-[var(--text-primary)] text-base font-sans normal-case tracking-normal tabular-nums">
+        <span
+          className="text-[var(--text-primary)] text-base font-sans normal-case tracking-normal tabular-nums"
+          // Live military value differs between server-render and client-
+          // hydration by a few ms; suppressing the diff so React doesn't
+          // bail out of hydration for the surrounding subtree.
+          suppressHydrationWarning={live}
+        >
           {valueText}
         </span>
       </div>
