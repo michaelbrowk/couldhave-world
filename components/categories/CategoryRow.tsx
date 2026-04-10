@@ -1,4 +1,5 @@
 import type { Category } from "@/data/categories.schema";
+import { militarySpending } from "@/data/military-spending.schema";
 import { computeCategoryMetric, computeSymbolCount, pickMatrixMode } from "@/lib/categories";
 import { formatCompact, formatCount, type SupportedLocale } from "@/lib/formatters";
 import { ComparisonBars } from "./ComparisonBars";
@@ -31,7 +32,6 @@ export function CategoryRow({ category, militaryTotalUsd, locale, strings }: Pro
   const symbolCount = computeSymbolCount(metric, mode);
 
   const numberDisplay = formatCount(metric, locale);
-  const militaryDisplay = formatCompact(militaryTotalUsd, locale);
   const alternativeDisplay = formatCompact(category.unitCostUsd, locale);
 
   const matrixAriaLabel =
@@ -67,12 +67,13 @@ export function CategoryRow({ category, militaryTotalUsd, locale, strings }: Pro
       <div className="pb-12 md:pb-16 pt-2 flex flex-col items-stretch gap-12">
         <div className="w-full pt-12">
           <ComparisonBars
+            projection={militarySpending.projection}
+            currentYear={militarySpending.currentYear}
             militaryLabel={strings.militaryBarLabel}
-            militaryDisplay={militaryDisplay}
-            militaryAmount={militaryTotalUsd}
             alternativeLabel={strings.alternativeBarLabel}
             alternativeDisplay={alternativeDisplay}
             alternativeAmount={category.unitCostUsd}
+            locale={locale}
           />
         </div>
         <SymbolMatrix symbol={category.symbol} count={symbolCount} ariaLabel={matrixAriaLabel} />

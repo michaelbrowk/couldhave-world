@@ -1,63 +1,85 @@
 "use client";
 
 import { motion, useInView, useReducedMotion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { formatCompact, type SupportedLocale } from "@/lib/formatters";
+import { currentSpendEstimate, type Projection } from "@/lib/projection";
 
 type Props = {
-  /** Label above the larger (military) bar. */
+  /** Live projection — bar fills up as the year progresses. */
+  projection: Projection;
+  currentYear: number;
+  /** Pre-translated label for the larger (military) bar. */
   militaryLabel: string;
-  /** Pre-formatted military amount for display, e.g. "$3.18T". */
-  militaryDisplay: string;
-  /** Numeric military amount in USD. */
-  militaryAmount: number;
-  /** Label above the smaller (alternative) bar. */
+  /** Static cost of one alternative unit. */
+  alternativeAmount: number;
+  /** Pre-translated label for the alternative bar. */
   alternativeLabel: string;
   /** Pre-formatted alternative amount, e.g. "$60K". */
   alternativeDisplay: string;
-  /** Numeric alternative amount in USD. */
-  alternativeAmount: number;
+  locale: SupportedLocale;
 };
 
-const MIN_BAR_PCT = 0.4; // px-equivalent floor so even tiny ratios remain visible
+const MIN_BAR_PCT = 0.4;
 
 export function ComparisonBars(props: Props) {
   const {
+    projection,
+    currentYear,
     militaryLabel,
-    militaryDisplay,
-    militaryAmount,
+    alternativeAmount,
     alternativeLabel,
     alternativeDisplay,
-    alternativeAmount,
+    locale,
   } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.2 });
   const reduceMotion = useReducedMotion();
 
-  const max = Math.max(militaryAmount, alternativeAmount);
-  const militaryPct = (militaryAmount / max) * 100;
-  const altPctRaw = (alternativeAmount / max) * 100;
-  const altPct = Math.max(altPctRaw, MIN_BAR_PCT);
+  // Live current spend, ticked every 100ms to match the main hero counter.
+  const [currentSpend, setCurrentSpend] = useState<number>(() =>
+    currentSpendEstimate(projection, new Date(), currentYear),
+  );
+
+  useEffect(() => {
+    if (reduceMotion) return;
+    const tick = () => setCurrentSpend(currentSpendEstimate(projection, new Date(), currentYear));
+    tick();
+    const interval = window.setInterval(tick, 100);
+    return () => window.clearInterval(interval);
+  }, [projection, currentYear, reduceMotion]);
+
+  // Both bars share the SAME scale: full annual projection. This makes the
+  // military bar a literal year-progress meter (0% → 100% over the year)
+  // while the alternative stays fixed as a tiny fraction.
+  const fullYear = projection.totalUsd;
+  const militaryProgressPct = Math.min(100, (currentSpend / fullYear) * 100);
+  const altPct = Math.max((alternativeAmount / fullYear) * 100, MIN_BAR_PCT);
+
+  const militaryDisplay = formatCompact(currentSpend, locale);
 
   return (
     <div ref={ref} className="w-full max-w-4xl space-y-8">
-      <Bar
+      <ProgressBar
         label={militaryLabel}
         valueText={militaryDisplay}
-        targetWidth={`${militaryPct}%`}
+        targetPct={militaryProgressPct}
         color="var(--accent)"
         inView={inView}
         reduceMotion={reduceMotion ?? false}
         delay={0}
+        live
       />
-      <Bar
+      <ProgressBar
         label={alternativeLabel}
         valueText={alternativeDisplay}
-        targetWidth={`${altPct}%`}
+        targetPct={altPct}
         color="var(--text-primary)"
         inView={inView}
         reduceMotion={reduceMotion ?? false}
         delay={0.4}
+        live={false}
       />
     </div>
   );
@@ -66,14 +88,30 @@ export function ComparisonBars(props: Props) {
 type BarProps = {
   label: string;
   valueText: string;
-  targetWidth: string;
+  targetPct: number;
   color: string;
   inView: boolean;
   reduceMotion: boolean;
   delay: number;
+  /** If true, the bar's width updates instantly (no transition) on each tick. */
+  live: boolean;
 };
 
-function Bar({ label, valueText, targetWidth, color, inView, reduceMotion, delay }: BarProps) {
+function ProgressBar({
+  label,
+  valueText,
+  targetPct,
+  color,
+  inView,
+  reduceMotion,
+  delay,
+  live,
+}: BarProps) {
+  // Track whether the entrance animation has finished. Before completion, use
+  // a long ease so the bar fills smoothly from 0. After completion, snap
+  // updates instantly so the live ticker doesn't lag behind state changes.
+  const [hasEntered, setHasEntered] = useState(false);
+
   return (
     <div>
       <div className="flex justify-between items-baseline mb-2 font-mono text-[11px] uppercase tracking-widest text-[var(--text-secondary)]">
@@ -86,9 +124,16 @@ function Bar({ label, valueText, targetWidth, color, inView, reduceMotion, delay
         <motion.div
           className="h-full rounded-full"
           style={{ backgroundColor: color }}
-          initial={{ width: reduceMotion ? targetWidth : 0 }}
-          animate={{ width: reduceMotion || inView ? targetWidth : 0 }}
-          transition={{ duration: 1.2, delay, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ width: reduceMotion ? `${targetPct}%` : 0 }}
+          animate={{ width: reduceMotion || inView ? `${targetPct}%` : 0 }}
+          transition={{
+            duration: live && hasEntered ? 0 : 1.2,
+            delay: hasEntered ? 0 : delay,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          onAnimationComplete={() => {
+            if (!hasEntered) setHasEntered(true);
+          }}
         />
       </div>
     </div>

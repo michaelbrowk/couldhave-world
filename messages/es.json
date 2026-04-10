@@ -53,5 +53,16 @@
       "title": "Cubiertas todas las crisis humanitarias",
       "unit": "años"
     }
+  },
+  "methodology": {
+    "title": "Metodología",
+    "counter": "El contador proyecta el gasto militar mundial total de este año a partir de las últimas cifras reales de SIPRI multiplicadas por la tasa de crecimiento promedio de 5 años, y avanza en tiempo real como una fracción de ese total anual según los segundos transcurridos desde el 1 de enero.",
+    "categories": "Cada alternativa humanitaria se calcula a partir de fuentes autorizadas (OMS, Banco Mundial, UNICEF, Gavi, UN OCHA, UNESCO, IRENA, FAO). Los costos unitarios y las citas están en el panel «ver fuentes» de cada categoría.",
+    "data": "Todos los datos son abiertos y se encuentran en el repositorio público.",
+    "updated": "Actualizado: {date}",
+    "repoLabel": "Ver datos y código fuente en GitHub"
+  },
+  "footer": {
+    "year": "© {year}"
   }
 }

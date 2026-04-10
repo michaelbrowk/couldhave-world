@@ -53,5 +53,16 @@
       "title": "Alle humanitären Krisen abgedeckt",
       "unit": "Jahre"
     }
+  },
+  "methodology": {
+    "title": "Methodik",
+    "counter": "Der Zähler prognostiziert die gesamten weltweiten Militärausgaben dieses Jahres auf Basis der neuesten SIPRI-Istzahlen multipliziert mit der durchschnittlichen 5-Jahres-Wachstumsrate und tickt in Echtzeit als Anteil dieses Jahrestotals basierend auf den seit dem 1. Januar vergangenen Sekunden.",
+    "categories": "Jede humanitäre Alternative wird aus autoritativen Quellen berechnet (WHO, Weltbank, UNICEF, Gavi, UN OCHA, UNESCO, IRENA, FAO). Kosteneinheiten und Zitate stehen im Panel „Quellen anzeigen“ jeder Kategorie.",
+    "data": "Alle Daten sind offen und liegen im öffentlichen Repository.",
+    "updated": "Zuletzt aktualisiert: {date}",
+    "repoLabel": "Daten und Quellcode auf GitHub ansehen"
+  },
+  "footer": {
+    "year": "© {year}"
   }
 }

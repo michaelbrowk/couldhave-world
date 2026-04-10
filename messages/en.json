@@ -53,5 +53,16 @@
       "title": "Funded all humanitarian appeals",
       "unit": "years"
     }
+  },
+  "methodology": {
+    "title": "Methodology",
+    "counter": "The counter projects this year's total global military spending based on the latest actual SIPRI figures multiplied by the 5-year average growth rate, then ticks in real time as a fraction of that yearly total based on seconds elapsed since January 1.",
+    "categories": "Each humanitarian alternative is computed from authoritative sources (WHO, World Bank, UNICEF, Gavi, UN OCHA, UNESCO, IRENA, FAO). Cost units and citations are listed in each category's “see sources” panel.",
+    "data": "All data is open and lives in the public repository.",
+    "updated": "Last updated: {date}",
+    "repoLabel": "View data and source code on GitHub"
+  },
+  "footer": {
+    "year": "© {year}"
   }
 }

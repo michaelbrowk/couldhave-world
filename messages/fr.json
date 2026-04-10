@@ -53,5 +53,16 @@
       "title": "Couvert tous les appels humanitaires",
       "unit": "années"
     }
+  },
+  "methodology": {
+    "title": "Méthodologie",
+    "counter": "Le compteur projette les dépenses militaires mondiales totales de cette année à partir des derniers chiffres réels de SIPRI multipliés par le taux de croissance moyen sur 5 ans, puis défile en temps réel comme une fraction de ce total annuel selon les secondes écoulées depuis le 1er janvier.",
+    "categories": "Chaque alternative humanitaire est calculée à partir de sources faisant autorité (OMS, Banque mondiale, UNICEF, Gavi, UN OCHA, UNESCO, IRENA, FAO). Les coûts unitaires et les citations figurent dans le panneau « voir les sources » de chaque catégorie.",
+    "data": "Toutes les données sont ouvertes et hébergées dans le dépôt public.",
+    "updated": "Dernière mise à jour : {date}",
+    "repoLabel": "Voir les données et le code source sur GitHub"
+  },
+  "footer": {
+    "year": "© {year}"
   }
 }

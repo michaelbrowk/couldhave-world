@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { CategoryRow, type CategoryRowStrings } from "@/components/categories/CategoryRow";
 import { TickingCounter } from "@/components/hero/TickingCounter";
+import { Footer } from "@/components/layout/Footer";
+import { Methodology } from "@/components/layout/Methodology";
 import { categories } from "@/data/categories.schema";
 import { militarySpending } from "@/data/military-spending.schema";
 import { formatCompact, formatCurrency, type SupportedLocale } from "@/lib/formatters";
@@ -10,6 +12,7 @@ import {
   getDictionary,
   hasLocale,
   interpolate,
+  type Locale,
 } from "./dictionaries";
 
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
@@ -78,6 +81,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             })}
           </div>
         </section>
+
+        <Methodology strings={dict.methodology} />
+
+        <Footer currentLocale={locale as Locale} yearTemplate={dict.footer.year} />
       </div>
     </main>
   );
