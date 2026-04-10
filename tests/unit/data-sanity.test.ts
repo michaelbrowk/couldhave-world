@@ -22,20 +22,6 @@ describe("military-spending data", () => {
     expect(actuals.length).toBeGreaterThanOrEqual(5);
   });
 
-  it("has 15 top countries", () => {
-    expect(militarySpending.topCountries).toHaveLength(15);
-  });
-
-  it("top countries are sorted descending by amount", () => {
-    const amounts = militarySpending.topCountries.map((c) => c.amountUsd);
-    const sorted = [...amounts].sort((a, b) => b - a);
-    expect(amounts).toEqual(sorted);
-  });
-
-  it("US is the #1 spender", () => {
-    expect(militarySpending.topCountries[0]?.countryCode).toBe("US");
-  });
-
   it("projection.totalUsd matches base × growthFactor^(currentYear - basedOnYear)", () => {
     const { totalUsd, baseAmountUsd, growthFactor, basedOnYear } = militarySpending.projection;
     const years = militarySpending.currentYear - basedOnYear;

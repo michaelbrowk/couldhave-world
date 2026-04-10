@@ -14,11 +14,6 @@ export type MilitarySpendingData = {
     totalUsd: number;
     actual: boolean;
   }>;
-  topCountries: Array<{
-    country: string;
-    countryCode: string;
-    amountUsd: number;
-  }>;
   source: string;
   sourceUrl: string;
   lastUpdated: string;
