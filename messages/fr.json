@@ -1,3 +1,8 @@
 {
-  "hello": "Bonjour"
+  "hello": "Bonjour",
+  "hero": {
+    "caption": "Dépensé pour la guerre depuis le 1er janvier {year}",
+    "methodology": "Projection pour {year}, basée sur les données réelles de SIPRI pour {basedOnYear} et le taux de croissance moyen sur 5 ans. Les chiffres réels sont publiés chaque année fin avril.",
+    "scrollHint": "Défiler"
+  }
 }

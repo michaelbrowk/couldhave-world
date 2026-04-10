@@ -37,7 +37,10 @@ export function currentSpendEstimate(
   currentYear: number,
 ): number {
   const yearStart = Date.UTC(currentYear, 0, 1, 0, 0, 0);
-  const elapsed = Math.max(0, Math.floor((now.getTime() - yearStart) / 1000));
+  // Sub-second precision: do NOT floor here. The ticking counter relies on
+  // continuous accumulation between RAF frames so the rendered integer dollar
+  // value visibly increments at ~60fps.
+  const elapsed = Math.max(0, (now.getTime() - yearStart) / 1000);
   const total = secondsInYear(currentYear);
   const fraction = Math.min(1, elapsed / total);
   return projection.totalUsd * fraction;

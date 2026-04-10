@@ -92,4 +92,15 @@ describe("currentSpendEstimate", () => {
     const result = currentSpendEstimate(projection, future, 2026);
     expect(result).toBeLessThanOrEqual(projection.totalUsd);
   });
+
+  it("returns different values for two timestamps within the same second", () => {
+    // Sub-second precision is required for the ticking counter to visibly
+    // update at 60fps. If we floored to whole seconds, two timestamps 16ms
+    // apart would return the same value and the counter would freeze.
+    const t1 = new Date(Date.UTC(2026, 5, 1, 12, 0, 0, 0));
+    const t2 = new Date(Date.UTC(2026, 5, 1, 12, 0, 0, 16));
+    const v1 = currentSpendEstimate(projection, t1, 2026);
+    const v2 = currentSpendEstimate(projection, t2, 2026);
+    expect(v2).toBeGreaterThan(v1);
+  });
 });

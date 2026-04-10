@@ -1,3 +1,8 @@
 {
-  "hello": "Hello"
+  "hello": "Hello",
+  "hero": {
+    "caption": "Spent on war since January 1, {year}",
+    "methodology": "Projected {year}, based on SIPRI {basedOnYear} actuals and a 5-year average growth rate. Actual figures are published annually in late April.",
+    "scrollHint": "Scroll"
+  }
 }

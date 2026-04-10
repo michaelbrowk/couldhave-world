@@ -1,3 +1,8 @@
 {
-  "hello": "Hola"
+  "hello": "Hola",
+  "hero": {
+    "caption": "Gastado en guerra desde el 1 de enero de {year}",
+    "methodology": "Proyección para {year}, basada en datos reales de SIPRI de {basedOnYear} y la tasa de crecimiento promedio de 5 años. Las cifras reales se publican anualmente a finales de abril.",
+    "scrollHint": "Desplazar"
+  }
 }

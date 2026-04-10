@@ -1,3 +1,8 @@
 {
-  "hello": "Hallo"
+  "hello": "Hallo",
+  "hero": {
+    "caption": "Seit 1. Januar {year} für Kriege ausgegeben",
+    "methodology": "Prognose für {year}, basierend auf SIPRI-Istdaten von {basedOnYear} und der durchschnittlichen 5-Jahres-Wachstumsrate. Die tatsächlichen Zahlen werden jährlich Ende April veröffentlicht.",
+    "scrollHint": "Scrollen"
+  }
 }
