@@ -1,7 +1,10 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import type { Category } from "@/data/categories.schema";
-import { militarySpending } from "@/data/military-spending.schema";
 import { computeCategoryMetric, computeSymbolCount, pickMatrixMode } from "@/lib/categories";
 import { formatCompact, formatCount, type SupportedLocale } from "@/lib/formatters";
+import { currentSpendEstimate, type Projection } from "@/lib/projection";
 import { ComparisonBars } from "./ComparisonBars";
 import { SymbolMatrix } from "./SymbolMatrix";
 
@@ -15,7 +18,8 @@ export type CategoryRowStrings = {
 
 type Props = {
   category: Category;
-  militaryTotalUsd: number;
+  projection: Projection;
+  currentYear: number;
   locale: SupportedLocale;
   strings: CategoryRowStrings;
 };
@@ -23,11 +27,29 @@ type Props = {
 /**
  * Card-shaped ledger row. Default state shows title (left), number + unit
  * (right) inside a soft gray plate. Clicking the card expands it inline to
- * reveal comparison bars, the symbol matrix, and source citations. Uses
- * native `<details>` for accessibility and zero-JS keyboard support.
+ * reveal comparison bars, the symbol matrix, and source citations.
+ *
+ * The headline metric (people treated, years funded, times-over) is derived
+ * from live year-to-date spend, so it stays mathematically consistent with
+ * the large hero counter and the comparison bar value. One source of truth —
+ * `currentSpendEstimate(projection, now, currentYear)` — drives everything.
  */
-export function CategoryRow({ category, militaryTotalUsd, locale, strings }: Props) {
-  const metric = computeCategoryMetric(category, militaryTotalUsd);
+export function CategoryRow({ category, projection, currentYear, locale, strings }: Props) {
+  // Live YTD spend, ticked every 100ms to match the hero counter cadence.
+  // Seeded with a deterministic initial value so SSR and the first client
+  // render produce identical markup; the interval then takes over.
+  const [currentSpend, setCurrentSpend] = useState<number>(() =>
+    currentSpendEstimate(projection, new Date(), currentYear),
+  );
+
+  useEffect(() => {
+    const tick = () => setCurrentSpend(currentSpendEstimate(projection, new Date(), currentYear));
+    tick();
+    const interval = window.setInterval(tick, 100);
+    return () => window.clearInterval(interval);
+  }, [projection, currentYear]);
+
+  const metric = computeCategoryMetric(category, currentSpend);
   const mode = pickMatrixMode(metric);
   const symbolCount = computeSymbolCount(metric, mode);
 
@@ -56,6 +78,12 @@ export function CategoryRow({ category, militaryTotalUsd, locale, strings }: Pro
           <span
             className="font-serif text-[var(--accent)] tabular-nums leading-none"
             style={{ fontSize: "clamp(32px, 5vw, 72px)" }}
+            // Static export freezes the HTML at build time, but the initial
+            // client render uses the visitor's wall clock — the two values
+            // differ by whatever time has passed since deploy. Suppressing
+            // the hydration warning lets React accept the fresher client
+            // value silently, matching the pattern in TickingCounter.
+            suppressHydrationWarning
           >
             {numberDisplay}
           </span>
@@ -68,8 +96,8 @@ export function CategoryRow({ category, militaryTotalUsd, locale, strings }: Pro
       <div className="pb-12 md:pb-16 pt-2 flex flex-col items-stretch gap-12">
         <div className="w-full pt-12">
           <ComparisonBars
-            projection={militarySpending.projection}
-            currentYear={militarySpending.currentYear}
+            projection={projection}
+            currentSpend={currentSpend}
             militaryLabel={strings.militaryBarLabel}
             alternativeLabel={strings.alternativeBarLabel}
             alternativeDisplay={alternativeDisplay}

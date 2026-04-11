@@ -1,14 +1,15 @@
 "use client";
 
 import { motion, useInView, useReducedMotion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { formatCompact, type SupportedLocale } from "@/lib/formatters";
-import { currentSpendEstimate, type Projection } from "@/lib/projection";
+import type { Projection } from "@/lib/projection";
 
 type Props = {
-  /** Live projection — bar fills up as the year progresses. */
+  /** Full-year projection — used for bar scale, not for the displayed value. */
   projection: Projection;
-  currentYear: number;
+  /** Live year-to-date spend, owned and ticked by the parent CategoryRow. */
+  currentSpend: number;
   /** Pre-translated label for the larger (military) bar. */
   militaryLabel: string;
   /** Static cost of one alternative unit. */
@@ -25,7 +26,7 @@ const MIN_BAR_PCT = 0.4;
 export function ComparisonBars(props: Props) {
   const {
     projection,
-    currentYear,
+    currentSpend,
     militaryLabel,
     alternativeAmount,
     alternativeLabel,
@@ -36,19 +37,6 @@ export function ComparisonBars(props: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.2 });
   const reduceMotion = useReducedMotion();
-
-  // Live current spend, ticked every 100ms to match the main hero counter.
-  const [currentSpend, setCurrentSpend] = useState<number>(() =>
-    currentSpendEstimate(projection, new Date(), currentYear),
-  );
-
-  useEffect(() => {
-    if (reduceMotion) return;
-    const tick = () => setCurrentSpend(currentSpendEstimate(projection, new Date(), currentYear));
-    tick();
-    const interval = window.setInterval(tick, 100);
-    return () => window.clearInterval(interval);
-  }, [projection, currentYear, reduceMotion]);
 
   // Both bars share the SAME scale: full annual projection. This makes the
   // military bar a literal year-progress meter (0% → 100% over the year)
