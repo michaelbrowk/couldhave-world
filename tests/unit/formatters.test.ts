@@ -20,21 +20,30 @@ describe("formatCurrency", () => {
 });
 
 describe("formatCount", () => {
-  it("rounds counts over 1M to nearest million", () => {
+  // Large counts tick live (~1-20 per second in the UI), so they must render
+  // as full integers with grouping — rounding to the nearest million would
+  // make ticks imperceptible and would break mathematical consistency with
+  // the hero counter (e.g. 874.8B / 60K = 14,579,665, not 15,000,000).
+  it("renders large counts with full precision and grouping", () => {
     const r = formatCount(16_543_210, "en");
-    // 16,543,210 should round to 17,000,000 (nearest million)
-    expect(r).toMatch(/17[\s,.]000[\s,.]000/);
+    expect(r).toMatch(/16[\s,.]543[\s,.]210/);
   });
 
-  it("rounds counts 10k-1M to nearest 10k", () => {
+  it("renders mid-range counts with full precision", () => {
     const r = formatCount(543_210, "en");
-    // 543,210 → 540,000 (nearest 10k)
-    expect(r).toMatch(/540[\s,.]000/);
+    expect(r).toMatch(/543[\s,.]210/);
   });
 
-  it("keeps small counts as integers", () => {
-    const r = formatCount(43, "en");
-    expect(r).toMatch(/^43$/);
+  // Small metrics (years of funding, "times over") need one decimal so the
+  // live ticker can show gradual accumulation rather than integer jumps.
+  it("renders small counts with one decimal place", () => {
+    const r = formatCount(26.47, "en");
+    expect(r).toMatch(/^26\.5$/);
+  });
+
+  it("renders tiny counts with one decimal place", () => {
+    const r = formatCount(9.7, "en");
+    expect(r).toMatch(/^9\.7$/);
   });
 
   it("respects locale grouping for German", () => {

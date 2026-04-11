@@ -73,7 +73,8 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                 <CategoryRow
                   key={category.id}
                   category={category}
-                  militaryTotalUsd={projection.totalUsd}
+                  projection={projection}
+                  currentYear={currentYear}
                   locale={locale as SupportedLocale}
                   strings={strings}
                 />

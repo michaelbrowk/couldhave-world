@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView, useReducedMotion } from "framer-motion";
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import type { CategorySymbolId } from "@/data/categories.schema";
 import type { SymbolCountResult } from "@/lib/categories";
 import { CategorySymbol } from "./CategorySymbol";
@@ -20,7 +20,12 @@ const CELL = 18;
 const GAP = 6;
 const STAGGER = 0.008;
 
-export function SymbolMatrix({ symbol, count, ariaLabel }: Props) {
+// The parent CategoryRow re-renders at ~10 Hz to tick the headline metric, but
+// `count.visibleCount` changes far more slowly (once per minute at most for
+// perUnit categories, and even slower for dense-mode ones). Memoize on the
+// identity of (symbol, visibleCount, unitsPerSymbol, ariaLabel) so we skip
+// 99% of the parent's renders and avoid thrashing the 200+ symbol DOM subtree.
+function SymbolMatrixImpl({ symbol, count, ariaLabel }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });
   const reduceMotion = useReducedMotion();
@@ -38,6 +43,11 @@ export function SymbolMatrix({ symbol, count, ariaLabel }: Props) {
       style={{ gap }}
       role="img"
       aria-label={ariaLabel}
+      // Parent ticks the metric from live YTD spend. Static export means
+      // the HTML was frozen at build time with a slightly different count
+      // than the client computes at first render — suppress the warning so
+      // React reconciles to the fresher client value without spam.
+      suppressHydrationWarning
     >
       {items.map((_, i) => {
         const delay = reduceMotion ? 0 : i * stagger;
@@ -66,3 +76,13 @@ export function SymbolMatrix({ symbol, count, ariaLabel }: Props) {
     </div>
   );
 }
+
+export const SymbolMatrix = memo(
+  SymbolMatrixImpl,
+  (prev, next) =>
+    prev.symbol === next.symbol &&
+    prev.ariaLabel === next.ariaLabel &&
+    prev.count.visibleCount === next.count.visibleCount &&
+    prev.count.unitsPerSymbol === next.count.unitsPerSymbol &&
+    prev.count.mode === next.count.mode,
+);
