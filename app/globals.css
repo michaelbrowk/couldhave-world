@@ -79,3 +79,8 @@ details > summary::-webkit-details-marker {
     transition-duration: 0.01ms !important;
   }
 }
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
