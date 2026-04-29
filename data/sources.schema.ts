@@ -27,6 +27,7 @@ const ProjectionSchema = z.object({
   totalUsd: z.number().positive(),
   basedOnYear: z.number().int(),
   baseAmountUsd: z.number().positive(),
+  /** When present: totalUsd ≈ baseAmountUsd × growthFactor compounded over (currentYear − basedOnYear) years. Absent for flat-annual sources (tobacco, fossil-fuels). */
   growthFactor: z.number().positive().optional(),
   growthBasis: z.string().min(1),
 });
@@ -45,10 +46,12 @@ export const SourceSchema = z.object({
   historical: z.array(HistoricalEntrySchema).optional(),
   source: z.string().min(1),
   sourceUrl: z.string().url(),
-  lastUpdated: z.string().min(1),
+  lastUpdated: z.string().date(),
   categories: z.array(CategorySchema).min(6),
 });
 
 export type Source = z.infer<typeof SourceSchema>;
 export type Category = z.infer<typeof CategorySchema>;
 export type CategorySourceRef = z.infer<typeof CategorySourceSchema>;
+export type Projection = z.infer<typeof ProjectionSchema>;
+export type HistoricalEntry = z.infer<typeof HistoricalEntrySchema>;
