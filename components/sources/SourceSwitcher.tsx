@@ -18,11 +18,11 @@ type DictionarySourceBlock = {
   methodology: string;
 };
 type DictionaryCategoryBlock = {
-  label: string; // e.g. "Military spending {year}"
+  label: string;
   [shortKey: string]: { title: string; unit: string; compareUnit?: string } | string;
 };
 
-type Props = {
+export type SourceSwitcherProps = {
   locale: SupportedLocale;
   ariaTabsLabel: string;
   transitionHeadline: string;
@@ -33,7 +33,16 @@ type Props = {
   categoryDictKeys: Record<string, Record<string, string>>;
 };
 
-export function SourceSwitcher({
+/**
+ * Pure presentational view: receives the active source as a prop and renders
+ * tabs + hero + categories. Used both as the static SSG fallback (with
+ * activeId="war") and as the body of the URL-driven SourceSwitcher.
+ *
+ * `via` distinguishes whether the active source was decided by the URL
+ * (deep-link) or by a user click.
+ */
+export function SourceSwitcherView({
+  activeId,
   locale,
   ariaTabsLabel,
   transitionHeadline,
@@ -41,28 +50,14 @@ export function SourceSwitcher({
   categoriesDict,
   sourcesToggle,
   categoryDictKeys,
-}: Props) {
+}: SourceSwitcherProps & { activeId: SourceId }) {
   const router = useRouter();
-  const params = useSearchParams();
-  const activeId: SourceId = parseSourceId(params.get("source")) ?? "war";
   const source = SOURCES[activeId];
 
   const items: readonly SourceTabItem[] = (Object.keys(SOURCES) as SourceId[]).map((id) => ({
     id,
     label: sourcesDict[id].label,
   }));
-
-  // Fire one-shot URL-arrival event for deep-linked sources (?source=tobacco
-  // direct land), excluding the default "war" so we don't double-count
-  // page_view's initial_source.
-  const fired = useRef(false);
-  useEffect(() => {
-    if (fired.current) return;
-    fired.current = true;
-    if (params.get("source") && activeId !== "war") {
-      track("source_switch", { from: null, to: activeId, locale, via: "url" });
-    }
-  }, [activeId, locale, params]);
 
   const onSelect = (id: SourceId) => {
     if (id === activeId) return;
@@ -81,7 +76,6 @@ export function SourceSwitcher({
 
   const dictBlock = categoriesDict[activeId];
   const sourceLabel = (dictBlock.label as string).replace("{year}", String(source.currentYear));
-  // Build a Record<shortKey, entry> excluding the "label" field.
   const categoriesEntries: Record<string, { title: string; unit: string; compareUnit?: string }> =
     {};
   for (const [k, v] of Object.entries(dictBlock)) {
@@ -106,4 +100,30 @@ export function SourceSwitcher({
       />
     </div>
   );
+}
+
+/**
+ * URL-aware wrapper. Reads `?source=` from the URL via `useSearchParams`
+ * (which suspends during static export) and delegates rendering to
+ * SourceSwitcherView. Fires the one-shot `source_switch` deep-link event
+ * for non-default arrivals.
+ *
+ * Render this inside <Suspense fallback={<SourceSwitcherView activeId="war" .../>}>
+ * so the static HTML carries the default-state markup, eliminating the
+ * post-hydration layout shift.
+ */
+export function SourceSwitcher(props: SourceSwitcherProps) {
+  const params = useSearchParams();
+  const activeId: SourceId = parseSourceId(params.get("source")) ?? "war";
+
+  const fired = useRef(false);
+  useEffect(() => {
+    if (fired.current) return;
+    fired.current = true;
+    if (params.get("source") && activeId !== "war") {
+      track("source_switch", { from: null, to: activeId, locale: props.locale, via: "url" });
+    }
+  }, [activeId, params, props.locale]);
+
+  return <SourceSwitcherView {...props} activeId={activeId} />;
 }
