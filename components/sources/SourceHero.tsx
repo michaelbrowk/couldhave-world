@@ -1,6 +1,6 @@
 "use client";
 
-import type { Source, SourceId } from "@/data/sources.schema";
+import type { Source } from "@/data/sources.schema";
 import { TickingCounter } from "@/components/hero/TickingCounter";
 import { formatCompact, formatCurrency, type SupportedLocale } from "@/lib/formatters";
 
@@ -31,7 +31,7 @@ export function SourceHero({ source, locale, strings }: Props) {
     <section
       role="tabpanel"
       id="source-tabpanel"
-      aria-labelledby={`source-tab-${source.id satisfies SourceId}`}
+      aria-labelledby={`source-tab-${source.id}`}
       className="mb-16 md:mb-24 fadein"
       key={source.id}
     >

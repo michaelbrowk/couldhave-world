@@ -3,7 +3,6 @@
 import { CategoryRow, type CategoryRowStrings } from "@/components/categories/CategoryRow";
 import type { Source } from "@/data/sources.schema";
 import type { SupportedLocale } from "@/lib/formatters";
-import type { Projection } from "@/lib/projection";
 
 type DictCategoryEntry = {
   title: string;
@@ -44,15 +43,11 @@ export function SourceCategories({ source, locale, strings }: Props) {
             alternativeBarLabel: compareUnit,
             sourcesToggle: strings.sourcesToggle,
           };
-          // source.projection.growthFactor is optional in the schema (flat-annual
-          // sources omit it) but lib/projection.Projection marks it required.
-          // Task 1 established shape parity; cast to satisfy CategoryRow's prop.
-          const projection = source.projection as Projection;
           return (
             <CategoryRow
               key={category.id}
               category={category}
-              projection={projection}
+              projection={source.projection}
               currentYear={source.currentYear}
               locale={locale}
               strings={rowStrings}
