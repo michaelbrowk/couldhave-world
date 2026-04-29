@@ -271,10 +271,12 @@ const onSelect = (id: SourceId) => {
 
 ### 8.3. Объём перевода в v1
 
-- **EN + RU**: полный перевод всех новых ключей.
-- **ES, DE, FR**: оставляем EN-фолбэк через mechanism в `dictionaries.ts` (если ключ отсутствует — берём из `en.json`). Полный перевод — отдельный PR.
+Проект сегодня поддерживает 4 локали: `en`, `de`, `es`, `fr` (русского нет — проверено по `messages/` и `LOCALES` в `dictionaries.ts`).
 
-Это сознательный YAGNI-trade-off: 3 локали × 2 таба × 8+ ключей = 60+ строк ручного перевода, который реально полирнуть только переводчиком, а не на ходу.
+- **EN**: полный перевод всех новых ключей.
+- **DE, ES, FR**: оставляем EN-фолбэк через явный fallback в `getDictionary` / `interpolate` — если ключ отсутствует, берём из `en.json`. Полный профессиональный перевод — отдельный PR с переводчиком.
+
+Это сознательный YAGNI-trade-off: 3 локали × 2 новых таба × ~12 ключей = 70+ строк, которые я не могу качественно перевести на DE/ES/FR без переводчика. Лучше показать EN-фолбэк, чем фейковый машинный перевод.
 
 ---
 
@@ -299,8 +301,8 @@ const onSelect = (id: SourceId) => {
 
 - `app/[locale]/page.tsx` — заменяет inline-хиро + categories на `<SourceSwitcher>`
 - `app/[locale]/dictionaries.ts` — `getCategoryDictKey(sourceId, categoryId)`, добавление `sources` секции в Dictionary типе
-- `messages/en.json`, `messages/ru.json` — новые ключи
-- `messages/es.json`, `messages/de.json`, `messages/fr.json` — пока EN-фолбэк, без правок, проверить что fallback работает
+- `messages/en.json` — новые ключи (полный перевод)
+- `messages/es.json`, `messages/de.json`, `messages/fr.json` — пока EN-фолбэк, без правок; в `dictionaries.ts` добавить fallback-логику и проверить тестом
 - `components/analytics/Analytics.tsx` — обработка `source_switch`, расширение `category` события полем source
 - `components/categories/CategoryRow.tsx` — принимает `sourceId` для аналитики (только проброс, рендер не меняется)
 - `lib/site-config.ts` — если используется в metadata, проверить что не ломается
@@ -380,7 +382,7 @@ const onSelect = (id: SourceId) => {
 - [ ] SourceSwitcher + SourceTabs + SourceHero + SourceCategories реализованы
 - [ ] URL deep-link работает (`/?source=tobacco` рендерит активный таб)
 - [ ] Mixpanel `source_switch` шлётся, `page_view` включает `initial_source`, `category` включает `source`
-- [ ] EN + RU словари обновлены, ES/DE/FR пока на EN-фолбэке (но не падает)
+- [ ] EN-словарь обновлён полностью; DE/ES/FR падают на EN-фолбэк через явную fallback-логику в `getDictionary`, без ошибок в рантайме
 - [ ] Все unit-тесты зелёные
 - [ ] Все Playwright e2e зелёные, включая reduced-motion
 - [ ] Lighthouse 100/100/100/100 на проде
