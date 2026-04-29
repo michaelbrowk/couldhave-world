@@ -58,8 +58,10 @@ export function SourceTabs({ items, activeId, onSelect, ariaLabel }: Props) {
               }}
               className={[
                 "font-mono text-xs md:text-sm uppercase tracking-[0.18em]",
-                "whitespace-nowrap py-3 border-b-2 -mb-px transition-colors",
-                "focus-visible:outline-none focus-visible:text-[var(--text-primary)]",
+                "whitespace-nowrap py-3 border-b-2 -mb-px",
+                "transition-[color,border-color,transform] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]",
+                "active:scale-[0.97]",
+                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]/30 focus-visible:rounded-sm",
                 isActive
                   ? "border-[var(--text-primary)] text-[var(--text-primary)]"
                   : "border-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)]",

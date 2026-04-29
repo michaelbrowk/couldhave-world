@@ -32,7 +32,7 @@ export function SourceHero({ source, locale, strings }: Props) {
       role="tabpanel"
       id="source-tabpanel"
       aria-labelledby={`source-tab-${source.id satisfies SourceId}`}
-      className="mb-16 md:mb-24 motion-safe:animate-[fadein_240ms_ease-out]"
+      className="mb-16 md:mb-24 fadein"
       key={source.id}
     >
       <p

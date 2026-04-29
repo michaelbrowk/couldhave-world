@@ -27,7 +27,7 @@ type Props = {
 
 export function SourceCategories({ source, locale, strings }: Props) {
   return (
-    <section className="motion-safe:animate-[fadein_240ms_ease-out]" key={source.id}>
+    <section className="fadein" key={source.id}>
       <h2 className="font-serif text-3xl md:text-5xl text-[var(--text-primary)] mb-8 md:mb-12">
         {strings.headline}
       </h2>
