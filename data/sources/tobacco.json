@@ -42,9 +42,9 @@
           "year": 2021
         },
         {
-          "name": "CDC — Best Practices for Comprehensive Tobacco Control Programs",
-          "url": "https://www.cdc.gov/tobacco/stateandcommunity/best_practices/index.htm",
-          "year": 2014
+          "name": "CDC — Smoking & Tobacco Use",
+          "url": "https://www.cdc.gov/tobacco/",
+          "year": 2024
         }
       ],
       "methodology": "Per-quitter cost of an evidence-based cessation program: nicotine replacement therapy (NRT) plus brief behavioural counselling, US public-health pricing."
@@ -116,14 +116,14 @@
       "unitCostUsd": 9500000000,
       "sources": [
         {
-          "name": "Gavi, The Vaccine Alliance — Investment Opportunity 2021-2025",
-          "url": "https://www.gavi.org/investing-gavi/funding/resource-mobilisation-process/gavi-investment-opportunity-2021-2025",
-          "year": 2020
+          "name": "Gavi, The Vaccine Alliance — Resource Mobilisation Process",
+          "url": "https://www.gavi.org/investing-gavi/funding/resource-mobilisation-process",
+          "year": 2024
         },
         {
-          "name": "WHO Immunization Agenda 2030",
-          "url": "https://www.who.int/publications/i/item/immunization-agenda-2030-a-global-strategy-to-leave-no-one-behind",
-          "year": 2020
+          "name": "WHO — Immunization Agenda 2030",
+          "url": "https://www.who.int/teams/immunization-vaccines-and-biologicals/strategies/ia2030",
+          "year": 2024
         }
       ],
       "methodology": "Estimated annual global cost of delivering a full routine childhood immunization schedule to every child (~USD 9-10 billion), combining Gavi replenishment figures and WHO IA2030 costing."
