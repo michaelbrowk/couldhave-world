@@ -27,7 +27,7 @@ export function SourceTabs({ items, activeId, onSelect, ariaLabel }: Props) {
     <div
       role="tablist"
       aria-label={ariaLabel}
-      className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-none flex-nowrap mask-fade-x md:[mask-image:none] border-b border-[var(--border-color)] mb-12 md:mb-16"
+      className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-none flex-nowrap border-b border-[var(--border-color)] mb-12 md:mb-16"
     >
       {items.map((item) => {
         const isActive = item.id === activeId;

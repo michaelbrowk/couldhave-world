@@ -39,28 +39,6 @@ body {
   display: none; /* Chrome / Safari / Edge */
 }
 
-/*
- * Edge-fade mask for horizontally scrollable strips. Used on mobile
- * tab rows to hint at off-screen items without showing a scrollbar.
- * Tabs disable the mask at md+ via `md:[mask-image:none]`.
- */
-.mask-fade-x {
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black 1.5rem,
-    black calc(100% - 1.5rem),
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black 1.5rem,
-    black calc(100% - 1.5rem),
-    transparent 100%
-  );
-}
-
 /* Suppress the default disclosure triangle on <details> across browsers. */
 details > summary {
   list-style: none;
