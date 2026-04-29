@@ -3,7 +3,7 @@
   "labelKey": "sources.war.label",
   "currentYear": 2026,
   "projection": {
-    "totalUsd": 3113040000000,
+    "totalUsd": 3113052100000,
     "basedOnYear": 2025,
     "baseAmountUsd": 2887000000000,
     "growthFactor": 1.0783,
@@ -161,9 +161,9 @@
           "year": 2022
         },
         {
-          "name": "Our World in Data — The economic cost of ending extreme poverty",
-          "url": "https://ourworldindata.org/poverty-cost-of-ending",
-          "year": 2021
+          "name": "Our World in Data — Extreme poverty",
+          "url": "https://ourworldindata.org/extreme-poverty",
+          "year": 2024
         }
       ],
       "methodology": "Annual income transfer required to lift everyone above the USD 2.15/day international poverty line (the 'poverty gap'), estimated at roughly USD 100 billion per year using World Bank PIP data."
