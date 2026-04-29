@@ -8,55 +8,68 @@
   "transition": {
     "headline": "Instead, this money could have…"
   },
+  "sources": {
+    "war": {
+      "label": "War",
+      "caption": "Spent on war since January 1, {year}",
+      "rate": "{perDay} per day · {perSecond} per second",
+      "methodology": "Projected {year}, based on SIPRI {basedOnYear} actuals and a 5-year average growth rate. SIPRI's annual update was published 27 April 2026."
+    },
+    "tobacco": {
+      "label": "Tobacco use",
+      "caption": "Lost to tobacco use since January 1, {year}",
+      "rate": "{perDay} per day · {perSecond} per second",
+      "methodology": "USD 1.7 trillion per year — healthcare costs and lost productivity from tobacco use, equivalent to 1.7% of global GDP. Source: WHO 2022 update."
+    },
+    "fossil-fuels": {
+      "label": "Fossil fuels",
+      "caption": "Subsidising fossil fuels since January 1, {year}",
+      "rate": "{perDay} per day · {perSecond} per second",
+      "methodology": "USD 7.4 trillion per year — explicit subsidies plus underpricing of climate and air-pollution costs. Source: IMF Working Paper 2025/270, 2024 data."
+    }
+  },
   "categories": {
-    "military": "Military spending {year}",
     "sourcesToggle": "See sources",
-    "cancer": {
-      "title": "Cured cancer worldwide",
-      "unit": "people",
-      "compareUnit": "One cancer treatment"
+    "war": {
+      "label": "Military spending {year}",
+      "cancer": { "title": "Cured cancer worldwide", "unit": "people", "compareUnit": "One cancer treatment" },
+      "malaria": { "title": "Eradicated malaria globally", "unit": "times over" },
+      "hunger": { "title": "Ended world hunger", "unit": "years" },
+      "water": { "title": "Clean water for everyone", "unit": "years" },
+      "schools": { "title": "Built schools in poor countries", "unit": "school places" },
+      "vaccination": { "title": "Vaccinated every child on Earth", "unit": "annual campaigns" },
+      "poverty": { "title": "Eliminated extreme poverty", "unit": "years" },
+      "rainforest": { "title": "Protected all tropical rainforest", "unit": "times over" },
+      "renewable": { "title": "Doubled the world's solar capacity", "unit": "GW of new solar" },
+      "humanitarian": { "title": "Funded all humanitarian appeals", "unit": "years" }
     },
-    "malaria": {
-      "title": "Eradicated malaria globally",
-      "unit": "times over"
+    "tobacco": {
+      "label": "Tobacco use {year}",
+      "lungCancer": { "title": "Cured lung cancer worldwide", "unit": "people", "compareUnit": "One full course of lung-cancer treatment" },
+      "cessation": { "title": "Helped people quit smoking", "unit": "people quit", "compareUnit": "One cessation programme" },
+      "mpower": { "title": "Funded WHO MPOWER in entire countries", "unit": "country-years", "compareUnit": "One country, fully implemented" },
+      "tb": { "title": "Treated tuberculosis worldwide", "unit": "people", "compareUnit": "One full DOTS course" },
+      "copd": { "title": "Cared for COPD patients for a year", "unit": "patient-years" },
+      "vaccination": { "title": "Vaccinated every child on Earth", "unit": "annual campaigns" },
+      "hunger": { "title": "Ended world hunger", "unit": "years" },
+      "water": { "title": "Clean water for everyone", "unit": "years" }
     },
-    "hunger": {
-      "title": "Ended world hunger",
-      "unit": "years"
-    },
-    "water": {
-      "title": "Clean water for everyone",
-      "unit": "years"
-    },
-    "schools": {
-      "title": "Built schools in poor countries",
-      "unit": "school places"
-    },
-    "vaccination": {
-      "title": "Vaccinated every child on Earth",
-      "unit": "annual campaigns"
-    },
-    "poverty": {
-      "title": "Eliminated extreme poverty",
-      "unit": "years"
-    },
-    "rainforest": {
-      "title": "Protected all tropical rainforest",
-      "unit": "times over"
-    },
-    "renewable": {
-      "title": "Doubled the world's solar capacity",
-      "unit": "GW of new solar"
-    },
-    "humanitarian": {
-      "title": "Funded all humanitarian appeals",
-      "unit": "years"
+    "fossil-fuels": {
+      "label": "Fossil-fuel subsidies {year}",
+      "renewable": { "title": "Doubled the world's solar capacity", "unit": "GW of new solar" },
+      "rainforest": { "title": "Protected all tropical rainforest", "unit": "times over" },
+      "cleanCooking": { "title": "Clean cooking for all of Africa & Asia", "unit": "years" },
+      "adaptation": { "title": "Funded climate adaptation for sub-Saharan Africa", "unit": "years" },
+      "retrofit": { "title": "Retrofitted the world's buildings to net-zero", "unit": "times over" },
+      "transit": { "title": "Built modern transit in megacities", "unit": "cities" },
+      "storage": { "title": "Installed grid-scale battery storage", "unit": "× 100 GWh" },
+      "hunger": { "title": "Ended world hunger", "unit": "years" }
     }
   },
   "methodology": {
     "title": "Methodology",
     "counter": "The counter projects this year's total global military spending based on the latest actual SIPRI figures multiplied by the 5-year average growth rate, then ticks in real time as a fraction of that yearly total based on seconds elapsed since January 1.",
-    "categories": "Each humanitarian alternative is computed from authoritative sources (WHO, World Bank, UNICEF, Gavi, UN OCHA, UNESCO, IRENA, FAO). Cost units and citations are listed in each category's “see sources” panel.",
+    "categories": "Each humanitarian alternative is computed from authoritative sources (WHO, World Bank, UNICEF, Gavi, UN OCHA, UNESCO, IRENA, FAO). Cost units and citations are listed in each category’s “see sources” panel.",
     "data": "All data is open and lives in the public repository.",
     "updated": "Last updated: {date}",
     "repoLabel": "View data and source code on GitHub"
