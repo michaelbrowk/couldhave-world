@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import warJson from "@/data/sources/war.json";
 import tobaccoJson from "@/data/sources/tobacco.json";
+import fossilJson from "@/data/sources/fossil-fuels.json";
 import { SourceSchema } from "@/data/sources.schema";
 
 describe("data/sources/war.json", () => {
@@ -43,6 +44,25 @@ describe("data/sources/tobacco.json", () => {
 
   it("ships at least 6 alternative categories", () => {
     const parsed = SourceSchema.parse(tobaccoJson);
+    expect(parsed.categories.length).toBeGreaterThanOrEqual(6);
+  });
+});
+
+describe("data/sources/fossil-fuels.json", () => {
+  it("validates against the source schema", () => {
+    const parsed = SourceSchema.parse(fossilJson);
+    expect(parsed.id).toBe("fossil-fuels");
+  });
+
+  it("uses a flat $7.4T/year (explicit + implicit)", () => {
+    const parsed = SourceSchema.parse(fossilJson);
+    expect(parsed.projection.totalUsd).toBe(7_400_000_000_000);
+    expect(parsed.projection.totalUsd).toBe(parsed.projection.baseAmountUsd);
+    expect(parsed.projection.growthFactor).toBeUndefined();
+  });
+
+  it("ships at least 6 alternative categories", () => {
+    const parsed = SourceSchema.parse(fossilJson);
     expect(parsed.categories.length).toBeGreaterThanOrEqual(6);
   });
 });

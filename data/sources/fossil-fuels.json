@@ -1,0 +1,154 @@
+{
+  "id": "fossil-fuels",
+  "labelKey": "sources.fossil-fuels.label",
+  "currentYear": 2026,
+  "projection": {
+    "totalUsd": 7400000000000,
+    "basedOnYear": 2024,
+    "baseAmountUsd": 7400000000000,
+    "growthBasis": "Annual figure used as a constant rate; not projected. IMF Working Paper 2025/270: USD 725 billion explicit subsidies (undercharging for supply costs) plus USD 6.7 trillion implicit subsidies (undercharging for environmental and air-pollution externalities), 2024 data, totalling ~7.1% of global GDP."
+  },
+  "source": "IMF Working Paper 2025/270 — Underpriced and Overused: Fossil Fuel Subsidies Data 2025 Update",
+  "sourceUrl": "https://www.imf.org/en/publications/wp/issues/2025/12/20/underpriced-and-overused-fossil-fuel-subsidies-data-2025-update-572729",
+  "lastUpdated": "2026-04-29",
+  "categories": [
+    {
+      "id": "renewable-transition",
+      "titleKey": "categories.fossil-fuels.renewable.title",
+      "unitLabelKey": "categories.fossil-fuels.renewable.unit",
+      "symbol": "ray",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 1000000000,
+      "sources": [
+        {
+          "name": "IRENA — Renewable Power Generation Costs in 2023",
+          "url": "https://www.irena.org/publications/2024/Sep/Renewable-power-generation-costs-in-2023",
+          "year": 2024
+        }
+      ],
+      "methodology": "Approximate capital cost to install one gigawatt (1 GW) of new utility-scale solar PV capacity, per IRENA's global weighted-average ~USD 0.8-1.1 billion per GW installed."
+    },
+    {
+      "id": "rainforest-protection",
+      "titleKey": "categories.fossil-fuels.rainforest.title",
+      "unitLabelKey": "categories.fossil-fuels.rainforest.unit",
+      "symbol": "leaf",
+      "scaleHint": "totalSolution",
+      "unitCostUsd": 45000000000,
+      "sources": [
+        {
+          "name": "Rainforest Trust — Cost per acre protected",
+          "url": "https://www.rainforesttrust.org/our-impact/",
+          "year": 2023
+        },
+        {
+          "name": "FAO — Global Forest Resources Assessment 2020",
+          "url": "https://www.fao.org/forest-resources-assessment/en/",
+          "year": 2020
+        }
+      ],
+      "methodology": "Total cost to place all of Earth's remaining tropical rainforest under durable legal protection (USD 25/ha × ~1.8B ha)."
+    },
+    {
+      "id": "clean-cooking-lmic",
+      "titleKey": "categories.fossil-fuels.cleanCooking.title",
+      "unitLabelKey": "categories.fossil-fuels.cleanCooking.unit",
+      "symbol": "ray",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 10000000000,
+      "sources": [
+        {
+          "name": "IEA — A Vision for Clean Cooking Access for All",
+          "url": "https://www.iea.org/reports/a-vision-for-clean-cooking-access-for-all",
+          "year": 2024
+        }
+      ],
+      "methodology": "Average additional annual investment (~USD 10 billion) needed to give universal access to clean cooking solutions in low- and lower-middle-income countries by 2030, per IEA Clean Cooking pathway."
+    },
+    {
+      "id": "climate-adaptation-africa",
+      "titleKey": "categories.fossil-fuels.adaptation.title",
+      "unitLabelKey": "categories.fossil-fuels.adaptation.unit",
+      "symbol": "leaf",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 50000000000,
+      "sources": [
+        {
+          "name": "UNEP — Adaptation Gap Report 2023",
+          "url": "https://www.unep.org/resources/adaptation-gap-report-2023",
+          "year": 2023
+        },
+        {
+          "name": "African Development Bank — Africa Climate Change Action Plan",
+          "url": "https://www.afdb.org/en/topics-and-sectors/initiatives-partnerships/climate-change-action-plan",
+          "year": 2022
+        }
+      ],
+      "methodology": "Estimated annual cost (~USD 50 billion) for sub-Saharan Africa to fund the most cost-effective adaptation measures (drought-resilient agriculture, sea defences, water security), per UNEP Adaptation Gap Report and AfDB modelling."
+    },
+    {
+      "id": "building-retrofit",
+      "titleKey": "categories.fossil-fuels.retrofit.title",
+      "unitLabelKey": "categories.fossil-fuels.retrofit.unit",
+      "symbol": "roof",
+      "scaleHint": "totalSolution",
+      "unitCostUsd": 1500000000000,
+      "sources": [
+        {
+          "name": "IEA — Net Zero Roadmap, Buildings sector",
+          "url": "https://www.iea.org/reports/net-zero-by-2050",
+          "year": 2021
+        }
+      ],
+      "methodology": "Approximate global capital outlay to retrofit existing buildings to net-zero standards (envelope, heat pumps, grid integration) by 2050, per IEA NZE 2050 cumulative buildings investment annualised."
+    },
+    {
+      "id": "public-transit-cities",
+      "titleKey": "categories.fossil-fuels.transit.title",
+      "unitLabelKey": "categories.fossil-fuels.transit.unit",
+      "symbol": "roof",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 5000000000,
+      "sources": [
+        {
+          "name": "World Bank — Transit-Oriented Development",
+          "url": "https://www.worldbank.org/en/topic/transport",
+          "year": 2023
+        }
+      ],
+      "methodology": "Approximate capital cost to deploy a modern integrated bus rapid transit (BRT) plus metro extension covering a city of 5-10M residents (rolling stock + stations + dedicated infrastructure), per World Bank transit costing studies."
+    },
+    {
+      "id": "grid-storage-100gwh",
+      "titleKey": "categories.fossil-fuels.storage.title",
+      "unitLabelKey": "categories.fossil-fuels.storage.unit",
+      "symbol": "ray",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 40000000000,
+      "sources": [
+        {
+          "name": "BloombergNEF — Battery Storage Cost Survey 2024",
+          "url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-2024/",
+          "year": 2024
+        }
+      ],
+      "methodology": "Approximate installed cost of 100 GWh of utility-scale lithium-ion battery storage at 2024 prices (~USD 400/kWh installed including BoP and integration), per BNEF survey."
+    },
+    {
+      "id": "world-hunger",
+      "titleKey": "categories.fossil-fuels.hunger.title",
+      "unitLabelKey": "categories.fossil-fuels.hunger.unit",
+      "symbol": "grain",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 33000000000,
+      "sources": [
+        {
+          "name": "Nature Food / IFPRI — Investment needs to end hunger by 2030",
+          "url": "https://www.nature.com/articles/s43016-020-00181-w",
+          "year": 2020
+        }
+      ],
+      "methodology": "Average additional annual public expenditure (~USD 33 billion) required to end hunger (SDG 2), per Ceres2030 / IFPRI."
+    }
+  ]
+}
