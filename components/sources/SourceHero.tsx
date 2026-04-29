@@ -3,7 +3,6 @@
 import type { Source, SourceId } from "@/data/sources.schema";
 import { TickingCounter } from "@/components/hero/TickingCounter";
 import { formatCompact, formatCurrency, type SupportedLocale } from "@/lib/formatters";
-import type { Projection } from "@/lib/projection";
 
 type Strings = {
   caption: string;
@@ -18,11 +17,7 @@ type Props = {
 };
 
 export function SourceHero({ source, locale, strings }: Props) {
-  // source.projection.growthFactor is optional in the schema (flat-annual
-  // sources omit it) but lib/projection.Projection marks it required.
-  // Task 1 established shape parity; cast to satisfy TickingCounter's prop.
-  const projection = source.projection as Projection;
-  const { currentYear } = source;
+  const { projection, currentYear } = source;
   const secondsInCurrentYear =
     (Date.UTC(currentYear + 1, 0, 1) - Date.UTC(currentYear, 0, 1)) / 1000;
   const perSecondUsd = projection.totalUsd / secondsInCurrentYear;

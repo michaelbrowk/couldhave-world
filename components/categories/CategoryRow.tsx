@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Category } from "@/data/categories.schema";
+import type { Category } from "@/data/sources.schema";
 import { computeCategoryMetric, computeSymbolCount, pickMatrixMode } from "@/lib/categories";
 import { formatCompact, formatCount, type SupportedLocale } from "@/lib/formatters";
 import { currentSpendEstimate, type Projection } from "@/lib/projection";

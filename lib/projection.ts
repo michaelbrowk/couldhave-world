@@ -1,10 +1,5 @@
-export type Projection = {
-  totalUsd: number;
-  basedOnYear: number;
-  baseAmountUsd: number;
-  growthFactor: number;
-  growthBasis: string;
-};
+import type { Projection } from "@/data/sources.schema";
+export type { Projection };
 
 /**
  * Project a future year's total by compounding the base amount with the

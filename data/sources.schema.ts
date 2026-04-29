@@ -55,3 +55,4 @@ export type Category = z.infer<typeof CategorySchema>;
 export type CategorySourceRef = z.infer<typeof CategorySourceSchema>;
 export type Projection = z.infer<typeof ProjectionSchema>;
 export type HistoricalEntry = z.infer<typeof HistoricalEntrySchema>;
+export type CategorySymbolId = z.infer<typeof SymbolEnum>;
