@@ -1,0 +1,164 @@
+{
+  "id": "tobacco",
+  "labelKey": "sources.tobacco.label",
+  "currentYear": 2026,
+  "projection": {
+    "totalUsd": 1700000000000,
+    "basedOnYear": 2022,
+    "baseAmountUsd": 1700000000000,
+    "growthBasis": "Annual figure used as a constant rate; not projected. WHO 2022 estimate: USD 1.7 trillion per year in healthcare costs and lost productivity, equivalent to 1.7% of global GDP."
+  },
+  "source": "WHO — Economic cost of tobacco use, 2022 update",
+  "sourceUrl": "https://www.who.int/health-topics/tobacco",
+  "lastUpdated": "2026-04-29",
+  "categories": [
+    {
+      "id": "lung-cancer-treatment",
+      "titleKey": "categories.tobacco.lungCancer.title",
+      "unitLabelKey": "categories.tobacco.lungCancer.unit",
+      "symbol": "cross",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 80000,
+      "sources": [
+        {
+          "name": "American Cancer Society — Cancer Treatment & Survivorship Facts and Figures",
+          "url": "https://www.cancer.org/research/cancer-facts-statistics/survivor-facts-figures.html",
+          "year": 2022
+        }
+      ],
+      "methodology": "Approximate full-course cost of treating one patient with non-small-cell lung cancer in a high-income setting (surgery + platinum-based chemotherapy + immunotherapy + radiotherapy + follow-up), drawn from ACS cost-of-care estimates."
+    },
+    {
+      "id": "smoking-cessation",
+      "titleKey": "categories.tobacco.cessation.title",
+      "unitLabelKey": "categories.tobacco.cessation.unit",
+      "symbol": "drop",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 300,
+      "sources": [
+        {
+          "name": "USPSTF — Tobacco Smoking Cessation in Adults, Recommendation Statement",
+          "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/tobacco-use-in-adults-and-pregnant-women-counseling-and-interventions",
+          "year": 2021
+        },
+        {
+          "name": "CDC — Best Practices for Comprehensive Tobacco Control Programs",
+          "url": "https://www.cdc.gov/tobacco/stateandcommunity/best_practices/index.htm",
+          "year": 2014
+        }
+      ],
+      "methodology": "Per-quitter cost of an evidence-based cessation program: nicotine replacement therapy (NRT) plus brief behavioural counselling, US public-health pricing."
+    },
+    {
+      "id": "mpower-country",
+      "titleKey": "categories.tobacco.mpower.title",
+      "unitLabelKey": "categories.tobacco.mpower.unit",
+      "symbol": "roof",
+      "scaleHint": "totalSolution",
+      "unitCostUsd": 100000000,
+      "sources": [
+        {
+          "name": "WHO — MPOWER Tobacco Control Investment Cases",
+          "url": "https://www.who.int/teams/health-promotion/tobacco-control/economics",
+          "year": 2023
+        },
+        {
+          "name": "WHO FCTC — The Global Case for Investment in Tobacco Control",
+          "url": "https://fctc.who.int/docs/librariesprovider12/investment-fund-documents/the-global-case-for-investment-in-tobacco-control.pdf",
+          "year": 2021
+        }
+      ],
+      "methodology": "Average annual cost for a single low- or middle-income country to fully implement the WHO MPOWER package (tax, smoke-free policies, cessation services, packaging, advertising bans, monitoring) at scale, from WHO investment-case median."
+    },
+    {
+      "id": "tb-treatment",
+      "titleKey": "categories.tobacco.tb.title",
+      "unitLabelKey": "categories.tobacco.tb.unit",
+      "symbol": "drop",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 600,
+      "sources": [
+        {
+          "name": "WHO — Global Tuberculosis Report",
+          "url": "https://www.who.int/teams/global-tuberculosis-programme/tb-reports",
+          "year": 2024
+        },
+        {
+          "name": "Stop TB Partnership — Global Plan to End TB",
+          "url": "https://www.stoptb.org/global-plan-to-end-tb",
+          "year": 2023
+        }
+      ],
+      "methodology": "Per-patient cost of a full DOTS course of TB treatment in low- and middle-income settings (drugs + diagnosis + supervised delivery), from WHO Global TB Report median."
+    },
+    {
+      "id": "copd-care-year",
+      "titleKey": "categories.tobacco.copd.title",
+      "unitLabelKey": "categories.tobacco.copd.unit",
+      "symbol": "cross",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 5000,
+      "sources": [
+        {
+          "name": "GOLD — Global Strategy for the Diagnosis, Management, and Prevention of COPD",
+          "url": "https://goldcopd.org/2024-gold-report/",
+          "year": 2024
+        }
+      ],
+      "methodology": "Annual cost of evidence-based COPD care for one moderate-severity patient (inhaled therapy + exacerbation management + pulmonary rehab) in an upper-middle-income setting, from GOLD report ranges."
+    },
+    {
+      "id": "child-vaccination",
+      "titleKey": "categories.tobacco.vaccination.title",
+      "unitLabelKey": "categories.tobacco.vaccination.unit",
+      "symbol": "drop",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 9500000000,
+      "sources": [
+        {
+          "name": "Gavi, The Vaccine Alliance — Investment Opportunity 2021-2025",
+          "url": "https://www.gavi.org/investing-gavi/funding/resource-mobilisation-process/gavi-investment-opportunity-2021-2025",
+          "year": 2020
+        },
+        {
+          "name": "WHO Immunization Agenda 2030",
+          "url": "https://www.who.int/publications/i/item/immunization-agenda-2030-a-global-strategy-to-leave-no-one-behind",
+          "year": 2020
+        }
+      ],
+      "methodology": "Estimated annual global cost of delivering a full routine childhood immunization schedule to every child (~USD 9-10 billion), combining Gavi replenishment figures and WHO IA2030 costing."
+    },
+    {
+      "id": "world-hunger",
+      "titleKey": "categories.tobacco.hunger.title",
+      "unitLabelKey": "categories.tobacco.hunger.unit",
+      "symbol": "grain",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 33000000000,
+      "sources": [
+        {
+          "name": "Nature Food / IFPRI — Investment needs to end hunger by 2030",
+          "url": "https://www.nature.com/articles/s43016-020-00181-w",
+          "year": 2020
+        }
+      ],
+      "methodology": "Average additional annual public expenditure (~USD 33 billion) required from donors and low/middle-income governments through 2030 to end hunger (SDG 2), per IFPRI models published in Nature Food."
+    },
+    {
+      "id": "clean-water",
+      "titleKey": "categories.tobacco.water.title",
+      "unitLabelKey": "categories.tobacco.water.unit",
+      "symbol": "drop",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 114000000000,
+      "sources": [
+        {
+          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
+          "url": "https://openknowledge.worldbank.org/handle/10986/23681",
+          "year": 2016
+        }
+      ],
+      "methodology": "Annual capital investment of ~USD 114 billion needed through 2030 to achieve universal safely managed drinking water, per the World Bank's SDG 6 costing study."
+    }
+  ]
+}
