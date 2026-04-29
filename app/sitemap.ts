@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { LOCALES } from "@/app/[locale]/dictionaries";
-import { militarySpending } from "@/data/military-spending.schema";
+import { getSource } from "@/data/sources.index";
 import { SITE_URL } from "@/lib/site-config";
 
 // Required for static export — render the sitemap once at build time.
@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // The site has one canonical entry per locale; lastModified is the SIPRI
   // data update date so search engines see a fresh signal whenever the
   // numbers change.
-  const lastModified = new Date(militarySpending.lastUpdated);
+  const lastModified = new Date(getSource("war").lastUpdated);
 
   return LOCALES.map((locale) => ({
     url: `${SITE_URL}/${locale}/`,

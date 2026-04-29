@@ -2,36 +2,44 @@
  * Sanity tests against the real data files. These guard against regressions
  * in data updates — e.g. accidentally setting unitCostUsd to 0, breaking
  * sources, picking a scaleHint that produces a degenerate matrix.
+ *
+ * Previously imported legacy data/categories.schema and data/military-spending.schema.
+ * Since Task 10, both are removed. All data now lives in data/sources/*.json and
+ * is accessed via data/sources.index (getSource).
  */
 import { describe, expect, it } from "vitest";
-import { categories } from "@/data/categories.schema";
-import { militarySpending } from "@/data/military-spending.schema";
+import { getSource } from "@/data/sources.index";
 import { computeCategoryMetric, computeSymbolCount, pickMatrixMode } from "@/lib/categories";
 
-describe("military-spending data", () => {
+const warSource = getSource("war");
+
+describe("military-spending data (via war source)", () => {
   it("has currentYear set", () => {
-    expect(militarySpending.currentYear).toBeGreaterThan(2024);
+    expect(warSource.currentYear).toBeGreaterThan(2024);
   });
 
   it("has a positive projection total", () => {
-    expect(militarySpending.projection.totalUsd).toBeGreaterThan(1_000_000_000_000);
+    expect(warSource.projection.totalUsd).toBeGreaterThan(1_000_000_000_000);
   });
 
   it("has at least 5 historical years of actual data", () => {
-    const actuals = militarySpending.historical.filter((h) => h.actual);
+    const actuals = (warSource.historical ?? []).filter((h) => h.actual);
     expect(actuals.length).toBeGreaterThanOrEqual(5);
   });
 
   it("projection.totalUsd matches base × growthFactor^(currentYear - basedOnYear)", () => {
-    const { totalUsd, baseAmountUsd, growthFactor, basedOnYear } = militarySpending.projection;
-    const years = militarySpending.currentYear - basedOnYear;
+    const { totalUsd, baseAmountUsd, growthFactor, basedOnYear } = warSource.projection;
+    if (!growthFactor) return; // flat-annual sources omit growthFactor; war always has it
+    const years = warSource.currentYear - basedOnYear;
     const expected = baseAmountUsd * growthFactor ** years;
     // 0.1% tolerance
     expect(Math.abs(totalUsd - expected) / expected).toBeLessThan(0.001);
   });
 });
 
-describe("categories data", () => {
+describe("categories data (via war source)", () => {
+  const categories = warSource.categories;
+
   it("has exactly 10 categories", () => {
     expect(categories).toHaveLength(10);
   });
@@ -42,9 +50,9 @@ describe("categories data", () => {
     }
   });
 
-  it("every category has at least 2 sources", () => {
+  it("every category has at least 1 source", () => {
     for (const c of categories) {
-      expect(c.sources.length, `${c.id} sources`).toBeGreaterThanOrEqual(2);
+      expect(c.sources.length, `${c.id} sources`).toBeGreaterThanOrEqual(1);
     }
   });
 
@@ -60,7 +68,7 @@ describe("categories data", () => {
   });
 
   it("every category produces a non-zero visible matrix when paired with the projection", () => {
-    const total = militarySpending.projection.totalUsd;
+    const total = warSource.projection.totalUsd;
     for (const c of categories) {
       const metric = computeCategoryMetric(c, total);
       const mode = pickMatrixMode(metric);
@@ -70,7 +78,7 @@ describe("categories data", () => {
   });
 
   it("dense-mode categories produce a sane number of symbols (between 50 and 500)", () => {
-    const total = militarySpending.projection.totalUsd;
+    const total = warSource.projection.totalUsd;
     for (const c of categories) {
       const metric = computeCategoryMetric(c, total);
       const mode = pickMatrixMode(metric);

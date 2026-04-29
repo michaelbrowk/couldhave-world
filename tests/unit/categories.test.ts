@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Category } from "@/data/categories.schema";
+import type { Category } from "@/data/sources.schema";
 import { computeCategoryMetric, computeSymbolCount, pickMatrixMode } from "@/lib/categories";
 
 const cancerCategory: Category = {

@@ -1,4 +1,4 @@
-import type { Category } from "@/data/categories.schema";
+import type { Category } from "@/data/sources.schema";
 
 export type MatrixMode = "discrete" | "dense";
 

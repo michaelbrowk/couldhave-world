@@ -16,7 +16,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { Resvg } from "@resvg/resvg-js";
 import satori from "satori";
-import { militarySpending } from "../data/military-spending.schema";
+import { getSource } from "../data/sources.index";
 import { formatCompact, formatCurrency } from "../lib/formatters";
 import { currentSpendEstimate } from "../lib/projection";
 
@@ -40,7 +40,7 @@ const instrumentSerif = fs.readFileSync(
 );
 
 // ── Compute live values ──────────────────────────────────────────────────────
-const { projection, currentYear } = militarySpending;
+const { projection, currentYear } = getSource("war");
 const now = new Date();
 const currentSpend = currentSpendEstimate(projection, now, currentYear);
 const formatted = formatCurrency(Math.round(currentSpend), "en");

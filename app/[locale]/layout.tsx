@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Analytics } from "@/components/analytics/Analytics";
-import { militarySpending } from "@/data/military-spending.schema";
+import { getSource } from "@/data/sources.index";
 import { ogImageUrl, SITE_NAME, SITE_URL } from "@/lib/site-config";
 import "../globals.css";
 import { getDictionary, hasLocale, interpolate, LOCALES, type Locale } from "./dictionaries";
@@ -42,7 +42,8 @@ export async function generateMetadata({
   if (!hasLocale(locale)) return {};
 
   const dict = await getDictionary(locale);
-  const { currentYear, projection } = militarySpending;
+  const warSource = getSource("war");
+  const { currentYear, projection } = warSource;
 
   // Title is the transition headline ("Instead, this money could have…").
   // Description is the live methodology line with year + basedOnYear filled in.
@@ -115,7 +116,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   if (!hasLocale(locale)) notFound();
 
   const dict = await getDictionary(locale);
-  const { currentYear, projection } = militarySpending;
+  const warSource = getSource("war");
+  const { currentYear, projection } = warSource;
   const description = interpolate(dict.hero.methodology, {
     year: currentYear,
     basedOnYear: projection.basedOnYear,
@@ -137,7 +139,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
     isBasedOn: {
       "@type": "Dataset",
       name: "SIPRI Military Expenditure Database",
-      url: militarySpending.sourceUrl,
+      url: warSource.sourceUrl,
       creator: {
         "@type": "Organization",
         name: "Stockholm International Peace Research Institute",

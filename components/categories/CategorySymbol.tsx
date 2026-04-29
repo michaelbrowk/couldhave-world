@@ -1,4 +1,4 @@
-import type { CategorySymbolId } from "@/data/categories.schema";
+import type { CategorySymbolId } from "@/data/sources.schema";
 
 type Props = {
   symbol: CategorySymbolId;

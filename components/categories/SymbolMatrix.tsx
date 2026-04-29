@@ -2,7 +2,7 @@
 
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { memo, useRef } from "react";
-import type { CategorySymbolId } from "@/data/categories.schema";
+import type { CategorySymbolId } from "@/data/sources.schema";
 import type { SymbolCountResult } from "@/lib/categories";
 import { CategorySymbol } from "./CategorySymbol";
 

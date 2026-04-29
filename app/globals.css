@@ -6,6 +6,11 @@
   --text-secondary: #6b6b68;
   --border-color: #e5e5e0;
   --accent: #b91c1c;
+
+  /* Stronger than the built-in `ease-out`. Used for entering elements
+   * (fade-ins, popovers, tab content) — the punchy initial frame is
+   * what makes UI feel responsive. */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @theme inline {
@@ -24,6 +29,36 @@ html,
 body {
   background-color: var(--bg);
   color: var(--text-primary);
+}
+
+/* Hide scrollbar while preserving scroll functionality. */
+.scrollbar-none {
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Edge */
+}
+
+/*
+ * Edge-fade mask for horizontally scrollable strips. Used on mobile
+ * tab rows to hint at off-screen items without showing a scrollbar.
+ * Tabs disable the mask at md+ via `md:[mask-image:none]`.
+ */
+.mask-fade-x {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 1.5rem,
+    black calc(100% - 1.5rem),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 1.5rem,
+    black calc(100% - 1.5rem),
+    transparent 100%
+  );
 }
 
 /* Suppress the default disclosure triangle on <details> across browsers. */
@@ -70,4 +105,17 @@ details > summary::-webkit-details-marker {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Single-source utility for the tab-content fade. 200ms with a strong
+ * ease-out so the first frame is visible immediately — matches Emil's
+ * principle that "ease-in feels sluggish, ease-out feels responsive."
+ * The reduced-motion media query above already disables this. */
+.fadein {
+  animation: fadein 200ms var(--ease-out-strong) both;
 }
