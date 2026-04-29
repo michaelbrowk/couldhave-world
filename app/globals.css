@@ -26,6 +26,14 @@ body {
   color: var(--text-primary);
 }
 
+/* Hide scrollbar while preserving scroll functionality. */
+.scrollbar-none {
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Edge */
+}
+
 /* Suppress the default disclosure triangle on <details> across browsers. */
 details > summary {
   list-style: none;
