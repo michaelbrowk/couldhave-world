@@ -36,7 +36,7 @@ export function SourceHero({ source, locale, strings }: Props) {
       key={source.id}
     >
       <p
-        className="font-serif text-2xl md:text-4xl text-[var(--text-primary)] mb-2"
+        className="font-serif text-2xl md:text-4xl text-[var(--text-primary)] mb-3 leading-tight"
         style={{ minHeight: "1.2em" }}
       >
         {strings.caption}
