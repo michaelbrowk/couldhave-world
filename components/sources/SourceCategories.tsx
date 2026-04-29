@@ -13,10 +13,10 @@ type DictCategoryEntry = {
 
 type Strings = {
   headline: string;
-  sourceLabel: string;            // e.g. "Military spending 2026"
+  sourceLabel: string; // e.g. "Military spending 2026"
   sourcesToggle: string;
   categories: Record<string, DictCategoryEntry>; // keyed by short dict key
-  shortKeyFor: (categoryId: string) => string;   // mapping fn from data id to dict key
+  shortKeyFor: (categoryId: string) => string; // mapping fn from data id to dict key
 };
 
 type Props = {

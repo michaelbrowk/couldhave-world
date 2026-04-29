@@ -6,7 +6,7 @@ import { SourceHero } from "@/components/sources/SourceHero";
 import { SourceCategories } from "@/components/sources/SourceCategories";
 import { SourceTabs, type SourceTabItem } from "@/components/sources/SourceTabs";
 import { SOURCES } from "@/data/sources.index";
-import { type SourceId } from "@/data/sources.schema";
+import type { SourceId } from "@/data/sources.schema";
 import { parseSourceId } from "@/lib/sources";
 import type { SupportedLocale } from "@/lib/formatters";
 import { track } from "@/lib/mixpanel";
@@ -91,12 +91,7 @@ export function SourceSwitcher({
 
   return (
     <div data-source={activeId}>
-      <SourceTabs
-        items={items}
-        activeId={activeId}
-        onSelect={onSelect}
-        ariaLabel={ariaTabsLabel}
-      />
+      <SourceTabs items={items} activeId={activeId} onSelect={onSelect} ariaLabel={ariaTabsLabel} />
       <SourceHero source={source} locale={locale} strings={heroStrings} />
       <SourceCategories
         source={source}
