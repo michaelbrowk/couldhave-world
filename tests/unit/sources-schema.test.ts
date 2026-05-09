@@ -74,3 +74,15 @@ describe("ai source", () => {
     expect(ai.projection.totalUsd).toBe(725_000_000_000);
   });
 });
+
+describe("ai aiBenefit field", () => {
+  it("every ai category has aiBenefit with text and at least one source", () => {
+    const parsed = SourceSchema.parse(aiJson);
+    for (const cat of parsed.categories) {
+      expect(cat.aiBenefit, `category ${cat.id} should have aiBenefit`).toBeDefined();
+      expect(cat.aiBenefit?.text.length).toBeGreaterThan(0);
+      expect(cat.aiBenefit?.sources.length).toBeGreaterThanOrEqual(1);
+      expect(cat.aiBenefit?.sources[0]?.url).toMatch(/^https:\/\//);
+    }
+  });
+});

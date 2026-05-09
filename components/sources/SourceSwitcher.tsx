@@ -2,14 +2,14 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { SourceHero } from "@/components/sources/SourceHero";
 import { SourceCategories } from "@/components/sources/SourceCategories";
-import { SourceTabs, type SourceTabItem } from "@/components/sources/SourceTabs";
+import { SourceHero } from "@/components/sources/SourceHero";
+import { type SourceTabItem, SourceTabs } from "@/components/sources/SourceTabs";
 import { SOURCES } from "@/data/sources.index";
 import type { SourceId } from "@/data/sources.schema";
-import { parseSourceId } from "@/lib/sources";
 import type { SupportedLocale } from "@/lib/formatters";
 import { track } from "@/lib/mixpanel";
+import { parseSourceId } from "@/lib/sources";
 
 type DictionarySourceBlock = {
   label: string;
@@ -29,6 +29,7 @@ export type SourceSwitcherProps = {
   sourcesDict: Record<SourceId, DictionarySourceBlock>;
   categoriesDict: Record<SourceId, DictionaryCategoryBlock>;
   sourcesToggle: string;
+  aiBenefitLabel: string;
   /** Plain mapping: sourceId → categoryId → short dict key. Serializable. */
   categoryDictKeys: Record<string, Record<string, string>>;
 };
@@ -36,7 +37,7 @@ export type SourceSwitcherProps = {
 /**
  * Pure presentational view: receives the active source as a prop and renders
  * tabs + hero + categories. Used both as the static SSG fallback (with
- * activeId="war") and as the body of the URL-driven SourceSwitcher.
+ * activeId="ai") and as the body of the URL-driven SourceSwitcher.
  *
  * `via` distinguishes whether the active source was decided by the URL
  * (deep-link) or by a user click.
@@ -49,6 +50,7 @@ export function SourceSwitcherView({
   sourcesDict,
   categoriesDict,
   sourcesToggle,
+  aiBenefitLabel,
   categoryDictKeys,
 }: SourceSwitcherProps & { activeId: SourceId }) {
   const router = useRouter();
@@ -62,7 +64,7 @@ export function SourceSwitcherView({
   const onSelect = (id: SourceId) => {
     if (id === activeId) return;
     track("source_switch", { from: activeId, to: id, locale, via: "click" });
-    const next = id === "war" ? "" : `?source=${id}`;
+    const next = id === "ai" ? "" : `?source=${id}`;
     router.replace(`/${locale}${next}`, { scroll: false });
   };
 
@@ -94,6 +96,7 @@ export function SourceSwitcherView({
           headline: transitionHeadline,
           sourceLabel,
           sourcesToggle,
+          aiBenefitLabel,
           categories: categoriesEntries,
           shortKeyFor: (catId) => categoryDictKeys[activeId]?.[catId] ?? catId,
         }}
@@ -108,19 +111,19 @@ export function SourceSwitcherView({
  * SourceSwitcherView. Fires the one-shot `source_switch` deep-link event
  * for non-default arrivals.
  *
- * Render this inside <Suspense fallback={<SourceSwitcherView activeId="war" .../>}>
+ * Render this inside <Suspense fallback={<SourceSwitcherView activeId="ai" .../>}>
  * so the static HTML carries the default-state markup, eliminating the
  * post-hydration layout shift.
  */
 export function SourceSwitcher(props: SourceSwitcherProps) {
   const params = useSearchParams();
-  const activeId: SourceId = parseSourceId(params.get("source")) ?? "war";
+  const activeId: SourceId = parseSourceId(params.get("source")) ?? "ai";
 
   const fired = useRef(false);
   useEffect(() => {
     if (fired.current) return;
     fired.current = true;
-    if (params.get("source") && activeId !== "war") {
+    if (params.get("source") && activeId !== "ai") {
       track("source_switch", { from: null, to: activeId, locale: props.locale, via: "url" });
     }
   }, [activeId, params, props.locale]);

@@ -1,11 +1,11 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("source tabs", () => {
-  test("default state is war, no ?source= in URL", async ({ page }) => {
+  test("default state is AI, no ?source= in URL", async ({ page }) => {
     await page.goto("/en/");
     const url = new URL(page.url());
     expect(url.searchParams.get("source")).toBeNull();
-    await expect(page.getByRole("tab", { name: /war/i })).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("tab", { name: /^ai$/i })).toHaveAttribute("aria-selected", "true");
   });
 
   test("clicking Tobacco updates URL and active tab", async ({ page }) => {
@@ -39,12 +39,9 @@ test.describe("source tabs", () => {
 
   test("ArrowRight cycles tabs", async ({ page }) => {
     await page.goto("/en/");
-    await page.getByRole("tab", { name: /war/i }).focus();
+    await page.getByRole("tab", { name: /^ai$/i }).focus();
     await page.keyboard.press("ArrowRight");
-    await expect(page.getByRole("tab", { name: /tobacco/i })).toHaveAttribute(
-      "aria-selected",
-      "true",
-    );
+    await expect(page.getByRole("tab", { name: /war/i })).toHaveAttribute("aria-selected", "true");
   });
 
   test("reduced-motion disables fade animation", async ({ browser }) => {
@@ -61,10 +58,11 @@ test.describe("source tabs", () => {
     await context.close();
   });
 
-  test("clicking AI updates URL and active tab", async ({ page }) => {
-    await page.goto("/en/");
+  test("clicking AI from war strips source param", async ({ page }) => {
+    await page.goto("/en/?source=war");
     await page.getByRole("tab", { name: /^ai$/i }).click();
-    await expect(page).toHaveURL(/\?source=ai/);
+    // URL should land on /en/ with no source param (or trailing slash variants)
+    await expect(page).toHaveURL(/\/en\/?$/);
     await expect(page.getByRole("tab", { name: /^ai$/i })).toHaveAttribute("aria-selected", "true");
   });
 

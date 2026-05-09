@@ -10,10 +10,10 @@ const fossilSource: Source = SourceSchema.parse(fossilJson);
 const aiSource: Source = SourceSchema.parse(aiJson);
 
 export const SOURCES: Record<SourceId, Source> = {
+  ai: aiSource,
   war: warSource,
   tobacco: tobaccoSource,
   "fossil-fuels": fossilSource,
-  ai: aiSource,
 };
 
 export const SOURCES_LIST: readonly Source[] = SOURCE_IDS.map((id) => SOURCES[id]);

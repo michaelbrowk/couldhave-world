@@ -35,7 +35,17 @@
           "year": 2024
         }
       ],
-      "methodology": "Aggregate US telecom-equipment capital investment 1996-2001 — approximately USD 500 billion in nominal dollars, financed largely with debt. The buildout that preceded the 2001 telecom bust."
+      "methodology": "Aggregate US telecom-equipment capital investment 1996-2001 — approximately USD 500 billion in nominal dollars, financed largely with debt. The buildout that preceded the 2001 telecom bust.",
+      "aiBenefit": {
+        "text": "After the bust, only 2.7% of laid fibre was lit. The 'dark fibre' glut became the backbone of broadband, cloud, and video streaming for the next 20 years.",
+        "sources": [
+          {
+            "name": "Dark fibre — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dark_fibre",
+            "year": 2024
+          }
+        ]
+      }
     },
     {
       "id": "global-ai-revenue-2025",
@@ -51,7 +61,17 @@
           "year": 2023
         }
       ],
-      "methodology": "Estimated 2025 global generative-AI software and services revenue (approximately USD 50 billion), per Bloomberg Intelligence's market sizing. Capex-to-revenue ratio is one of the most cited single bubble indicators."
+      "methodology": "Estimated 2025 global generative-AI software and services revenue (approximately USD 50 billion), per Bloomberg Intelligence's market sizing. Capex-to-revenue ratio is one of the most cited single bubble indicators.",
+      "aiBenefit": {
+        "text": "Bloomberg Intelligence projects 42% CAGR through 2032 for generative-AI software revenue — faster than any prior tech wave.",
+        "sources": [
+          {
+            "name": "Bloomberg Intelligence — Generative AI to become a $1.3 trillion market by 2032",
+            "url": "https://www.bloomberg.com/company/press/generative-ai-to-become-a-1-3-trillion-market-by-2032-research-finds/",
+            "year": 2023
+          }
+        ]
+      }
     },
     {
       "id": "apollo-program",
@@ -67,7 +87,17 @@
           "year": 2024
         }
       ],
-      "methodology": "Total cumulative cost of the Apollo program (1961-1973), inflation-adjusted to 2024 USD: approximately USD 280 billion. Covers Mercury and Gemini predecessor programs, the Saturn V launch system, and all Apollo missions through Apollo 17."
+      "methodology": "Total cumulative cost of the Apollo program (1961-1973), inflation-adjusted to 2024 USD: approximately USD 280 billion. Covers Mercury and Gemini predecessor programs, the Saturn V launch system, and all Apollo missions through Apollo 17.",
+      "aiBenefit": {
+        "text": "DeepMind's AlphaFold has predicted 214M+ protein structures, free for all researchers — solving a 50-year biology grand challenge.",
+        "sources": [
+          {
+            "name": "AlphaFold Protein Structure Database in 2024 — Nucleic Acids Research",
+            "url": "https://academic.oup.com/nar/article/52/D1/D368/7337620",
+            "year": 2024
+          }
+        ]
+      }
     },
     {
       "id": "manhattan-project",
@@ -83,7 +113,17 @@
           "year": 1998
         }
       ],
-      "methodology": "Total cost of the Manhattan Project (1942-1946), USD 1.9 billion nominal, inflation-adjusted to approximately USD 30 billion in 2024 USD per Brookings' Atomic Audit (Schwartz, 1998)."
+      "methodology": "Total cost of the Manhattan Project (1942-1946), USD 1.9 billion nominal, inflation-adjusted to approximately USD 30 billion in 2024 USD per Brookings' Atomic Audit (Schwartz, 1998).",
+      "aiBenefit": {
+        "text": "DeepMind's reinforcement-learning agent controlled superheated plasma inside a tokamak in real time — a step towards fusion energy.",
+        "sources": [
+          {
+            "name": "Magnetic control of tokamak plasmas through deep reinforcement learning — Nature",
+            "url": "https://www.nature.com/articles/s41586-021-04301-9",
+            "year": 2022
+          }
+        ]
+      }
     },
     {
       "id": "world-hunger",
@@ -99,7 +139,17 @@
           "year": 2020
         }
       ],
-      "methodology": "Average additional annual public expenditure (approximately USD 33 billion) required from donors and low/middle-income governments through 2030 to end hunger (SDG 2), per Ceres2030 / IFPRI models published in Nature Food."
+      "methodology": "Average additional annual public expenditure (approximately USD 33 billion) required from donors and low/middle-income governments through 2030 to end hunger (SDG 2), per Ceres2030 / IFPRI models published in Nature Food.",
+      "aiBenefit": {
+        "text": "The UN World Food Programme's HungerMap LIVE uses machine learning to predict food crises up to 60 days ahead, across 50+ countries.",
+        "sources": [
+          {
+            "name": "WFP — HungerMap LIVE press release",
+            "url": "https://www.wfp.org/news/wfp-releases-hungermap-live-modernized-intelligence-platform-turns-data-global-hunger-early",
+            "year": 2026
+          }
+        ]
+      }
     },
     {
       "id": "clean-water",
@@ -115,7 +165,17 @@
           "year": 2016
         }
       ],
-      "methodology": "Annual capital investment of approximately USD 114 billion needed through 2030 to achieve universal safely managed drinking water, per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
+      "methodology": "Annual capital investment of approximately USD 114 billion needed through 2030 to achieve universal safely managed drinking water, per the World Bank's SDG 6 costing study (Hutton & Varughese 2016).",
+      "aiBenefit": {
+        "text": "UK utilities deploying AI satellite leak-detection (Origin Tech) have prevented over 3 billion litres of water loss across 12 water companies.",
+        "sources": [
+          {
+            "name": "Smart Water Magazine — Thames Water signs AI satellite deal",
+            "url": "https://smartwatermagazine.com/news/smart-water-magazine/thames-water-signs-ai-satellite-deal-plug-100-million-litres-daily-leaks",
+            "year": 2024
+          }
+        ]
+      }
     },
     {
       "id": "malaria-eradication",
@@ -131,7 +191,17 @@
           "year": 2019
         }
       ],
-      "methodology": "Total cumulative additional global investment required to eradicate malaria by 2030 (approximately USD 90-120 billion), per the Lancet Commission's modelled additional funding on top of current spending."
+      "methodology": "Total cumulative additional global investment required to eradicate malaria by 2030 (approximately USD 90-120 billion), per the Lancet Commission's modelled additional funding on top of current spending.",
+      "aiBenefit": {
+        "text": "Insilico's Pharma.AI took a novel pan-fibrotic drug from idea to Phase II clinical trials in under 30 months — historically a 5+ year process.",
+        "sources": [
+          {
+            "name": "Insilico Medicine — First Generative AI Drug Begins Phase II Trials",
+            "url": "https://insilico.com/blog/first_phase2",
+            "year": 2023
+          }
+        ]
+      }
     },
     {
       "id": "us-grid-modernization",
@@ -147,7 +217,17 @@
           "year": 2024
         }
       ],
-      "methodology": "Estimated annual capital investment required to modernise the US power grid (transmission upgrades, distribution hardening, interconnection-queue clearing) — approximately USD 167 billion per year over 30 years toward a net-zero-aligned grid, per Princeton REPEAT and DOE Grid Deployment Office estimates."
+      "methodology": "Estimated annual capital investment required to modernise the US power grid (transmission upgrades, distribution hardening, interconnection-queue clearing) — approximately USD 167 billion per year over 30 years toward a net-zero-aligned grid, per Princeton REPEAT and DOE Grid Deployment Office estimates.",
+      "aiBenefit": {
+        "text": "DeepMind's reinforcement-learning controller cut Google data-centre cooling energy by 40% — the same approach is now being applied to grid optimisation.",
+        "sources": [
+          {
+            "name": "DeepMind blog — Reduces Google Data Centre Cooling Bill by 40%",
+            "url": "https://deepmind.google/blog/deepmind-ai-reduces-google-data-centre-cooling-bill-by-40/",
+            "year": 2016
+          }
+        ]
+      }
     }
   ]
 }

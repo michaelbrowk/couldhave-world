@@ -14,6 +14,7 @@ type Strings = {
   headline: string;
   sourceLabel: string; // e.g. "Military spending 2026"
   sourcesToggle: string;
+  aiBenefitLabel: string;
   categories: Record<string, DictCategoryEntry>; // keyed by short dict key
   shortKeyFor: (categoryId: string) => string; // mapping fn from data id to dict key
 };
@@ -42,6 +43,7 @@ export function SourceCategories({ source, locale, strings }: Props) {
             militaryBarLabel: strings.sourceLabel,
             alternativeBarLabel: compareUnit,
             sourcesToggle: strings.sourcesToggle,
+            aiBenefitLabel: strings.aiBenefitLabel,
           };
           return (
             <CategoryRow
