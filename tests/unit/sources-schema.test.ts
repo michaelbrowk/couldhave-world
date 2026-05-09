@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { SourceSchema, SOURCE_IDS } from "@/data/sources.schema";
+import aiJson from "@/data/sources/ai.json";
 
 describe("SourceSchema", () => {
   it("accepts a minimal valid source", () => {
@@ -52,6 +53,24 @@ describe("SourceSchema", () => {
   });
 
   it("exposes the canonical id list", () => {
-    expect(SOURCE_IDS).toEqual(["war", "tobacco", "fossil-fuels"]);
+    expect(SOURCE_IDS).toEqual(["war", "tobacco", "fossil-fuels", "ai"]);
+  });
+});
+
+describe("ai source", () => {
+  it("is registered in SOURCE_IDS", () => {
+    expect(SOURCE_IDS).toContain("ai");
+  });
+
+  it("parses ai.json against the schema", () => {
+    expect(() => SourceSchema.parse(aiJson)).not.toThrow();
+  });
+
+  it("has the expected top-level shape", () => {
+    const ai = SourceSchema.parse(aiJson);
+    expect(ai.id).toBe("ai");
+    expect(ai.currentYear).toBe(2026);
+    expect(ai.categories.length).toBeGreaterThanOrEqual(8);
+    expect(ai.projection.totalUsd).toBe(725_000_000_000);
   });
 });

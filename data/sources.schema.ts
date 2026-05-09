@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const SOURCE_IDS = ["war", "tobacco", "fossil-fuels"] as const;
+export const SOURCE_IDS = ["war", "tobacco", "fossil-fuels", "ai"] as const;
 export type SourceId = (typeof SOURCE_IDS)[number];
 
 const SymbolEnum = z.enum(["cross", "drop", "grain", "roof", "coin", "leaf", "ray"]);
