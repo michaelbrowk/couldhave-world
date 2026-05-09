@@ -26,6 +26,12 @@
       "caption": "Subsidising fossil fuels since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
       "methodology": "USD 7.4 trillion per year — explicit subsidies plus underpricing of climate and air-pollution costs. Source: IMF Working Paper 2025/270, 2024 data."
+    },
+    "ai": {
+      "label": "AI",
+      "caption": "Poured into AI since January 1, {year}",
+      "rate": "{perDay} per day · {perSecond} per second",
+      "methodology": "USD 725 billion projected for 2026 — Big-5 hyperscaler FY26 capex guidance, the vast majority directed at AI compute and data centres. Source: Bloomberg Intelligence, CreditSights, Statista (Q1 2026)."
     }
   },
   "categories": {
@@ -90,6 +96,23 @@
       "transit": { "title": "Built modern transit in megacities", "unit": "cities" },
       "storage": { "title": "Installed grid-scale battery storage", "unit": "× 100 GWh" },
       "hunger": { "title": "Ended world hunger", "unit": "years" }
+    },
+    "ai": {
+      "label": "AI infrastructure capex {year}",
+      "dotcom": {
+        "title": "Repeated the dotcom telecom buildout",
+        "unit": "× the entire 1996-2001 buildout"
+      },
+      "aiRevenue": {
+        "title": "Bought every dollar of global AI revenue",
+        "unit": "× annual global AI revenue, 2025"
+      },
+      "apollo": { "title": "Funded the Apollo program", "unit": "× the entire program" },
+      "manhattan": { "title": "Funded the Manhattan Project", "unit": "× the entire program" },
+      "hunger": { "title": "Ended world hunger", "unit": "years" },
+      "water": { "title": "Clean water for everyone", "unit": "years" },
+      "malaria": { "title": "Eradicated malaria globally", "unit": "times over" },
+      "grid": { "title": "Modernised the US power grid", "unit": "years" }
     }
   },
   "methodology": {

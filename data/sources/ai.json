@@ -1,0 +1,153 @@
+{
+  "id": "ai",
+  "labelKey": "sources.ai.label",
+  "currentYear": 2026,
+  "projection": {
+    "totalUsd": 725000000000,
+    "basedOnYear": 2025,
+    "baseAmountUsd": 380000000000,
+    "growthFactor": 1.908,
+    "growthBasis": "Year-over-year growth from basedOnYear (2025) to currentYear (2026) reflects raised FY26 capex guidance announced during Q1 2026 hyperscaler earnings season. Aggregate Big-5 capex (Microsoft, Alphabet, Meta, Amazon, Oracle) of approximately USD 725 billion for 2026, the vast majority directed at AI compute, data centres, and networking. Sources: Bloomberg Intelligence, CreditSights, and Statista 2026-Q1 estimates. Historical entries reflect aggregate Big-5 hyperscaler capital expenditure as reported in 10-K filings, rounded to the nearest USD 5 billion."
+  },
+  "historical": [
+    { "year": 2025, "totalUsd": 380000000000, "actual": true },
+    { "year": 2024, "totalUsd": 245000000000, "actual": true },
+    { "year": 2023, "totalUsd": 200000000000, "actual": true },
+    { "year": 2022, "totalUsd": 165000000000, "actual": true },
+    { "year": 2021, "totalUsd": 145000000000, "actual": true },
+    { "year": 2020, "totalUsd": 110000000000, "actual": true }
+  ],
+  "source": "Q1 2026 hyperscaler earnings — Bloomberg Intelligence, CreditSights, Statista compilation",
+  "sourceUrl": "https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html",
+  "lastUpdated": "2026-05-09",
+  "categories": [
+    {
+      "id": "dotcom-telecom-capex",
+      "titleKey": "categories.ai.dotcom.title",
+      "unitLabelKey": "categories.ai.dotcom.unit",
+      "symbol": "coin",
+      "scaleHint": "totalSolution",
+      "unitCostUsd": 500000000000,
+      "sources": [
+        {
+          "name": "Telecoms crash — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Telecoms_crash",
+          "year": 2024
+        }
+      ],
+      "methodology": "Aggregate US telecom-equipment capital investment 1996-2001 — approximately USD 500 billion in nominal dollars, financed largely with debt. The buildout that preceded the 2001 telecom bust."
+    },
+    {
+      "id": "global-ai-revenue-2025",
+      "titleKey": "categories.ai.aiRevenue.title",
+      "unitLabelKey": "categories.ai.aiRevenue.unit",
+      "symbol": "coin",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 50000000000,
+      "sources": [
+        {
+          "name": "Bloomberg Intelligence — Generative AI to become a $1.3 trillion market by 2032",
+          "url": "https://www.bloomberg.com/company/press/generative-ai-to-become-a-1-3-trillion-market-by-2032-research-finds/",
+          "year": 2023
+        }
+      ],
+      "methodology": "Estimated 2025 global generative-AI software and services revenue (approximately USD 50 billion), per Bloomberg Intelligence's market sizing. Capex-to-revenue ratio is one of the most cited single bubble indicators."
+    },
+    {
+      "id": "apollo-program",
+      "titleKey": "categories.ai.apollo.title",
+      "unitLabelKey": "categories.ai.apollo.unit",
+      "symbol": "ray",
+      "scaleHint": "totalSolution",
+      "unitCostUsd": 280000000000,
+      "sources": [
+        {
+          "name": "The Planetary Society — How much did the Apollo program cost?",
+          "url": "https://www.planetary.org/space-policy/cost-of-apollo",
+          "year": 2024
+        }
+      ],
+      "methodology": "Total cumulative cost of the Apollo program (1961-1973), inflation-adjusted to 2024 USD: approximately USD 280 billion. Covers Mercury and Gemini predecessor programs, the Saturn V launch system, and all Apollo missions through Apollo 17."
+    },
+    {
+      "id": "manhattan-project",
+      "titleKey": "categories.ai.manhattan.title",
+      "unitLabelKey": "categories.ai.manhattan.unit",
+      "symbol": "ray",
+      "scaleHint": "totalSolution",
+      "unitCostUsd": 30000000000,
+      "sources": [
+        {
+          "name": "Brookings Institution — The Costs of the Manhattan Project (Atomic Audit, Stephen I. Schwartz)",
+          "url": "https://www.brookings.edu/the-costs-of-the-manhattan-project/",
+          "year": 1998
+        }
+      ],
+      "methodology": "Total cost of the Manhattan Project (1942-1946), USD 1.9 billion nominal, inflation-adjusted to approximately USD 30 billion in 2024 USD per Brookings' Atomic Audit (Schwartz, 1998)."
+    },
+    {
+      "id": "world-hunger",
+      "titleKey": "categories.ai.hunger.title",
+      "unitLabelKey": "categories.ai.hunger.unit",
+      "symbol": "grain",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 33000000000,
+      "sources": [
+        {
+          "name": "Nature Food / IFPRI — Investment needs to end hunger by 2030",
+          "url": "https://www.nature.com/articles/s43016-020-00181-w",
+          "year": 2020
+        }
+      ],
+      "methodology": "Average additional annual public expenditure (approximately USD 33 billion) required from donors and low/middle-income governments through 2030 to end hunger (SDG 2), per Ceres2030 / IFPRI models published in Nature Food."
+    },
+    {
+      "id": "clean-water",
+      "titleKey": "categories.ai.water.title",
+      "unitLabelKey": "categories.ai.water.unit",
+      "symbol": "drop",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 114000000000,
+      "sources": [
+        {
+          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
+          "url": "https://openknowledge.worldbank.org/handle/10986/23681",
+          "year": 2016
+        }
+      ],
+      "methodology": "Annual capital investment of approximately USD 114 billion needed through 2030 to achieve universal safely managed drinking water, per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
+    },
+    {
+      "id": "malaria-eradication",
+      "titleKey": "categories.ai.malaria.title",
+      "unitLabelKey": "categories.ai.malaria.unit",
+      "symbol": "drop",
+      "scaleHint": "totalSolution",
+      "unitCostUsd": 90000000000,
+      "sources": [
+        {
+          "name": "The Lancet Commission on Malaria Eradication",
+          "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(19)31139-0/fulltext",
+          "year": 2019
+        }
+      ],
+      "methodology": "Total cumulative additional global investment required to eradicate malaria by 2030 (approximately USD 90-120 billion), per the Lancet Commission's modelled additional funding on top of current spending."
+    },
+    {
+      "id": "us-grid-modernization",
+      "titleKey": "categories.ai.grid.title",
+      "unitLabelKey": "categories.ai.grid.unit",
+      "symbol": "ray",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 167000000000,
+      "sources": [
+        {
+          "name": "Princeton REPEAT Project — Net-Zero America",
+          "url": "https://repeatproject.org/",
+          "year": 2024
+        }
+      ],
+      "methodology": "Estimated annual capital investment required to modernise the US power grid (transmission upgrades, distribution hardening, interconnection-queue clearing) — approximately USD 167 billion per year over 30 years toward a net-zero-aligned grid, per Princeton REPEAT and DOE Grid Deployment Office estimates."
+    }
+  ]
+}

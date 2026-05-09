@@ -74,9 +74,9 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
         <span className="font-serif text-xl md:text-3xl text-[var(--text-primary)] flex-1 min-w-0 leading-tight">
           {strings.title}
         </span>
-        <span className="flex items-baseline gap-3 md:gap-4 shrink-0">
+        <span className="flex items-baseline gap-3 md:gap-4 shrink-0 max-w-[55%] sm:max-w-[60%]">
           <span
-            className="font-serif text-[var(--accent)] tabular-nums leading-none"
+            className="font-serif text-[var(--accent)] tabular-nums leading-none shrink-0"
             style={{ fontSize: "clamp(32px, 5vw, 72px)" }}
             // Static export freezes the HTML at build time, but the initial
             // client render uses the visitor's wall clock — the two values
@@ -87,7 +87,7 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
           >
             {numberDisplay}
           </span>
-          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.15em] text-[var(--text-secondary)] hidden sm:inline">
+          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.12em] leading-snug text-[var(--text-secondary)] hidden sm:inline-block max-w-[14ch] md:max-w-[18ch] text-left">
             {strings.unit}
           </span>
         </span>
