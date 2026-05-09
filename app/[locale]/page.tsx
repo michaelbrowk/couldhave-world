@@ -26,6 +26,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       war: dict.categories.war,
       tobacco: dict.categories.tobacco,
       "fossil-fuels": dict.categories["fossil-fuels"],
+      ai: dict.categories.ai,
     },
     sourcesToggle: dict.categories.sourcesToggle,
     categoryDictKeys: CATEGORY_DICT_KEYS,

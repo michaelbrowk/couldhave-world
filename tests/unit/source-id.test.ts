@@ -6,6 +6,7 @@ describe("parseSourceId", () => {
     expect(parseSourceId("war")).toBe("war");
     expect(parseSourceId("tobacco")).toBe("tobacco");
     expect(parseSourceId("fossil-fuels")).toBe("fossil-fuels");
+    expect(parseSourceId("ai")).toBe("ai");
   });
 
   it("returns null for unknown / empty / null", () => {
@@ -20,7 +21,7 @@ describe("isValidSourceId", () => {
   it("narrows a string to SourceId", () => {
     const x: string = "tobacco";
     if (isValidSourceId(x)) {
-      const _ok: "war" | "tobacco" | "fossil-fuels" = x;
+      const _ok: "war" | "tobacco" | "fossil-fuels" | "ai" = x;
     }
     expect(isValidSourceId("war")).toBe(true);
     expect(isValidSourceId("xx")).toBe(false);
