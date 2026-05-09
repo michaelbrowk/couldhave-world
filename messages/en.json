@@ -31,7 +31,7 @@
       "label": "AI",
       "caption": "Poured into AI since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD ~725 billion projected for 2026 — Big-5 hyperscaler FY26 capex guidance, the vast majority directed at AI compute and data centres. Source: Bloomberg Intelligence, CreditSights, Statista (Q1 2026)."
+      "methodology": "USD 725 billion projected for 2026 — Big-5 hyperscaler FY26 capex guidance, the vast majority directed at AI compute and data centres. Source: Bloomberg Intelligence, CreditSights, Statista (Q1 2026)."
     }
   },
   "categories": {

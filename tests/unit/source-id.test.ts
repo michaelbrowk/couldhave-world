@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import type { SourceId } from "@/data/sources.schema";
 import { isValidSourceId, parseSourceId } from "@/lib/sources";
 
 describe("parseSourceId", () => {
@@ -21,7 +22,7 @@ describe("isValidSourceId", () => {
   it("narrows a string to SourceId", () => {
     const x: string = "tobacco";
     if (isValidSourceId(x)) {
-      const _ok: "war" | "tobacco" | "fossil-fuels" | "ai" = x;
+      const _ok: SourceId = x;
     }
     expect(isValidSourceId("war")).toBe(true);
     expect(isValidSourceId("xx")).toBe(false);

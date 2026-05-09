@@ -7,7 +7,7 @@
     "basedOnYear": 2025,
     "baseAmountUsd": 380000000000,
     "growthFactor": 1.908,
-    "growthBasis": "Year-over-year growth from basedOnYear (2025) to currentYear (2026) reflects raised FY26 capex guidance announced during Q1 2026 hyperscaler earnings season. Aggregate Big-5 capex (Microsoft, Alphabet, Meta, Amazon, Oracle) of approximately USD 725 billion for 2026, the vast majority directed at AI compute, data centers, and networking. Sources: Bloomberg Intelligence, CreditSights, and Statista 2026-Q1 estimates. Historical entries reflect aggregate Big-5 hyperscaler capital expenditure as reported in 10-K filings, rounded to the nearest USD 5 billion."
+    "growthBasis": "Year-over-year growth from basedOnYear (2025) to currentYear (2026) reflects raised FY26 capex guidance announced during Q1 2026 hyperscaler earnings season. Aggregate Big-5 capex (Microsoft, Alphabet, Meta, Amazon, Oracle) of approximately USD 725 billion for 2026, the vast majority directed at AI compute, data centres, and networking. Sources: Bloomberg Intelligence, CreditSights, and Statista 2026-Q1 estimates. Historical entries reflect aggregate Big-5 hyperscaler capital expenditure as reported in 10-K filings, rounded to the nearest USD 5 billion."
   },
   "historical": [
     { "year": 2025, "totalUsd": 380000000000, "actual": true },
