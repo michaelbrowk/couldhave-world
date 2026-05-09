@@ -21,6 +21,15 @@ const CategorySchema = z.object({
   unitCostUsd: z.number().positive(),
   sources: z.array(CategorySourceSchema).min(1),
   methodology: z.string().min(1),
+  // Optional: a verified positive AI achievement that pairs with this
+  // negative comparison. Only populated for the 'ai' source — other
+  // sources leave this absent.
+  aiBenefit: z
+    .object({
+      text: z.string().min(1),
+      sources: z.array(CategorySourceSchema).min(1),
+    })
+    .optional(),
 });
 
 const ProjectionSchema = z.object({
