@@ -66,7 +66,7 @@
         "text": "Bloomberg Intelligence projects 42% CAGR through 2032 for generative-AI software revenue — faster than any prior tech wave.",
         "sources": [
           {
-            "name": "Bloomberg LP — Generative AI to become a $1.3 trillion market by 2032",
+            "name": "Bloomberg Intelligence — Generative AI to become a $1.3 trillion market by 2032",
             "url": "https://www.bloomberg.com/company/press/generative-ai-to-become-a-1-3-trillion-market-by-2032-research-finds/",
             "year": 2023
           }
@@ -115,7 +115,7 @@
       ],
       "methodology": "Total cost of the Manhattan Project (1942-1946), USD 1.9 billion nominal, inflation-adjusted to approximately USD 30 billion in 2024 USD per Brookings' Atomic Audit (Schwartz, 1998).",
       "aiBenefit": {
-        "text": "DeepMind's reinforcement-learning agent controlled superheated plasma inside a tokamak in real time — a step toward fusion energy.",
+        "text": "DeepMind's reinforcement-learning agent controlled superheated plasma inside a tokamak in real time — a step towards fusion energy.",
         "sources": [
           {
             "name": "Magnetic control of tokamak plasmas through deep reinforcement learning — Nature",
