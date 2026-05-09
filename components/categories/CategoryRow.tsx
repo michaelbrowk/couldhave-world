@@ -122,7 +122,7 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline decoration-[var(--border-color)] underline-offset-4 hover:text-[var(--accent)] hover:decoration-[var(--accent)] transition-colors"
+                    className="underline decoration-[var(--border-color)] underline-offset-4 hover:text-[var(--accent)] hover:decoration-[var(--accent)] transition-[color,text-decoration-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]"
                   >
                     {s.name} ({s.year})
                     <span aria-hidden="true" className="ml-1 text-[0.85em] opacity-70">
@@ -135,7 +135,7 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
           </aside>
         ) : null}
         <details className="font-mono text-xs text-[var(--text-secondary)] max-w-xl">
-          <summary className="cursor-pointer uppercase tracking-widest hover:text-[var(--accent)] transition-colors">
+          <summary className="cursor-pointer uppercase tracking-widest hover:text-[var(--accent)] transition-colors duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]">
             {strings.sourcesToggle}
           </summary>
           <ul className="mt-3 space-y-1 list-none text-left">
@@ -145,7 +145,7 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline decoration-[var(--border-color)] underline-offset-4 hover:text-[var(--accent)] hover:decoration-[var(--accent)] transition-colors"
+                  className="underline decoration-[var(--border-color)] underline-offset-4 hover:text-[var(--accent)] hover:decoration-[var(--accent)] transition-[color,text-decoration-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]"
                 >
                   {s.name} ({s.year})
                 </a>
