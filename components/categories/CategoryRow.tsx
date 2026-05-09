@@ -14,6 +14,7 @@ export type CategoryRowStrings = {
   militaryBarLabel: string;
   alternativeBarLabel: string;
   sourcesToggle: string;
+  aiBenefitLabel: string;
 };
 
 type Props = {
@@ -106,6 +107,30 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
           />
         </div>
         <SymbolMatrix symbol={category.symbol} count={symbolCount} ariaLabel={matrixAriaLabel} />
+        {category.aiBenefit ? (
+          <aside className="max-w-xl">
+            <p className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-[var(--text-secondary)] mb-2">
+              {strings.aiBenefitLabel}
+            </p>
+            <p className="font-serif text-base md:text-lg text-[var(--text-primary)] leading-relaxed">
+              {category.aiBenefit.text}
+            </p>
+            <ul className="mt-3 space-y-1 list-none font-mono text-xs text-[var(--text-secondary)]">
+              {category.aiBenefit.sources.map((s) => (
+                <li key={s.url}>
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-[var(--border-color)] underline-offset-4 hover:text-[var(--accent)] hover:decoration-[var(--accent)] transition-colors"
+                  >
+                    {s.name} ({s.year}) ↗
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        ) : null}
         <details className="font-mono text-xs text-[var(--text-secondary)] max-w-xl">
           <summary className="cursor-pointer uppercase tracking-widest hover:text-[var(--accent)] transition-colors">
             {strings.sourcesToggle}

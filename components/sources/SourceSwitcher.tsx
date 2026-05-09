@@ -29,6 +29,7 @@ export type SourceSwitcherProps = {
   sourcesDict: Record<SourceId, DictionarySourceBlock>;
   categoriesDict: Record<SourceId, DictionaryCategoryBlock>;
   sourcesToggle: string;
+  aiBenefitLabel: string;
   /** Plain mapping: sourceId → categoryId → short dict key. Serializable. */
   categoryDictKeys: Record<string, Record<string, string>>;
 };
@@ -49,6 +50,7 @@ export function SourceSwitcherView({
   sourcesDict,
   categoriesDict,
   sourcesToggle,
+  aiBenefitLabel,
   categoryDictKeys,
 }: SourceSwitcherProps & { activeId: SourceId }) {
   const router = useRouter();
@@ -94,6 +96,7 @@ export function SourceSwitcherView({
           headline: transitionHeadline,
           sourceLabel,
           sourcesToggle,
+          aiBenefitLabel,
           categories: categoriesEntries,
           shortKeyFor: (catId) => categoryDictKeys[activeId]?.[catId] ?? catId,
         }}

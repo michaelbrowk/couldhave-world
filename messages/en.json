@@ -36,6 +36,7 @@
   },
   "categories": {
     "sourcesToggle": "See sources",
+    "aiBenefitLabel": "But AI also",
     "war": {
       "label": "Military spending {year}",
       "cancer": {

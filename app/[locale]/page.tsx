@@ -29,6 +29,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       ai: dict.categories.ai,
     },
     sourcesToggle: dict.categories.sourcesToggle,
+    aiBenefitLabel: dict.categories.aiBenefitLabel,
     categoryDictKeys: CATEGORY_DICT_KEYS,
   };
 
