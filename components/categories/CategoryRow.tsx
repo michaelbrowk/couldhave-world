@@ -108,14 +108,14 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
         </div>
         <SymbolMatrix symbol={category.symbol} count={symbolCount} ariaLabel={matrixAriaLabel} />
         {category.aiBenefit ? (
-          <aside className="max-w-xl">
-            <p className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-[var(--text-secondary)] mb-2">
+          <aside className="max-w-xl border-t border-[var(--border-color)] pt-8">
+            <p className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-[var(--text-primary)] mb-3">
               {strings.aiBenefitLabel}
             </p>
             <p className="font-serif text-base md:text-lg text-[var(--text-primary)] leading-relaxed">
               {category.aiBenefit.text}
             </p>
-            <ul className="mt-3 space-y-1 list-none font-mono text-xs text-[var(--text-secondary)]">
+            <ul className="mt-4 space-y-1 list-none font-mono text-xs text-[var(--text-secondary)]">
               {category.aiBenefit.sources.map((s) => (
                 <li key={s.url}>
                   <a
@@ -124,7 +124,10 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
                     rel="noopener noreferrer"
                     className="underline decoration-[var(--border-color)] underline-offset-4 hover:text-[var(--accent)] hover:decoration-[var(--accent)] transition-colors"
                   >
-                    {s.name} ({s.year}) ↗
+                    {s.name} ({s.year})
+                    <span aria-hidden="true" className="ml-1 text-[0.85em] opacity-70">
+                      ↗
+                    </span>
                   </a>
                 </li>
               ))}
