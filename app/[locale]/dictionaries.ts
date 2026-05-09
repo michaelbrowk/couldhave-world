@@ -90,6 +90,16 @@ export const CATEGORY_DICT_KEYS: Record<string, Record<string, string>> = {
     "grid-storage-100gwh": "storage",
     "world-hunger": "hunger",
   },
+  ai: {
+    "dotcom-telecom-capex": "dotcom",
+    "global-ai-revenue-2025": "aiRevenue",
+    "apollo-program": "apollo",
+    "manhattan-project": "manhattan",
+    "world-hunger": "hunger",
+    "clean-water": "water",
+    "malaria-eradication": "malaria",
+    "us-grid-modernization": "grid",
+  },
 };
 
 export function getCategoryDictKey(sourceId: string, categoryId: string): string {
