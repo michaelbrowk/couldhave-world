@@ -1,8 +1,8 @@
-import warJson from "@/data/sources/war.json";
-import tobaccoJson from "@/data/sources/tobacco.json";
-import fossilJson from "@/data/sources/fossil-fuels.json";
 import aiJson from "@/data/sources/ai.json";
-import { type Source, SourceSchema, type SourceId, SOURCE_IDS } from "@/data/sources.schema";
+import fossilJson from "@/data/sources/fossil-fuels.json";
+import tobaccoJson from "@/data/sources/tobacco.json";
+import warJson from "@/data/sources/war.json";
+import { SOURCE_IDS, type Source, type SourceId, SourceSchema } from "@/data/sources.schema";
 
 const warSource: Source = SourceSchema.parse(warJson);
 const tobaccoSource: Source = SourceSchema.parse(tobaccoJson);

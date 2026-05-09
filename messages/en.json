@@ -99,8 +99,14 @@
     },
     "ai": {
       "label": "AI infrastructure capex {year}",
-      "dotcom": { "title": "Repeated the dotcom telecom buildout", "unit": "× the entire 1996-2001 buildout" },
-      "aiRevenue": { "title": "Bought every dollar of global AI revenue", "unit": "× annual global AI revenue, 2025" },
+      "dotcom": {
+        "title": "Repeated the dotcom telecom buildout",
+        "unit": "× the entire 1996-2001 buildout"
+      },
+      "aiRevenue": {
+        "title": "Bought every dollar of global AI revenue",
+        "unit": "× annual global AI revenue, 2025"
+      },
       "apollo": { "title": "Funded the Apollo program", "unit": "× the entire program" },
       "manhattan": { "title": "Funded the Manhattan Project", "unit": "× the entire program" },
       "hunger": { "title": "Ended world hunger", "unit": "years" },

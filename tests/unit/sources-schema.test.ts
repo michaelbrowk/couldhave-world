@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { SourceSchema, SOURCE_IDS } from "@/data/sources.schema";
 import aiJson from "@/data/sources/ai.json";
+import { SOURCE_IDS, SourceSchema } from "@/data/sources.schema";
 
 describe("SourceSchema", () => {
   it("accepts a minimal valid source", () => {

@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.describe("source tabs", () => {
   test("default state is war, no ?source= in URL", async ({ page }) => {
@@ -65,18 +65,12 @@ test.describe("source tabs", () => {
     await page.goto("/en/");
     await page.getByRole("tab", { name: /^ai$/i }).click();
     await expect(page).toHaveURL(/\?source=ai/);
-    await expect(page.getByRole("tab", { name: /^ai$/i })).toHaveAttribute(
-      "aria-selected",
-      "true",
-    );
+    await expect(page.getByRole("tab", { name: /^ai$/i })).toHaveAttribute("aria-selected", "true");
   });
 
   test("direct ?source=ai lands on AI tab and renders categories", async ({ page }) => {
     await page.goto("/en/?source=ai");
-    await expect(page.getByRole("tab", { name: /^ai$/i })).toHaveAttribute(
-      "aria-selected",
-      "true",
-    );
+    await expect(page.getByRole("tab", { name: /^ai$/i })).toHaveAttribute("aria-selected", "true");
     // Hero copy reflects the AI methodology (mentions "Big-5 hyperscaler")
     await expect(page.getByText(/Big-5 hyperscaler/i)).toBeVisible();
     // First AI category renders.

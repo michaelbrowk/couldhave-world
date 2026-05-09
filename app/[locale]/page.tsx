@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { SourceSwitcher, SourceSwitcherView } from "@/components/sources/SourceSwitcher";
 import { Footer } from "@/components/layout/Footer";
 import { Methodology } from "@/components/layout/Methodology";
-import { type Locale, CATEGORY_DICT_KEYS, getDictionary, hasLocale } from "./dictionaries";
+import { SourceSwitcher, SourceSwitcherView } from "@/components/sources/SourceSwitcher";
 import type { SupportedLocale } from "@/lib/formatters";
+import { CATEGORY_DICT_KEYS, getDictionary, hasLocale, type Locale } from "./dictionaries";
 
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
