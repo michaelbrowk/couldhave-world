@@ -2,14 +2,14 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { SourceHero } from "@/components/sources/SourceHero";
 import { SourceCategories } from "@/components/sources/SourceCategories";
-import { SourceTabs, type SourceTabItem } from "@/components/sources/SourceTabs";
+import { SourceHero } from "@/components/sources/SourceHero";
+import { type SourceTabItem, SourceTabs } from "@/components/sources/SourceTabs";
 import { SOURCES } from "@/data/sources.index";
 import type { SourceId } from "@/data/sources.schema";
-import { parseSourceId } from "@/lib/sources";
 import type { SupportedLocale } from "@/lib/formatters";
 import { track } from "@/lib/mixpanel";
+import { parseSourceId } from "@/lib/sources";
 
 type DictionarySourceBlock = {
   label: string;

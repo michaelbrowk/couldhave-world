@@ -5,10 +5,7 @@ test.describe("source tabs", () => {
     await page.goto("/en/");
     const url = new URL(page.url());
     expect(url.searchParams.get("source")).toBeNull();
-    await expect(page.getByRole("tab", { name: /^ai$/i })).toHaveAttribute(
-      "aria-selected",
-      "true",
-    );
+    await expect(page.getByRole("tab", { name: /^ai$/i })).toHaveAttribute("aria-selected", "true");
   });
 
   test("clicking Tobacco updates URL and active tab", async ({ page }) => {
@@ -44,10 +41,7 @@ test.describe("source tabs", () => {
     await page.goto("/en/");
     await page.getByRole("tab", { name: /^ai$/i }).focus();
     await page.keyboard.press("ArrowRight");
-    await expect(page.getByRole("tab", { name: /war/i })).toHaveAttribute(
-      "aria-selected",
-      "true",
-    );
+    await expect(page.getByRole("tab", { name: /war/i })).toHaveAttribute("aria-selected", "true");
   });
 
   test("reduced-motion disables fade animation", async ({ browser }) => {
