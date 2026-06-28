@@ -6,7 +6,7 @@ import { SourceCategories } from "@/components/sources/SourceCategories";
 import { SourceHero } from "@/components/sources/SourceHero";
 import { type SourceTabItem, SourceTabs } from "@/components/sources/SourceTabs";
 import { SOURCES } from "@/data/sources.index";
-import type { SourceId } from "@/data/sources.schema";
+import { SOURCE_IDS, type SourceId } from "@/data/sources.schema";
 import type { SupportedLocale } from "@/lib/formatters";
 import { track } from "@/lib/mixpanel";
 import { parseSourceId } from "@/lib/sources";
@@ -56,7 +56,7 @@ export function SourceSwitcherView({
   const router = useRouter();
   const source = SOURCES[activeId];
 
-  const items: readonly SourceTabItem[] = (Object.keys(SOURCES) as SourceId[]).map((id) => ({
+  const items: readonly SourceTabItem[] = SOURCE_IDS.map((id) => ({
     id,
     label: sourcesDict[id].label,
   }));

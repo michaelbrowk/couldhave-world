@@ -37,11 +37,27 @@ test.describe("source tabs", () => {
     expect(url1).toBe(url2);
   });
 
+  // Tab order: war(0), tobacco(1), fossil-fuels(2), ai(3), food-waste(4), advertising(5), gambling(6)
+  // ArrowRight from ai(3) → food-waste(4)
   test("ArrowRight cycles tabs", async ({ page }) => {
     await page.goto("/en/");
     await page.getByRole("tab", { name: /^ai$/i }).focus();
     await page.keyboard.press("ArrowRight");
-    await expect(page.getByRole("tab", { name: /war/i })).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("tab", { name: /food.waste/i })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
+  });
+
+  // ArrowRight from gambling(6) → war(0) — wrap-around
+  test("ArrowRight wraps from gambling to war", async ({ page }) => {
+    await page.goto("/en/?source=gambling");
+    await page.getByRole("tab", { name: /gambling/i }).focus();
+    await page.keyboard.press("ArrowRight");
+    await expect(page.getByRole("tab", { name: /^war$/i })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
   });
 
   test("reduced-motion disables fade animation", async ({ browser }) => {
@@ -73,5 +89,23 @@ test.describe("source tabs", () => {
     await expect(page.getByText(/Big-5 hyperscaler/i)).toBeVisible();
     // First AI category renders.
     await expect(page.getByText(/Repeated the dotcom telecom buildout/i).first()).toBeVisible();
+  });
+
+  // Mobile: all 7 tabs must be visible (wrapped, not clipped/scrolled off)
+  test("all 7 tabs visible at 375px viewport (wrapped chips)", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/en/");
+    await page.waitForLoadState("networkidle");
+
+    const tabNames = ["war", "tobacco", "fossil", "ai", "food", "advertising", "gambling"];
+    for (const name of tabNames) {
+      const tab = page.getByRole("tab", { name: new RegExp(name, "i") });
+      const box = await tab.boundingBox();
+      expect(box, `Tab "${name}" has no bounding box`).not.toBeNull();
+      if (box) {
+        expect(box.x, `Tab "${name}" overflows left`).toBeGreaterThanOrEqual(0);
+        expect(box.x + box.width, `Tab "${name}" overflows right`).toBeLessThanOrEqual(375);
+      }
+    }
   });
 });
