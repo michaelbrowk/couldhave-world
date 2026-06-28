@@ -118,6 +118,15 @@ export const CATEGORY_DICT_KEYS: Record<string, Record<string, string>> = {
     "world-hunger": "hunger",
     "clean-water": "water",
   },
+  gambling: {
+    "gambling-disorder-treatment": "treatment",
+    "permanent-supportive-housing": "housing",
+    "mental-health-financing-gap": "mentalHealth",
+    "suicide-crisis-lifeline": "lifeline",
+    "world-hunger": "hunger",
+    "extreme-poverty": "poverty",
+    "clean-water": "water",
+  },
 };
 
 export function getCategoryDictKey(sourceId: string, categoryId: string): string {

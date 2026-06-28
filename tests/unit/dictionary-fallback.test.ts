@@ -15,6 +15,38 @@ describe("dictionary EN fallback", () => {
   });
 });
 
+describe("sources dictionary blocks", () => {
+  it("en.json sources['food-waste'] has string label/caption/rate/methodology", () => {
+    const fw = (enDict as { sources: { "food-waste": Record<string, unknown> } }).sources[
+      "food-waste"
+    ];
+    expect(fw).toBeDefined();
+    expect(typeof fw.label).toBe("string");
+    expect(typeof fw.caption).toBe("string");
+    expect(typeof fw.rate).toBe("string");
+    expect(typeof fw.methodology).toBe("string");
+  });
+
+  it("en.json sources['advertising'] has string label/caption/rate/methodology", () => {
+    const adv = (enDict as { sources: { advertising: Record<string, unknown> } }).sources
+      .advertising;
+    expect(adv).toBeDefined();
+    expect(typeof adv.label).toBe("string");
+    expect(typeof adv.caption).toBe("string");
+    expect(typeof adv.rate).toBe("string");
+    expect(typeof adv.methodology).toBe("string");
+  });
+
+  it("en.json sources['gambling'] has string label/caption/rate/methodology", () => {
+    const g = (enDict as { sources: { gambling: Record<string, unknown> } }).sources.gambling;
+    expect(g).toBeDefined();
+    expect(typeof g.label).toBe("string");
+    expect(typeof g.caption).toBe("string");
+    expect(typeof g.rate).toBe("string");
+    expect(typeof g.methodology).toBe("string");
+  });
+});
+
 describe("ai dictionary", () => {
   it("has sources.ai with label, caption, rate, methodology as strings", () => {
     const ai = (enDict as { sources: { ai: Record<string, unknown> } }).sources.ai;

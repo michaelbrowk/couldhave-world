@@ -60,6 +60,7 @@ describe("SourceSchema", () => {
       "ai",
       "food-waste",
       "advertising",
+      "gambling",
     ]);
   });
 });

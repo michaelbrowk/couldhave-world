@@ -29,6 +29,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       ai: dict.categories.ai,
       "food-waste": dict.categories["food-waste"],
       advertising: dict.categories.advertising,
+      gambling: dict.categories.gambling,
     },
     sourcesToggle: dict.categories.sourcesToggle,
     aiBenefitLabel: dict.categories.aiBenefitLabel,

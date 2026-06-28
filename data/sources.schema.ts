@@ -7,6 +7,7 @@ export const SOURCE_IDS = [
   "ai",
   "food-waste",
   "advertising",
+  "gambling",
 ] as const;
 export type SourceId = (typeof SOURCE_IDS)[number];
 

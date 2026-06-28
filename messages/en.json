@@ -44,6 +44,12 @@
       "caption": "Spent on advertising since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
       "methodology": "USD 1.3 trillion projected for 2026 — total global advertising spend. Source: WARC Global Ad Trends, December 2025."
+    },
+    "gambling": {
+      "label": "Gambling",
+      "caption": "Gambled away since January 1, {year}",
+      "rate": "{perDay} per day · {perSecond} per second",
+      "methodology": "USD 573 billion per year — global gambling losses (gross gaming revenue). Source: H2 Gambling Capital, 2024."
     }
   },
   "categories": {
@@ -169,6 +175,28 @@
       },
       "vaccination": { "title": "Vaccinated every child on Earth", "unit": "years" },
       "hunger": { "title": "Ended world hunger", "unit": "years" },
+      "water": { "title": "Clean drinking water for everyone", "unit": "years" }
+    },
+    "gambling": {
+      "label": "Gambling losses {year}",
+      "treatment": {
+        "title": "A year of care for problem gamblers",
+        "unit": "people",
+        "compareUnit": "One person, one year of care"
+      },
+      "housing": {
+        "title": "Housed homeless people for a year",
+        "unit": "people",
+        "compareUnit": "One person housed for a year"
+      },
+      "mentalHealth": { "title": "Closed the mental-health funding gap", "unit": "years" },
+      "lifeline": {
+        "title": "Ran national crisis lifelines",
+        "unit": "years",
+        "compareUnit": "One year of a national lifeline"
+      },
+      "hunger": { "title": "Ended world hunger", "unit": "years" },
+      "poverty": { "title": "Lifted everyone out of extreme poverty", "unit": "years" },
       "water": { "title": "Clean drinking water for everyone", "unit": "years" }
     }
   },
