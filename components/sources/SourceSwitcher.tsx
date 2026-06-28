@@ -6,7 +6,7 @@ import { SourceCategories } from "@/components/sources/SourceCategories";
 import { SourceHero } from "@/components/sources/SourceHero";
 import { type SourceTabItem, SourceTabs } from "@/components/sources/SourceTabs";
 import { SOURCES } from "@/data/sources.index";
-import type { SourceId } from "@/data/sources.schema";
+import { type SourceId } from "@/data/sources.schema";
 import type { SupportedLocale } from "@/lib/formatters";
 import { track } from "@/lib/mixpanel";
 import { parseSourceId } from "@/lib/sources";

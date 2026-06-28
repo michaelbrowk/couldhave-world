@@ -53,7 +53,15 @@ describe("SourceSchema", () => {
   });
 
   it("exposes the canonical id list", () => {
-    expect(SOURCE_IDS).toEqual(["war", "tobacco", "fossil-fuels", "ai"]);
+    expect(SOURCE_IDS).toEqual([
+      "war",
+      "tobacco",
+      "fossil-fuels",
+      "ai",
+      "food-waste",
+      "advertising",
+      "gambling",
+    ]);
   });
 });
 
@@ -71,7 +79,7 @@ describe("ai source", () => {
     expect(ai.id).toBe("ai");
     expect(ai.currentYear).toBe(2026);
     expect(ai.categories.length).toBeGreaterThanOrEqual(8);
-    expect(ai.projection.totalUsd).toBe(725_000_000_000);
+    expect(ai.projection.totalUsd).toBe(770_000_000_000);
   });
 });
 
@@ -84,5 +92,12 @@ describe("ai aiBenefit field", () => {
       expect(cat.aiBenefit?.sources.length).toBeGreaterThanOrEqual(1);
       expect(cat.aiBenefit?.sources[0]?.url).toMatch(/^https:\/\//);
     }
+  });
+
+  it("insilico benefit says Phase I, not Phase II", () => {
+    const ai = SourceSchema.parse(aiJson);
+    const m = ai.categories.find((c) => c.id === "malaria-eradication");
+    expect(m?.aiBenefit?.text).toMatch(/Phase I\b/);
+    expect(m?.aiBenefit?.text).not.toMatch(/Phase II/);
   });
 });

@@ -49,7 +49,7 @@ export function TickingCounter({ projection, currentYear, locale }: Props) {
   return (
     <div
       className="font-serif text-[var(--accent)] leading-none tabular-nums tracking-tight"
-      style={{ fontSize: "clamp(56px, 12vw, 220px)" }}
+      style={{ fontSize: "clamp(40px, 12vw, 220px)" }}
       role="status"
       aria-live="off"
       aria-label={yearTotalLabel}

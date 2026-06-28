@@ -1,0 +1,133 @@
+{
+  "id": "gambling",
+  "labelKey": "sources.gambling.label",
+  "currentYear": 2026,
+  "projection": {
+    "totalUsd": 573000000000,
+    "basedOnYear": 2024,
+    "baseAmountUsd": 573000000000,
+    "growthBasis": "Annual figure used as a constant rate; not projected. H2 Gambling Capital estimate of total global gross gaming revenue (player losses, not turnover) for 2024 (~USD 573 billion), applying ~7% growth to the confirmed 2023 actual of US$536 billion."
+  },
+  "source": "H2 Gambling Capital",
+  "sourceUrl": "https://h2gc.com/news/general/global-gambling-industry-generates-536bn-in-2023-with-7-growth-expected-in-2024",
+  "lastUpdated": "2026-06-28",
+  "categories": [
+    {
+      "id": "gambling-disorder-treatment",
+      "titleKey": "categories.gambling.treatment.title",
+      "unitLabelKey": "categories.gambling.treatment.unit",
+      "symbol": "cross",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 9000,
+      "sources": [
+        {
+          "name": "Rodriguez-Monguio et al. — Economic burden of pathological gambling (Massachusetts All-Payer Claims), J Addict Med",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29068825/",
+          "year": 2018
+        }
+      ],
+      "methodology": "Approximate mean annual healthcare cost (~USD 9,000) for one person with a gambling (pathological gambling) disorder, from US all-payer-claims data (Massachusetts; 4-year mean ~$9,166)."
+    },
+    {
+      "id": "permanent-supportive-housing",
+      "titleKey": "categories.gambling.housing.title",
+      "unitLabelKey": "categories.gambling.housing.unit",
+      "symbol": "roof",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 13000,
+      "sources": [
+        {
+          "name": "Third Door Coalition — Research and Sources (PSH unit-cost compilation: Culhane et al.; CSH)",
+          "url": "https://www.thirddoorcoalition.org/research-and-sources",
+          "year": 2023
+        }
+      ],
+      "methodology": "Approximate annual cost (~USD 13,000) of permanent supportive housing (rent plus support services) for one chronically homeless person; documented US program operating costs run ~$10,000-$18,000/year (Culhane et al.; CSH), per the Third Door Coalition."
+    },
+    {
+      "id": "mental-health-financing-gap",
+      "titleKey": "categories.gambling.mentalHealth.title",
+      "unitLabelKey": "categories.gambling.mentalHealth.unit",
+      "symbol": "coin",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 200000000000,
+      "sources": [
+        {
+          "name": "United for Global Mental Health — US$200 billion financing gap report",
+          "url": "https://unitedgmh.org/newsroom/2023-us200-billion-financing-gap-new-report-calls-for-urgent-investment-in-mental-health-on-world-mental-health-day/",
+          "year": 2023
+        }
+      ],
+      "methodology": "Estimated annual global mental-health financing gap of at least USD 200 billion — the additional yearly investment needed to meet mental-health needs worldwide — per United for Global Mental Health (2023)."
+    },
+    {
+      "id": "suicide-crisis-lifeline",
+      "titleKey": "categories.gambling.lifeline.title",
+      "unitLabelKey": "categories.gambling.lifeline.unit",
+      "symbol": "cross",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 255000000,
+      "sources": [
+        {
+          "name": "HHS — SAMHSA Awards $255 Million to Administer 988 Lifeline",
+          "url": "https://www.hhs.gov/press-room/samhsa-awards-255-million-to-administer-988-lifeline.html",
+          "year": 2026
+        }
+      ],
+      "methodology": "USD 255 million — the US federal award to operate the national 988 Suicide & Crisis Lifeline administrator for roughly one year (annual budget ceiling ~$231M), per SAMHSA/HHS (2026)."
+    },
+    {
+      "id": "world-hunger",
+      "titleKey": "categories.gambling.hunger.title",
+      "unitLabelKey": "categories.gambling.hunger.unit",
+      "symbol": "grain",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 33000000000,
+      "sources": [
+        {
+          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature",
+          "url": "https://www.nature.com/articles/d41586-020-02849-6",
+          "year": 2020
+        }
+      ],
+      "methodology": "Average additional ~USD 33 billion/year ($14B donors + $19B LMIC governments) through 2030 to end hunger (SDG 2), per Ceres2030 (IFPRI/IISD/Cornell)."
+    },
+    {
+      "id": "extreme-poverty",
+      "titleKey": "categories.gambling.poverty.title",
+      "unitLabelKey": "categories.gambling.poverty.unit",
+      "symbol": "coin",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 315000000000,
+      "sources": [
+        {
+          "name": "Our World in Data — Total shortfall from extreme poverty ($3.00/day, 2021 PPP)",
+          "url": "https://ourworldindata.org/grapher/total-shortfall-from-extreme-poverty",
+          "year": 2026
+        },
+        {
+          "name": "World Bank — Poverty, Prosperity, and Planet 2024",
+          "url": "https://www.worldbank.org/en/publication/poverty-prosperity-and-planet",
+          "year": 2024
+        }
+      ],
+      "methodology": "Annual income transfer (poverty gap) to lift everyone above the USD 3.00/day international poverty line (2021 PPP), ~USD 315 billion/year per World Bank PIP / Our World in Data (the Bank retired the $2.15/day line in 2025)."
+    },
+    {
+      "id": "clean-water",
+      "titleKey": "categories.gambling.water.title",
+      "unitLabelKey": "categories.gambling.water.unit",
+      "symbol": "drop",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 37600000000,
+      "sources": [
+        {
+          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
+          "url": "https://openknowledge.worldbank.org/handle/10986/23681",
+          "year": 2016
+        }
+      ],
+      "methodology": "~USD 37.6 billion/year capital investment for universal safely-managed drinking water (SDG 6.1 component), per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # couldhave.world
 
-A multilingual data-journalism landing page that shows global military spending in real time and translates it into ten verifiable humanitarian alternatives.
+A multilingual data-journalism landing page that shows seven major global spending categories in real time and translates each into verifiable humanitarian alternatives.
 
 **Live:** [couldhave.world](https://couldhave.world)
 
@@ -8,24 +8,29 @@ A multilingual data-journalism landing page that shows global military spending 
 
 A single page that:
 
-- Ticks the **projected global military spend for the current year** (based on SIPRI data) live, in real time
-- Shows ten concrete alternatives: cure cancer, eradicate malaria, end world hunger, clean water, schools, child vaccination, eliminate extreme poverty, protect rainforest, transition to renewable energy, fund all UN humanitarian appeals
-- Each alternative comes with a comparison bar (a real progress meter for the year), a symbol matrix, and citations to authoritative sources (WHO, UNICEF, World Bank, Gavi, UN OCHA, UNESCO, IRENA, FAO, Lancet, IFPRI)
+- Ticks the **projected annual spend** for the selected spending category live, in real time
+- Offers **7 spending tabs**: AI infrastructure, war, tobacco, fossil fuels, food waste, advertising, gambling — each backed by SIPRI/IPCC/WHO/industry authoritative data
+- For each tab, shows **6–10 concrete humanitarian alternatives** — cure cancer, eradicate malaria, end world hunger, clean water, schools, child vaccination, eliminate extreme poverty, protect rainforest, and more — with a comparison bar, a symbol matrix, and citations
 - Available in **English, Spanish, German, French**
 - Fully static, no backend, all data open and auditable in this repo
 
 ## Methodology
 
-The counter projects this year's total military spending from the most recent SIPRI actual figures (currently 2024) compounded by the trailing 5-year average growth rate. It ticks against that yearly total based on seconds elapsed since January 1.
+The counter projects this year's total spending for the active tab from the most recent authoritative figures, compounded by a trailing average growth rate where applicable. It ticks against the yearly total based on seconds elapsed since January 1.
 
-Each humanitarian alternative is computed from authoritative sources documented in `data/categories.json`. Each category has a minimum of two source citations with publication years and a methodology statement explaining what the unit cost represents.
+Each humanitarian alternative is computed from authoritative sources documented in `data/sources/<id>.json`. Each category cites at least one authoritative source with its publication year and carries a methodology statement explaining what the unit cost represents.
 
-All data lives in `data/`:
+All source data lives in `data/sources/`:
 
-- `data/military-spending.json` — SIPRI historical totals + projection
-- `data/categories.json` — 10 humanitarian alternatives with sources and methodology
+- `data/sources/war.json` — SIPRI military spending: historical totals + projection
+- `data/sources/tobacco.json` — global tobacco industry revenue
+- `data/sources/fossil-fuels.json` — IMF-estimated fossil-fuel subsidy flows
+- `data/sources/ai.json` — Big-Five hyperscaler AI/data-centre capex (Epoch AI)
+- `data/sources/food-waste.json` — FAO/UNEP global food-loss cost estimate
+- `data/sources/advertising.json` — global ad-spend (GroupM/Magna)
+- `data/sources/gambling.json` — global gross gaming revenue (H2 Gambling Capital)
 
-Updating the data is a single hand edit followed by a rebuild. SIPRI publishes annually in late April; that's the only refresh cadence the project needs.
+Updating a source is a single hand edit to the relevant JSON file followed by a rebuild.
 
 ## Stack
 
@@ -35,8 +40,8 @@ Updating the data is a single hand edit followed by a rebuild. SIPRI publishes a
 - **Framer Motion** — counter spring smoothing, fade-in, comparison bar reveal, symbol matrix stagger
 - **next/font** — Instrument Serif (display), Inter (body), JetBrains Mono (numbers), all self-hosted from Google Fonts
 - **Built-in dictionary i18n** — `app/[locale]/dictionaries.ts`, no external i18n library
-- **Vitest** — 42 unit tests (projection math, formatters, category metrics, data sanity)
-- **Playwright** — 12 E2E tests (locales, ticking counter, language switcher, axe a11y across all 4 locales)
+- **Vitest** — 121 unit tests (projection math, formatters, category metrics, data sanity across all 7 sources)
+- **Playwright** — 24 E2E tests (locales, ticking counter, source-tab switching, language switcher, axe a11y across all 4 locales)
 - **Biome** — lint + format
 - **satori + @resvg/resvg-js** — daily-refreshable Open Graph image generation at build time
 
@@ -68,13 +73,13 @@ npm run build    # Static export to ./out
 
 ## Updating data
 
-When SIPRI releases its annual fact sheet (late April), edit two values in `data/military-spending.json`:
+When SIPRI releases its annual fact sheet (late April), edit the relevant values in `data/sources/war.json`:
 
 - `projection.basedOnYear` → the new latest actual year
 - `projection.baseAmountUsd` → the new latest actual world total in current USD
 - Optionally re-compute `projection.growthFactor` from the updated 5-year window
 
-Add the new year to `historical[]`, run `npm run build`, and the projected total + per-day + per-second rates update everywhere automatically.
+Add the new year to `historical[]`, run `npm run build`, and the projected total + per-day + per-second rates update everywhere automatically. The same pattern applies to other sources when their upstream data refreshes.
 
 ## Deploy
 
@@ -94,7 +99,7 @@ The nginx vhost lives at `/etc/nginx/sites-available/couldhave-world` on the dro
 
 ### Updating data
 
-When SIPRI publishes a new fact sheet (late April annually), edit `data/military-spending.json`, then rebuild and rsync:
+After editing any `data/sources/*.json`, rebuild and rsync:
 
 ```bash
 npm run build && rsync -avz --delete out/ root@46.101.216.23:/opt/couldhave-world/out/
@@ -114,4 +119,4 @@ Set it under **Settings → Secrets and variables → Actions → New repository
 
 ## License
 
-[MIT](./LICENSE) — do whatever you want with it. Data sources are credited in `data/categories.json` and on the methodology section of the page.
+[MIT](./LICENSE) — do whatever you want with it. Data sources are credited in `data/sources/*.json` and on the methodology section of the page.

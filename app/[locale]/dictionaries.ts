@@ -100,6 +100,33 @@ export const CATEGORY_DICT_KEYS: Record<string, Record<string, string>> = {
     "malaria-eradication": "malaria",
     "us-grid-modernization": "grid",
   },
+  "food-waste": {
+    "rutf-malnutrition": "rutf",
+    "school-meals": "schoolMeals",
+    "emergency-food-ration": "dailyMeal",
+    "smallholder-climate-finance": "smallholder",
+    "world-hunger": "hunger",
+    "clean-water": "water",
+    "food-systems-transformation": "foodSystems",
+  },
+  advertising: {
+    "mental-health-care-gap": "mentalHealth",
+    "education-financing-gap": "education",
+    "who-annual-budget": "who",
+    "malaria-rd-funding": "malariaRd",
+    "child-vaccination": "vaccination",
+    "world-hunger": "hunger",
+    "clean-water": "water",
+  },
+  gambling: {
+    "gambling-disorder-treatment": "treatment",
+    "permanent-supportive-housing": "housing",
+    "mental-health-financing-gap": "mentalHealth",
+    "suicide-crisis-lifeline": "lifeline",
+    "world-hunger": "hunger",
+    "extreme-poverty": "poverty",
+    "clean-water": "water",
+  },
 };
 
 export function getCategoryDictKey(sourceId: string, categoryId: string): string {

@@ -19,7 +19,7 @@
       "label": "Tobacco use",
       "caption": "Lost to tobacco use since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD 1.7 trillion per year — healthcare costs and lost productivity from tobacco use, equivalent to 1.7% of global GDP. Source: WHO 2022 update."
+      "methodology": "USD 1.4 trillion per year — healthcare costs and lost productivity from tobacco use, ~1.8% of global GDP. Source: WHO / Goodchild et al. 2017."
     },
     "fossil-fuels": {
       "label": "Fossil fuels",
@@ -31,7 +31,25 @@
       "label": "AI",
       "caption": "Poured into AI since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD 725 billion projected for 2026 — Big-5 hyperscaler FY26 capex guidance, the vast majority directed at AI compute and data centres. Source: Bloomberg Intelligence, CreditSights, Statista (Q1 2026)."
+      "methodology": "USD 770 billion projected for 2026 — Big-Five hyperscaler (Microsoft, Amazon, Alphabet, Meta, Oracle) AI/data-centre capex. Source: Epoch AI."
+    },
+    "food-waste": {
+      "label": "Food wasted",
+      "caption": "Wasted on uneaten food since January 1, {year}",
+      "rate": "{perDay} per day · {perSecond} per second",
+      "methodology": "USD 1 trillion per year — the direct economic value of food lost and wasted worldwide. Source: FAO Food Wastage Footprint, reaffirmed by UNEP Food Waste Index Report 2024."
+    },
+    "advertising": {
+      "label": "Advertising",
+      "caption": "Spent on advertising since January 1, {year}",
+      "rate": "{perDay} per day · {perSecond} per second",
+      "methodology": "USD 1.3 trillion projected for 2026 — total global advertising spend. Source: WARC Global Ad Trends, December 2025."
+    },
+    "gambling": {
+      "label": "Gambling",
+      "caption": "Gambled away since January 1, {year}",
+      "rate": "{perDay} per day · {perSecond} per second",
+      "methodology": "USD 573 billion per year — global gambling losses (gross gaming revenue). Source: H2 Gambling Capital, 2024."
     }
   },
   "categories": {
@@ -47,7 +65,11 @@
       "malaria": { "title": "Eradicated malaria globally", "unit": "times over" },
       "hunger": { "title": "Ended world hunger", "unit": "years" },
       "water": { "title": "Clean water for everyone", "unit": "years" },
-      "schools": { "title": "Built schools in poor countries", "unit": "school places" },
+      "schools": {
+        "title": "Put children through school",
+        "unit": "children educated",
+        "compareUnit": "One child, full schooling"
+      },
       "vaccination": { "title": "Vaccinated every child on Earth", "unit": "annual campaigns" },
       "poverty": { "title": "Eliminated extreme poverty", "unit": "years" },
       "rainforest": { "title": "Protected all tropical rainforest", "unit": "times over" },
@@ -63,13 +85,13 @@
       },
       "cessation": {
         "title": "Helped people quit smoking",
-        "unit": "people quit",
-        "compareUnit": "One cessation programme"
+        "unit": "people treated",
+        "compareUnit": "One quit attempt"
       },
       "mpower": {
         "title": "Funded WHO MPOWER in entire countries",
         "unit": "country-years",
-        "compareUnit": "One country, fully implemented"
+        "compareUnit": "One country for a year"
       },
       "tb": {
         "title": "Treated tuberculosis worldwide",
@@ -92,9 +114,9 @@
       },
       "retrofit": {
         "title": "Retrofitted the world's buildings to net-zero",
-        "unit": "times over"
+        "unit": "years"
       },
-      "transit": { "title": "Built modern transit in megacities", "unit": "cities" },
+      "transit": { "title": "Built metro lines in megacities", "unit": "metro lines" },
       "storage": { "title": "Installed grid-scale battery storage", "unit": "× 100 GWh" },
       "hunger": { "title": "Ended world hunger", "unit": "years" }
     },
@@ -114,6 +136,68 @@
       "water": { "title": "Clean water for everyone", "unit": "years" },
       "malaria": { "title": "Eradicated malaria globally", "unit": "times over" },
       "grid": { "title": "Modernised the US power grid", "unit": "years" }
+    },
+    "food-waste": {
+      "label": "Food wasted {year}",
+      "rutf": {
+        "title": "Treated children for severe malnutrition",
+        "unit": "children",
+        "compareUnit": "One full course of therapeutic food"
+      },
+      "schoolMeals": {
+        "title": "School meals for a child for a year",
+        "unit": "child-years",
+        "compareUnit": "One child fed for a school year"
+      },
+      "dailyMeal": {
+        "title": "Fed hungry people for a day",
+        "unit": "meals",
+        "compareUnit": "One day of meals"
+      },
+      "smallholder": { "title": "Closed the farmers' climate-finance gap", "unit": "years" },
+      "hunger": { "title": "Ended world hunger", "unit": "years" },
+      "water": { "title": "Clean drinking water for everyone", "unit": "years" },
+      "foodSystems": { "title": "Transformed the world's food systems", "unit": "years" }
+    },
+    "advertising": {
+      "label": "Advertising spend {year}",
+      "mentalHealth": { "title": "Treated depression and anxiety worldwide", "unit": "years" },
+      "education": { "title": "Closed the global education funding gap", "unit": "years" },
+      "who": {
+        "title": "Funded the entire World Health Organization",
+        "unit": "annual budgets",
+        "compareUnit": "One year of the WHO's budget"
+      },
+      "malariaRd": {
+        "title": "Funded all malaria research",
+        "unit": "years of R&D",
+        "compareUnit": "One year of global malaria R&D"
+      },
+      "vaccination": { "title": "Vaccinated every child on Earth", "unit": "years" },
+      "hunger": { "title": "Ended world hunger", "unit": "years" },
+      "water": { "title": "Clean drinking water for everyone", "unit": "years" }
+    },
+    "gambling": {
+      "label": "Gambling losses {year}",
+      "treatment": {
+        "title": "A year of care for problem gamblers",
+        "unit": "people",
+        "compareUnit": "One person, one year of care"
+      },
+      "housing": {
+        "title": "Housed homeless people for a year",
+        "unit": "people",
+        "compareUnit": "One person housed for a year"
+      },
+      "mentalHealth": { "title": "Closed the mental-health funding gap", "unit": "years" },
+      "lifeline": {
+        "title": "Ran national crisis lifelines",
+        "unit": "years",
+        "compareUnit": "One year of a national lifeline"
+      },
+      "hunger": { "title": "Ended world hunger", "unit": "years" },
+      "poverty": { "title": "Lifted everyone out of extreme poverty", "unit": "years" },
+      "water": { "title": "Clean drinking water for everyone", "unit": "years" }
     }
   },
   "methodology": {
