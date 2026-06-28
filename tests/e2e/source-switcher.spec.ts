@@ -37,27 +37,24 @@ test.describe("source tabs", () => {
     expect(url1).toBe(url2);
   });
 
-  // Tab order: war(0), tobacco(1), fossil-fuels(2), ai(3), food-waste(4), advertising(5), gambling(6)
-  // ArrowRight from ai(3) → food-waste(4)
+  // Tab order: ai(0), war(1), tobacco(2), fossil-fuels(3), food-waste(4), advertising(5), gambling(6)
+  // ArrowRight from ai(0) → war(1)
   test("ArrowRight cycles tabs", async ({ page }) => {
     await page.goto("/en/");
     await page.getByRole("tab", { name: /^ai$/i }).focus();
-    await page.keyboard.press("ArrowRight");
-    await expect(page.getByRole("tab", { name: /food.waste/i })).toHaveAttribute(
-      "aria-selected",
-      "true",
-    );
-  });
-
-  // ArrowRight from gambling(6) → war(0) — wrap-around
-  test("ArrowRight wraps from gambling to war", async ({ page }) => {
-    await page.goto("/en/?source=gambling");
-    await page.getByRole("tab", { name: /gambling/i }).focus();
     await page.keyboard.press("ArrowRight");
     await expect(page.getByRole("tab", { name: /^war$/i })).toHaveAttribute(
       "aria-selected",
       "true",
     );
+  });
+
+  // ArrowRight from gambling(6) → ai(0) — wrap-around
+  test("ArrowRight wraps from gambling to ai", async ({ page }) => {
+    await page.goto("/en/?source=gambling");
+    await page.getByRole("tab", { name: /gambling/i }).focus();
+    await page.keyboard.press("ArrowRight");
+    await expect(page.getByRole("tab", { name: /^ai$/i })).toHaveAttribute("aria-selected", "true");
   });
 
   test("reduced-motion disables fade animation", async ({ browser }) => {
@@ -86,7 +83,7 @@ test.describe("source tabs", () => {
     await page.goto("/en/?source=ai");
     await expect(page.getByRole("tab", { name: /^ai$/i })).toHaveAttribute("aria-selected", "true");
     // Hero copy reflects the AI methodology (mentions "Big-5 hyperscaler")
-    await expect(page.getByText(/Big-5 hyperscaler/i)).toBeVisible();
+    await expect(page.getByText(/Big-Five hyperscaler/i)).toBeVisible();
     // First AI category renders.
     await expect(page.getByText(/Repeated the dotcom telecom buildout/i).first()).toBeVisible();
   });
