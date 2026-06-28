@@ -32,6 +32,12 @@
       "caption": "Poured into AI since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
       "methodology": "USD 770 billion projected for 2026 — Big-Five hyperscaler (Microsoft, Amazon, Alphabet, Meta, Oracle) AI/data-centre capex. Source: Epoch AI."
+    },
+    "food-waste": {
+      "label": "Food wasted",
+      "caption": "Wasted on uneaten food since January 1, {year}",
+      "rate": "{perDay} per day · {perSecond} per second",
+      "methodology": "USD 1 trillion per year — the direct economic value of food lost and wasted worldwide. Source: FAO Food Wastage Footprint, reaffirmed by UNEP Food Waste Index Report 2024."
     }
   },
   "categories": {
@@ -118,6 +124,28 @@
       "water": { "title": "Clean water for everyone", "unit": "years" },
       "malaria": { "title": "Eradicated malaria globally", "unit": "times over" },
       "grid": { "title": "Modernised the US power grid", "unit": "years" }
+    },
+    "food-waste": {
+      "label": "Food wasted {year}",
+      "rutf": {
+        "title": "Treated children for severe malnutrition",
+        "unit": "children",
+        "compareUnit": "One full course of therapeutic food"
+      },
+      "schoolMeals": {
+        "title": "School meals for a child for a year",
+        "unit": "child-years",
+        "compareUnit": "One child fed for a school year"
+      },
+      "dailyMeal": {
+        "title": "Fed hungry people for a day",
+        "unit": "meals",
+        "compareUnit": "One day of meals"
+      },
+      "smallholder": { "title": "Closed the farmers' climate-finance gap", "unit": "years" },
+      "hunger": { "title": "Ended world hunger", "unit": "years" },
+      "water": { "title": "Clean drinking water for everyone", "unit": "years" },
+      "foodSystems": { "title": "Transformed the world's food systems", "unit": "years" }
     }
   },
   "methodology": {
