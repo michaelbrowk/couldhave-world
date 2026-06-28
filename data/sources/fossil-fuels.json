@@ -6,7 +6,7 @@
     "totalUsd": 7400000000000,
     "basedOnYear": 2024,
     "baseAmountUsd": 7400000000000,
-    "growthBasis": "Annual figure used as a constant rate; not projected. IMF Working Paper 2025/270: USD 725 billion explicit subsidies (undercharging for supply costs) plus USD 6.7 trillion implicit subsidies (undercharging for environmental and air-pollution externalities), 2024 data, totalling ~7.1% of global GDP."
+    "growthBasis": "Annual figure used as a constant rate; not projected. IMF Working Paper 2025/270: USD 725 billion explicit subsidies (undercharging for supply costs) plus USD 6.7 trillion implicit subsidies (undercharging for environmental and air-pollution externalities), 2024 data, totalling ~6.4% of global GDP."
   },
   "source": "IMF Working Paper 2025/270 — Underpriced and Overused: Fossil Fuel Subsidies Data 2025 Update",
   "sourceUrl": "https://www.imf.org/en/publications/wp/issues/2025/12/20/underpriced-and-overused-fossil-fuel-subsidies-data-2025-update-572729",

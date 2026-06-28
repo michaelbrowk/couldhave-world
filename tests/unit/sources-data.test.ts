@@ -35,9 +35,9 @@ describe("data/sources/tobacco.json", () => {
     expect(parsed.id).toBe("tobacco");
   });
 
-  it("uses a flat $1.7T/year (no growth)", () => {
+  it("uses a flat $1.4T/year (no growth)", () => {
     const parsed = SourceSchema.parse(tobaccoJson);
-    expect(parsed.projection.totalUsd).toBe(1_700_000_000_000);
+    expect(parsed.projection.totalUsd).toBe(1_400_000_000_000);
     expect(parsed.projection.totalUsd).toBe(parsed.projection.baseAmountUsd);
     expect(parsed.projection.growthFactor).toBeUndefined();
   });

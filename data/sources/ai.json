@@ -3,22 +3,22 @@
   "labelKey": "sources.ai.label",
   "currentYear": 2026,
   "projection": {
-    "totalUsd": 725000000000,
+    "totalUsd": 770000000000,
     "basedOnYear": 2025,
-    "baseAmountUsd": 380000000000,
-    "growthFactor": 1.908,
-    "growthBasis": "Year-over-year growth from basedOnYear (2025) to currentYear (2026) reflects raised FY26 capex guidance announced during Q1 2026 hyperscaler earnings season. Aggregate Big-5 capex (Microsoft, Alphabet, Meta, Amazon, Oracle) of approximately USD 725 billion for 2026, the vast majority directed at AI compute, data centres, and networking. Sources: Bloomberg Intelligence, CreditSights, and Statista 2026-Q1 estimates. Historical entries reflect aggregate Big-5 hyperscaler capital expenditure as reported in 10-K filings, rounded to the nearest USD 5 billion."
+    "baseAmountUsd": 445000000000,
+    "growthFactor": 1.7303,
+    "growthBasis": "Year-over-year growth from basedOnYear (2025) to currentYear (2026) based on Epoch AI exponential-growth model fitted to quarterly SEC filing data. Aggregate Big-5 capex (Microsoft, Amazon, Alphabet, Meta, Oracle) of approximately USD 770 billion projected for 2026, the vast majority directed at AI compute, data centres, and networking. Source: Epoch AI. Historical entries reflect aggregate Big-5 hyperscaler capital expenditure derived from company 10-K filings."
   },
   "historical": [
-    { "year": 2025, "totalUsd": 380000000000, "actual": true },
-    { "year": 2024, "totalUsd": 245000000000, "actual": true },
-    { "year": 2023, "totalUsd": 200000000000, "actual": true },
-    { "year": 2022, "totalUsd": 165000000000, "actual": true },
-    { "year": 2021, "totalUsd": 145000000000, "actual": true },
-    { "year": 2020, "totalUsd": 110000000000, "actual": true }
+    { "year": 2025, "totalUsd": 445000000000, "actual": true },
+    { "year": 2024, "totalUsd": 259000000000, "actual": true },
+    { "year": 2023, "totalUsd": 148000000000, "actual": true },
+    { "year": 2022, "totalUsd": 162000000000, "actual": true },
+    { "year": 2021, "totalUsd": 130000000000, "actual": true },
+    { "year": 2020, "totalUsd": 95000000000, "actual": true }
   ],
-  "source": "Q1 2026 hyperscaler earnings — Bloomberg Intelligence, CreditSights, Statista compilation",
-  "sourceUrl": "https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html",
+  "source": "Epoch AI — Hyperscaler capex has quadrupled since GPT-4's release",
+  "sourceUrl": "https://epoch.ai/data-insights/hyperscaler-capex-trend",
   "lastUpdated": "2026-05-09",
   "categories": [
     {

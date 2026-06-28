@@ -71,7 +71,7 @@ describe("ai source", () => {
     expect(ai.id).toBe("ai");
     expect(ai.currentYear).toBe(2026);
     expect(ai.categories.length).toBeGreaterThanOrEqual(8);
-    expect(ai.projection.totalUsd).toBe(725_000_000_000);
+    expect(ai.projection.totalUsd).toBe(770_000_000_000);
   });
 });
 

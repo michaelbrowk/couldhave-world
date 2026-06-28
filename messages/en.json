@@ -19,7 +19,7 @@
       "label": "Tobacco use",
       "caption": "Lost to tobacco use since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD 1.7 trillion per year — healthcare costs and lost productivity from tobacco use, equivalent to 1.7% of global GDP. Source: WHO 2022 update."
+      "methodology": "USD 1.4 trillion per year — healthcare costs and lost productivity from tobacco use, ~1.8% of global GDP. Source: WHO / Goodchild et al. 2017."
     },
     "fossil-fuels": {
       "label": "Fossil fuels",
@@ -31,7 +31,7 @@
       "label": "AI",
       "caption": "Poured into AI since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD 725 billion projected for 2026 — Big-5 hyperscaler FY26 capex guidance, the vast majority directed at AI compute and data centres. Source: Bloomberg Intelligence, CreditSights, Statista (Q1 2026)."
+      "methodology": "USD 770 billion projected for 2026 — Big-Five hyperscaler (Microsoft, Amazon, Alphabet, Meta, Oracle) AI/data-centre capex. Source: Epoch AI."
     }
   },
   "categories": {

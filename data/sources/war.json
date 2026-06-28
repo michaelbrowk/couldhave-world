@@ -7,7 +7,7 @@
     "basedOnYear": 2025,
     "baseAmountUsd": 2887000000000,
     "growthFactor": 1.0783,
-    "growthBasis": "5-data-point geometric mean of annual nominal growth, SIPRI 2020-2025 (5 compounding years), then compounded 1 year from basedOnYear (2025) to currentYear (2026). SIPRI Trends in World Military Expenditure, 2025 was published on 2026-04-27."
+    "growthBasis": "5-data-point geometric mean of annual nominal growth, SIPRI 2020-2025 (5 compounding years), then compounded 1 year from basedOnYear (2025) to currentYear (2026). SIPRI Trends in World Military Expenditure, 2025 was published on 2026-04-27. (2025 nominal growth decelerated to ~6.2%, so this geometric-mean extrapolation is upper-leaning)."
   },
   "historical": [
     { "year": 2025, "totalUsd": 2887000000000, "actual": true },

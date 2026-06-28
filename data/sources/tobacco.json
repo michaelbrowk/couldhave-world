@@ -3,12 +3,12 @@
   "labelKey": "sources.tobacco.label",
   "currentYear": 2026,
   "projection": {
-    "totalUsd": 1700000000000,
-    "basedOnYear": 2022,
-    "baseAmountUsd": 1700000000000,
-    "growthBasis": "Annual figure used as a constant rate; not projected. WHO 2022 estimate: USD 1.7 trillion per year in healthcare costs and lost productivity, equivalent to 1.7% of global GDP."
+    "totalUsd": 1400000000000,
+    "basedOnYear": 2012,
+    "baseAmountUsd": 1400000000000,
+    "growthBasis": "Annual figure used as a constant rate; not projected. WHO estimate (Goodchild et al. 2017, 2012 data): ~USD 1.4 trillion/year in healthcare costs and lost productivity, equivalent to 1.8% of global GDP."
   },
-  "source": "WHO — Economic cost of tobacco use, 2022 update",
+  "source": "WHO / Goodchild, Nargis & d'Espaignet, Tobacco Control 2017 (2012 data)",
   "sourceUrl": "https://www.who.int/health-topics/tobacco",
   "lastUpdated": "2026-04-29",
   "categories": [
