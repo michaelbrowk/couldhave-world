@@ -1,3 +1,4 @@
+import advertisingJson from "@/data/sources/advertising.json";
 import aiJson from "@/data/sources/ai.json";
 import fossilJson from "@/data/sources/fossil-fuels.json";
 import foodWasteJson from "@/data/sources/food-waste.json";
@@ -10,6 +11,7 @@ const tobaccoSource: Source = SourceSchema.parse(tobaccoJson);
 const fossilSource: Source = SourceSchema.parse(fossilJson);
 const aiSource: Source = SourceSchema.parse(aiJson);
 const foodWasteSource: Source = SourceSchema.parse(foodWasteJson);
+const advertisingSource: Source = SourceSchema.parse(advertisingJson);
 
 export const SOURCES: Record<SourceId, Source> = {
   ai: aiSource,
@@ -17,6 +19,7 @@ export const SOURCES: Record<SourceId, Source> = {
   tobacco: tobaccoSource,
   "fossil-fuels": fossilSource,
   "food-waste": foodWasteSource,
+  advertising: advertisingSource,
 };
 
 export const SOURCES_LIST: readonly Source[] = SOURCE_IDS.map((id) => SOURCES[id]);

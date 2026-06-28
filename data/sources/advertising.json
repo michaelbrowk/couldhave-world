@@ -1,0 +1,148 @@
+{
+  "id": "advertising",
+  "labelKey": "sources.advertising.label",
+  "currentYear": 2026,
+  "projection": {
+    "totalUsd": 1300000000000,
+    "basedOnYear": 2026,
+    "baseAmountUsd": 1300000000000,
+    "growthBasis": "Annual figure used as a constant rate; not projected. WARC Global Ad Trends (December 2025) forecasts ~USD 1.3 trillion in global advertising spend for 2026."
+  },
+  "source": "WARC — Global Ad Trends (December 2025)",
+  "sourceUrl": "https://www.warc.com/content/feed/advertising-grew-89-in-2025--but-three-companies-took-most-of-the-spoils/en-GB/11199",
+  "lastUpdated": "2026-06-28",
+  "categories": [
+    {
+      "id": "mental-health-care-gap",
+      "titleKey": "categories.advertising.mentalHealth.title",
+      "unitLabelKey": "categories.advertising.mentalHealth.unit",
+      "symbol": "cross",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 9800000000,
+      "sources": [
+        {
+          "name": "WHO — Investing in treatment for depression and anxiety leads to fourfold return",
+          "url": "https://www.who.int/news/item/13-04-2016-investing-in-treatment-for-depression-and-anxiety-leads-to-fourfold-return",
+          "year": 2016
+        },
+        {
+          "name": "Chisholm et al. — Scaling-up treatment of depression and anxiety, The Lancet Psychiatry",
+          "url": "https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(16)30024-4/fulltext",
+          "year": 2016
+        }
+      ],
+      "methodology": "Approximate annual cost (~USD 9.8 billion) of scaling up treatment for depression and anxiety — the WHO/World Bank estimate of US$147 billion over 2016-2030 across 36 countries (~80% of the global burden of these disorders), divided across the 15-year window (Chisholm et al., Lancet Psychiatry 2016)."
+    },
+    {
+      "id": "education-financing-gap",
+      "titleKey": "categories.advertising.education.title",
+      "unitLabelKey": "categories.advertising.education.unit",
+      "symbol": "roof",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 97000000000,
+      "sources": [
+        {
+          "name": "UNESCO Global Education Monitoring Report — annual financing gap of almost $100 billion",
+          "url": "https://www.unesco.org/en/articles/annual-financing-gap-education-almost-100-billion",
+          "year": 2023
+        },
+        {
+          "name": "UNESCO GEM Report — Can countries afford their national SDG 4 benchmarks? (full report)",
+          "url": "https://unesdoc.unesco.org/ark:/48223/pf0000385004",
+          "year": 2023
+        }
+      ],
+      "methodology": "Average annual financing gap of ~USD 97 billion (2023-2030) for 79 low- and lower-middle-income countries to reach their national SDG 4 targets (universal pre-primary, primary and secondary education), per the UNESCO Global Education Monitoring Report."
+    },
+    {
+      "id": "who-annual-budget",
+      "titleKey": "categories.advertising.who.title",
+      "unitLabelKey": "categories.advertising.who.unit",
+      "symbol": "coin",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 3417000000,
+      "sources": [
+        {
+          "name": "WHO — Programme Budget (accountability)",
+          "url": "https://www.who.int/about/accountability/budget",
+          "year": 2024
+        },
+        {
+          "name": "WHO — Programme budget 2024-2025, resolution WHA76.1",
+          "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA76/A76_R1-en.pdf",
+          "year": 2023
+        }
+      ],
+      "methodology": "One year of the World Health Organization's entire approved programme budget: the 2024-2025 biennium budget of US$6.83 billion divided by two, ~USD 3.42 billion/year (WHO Programme Budget 2024-2025, resolution WHA76.1)."
+    },
+    {
+      "id": "malaria-rd-funding",
+      "titleKey": "categories.advertising.malariaRd.title",
+      "unitLabelKey": "categories.advertising.malariaRd.unit",
+      "symbol": "ray",
+      "scaleHint": "perUnit",
+      "unitCostUsd": 673000000,
+      "sources": [
+        {
+          "name": "PATH / Policy Cures Research — Bridging the gaps in malaria R&D",
+          "url": "https://www.path.org/our-impact/media-center/new-report-finds-100-million-shortfall-annual-global-investments-malaria-research-and-development/",
+          "year": 2018
+        }
+      ],
+      "methodology": "Average annual global investment in malaria research and development (~USD 673 million, 2014-2016 average; basic research plus product development), per PATH / Policy Cures Research 'Bridging the gaps in malaria R&D' — about US$100 million short of target."
+    },
+    {
+      "id": "child-vaccination",
+      "titleKey": "categories.advertising.vaccination.title",
+      "unitLabelKey": "categories.advertising.vaccination.unit",
+      "symbol": "drop",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 27000000000,
+      "sources": [
+        {
+          "name": "Sriudomporn et al. — Achieving Immunization Agenda 2030 coverage targets for 14 pathogens, Vaccine X",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2590136222001164",
+          "year": 2022
+        },
+        {
+          "name": "Gavi, The Vaccine Alliance — Resource Mobilisation Process",
+          "url": "https://www.gavi.org/investing-gavi/funding/resource-mobilisation-process",
+          "year": 2024
+        }
+      ],
+      "methodology": "Estimated ~USD 27 billion per year — the full annual cost of delivering a routine immunisation schedule against 14 pathogens to every child across 194 countries (~USD 269.8 billion total over 2021-2030, vaccine product plus delivery), per Sriudomporn et al., Vaccine X 2022."
+    },
+    {
+      "id": "world-hunger",
+      "titleKey": "categories.advertising.hunger.title",
+      "unitLabelKey": "categories.advertising.hunger.unit",
+      "symbol": "grain",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 33000000000,
+      "sources": [
+        {
+          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature",
+          "url": "https://www.nature.com/articles/d41586-020-02849-6",
+          "year": 2020
+        }
+      ],
+      "methodology": "Average additional ~USD 33 billion/year ($14B donors + $19B LMIC governments) through 2030 to end hunger (SDG 2), per Ceres2030 (IFPRI/IISD/Cornell)."
+    },
+    {
+      "id": "clean-water",
+      "titleKey": "categories.advertising.water.title",
+      "unitLabelKey": "categories.advertising.water.unit",
+      "symbol": "drop",
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 37600000000,
+      "sources": [
+        {
+          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
+          "url": "https://openknowledge.worldbank.org/handle/10986/23681",
+          "year": 2016
+        }
+      ],
+      "methodology": "~USD 37.6 billion/year capital investment for universal safely-managed drinking water (SDG 6.1 component), per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
+    }
+  ]
+}

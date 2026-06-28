@@ -109,6 +109,15 @@ export const CATEGORY_DICT_KEYS: Record<string, Record<string, string>> = {
     "clean-water": "water",
     "food-systems-transformation": "foodSystems",
   },
+  advertising: {
+    "mental-health-care-gap": "mentalHealth",
+    "education-financing-gap": "education",
+    "who-annual-budget": "who",
+    "malaria-rd-funding": "malariaRd",
+    "child-vaccination": "vaccination",
+    "world-hunger": "hunger",
+    "clean-water": "water",
+  },
 };
 
 export function getCategoryDictKey(sourceId: string, categoryId: string): string {

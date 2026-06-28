@@ -53,7 +53,14 @@ describe("SourceSchema", () => {
   });
 
   it("exposes the canonical id list", () => {
-    expect(SOURCE_IDS).toEqual(["war", "tobacco", "fossil-fuels", "ai", "food-waste"]);
+    expect(SOURCE_IDS).toEqual([
+      "war",
+      "tobacco",
+      "fossil-fuels",
+      "ai",
+      "food-waste",
+      "advertising",
+    ]);
   });
 });
 

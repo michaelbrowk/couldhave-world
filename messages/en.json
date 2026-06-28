@@ -38,6 +38,12 @@
       "caption": "Wasted on uneaten food since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
       "methodology": "USD 1 trillion per year — the direct economic value of food lost and wasted worldwide. Source: FAO Food Wastage Footprint, reaffirmed by UNEP Food Waste Index Report 2024."
+    },
+    "advertising": {
+      "label": "Advertising",
+      "caption": "Spent on advertising since January 1, {year}",
+      "rate": "{perDay} per day · {perSecond} per second",
+      "methodology": "USD 1.3 trillion projected for 2026 — total global advertising spend. Source: WARC Global Ad Trends, December 2025."
     }
   },
   "categories": {
@@ -146,6 +152,24 @@
       "hunger": { "title": "Ended world hunger", "unit": "years" },
       "water": { "title": "Clean drinking water for everyone", "unit": "years" },
       "foodSystems": { "title": "Transformed the world's food systems", "unit": "years" }
+    },
+    "advertising": {
+      "label": "Advertising spend {year}",
+      "mentalHealth": { "title": "Treated depression and anxiety worldwide", "unit": "years" },
+      "education": { "title": "Closed the global education funding gap", "unit": "years" },
+      "who": {
+        "title": "Funded the entire World Health Organization",
+        "unit": "annual budgets",
+        "compareUnit": "One year of the WHO's budget"
+      },
+      "malariaRd": {
+        "title": "Funded all malaria research",
+        "unit": "years of R&D",
+        "compareUnit": "One year of global malaria R&D"
+      },
+      "vaccination": { "title": "Vaccinated every child on Earth", "unit": "years" },
+      "hunger": { "title": "Ended world hunger", "unit": "years" },
+      "water": { "title": "Clean drinking water for everyone", "unit": "years" }
     }
   },
   "methodology": {
