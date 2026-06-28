@@ -26,7 +26,7 @@
           "year": 2024
         }
       ],
-      "methodology": "Approximate capital cost to install one gigawatt (1 GW) of new utility-scale solar PV capacity, per IRENA's global weighted-average ~USD 0.8-1.1 billion per GW installed."
+      "methodology": "Capital cost to install 1 GW of utility-scale solar PV. IRENA's 2023 global weighted-average was $758/kW, so ~$1B installs ~1.3 GW — enough to power ~300,000 European homes."
     },
     {
       "id": "rainforest-protection",
@@ -143,8 +143,8 @@
       "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "Nature Food / IFPRI — Investment needs to end hunger by 2030",
-          "url": "https://www.nature.com/articles/s43016-020-00181-w",
+          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature 2020",
+          "url": "https://www.nature.com/articles/d41586-020-02849-6",
           "year": 2020
         }
       ],

@@ -134,8 +134,8 @@
       "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "Nature Food / IFPRI — Investment needs to end hunger by 2030",
-          "url": "https://www.nature.com/articles/s43016-020-00181-w",
+          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature 2020",
+          "url": "https://www.nature.com/articles/d41586-020-02849-6",
           "year": 2020
         }
       ],
@@ -157,7 +157,7 @@
       "unitLabelKey": "categories.ai.water.unit",
       "symbol": "drop",
       "scaleHint": "annualNeed",
-      "unitCostUsd": 114000000000,
+      "unitCostUsd": 37600000000,
       "sources": [
         {
           "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
@@ -165,7 +165,7 @@
           "year": 2016
         }
       ],
-      "methodology": "Annual capital investment of approximately USD 114 billion needed through 2030 to achieve universal safely managed drinking water, per the World Bank's SDG 6 costing study (Hutton & Varughese 2016).",
+      "methodology": "Annual capital investment of ~USD 37.6 billion needed through 2030 for universal safely-managed drinking water (SDG 6.1 component), per the World Bank's SDG 6 costing study (Hutton & Varughese 2016).",
       "aiBenefit": {
         "text": "UK utilities deploying AI satellite leak-detection (Origin Tech) have prevented over 3 billion litres of water loss across 12 water companies.",
         "sources": [
@@ -186,12 +186,17 @@
       "unitCostUsd": 90000000000,
       "sources": [
         {
-          "name": "The Lancet Commission on Malaria Eradication",
-          "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(19)31139-0/fulltext",
-          "year": 2019
+          "name": "Gates & Chambers — From Aspiration to Action: What Will It Take to End Malaria? (2015)",
+          "url": "https://www.gatesfoundation.org/ideas/publications/2015/10/from-aspiration-to-action",
+          "year": 2015
+        },
+        {
+          "name": "WHO — Global Technical Strategy for Malaria 2016–2030 (2021 update)",
+          "url": "https://www.who.int/publications/i/item/9789240031357",
+          "year": 2021
         }
       ],
-      "methodology": "Total cumulative additional global investment required to eradicate malaria by 2030 (approximately USD 90-120 billion), per the Lancet Commission's modelled additional funding on top of current spending.",
+      "methodology": "Total additional investment to eradicate malaria (~USD 90-120B), per Gates & Chambers 2015 'From Aspiration to Action' and WHO Global Technical Strategy; WHO targets eradication by 2050.",
       "aiBenefit": {
         "text": "Insilico's Pharma.AI took a novel pan-fibrotic drug from idea to Phase II clinical trials in under 30 months — historically a 5+ year process.",
         "sources": [

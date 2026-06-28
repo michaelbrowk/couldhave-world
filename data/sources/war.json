@@ -51,17 +51,17 @@
       "unitCostUsd": 90000000000,
       "sources": [
         {
-          "name": "The Lancet Commission on Malaria Eradication",
-          "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(19)31139-0/fulltext",
-          "year": 2019
+          "name": "Gates & Chambers — From Aspiration to Action: What Will It Take to End Malaria? (2015)",
+          "url": "https://www.gatesfoundation.org/ideas/publications/2015/10/from-aspiration-to-action",
+          "year": 2015
         },
         {
-          "name": "WHO Global Technical Strategy for Malaria 2016-2030 (2021 update)",
+          "name": "WHO — Global Technical Strategy for Malaria 2016–2030 (2021 update)",
           "url": "https://www.who.int/publications/i/item/9789240031357",
           "year": 2021
         }
       ],
-      "methodology": "Total cumulative additional global investment required to eradicate malaria by 2030, per the Lancet Commission's modelled additional funding of roughly USD 90-120 billion on top of current spending."
+      "methodology": "Total additional investment to eradicate malaria (~USD 90-120B), per Gates & Chambers 2015 'From Aspiration to Action' and WHO Global Technical Strategy; WHO targets eradication by 2050."
     },
     {
       "id": "world-hunger",
@@ -72,8 +72,8 @@
       "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "Nature Food / IFPRI — Investment needs to end hunger by 2030",
-          "url": "https://www.nature.com/articles/s43016-020-00181-w",
+          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature 2020",
+          "url": "https://www.nature.com/articles/d41586-020-02849-6",
           "year": 2020
         }
       ],
@@ -85,20 +85,15 @@
       "unitLabelKey": "categories.war.water.unit",
       "symbol": "drop",
       "scaleHint": "annualNeed",
-      "unitCostUsd": 114000000000,
+      "unitCostUsd": 37600000000,
       "sources": [
         {
           "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
           "url": "https://openknowledge.worldbank.org/handle/10986/23681",
           "year": 2016
-        },
-        {
-          "name": "WHO / UNICEF JMP — Progress on household drinking water, sanitation and hygiene 2000-2022",
-          "url": "https://washdata.org/reports/jmp-2023-wash-households",
-          "year": 2023
         }
       ],
-      "methodology": "Annual capital investment of approximately USD 114 billion needed through 2030 to achieve universal safely managed drinking water, per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
+      "methodology": "Annual capital investment of ~USD 37.6 billion needed through 2030 for universal safely-managed drinking water (SDG 6.1 component), per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
     },
     {
       "id": "schools-lmic",
@@ -127,20 +122,20 @@
       "unitLabelKey": "categories.war.vaccination.unit",
       "symbol": "drop",
       "scaleHint": "annualNeed",
-      "unitCostUsd": 9500000000,
+      "unitCostUsd": 27000000000,
       "sources": [
+        {
+          "name": "Sriudomporn, Watts, Sim et al. — Achieving Immunization Agenda 2030 coverage targets for 14 pathogens: Projected product and immunization delivery costs for 194 Countries, 2021–2030 (Vaccine: X 2022)",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2590136222001164",
+          "year": 2022
+        },
         {
           "name": "Gavi, The Vaccine Alliance — Resource Mobilisation Process",
           "url": "https://www.gavi.org/investing-gavi/funding/resource-mobilisation-process",
           "year": 2024
-        },
-        {
-          "name": "WHO — Immunization Agenda 2030",
-          "url": "https://www.who.int/teams/immunization-vaccines-and-biologicals/strategies/ia2030",
-          "year": 2024
         }
       ],
-      "methodology": "Estimated annual global cost of delivering a full routine childhood immunization schedule to every child (approximately USD 9-10 billion), combining Gavi replenishment figures and WHO IA2030 costing."
+      "methodology": "Estimated ~USD 27 billion/year to deliver a full routine immunisation schedule to every child globally, per the IA2030 costing (Sriudomporn, Watts, Sim et al., Vaccine: X 2022)."
     },
     {
       "id": "extreme-poverty",
@@ -148,20 +143,20 @@
       "unitLabelKey": "categories.war.poverty.unit",
       "symbol": "coin",
       "scaleHint": "annualNeed",
-      "unitCostUsd": 100000000000,
+      "unitCostUsd": 315000000000,
       "sources": [
         {
-          "name": "World Bank — Poverty and Shared Prosperity 2022: Correcting Course",
-          "url": "https://www.worldbank.org/en/publication/poverty-and-shared-prosperity",
-          "year": 2022
+          "name": "Our World in Data — Total shortfall from the $3/day poverty line",
+          "url": "https://ourworldindata.org/grapher/total-shortfall-poverty-line",
+          "year": 2024
         },
         {
-          "name": "Our World in Data — Extreme poverty",
-          "url": "https://ourworldindata.org/extreme-poverty",
+          "name": "World Bank — Poverty, Prosperity, and Planet 2024",
+          "url": "https://www.worldbank.org/en/publication/poverty-prosperity-and-planet",
           "year": 2024
         }
       ],
-      "methodology": "Annual income transfer required to lift everyone above the USD 2.15/day international poverty line (the 'poverty gap'), estimated at roughly USD 100 billion per year using World Bank PIP data."
+      "methodology": "Annual income transfer (poverty gap) to lift everyone above the USD 3.00/day international poverty line (2021 PPP), ~USD 315 billion/year per World Bank PIP / Our World in Data."
     },
     {
       "id": "rainforest-protection",
@@ -203,7 +198,7 @@
           "year": 2023
         }
       ],
-      "methodology": "Approximate capital cost to install one gigawatt (1 GW) of new utility-scale solar PV capacity, per IRENA's Renewable Power Generation Costs in 2023 (global weighted-average ~USD 0.8-1.1 billion per GW installed). 1 GW powers roughly 200,000 European homes."
+      "methodology": "Capital cost to install 1 GW of utility-scale solar PV. IRENA's 2023 global weighted-average was $758/kW, so ~$1B installs ~1.3 GW — enough to power ~300,000 European homes."
     },
     {
       "id": "humanitarian-aid",
