@@ -59,16 +59,24 @@ export function SourceTabs({ items, activeId, onSelect, ariaLabel }: Props) {
                 const delta = e.key === "ArrowRight" ? 1 : -1;
                 const next = items[(idx + delta + items.length) % items.length];
                 if (next) onSelect(next.id);
+              } else if (e.key === "Home") {
+                e.preventDefault();
+                const first = items[0];
+                if (first) onSelect(first.id);
+              } else if (e.key === "End") {
+                e.preventDefault();
+                const last = items[items.length - 1];
+                if (last) onSelect(last.id);
               }
             }}
             className={[
               "font-mono text-xs md:text-sm uppercase tracking-[0.18em] whitespace-nowrap",
               "transition-[color,background-color,border-color,transform] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]",
               "active:scale-[0.97]",
-              "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]/30 focus-visible:rounded-full md:focus-visible:rounded-sm",
+              "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]/70 focus-visible:rounded-full md:focus-visible:rounded-none",
               isActive
                 ? "rounded-full px-3 py-1.5 bg-[var(--text-primary)] text-[var(--bg)] md:bg-transparent md:text-[var(--text-primary)] md:rounded-none md:px-0 md:py-3 md:border-b-2 md:border-[var(--text-primary)] md:-mb-px"
-                : "rounded-full px-3 py-1.5 border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] md:border-0 md:border-b-2 md:border-transparent md:rounded-none md:px-0 md:py-3",
+                : "rounded-full px-3 py-1.5 border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-primary)] md:border-0 md:border-b-2 md:border-transparent md:rounded-none md:px-0 md:py-3",
             ].join(" ")}
           >
             {item.label}
