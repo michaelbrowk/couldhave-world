@@ -37,7 +37,7 @@
       ],
       "methodology": "Aggregate US telecom-equipment capital investment 1996-2001 — approximately USD 500 billion in nominal dollars, financed largely with debt. The buildout that preceded the 2001 telecom bust.",
       "aiBenefit": {
-        "text": "After the bust, only 2.7% of laid fibre was lit. The 'dark fibre' glut became the backbone of broadband, cloud, and video streaming for the next 20 years.",
+        "text": "After the bust, only 2.7% of laid fibre was actually in use (≈90% sat dark, ~10% lit). The 'dark fibre' glut became the backbone of broadband, cloud, and video streaming for the next 20 years.",
         "sources": [
           {
             "name": "Dark fibre — Wikipedia",
@@ -63,7 +63,7 @@
       ],
       "methodology": "Estimated 2025 global generative-AI software/app-layer revenue — order-of-magnitude approximately USD 50 billion (analyst estimates range ~$22B–$104B across Grand View, Statista ~$67B, MarketsAndMarkets, Fortune Business Insights). Capex-to-revenue ratio is one of the most cited single bubble indicators.",
       "aiBenefit": {
-        "text": "Generative-AI software revenue is projected to grow at ~40% CAGR through 2032 — faster than any prior technology wave.",
+        "text": "The generative-AI market is projected to grow at 42% CAGR through 2032 — faster than any prior technology wave.",
         "sources": [
           {
             "name": "Statista Market Forecast — Generative AI worldwide revenue",
@@ -141,7 +141,7 @@
       ],
       "methodology": "Average additional annual public expenditure (approximately USD 33 billion) required from donors and low/middle-income governments through 2030 to end hunger (SDG 2), per Ceres2030 / IFPRI models published in Nature Food.",
       "aiBenefit": {
-        "text": "The UN World Food Programme's HungerMap LIVE uses machine learning to predict food crises up to 60 days ahead, across 50+ countries.",
+        "text": "The UN World Food Programme's HungerMap LIVE uses machine learning to predict food crises up to 90 days ahead, across 50+ countries.",
         "sources": [
           {
             "name": "WFP — HungerMap LIVE press release",
@@ -198,7 +198,7 @@
       ],
       "methodology": "Total additional investment to eradicate malaria (~USD 90-120B), per Gates & Chambers 2015 'From Aspiration to Action' and WHO Global Technical Strategy; WHO targets eradication by 2050.",
       "aiBenefit": {
-        "text": "Insilico's Pharma.AI took a novel pan-fibrotic drug from idea to Phase II clinical trials in under 30 months — historically a 5+ year process.",
+        "text": "Insilico's Pharma.AI took a novel pan-fibrotic drug from idea to Phase I clinical trials in under 30 months — historically a 5+ year process.",
         "sources": [
           {
             "name": "Insilico Medicine — First Generative AI Drug Begins Phase II Trials",
@@ -224,7 +224,7 @@
       ],
       "methodology": "Estimated annual capital investment required to modernise the US power grid (transmission upgrades, distribution hardening, interconnection-queue clearing) — approximately USD 167 billion per year over 30 years toward a net-zero-aligned grid, per Princeton REPEAT and DOE Grid Deployment Office estimates.",
       "aiBenefit": {
-        "text": "DeepMind's reinforcement-learning controller cut Google data-centre cooling energy by 40% — the same approach is now being applied to grid optimisation.",
+        "text": "DeepMind's machine-learning system (deep neural networks) cut Google data-centre cooling energy by up to 40% — the same approach is now being applied to grid optimisation.",
         "sources": [
           {
             "name": "DeepMind blog — Reduces Google Data Centre Cooling Bill by 40%",

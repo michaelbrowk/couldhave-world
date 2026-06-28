@@ -85,4 +85,11 @@ describe("ai aiBenefit field", () => {
       expect(cat.aiBenefit?.sources[0]?.url).toMatch(/^https:\/\//);
     }
   });
+
+  it("insilico benefit says Phase I, not Phase II", () => {
+    const ai = SourceSchema.parse(aiJson);
+    const m = ai.categories.find((c) => c.id === "malaria-eradication");
+    expect(m?.aiBenefit?.text).toMatch(/Phase I\b/);
+    expect(m?.aiBenefit?.text).not.toMatch(/Phase II/);
+  });
 });
