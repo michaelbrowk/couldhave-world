@@ -30,17 +30,12 @@
       "unitCostUsd": 60000,
       "sources": [
         {
-          "name": "The Lancet Oncology Commission — Global cancer care costs",
-          "url": "https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(21)00149-2/fulltext",
-          "year": 2021
-        },
-        {
-          "name": "American Cancer Society — Cancer Treatment & Survivorship Facts and Figures",
-          "url": "https://www.cancer.org/research/cancer-facts-statistics/survivor-facts-figures.html",
-          "year": 2022
+          "name": "NCI Cancer Trends Progress Report — Financial Burden of Cancer Care (Mariotto et al. 2020)",
+          "url": "https://progressreport.cancer.gov/after/economic_burden",
+          "year": 2020
         }
       ],
-      "methodology": "Approximate average per-patient cost of a full first-course cancer treatment (surgery, chemotherapy, radiotherapy and follow-up) in a high-income setting, drawn from Lancet Oncology Commission and ACS cost-of-care estimates."
+      "methodology": "Approximate per-patient cost of a full first-course cancer treatment (surgery, chemotherapy, radiotherapy and follow-up) in a US/high-income setting. NCI Cancer Trends Progress Report (Mariotto et al. 2020) reports initial-phase per-patient cost of ~$45,400 in 2020 USD; rounded to ~$60,000 in 2026 USD to capture the full multimodal course including follow-up."
     },
     {
       "id": "malaria-eradication",
@@ -101,20 +96,15 @@
       "unitLabelKey": "categories.war.schools.unit",
       "symbol": "roof",
       "scaleHint": "perUnit",
-      "unitCostUsd": 5000,
+      "unitCostUsd": 5900,
       "sources": [
         {
-          "name": "UNESCO Global Education Monitoring Report — Pricing the right to education",
+          "name": "UNESCO Global Education Monitoring Report — Pricing the right to education (2015)",
           "url": "https://unesdoc.unesco.org/ark:/48223/pf0000232197",
           "year": 2015
-        },
-        {
-          "name": "Global Partnership for Education — Results Report",
-          "url": "https://www.globalpartnership.org/content/results-report-2022",
-          "year": 2022
         }
       ],
-      "methodology": "Approximate per-pupil capital cost (construction plus basic equipment) of creating one new school place in a low- or lower-middle-income country, derived from UNESCO GEM Report and GPE infrastructure costings."
+      "methodology": "Total cost of putting one child through a complete 13-year schooling cycle (pre-primary to upper-secondary) in a low- or lower-middle-income country — approximately USD 5,900 (~$1.25/day × 365 × 13 years), per UNESCO GEM 'Pricing the right to education' (2015). This covers both recurrent and capital costs for one child's full education."
     },
     {
       "id": "child-vaccination",
@@ -206,20 +196,15 @@
       "unitLabelKey": "categories.war.humanitarian.unit",
       "symbol": "coin",
       "scaleHint": "annualNeed",
-      "unitCostUsd": 46400000000,
+      "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "UN OCHA — Global Humanitarian Overview 2024",
-          "url": "https://humanitarianaction.info/document/global-humanitarian-overview-2024",
-          "year": 2023
-        },
-        {
-          "name": "UN OCHA — Global Humanitarian Overview 2023",
-          "url": "https://humanitarianaction.info/document/global-humanitarian-overview-2023",
-          "year": 2022
+          "name": "UN OCHA — Global Humanitarian Overview 2026",
+          "url": "https://humanitarianaction.info/document/global-humanitarian-overview-2026",
+          "year": 2025
         }
       ],
-      "methodology": "Total funding requirement of the UN-coordinated Global Humanitarian Appeal for 2024 (USD 46.4 billion to assist roughly 181 million people), as stated by UN OCHA."
+      "methodology": "Total funding requirement of the UN-coordinated Global Humanitarian Appeal for 2026: USD 33 billion to reach 135 million of the 239 million people in need, per UN OCHA Global Humanitarian Overview 2026 (launched December 2025). The 2026 appeal was deliberately pared back via hyper-prioritisation after the 2025 funding collapse."
     }
   ]
 }

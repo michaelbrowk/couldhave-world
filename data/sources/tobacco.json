@@ -18,15 +18,15 @@
       "unitLabelKey": "categories.tobacco.lungCancer.unit",
       "symbol": "cross",
       "scaleHint": "perUnit",
-      "unitCostUsd": 80000,
+      "unitCostUsd": 150000,
       "sources": [
         {
-          "name": "American Cancer Society — Cancer Treatment & Survivorship Facts and Figures",
-          "url": "https://www.cancer.org/research/cancer-facts-statistics/survivor-facts-figures.html",
-          "year": 2022
+          "name": "Patel et al. — Real-world costs of non-small-cell lung cancer treatment in the US (PMC11940980)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11940980/",
+          "year": 2024
         }
       ],
-      "methodology": "Approximate full-course cost of treating one patient with non-small-cell lung cancer in a high-income setting (surgery + platinum-based chemotherapy + immunotherapy + radiotherapy + follow-up), drawn from ACS cost-of-care estimates."
+      "methodology": "Approximate full-course cost of treating one patient with non-small-cell lung cancer (NSCLC) in a US/high-income setting (surgery + platinum-based chemotherapy + immunotherapy + radiotherapy + follow-up). Real-world US data (PMC11940980) shows multimodal NSCLC courses including immunotherapy run ~$150,000–$300,000+; $150,000 is a conservative lower-bound for the full immunotherapy-inclusive regimen."
     },
     {
       "id": "smoking-cessation",
@@ -37,17 +37,12 @@
       "unitCostUsd": 300,
       "sources": [
         {
-          "name": "USPSTF — Tobacco Smoking Cessation in Adults, Recommendation Statement",
-          "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/tobacco-use-in-adults-and-pregnant-women-counseling-and-interventions",
-          "year": 2021
-        },
-        {
-          "name": "CDC — Smoking & Tobacco Use",
-          "url": "https://www.cdc.gov/tobacco/",
-          "year": 2024
+          "name": "CDC Preventing Chronic Disease — Cost-effectiveness of community-based tobacco treatment (2019)",
+          "url": "https://www.cdc.gov/pcd/issues/2019/19_0232.htm",
+          "year": 2019
         }
       ],
-      "methodology": "Per-quitter cost of an evidence-based cessation program: nicotine replacement therapy (NRT) plus brief behavioural counselling, US public-health pricing."
+      "methodology": "Cost per smoker treated / per quit attempt using an evidence-based cessation program: nicotine replacement therapy (NRT) plus brief behavioural counselling, US public-health pricing (~$180–$200 OTC NRT course + brief counselling). CDC Preventing Chronic Disease 2019 cost review confirms ~$200–$400 per person treated."
     },
     {
       "id": "mpower-country",
@@ -55,20 +50,20 @@
       "unitLabelKey": "categories.tobacco.mpower.unit",
       "symbol": "roof",
       "scaleHint": "totalSolution",
-      "unitCostUsd": 100000000,
+      "unitCostUsd": 5000000,
       "sources": [
-        {
-          "name": "WHO — MPOWER Tobacco Control Investment Cases",
-          "url": "https://www.who.int/teams/health-promotion/tobacco-control/economics",
-          "year": 2023
-        },
         {
           "name": "WHO FCTC — The Global Case for Investment in Tobacco Control",
           "url": "https://fctc.who.int/docs/librariesprovider12/investment-fund-documents/the-global-case-for-investment-in-tobacco-control.pdf",
           "year": 2021
+        },
+        {
+          "name": "Ngo et al. — FCTC investment cases in 21 LMICs (BMJ/Tobacco Control 2024, PMC11103323)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11103323/",
+          "year": 2024
         }
       ],
-      "methodology": "Average annual cost for a single low- or middle-income country to fully implement the WHO MPOWER package (tax, smoke-free policies, cessation services, packaging, advertising bans, monitoring) at scale, from WHO investment-case median."
+      "methodology": "Annual cost for one low/middle-income country to implement WHO MPOWER best-buy demand-reduction measures — approximately USD 5 million per year (WHO FCTC investment cases across 21 LMICs: $4–61M over 15 years annualised; WHO best-buy per-capita rate ~$0.11/person/year ≈ $5M for a ~45M-population country)."
     },
     {
       "id": "tb-treatment",
@@ -89,7 +84,7 @@
           "year": 2023
         }
       ],
-      "methodology": "Per-patient cost of a full DOTS course of TB treatment in low- and middle-income settings (drugs + diagnosis + supervised delivery), from WHO Global TB Report median."
+      "methodology": "Per-patient cost of a full DOTS course of TB treatment in low- and middle-income settings (drugs + diagnosis + supervised delivery). $600 is a rounded mid-range across LMIC provider costs (low-income ~$260, lower-middle ~$275, upper-middle ~$840 per Laurence 2015 systematic review; WHO Global TB Report 2024 global median ~$780)."
     },
     {
       "id": "copd-care-year",
@@ -100,12 +95,12 @@
       "unitCostUsd": 5000,
       "sources": [
         {
-          "name": "GOLD — Global Strategy for the Diagnosis, Management, and Prevention of COPD",
-          "url": "https://goldcopd.org/2024-gold-report/",
-          "year": 2024
+          "name": "Blanchette et al. — COPD direct costs in US commercially-insured patients by severity (PubMed 30698096)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30698096/",
+          "year": 2019
         }
       ],
-      "methodology": "Annual cost of evidence-based COPD care for one moderate-severity patient (inhaled therapy + exacerbation management + pulmonary rehab) in an upper-middle-income setting, from GOLD report ranges."
+      "methodology": "Annual cost of evidence-based COPD care for one moderate-severity patient (inhaled therapy + exacerbation management + pulmonary rehabilitation) in a high-income setting. US cost-of-illness data (PubMed 30698096) reports ~$4,000–$6,000/year for commercially-insured COPD patients by severity; $5,000 is the mid-range for moderate severity."
     },
     {
       "id": "child-vaccination",

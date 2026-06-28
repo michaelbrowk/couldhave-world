@@ -47,7 +47,11 @@
       "malaria": { "title": "Eradicated malaria globally", "unit": "times over" },
       "hunger": { "title": "Ended world hunger", "unit": "years" },
       "water": { "title": "Clean water for everyone", "unit": "years" },
-      "schools": { "title": "Built schools in poor countries", "unit": "school places" },
+      "schools": {
+        "title": "Put children through school",
+        "unit": "children educated",
+        "compareUnit": "One child, full schooling"
+      },
       "vaccination": { "title": "Vaccinated every child on Earth", "unit": "annual campaigns" },
       "poverty": { "title": "Eliminated extreme poverty", "unit": "years" },
       "rainforest": { "title": "Protected all tropical rainforest", "unit": "times over" },
@@ -63,13 +67,13 @@
       },
       "cessation": {
         "title": "Helped people quit smoking",
-        "unit": "people quit",
-        "compareUnit": "One cessation programme"
+        "unit": "people treated",
+        "compareUnit": "One quit attempt"
       },
       "mpower": {
         "title": "Funded WHO MPOWER in entire countries",
         "unit": "country-years",
-        "compareUnit": "One country, fully implemented"
+        "compareUnit": "One country for a year"
       },
       "tb": {
         "title": "Treated tuberculosis worldwide",
@@ -92,9 +96,9 @@
       },
       "retrofit": {
         "title": "Retrofitted the world's buildings to net-zero",
-        "unit": "times over"
+        "unit": "years"
       },
-      "transit": { "title": "Built modern transit in megacities", "unit": "cities" },
+      "transit": { "title": "Built metro lines in megacities", "unit": "metro lines" },
       "storage": { "title": "Installed grid-scale battery storage", "unit": "× 100 GWh" },
       "hunger": { "title": "Ended world hunger", "unit": "years" }
     },

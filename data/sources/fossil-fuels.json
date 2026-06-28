@@ -55,7 +55,7 @@
       "unitLabelKey": "categories.fossil-fuels.cleanCooking.unit",
       "symbol": "ray",
       "scaleHint": "annualNeed",
-      "unitCostUsd": 10000000000,
+      "unitCostUsd": 8000000000,
       "sources": [
         {
           "name": "IEA — A Vision for Clean Cooking Access for All",
@@ -63,7 +63,7 @@
           "year": 2024
         }
       ],
-      "methodology": "Average additional annual investment (~USD 10 billion) needed to give universal access to clean cooking solutions in low- and lower-middle-income countries by 2030, per IEA Clean Cooking pathway."
+      "methodology": "Average additional annual investment needed to achieve universal access to clean cooking in low- and lower-middle-income countries by 2030 — approximately USD 8 billion per year (up from ~$2.5B today), per IEA 'A Vision for Clean Cooking Access for All'."
     },
     {
       "id": "climate-adaptation-africa",
@@ -74,33 +74,33 @@
       "unitCostUsd": 50000000000,
       "sources": [
         {
-          "name": "UNEP — Adaptation Gap Report 2023",
-          "url": "https://www.unep.org/resources/adaptation-gap-report-2023",
-          "year": 2023
+          "name": "UNEP — Adaptation Gap Report 2025",
+          "url": "https://www.unep.org/resources/adaptation-gap-report-2025",
+          "year": 2025
         },
         {
-          "name": "African Development Bank — Africa Climate Change Action Plan",
-          "url": "https://www.afdb.org/en/topics-and-sectors/initiatives-partnerships/climate-change-action-plan",
-          "year": 2022
+          "name": "WMO — State of the Climate in Africa",
+          "url": "https://library.wmo.int/records/item/67582-state-of-the-climate-in-africa-2024",
+          "year": 2024
         }
       ],
-      "methodology": "Estimated annual cost (~USD 50 billion) for sub-Saharan Africa to fund the most cost-effective adaptation measures (drought-resilient agriculture, sea defences, water security), per UNEP Adaptation Gap Report and AfDB modelling."
+      "methodology": "Estimated annual adaptation finance required for sub-Saharan Africa — approximately USD 51 billion per year (2023 prices), per UNEP Adaptation Gap Report 2025 (SSA requires $51B/yr; wider UNEP range $30–50B/yr over 2021–2030, ~2–3% of SSA GDP)."
     },
     {
       "id": "building-retrofit",
       "titleKey": "categories.fossil-fuels.retrofit.title",
       "unitLabelKey": "categories.fossil-fuels.retrofit.unit",
       "symbol": "roof",
-      "scaleHint": "totalSolution",
-      "unitCostUsd": 1500000000000,
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 650000000000,
       "sources": [
         {
-          "name": "IEA — Net Zero Roadmap, Buildings sector",
+          "name": "IEA — Net Zero by 2050: A Roadmap for the Global Energy Sector",
           "url": "https://www.iea.org/reports/net-zero-by-2050",
           "year": 2021
         }
       ],
-      "methodology": "Approximate global capital outlay to retrofit existing buildings to net-zero standards (envelope, heat pumps, grid integration) by 2050, per IEA NZE 2050 cumulative buildings investment annualised."
+      "methodology": "Approximate annual investment in deep retrofits and energy efficiency for the global buildings sector required to reach net-zero — approximately USD 650 billion per year (IEA NZE: buildings efficiency investment must roughly double from ~$250B in 2022 toward ~$640B+ by 2050 for deep retrofit + efficient appliances)."
     },
     {
       "id": "public-transit-cities",
@@ -111,12 +111,12 @@
       "unitCostUsd": 5000000000,
       "sources": [
         {
-          "name": "World Bank — Transit-Oriented Development",
-          "url": "https://www.worldbank.org/en/topic/transport",
-          "year": 2023
+          "name": "ITDP — BRT Planning Guide (capital-cost data)",
+          "url": "https://brtguide.itdp.org/branch/master/guide/why-brt/costs",
+          "year": 2016
         }
       ],
-      "methodology": "Approximate capital cost to deploy a modern integrated bus rapid transit (BRT) plus metro extension covering a city of 5-10M residents (rolling stock + stations + dedicated infrastructure), per World Bank transit costing studies."
+      "methodology": "Approximate capital cost of one full metro line or BRT corridor expansion in a major city — approximately USD 5 billion covers a metro extension (~30–40 km) plus a BRT network (~50–100 km) to expand mass transit. ITDP BRT Planning Guide: BRT $6–11.5M/km, metro/HRT ~$87M/km in lower-income settings."
     },
     {
       "id": "grid-storage-100gwh",
@@ -124,15 +124,15 @@
       "unitLabelKey": "categories.fossil-fuels.storage.unit",
       "symbol": "ray",
       "scaleHint": "perUnit",
-      "unitCostUsd": 40000000000,
+      "unitCostUsd": 20000000000,
       "sources": [
         {
-          "name": "BloombergNEF — Battery Storage Cost Survey 2024",
+          "name": "BloombergNEF — 1H 2024 Battery Price Survey (turnkey utility-scale BESS)",
           "url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-2024/",
           "year": 2024
         }
       ],
-      "methodology": "Approximate installed cost of 100 GWh of utility-scale lithium-ion battery storage at 2024 prices (~USD 400/kWh installed including BoP and integration), per BNEF survey."
+      "methodology": "Approximate all-in cost of 100 GWh of utility-scale lithium-ion battery storage — approximately USD 20 billion (100 GWh × ~$200/kWh all-in: BNEF 2024 turnkey ~$165/kWh global average, plus EPC/grid integration mark-up to ~$200/kWh)."
     },
     {
       "id": "world-hunger",

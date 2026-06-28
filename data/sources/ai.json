@@ -56,19 +56,19 @@
       "unitCostUsd": 50000000000,
       "sources": [
         {
-          "name": "Bloomberg Intelligence — Generative AI to become a $1.3 trillion market by 2032",
-          "url": "https://www.bloomberg.com/company/press/generative-ai-to-become-a-1-3-trillion-market-by-2032-research-finds/",
-          "year": 2023
+          "name": "Statista Market Forecast — Generative AI worldwide revenue 2025",
+          "url": "https://www.statista.com/outlook/tmo/artificial-intelligence/generative-ai/worldwide/",
+          "year": 2025
         }
       ],
-      "methodology": "Estimated 2025 global generative-AI software and services revenue (approximately USD 50 billion), per Bloomberg Intelligence's market sizing. Capex-to-revenue ratio is one of the most cited single bubble indicators.",
+      "methodology": "Estimated 2025 global generative-AI software/app-layer revenue — order-of-magnitude approximately USD 50 billion (analyst estimates range ~$22B–$104B across Grand View, Statista ~$67B, MarketsAndMarkets, Fortune Business Insights). Capex-to-revenue ratio is one of the most cited single bubble indicators.",
       "aiBenefit": {
-        "text": "Bloomberg Intelligence projects 42% CAGR through 2032 for generative-AI software revenue — faster than any prior tech wave.",
+        "text": "Generative-AI software revenue is projected to grow at ~40% CAGR through 2032 — faster than any prior technology wave.",
         "sources": [
           {
-            "name": "Bloomberg Intelligence — Generative AI to become a $1.3 trillion market by 2032",
-            "url": "https://www.bloomberg.com/company/press/generative-ai-to-become-a-1-3-trillion-market-by-2032-research-finds/",
-            "year": 2023
+            "name": "Statista Market Forecast — Generative AI worldwide revenue",
+            "url": "https://www.statista.com/outlook/tmo/artificial-intelligence/generative-ai/worldwide/",
+            "year": 2025
           }
         ]
       }
@@ -79,15 +79,15 @@
       "unitLabelKey": "categories.ai.apollo.unit",
       "symbol": "ray",
       "scaleHint": "totalSolution",
-      "unitCostUsd": 280000000000,
+      "unitCostUsd": 338000000000,
       "sources": [
         {
           "name": "The Planetary Society — How much did the Apollo program cost?",
           "url": "https://www.planetary.org/space-policy/cost-of-apollo",
-          "year": 2024
+          "year": 2025
         }
       ],
-      "methodology": "Total cumulative cost of the Apollo program (1961-1973), inflation-adjusted to 2024 USD: approximately USD 280 billion. Covers Mercury and Gemini predecessor programs, the Saturn V launch system, and all Apollo missions through Apollo 17.",
+      "methodology": "Total cumulative cost of the Apollo lunar effort (1960-1973) including Project Apollo, Gemini predecessor programme, and robotic lunar programmes — approximately USD 338 billion in 2025 USD, per The Planetary Society inflation adjustment using NASA New Start Index. (Project Apollo alone = ~$309B in 2025 USD.)",
       "aiBenefit": {
         "text": "DeepMind's AlphaFold has predicted 214M+ protein structures, free for all researchers — solving a 50-year biology grand challenge.",
         "sources": [
@@ -113,7 +113,7 @@
           "year": 1998
         }
       ],
-      "methodology": "Total cost of the Manhattan Project (1942-1946), USD 1.9 billion nominal, inflation-adjusted to approximately USD 30 billion in 2024 USD per Brookings' Atomic Audit (Schwartz, 1998).",
+      "methodology": "Total cost of the Manhattan Project (1942-1945) — USD 1.9 billion nominal ($1,889,604,000) per Brookings Atomic Audit (Schwartz, 1998); inflation-adjusted to approximately USD 30 billion in 2024 USD (independent CPI calculation; Brookings itself reports $21.6B in constant 1996 dollars).",
       "aiBenefit": {
         "text": "DeepMind's reinforcement-learning agent controlled superheated plasma inside a tokamak in real time — a step towards fusion energy.",
         "sources": [
@@ -217,9 +217,9 @@
       "unitCostUsd": 167000000000,
       "sources": [
         {
-          "name": "Princeton REPEAT Project — Net-Zero America",
-          "url": "https://repeatproject.org/",
-          "year": 2024
+          "name": "Princeton — Net-Zero America Final Report Summary (2021)",
+          "url": "https://netzeroamerica.princeton.edu/img/Princeton%20NZA%20FINAL%20REPORT%20SUMMARY%20(29Oct2021).pdf",
+          "year": 2021
         }
       ],
       "methodology": "Estimated annual capital investment required to modernise the US power grid (transmission upgrades, distribution hardening, interconnection-queue clearing) — approximately USD 167 billion per year over 30 years toward a net-zero-aligned grid, per Princeton REPEAT and DOE Grid Deployment Office estimates.",
