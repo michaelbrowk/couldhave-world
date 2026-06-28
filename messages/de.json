@@ -8,49 +8,205 @@
   "transition": {
     "headline": "Stattdessen hätte dieses Geld…"
   },
+  "sources": {
+    "war": {
+      "label": "Krieg",
+      "caption": "Seit 1. Januar {year} für Kriege ausgegeben",
+      "rate": "{perDay} pro Tag · {perSecond} pro Sekunde",
+      "methodology": "Prognose für {year}, basierend auf SIPRI-Istdaten von {basedOnYear} und der durchschnittlichen 5-Jahres-Wachstumsrate. SIPRIs Jahresupdate wurde am 27. April 2026 veröffentlicht."
+    },
+    "tobacco": {
+      "label": "Tabakkonsum",
+      "caption": "Durch Tabakkonsum seit 1. Januar {year} verloren",
+      "rate": "{perDay} pro Tag · {perSecond} pro Sekunde",
+      "methodology": "1,4 Billionen USD pro Jahr — Gesundheitskosten und Produktivitätsverluste durch Tabakkonsum, ~1,8 % des globalen BIP. Quelle: WHO / Goodchild et al. 2017."
+    },
+    "fossil-fuels": {
+      "label": "Fossile Brennstoffe",
+      "caption": "Seit 1. Januar {year} für Subventionen fossiler Brennstoffe ausgegeben",
+      "rate": "{perDay} pro Tag · {perSecond} pro Sekunde",
+      "methodology": "7,4 Billionen USD pro Jahr — explizite Subventionen plus Unterbewertung der Klima- und Luftverschmutzungskosten. Quelle: IWF Working Paper 2025/270, Daten von 2024."
+    },
+    "ai": {
+      "label": "KI",
+      "caption": "Seit 1. Januar {year} in KI investiert",
+      "rate": "{perDay} pro Tag · {perSecond} pro Sekunde",
+      "methodology": "770 Milliarden USD für 2026 projiziert — KI- und Rechenzentrum-Capex der fünf größten Hyperscaler (Microsoft, Amazon, Alphabet, Meta, Oracle). Quelle: Epoch AI."
+    },
+    "food-waste": {
+      "label": "Lebensmittelverschwendung",
+      "caption": "Seit 1. Januar {year} durch weggeworfene Lebensmittel verschwendet",
+      "rate": "{perDay} pro Tag · {perSecond} pro Sekunde",
+      "methodology": "1 Billion USD pro Jahr — direkter wirtschaftlicher Wert aller weltweit verlorenen und verschwendeten Lebensmittel. Quelle: FAO Food Wastage Footprint, bestätigt durch UNEP Food Waste Index Report 2024."
+    },
+    "advertising": {
+      "label": "Werbung",
+      "caption": "Seit 1. Januar {year} für Werbung ausgegeben",
+      "rate": "{perDay} pro Tag · {perSecond} pro Sekunde",
+      "methodology": "1,3 Billionen USD für 2026 projiziert — gesamte globale Werbeausgaben. Quelle: WARC Global Ad Trends, Dezember 2025."
+    },
+    "gambling": {
+      "label": "Glücksspiel",
+      "caption": "Seit 1. Januar {year} beim Glücksspiel verloren",
+      "rate": "{perDay} pro Tag · {perSecond} pro Sekunde",
+      "methodology": "573 Milliarden USD pro Jahr — weltweite Glücksspielverluste (Bruttospielerträge). Quelle: H2 Gambling Capital, 2024."
+    }
+  },
   "categories": {
-    "military": "Militärausgaben {year}",
     "sourcesToggle": "Quellen anzeigen",
-    "cancer": {
-      "title": "Krebs weltweit geheilt",
-      "unit": "Menschen",
-      "compareUnit": "Eine Krebsbehandlung"
+    "aiBenefitLabel": "Aber KI auch",
+    "war": {
+      "label": "Militärausgaben {year}",
+      "cancer": {
+        "title": "Krebs weltweit geheilt",
+        "unit": "Menschen",
+        "compareUnit": "Eine Krebsbehandlung"
+      },
+      "malaria": { "title": "Malaria weltweit ausgerottet", "unit": "mal" },
+      "hunger": { "title": "Welthunger beendet", "unit": "Jahre" },
+      "water": { "title": "Sauberes Wasser für alle", "unit": "Jahre" },
+      "schools": {
+        "title": "Kinder zur Schule gebracht",
+        "unit": "beschulte Kinder",
+        "compareUnit": "Ein Kind, vollständige Schulbildung"
+      },
+      "vaccination": { "title": "Jedes Kind der Welt geimpft", "unit": "Jahreskampagnen" },
+      "poverty": { "title": "Extreme Armut beseitigt", "unit": "Jahre" },
+      "rainforest": { "title": "Alle tropischen Wälder geschützt", "unit": "mal" },
+      "renewable": { "title": "Solarkapazität der Welt verdoppelt", "unit": "GW neue Solar" },
+      "humanitarian": { "title": "Alle humanitären Krisen abgedeckt", "unit": "Jahre" }
     },
-    "malaria": {
-      "title": "Malaria weltweit ausgerottet",
-      "unit": "mal"
+    "tobacco": {
+      "label": "Tabakkonsum {year}",
+      "lungCancer": {
+        "title": "Lungenkrebs weltweit geheilt",
+        "unit": "Menschen",
+        "compareUnit": "Eine vollständige Lungenkrebsbehandlung"
+      },
+      "cessation": {
+        "title": "Menschen beim Rauchstopp geholfen",
+        "unit": "behandelte Personen",
+        "compareUnit": "Ein Rauchentwöhnungsversuch"
+      },
+      "mpower": {
+        "title": "WHO MPOWER in ganzen Ländern finanziert",
+        "unit": "Länderjahre",
+        "compareUnit": "Ein Land für ein Jahr"
+      },
+      "tb": {
+        "title": "Tuberkulose weltweit behandelt",
+        "unit": "Menschen",
+        "compareUnit": "Ein vollständiger DOTS-Kurs"
+      },
+      "copd": { "title": "COPD-Patienten ein Jahr lang versorgt", "unit": "Patientenjahre" },
+      "vaccination": { "title": "Jedes Kind der Welt geimpft", "unit": "Jahreskampagnen" },
+      "hunger": { "title": "Welthunger beendet", "unit": "Jahre" },
+      "water": { "title": "Sauberes Wasser für alle", "unit": "Jahre" }
     },
-    "hunger": {
-      "title": "Welthunger beendet",
-      "unit": "Jahre"
+    "fossil-fuels": {
+      "label": "Subventionen für fossile Brennstoffe {year}",
+      "renewable": { "title": "Solarkapazität der Welt verdoppelt", "unit": "GW neue Solar" },
+      "rainforest": { "title": "Alle tropischen Wälder geschützt", "unit": "mal" },
+      "cleanCooking": { "title": "Sauberes Kochen für ganz Afrika und Asien", "unit": "Jahre" },
+      "adaptation": {
+        "title": "Klimaanpassung für Subsahara-Afrika finanziert",
+        "unit": "Jahre"
+      },
+      "retrofit": {
+        "title": "Weltweite Gebäude auf Netto-Null saniert",
+        "unit": "Jahre"
+      },
+      "transit": { "title": "U-Bahn-Linien in Megastädten gebaut", "unit": "U-Bahn-Linien" },
+      "storage": { "title": "Netzmaßstäbliche Batteriespeicher installiert", "unit": "× 100 GWh" },
+      "hunger": { "title": "Welthunger beendet", "unit": "Jahre" }
     },
-    "water": {
-      "title": "Sauberes Wasser für alle",
-      "unit": "Jahre"
+    "ai": {
+      "label": "KI-Infrastruktur-Capex {year}",
+      "dotcom": {
+        "title": "Dotcom-Telekombuildout wiederholt",
+        "unit": "× den gesamten Aufbau 1996-2001"
+      },
+      "aiRevenue": {
+        "title": "Alle globalen KI-Einnahmen gekauft",
+        "unit": "× globale KI-Einnahmen 2025"
+      },
+      "apollo": { "title": "Apollo-Programm finanziert", "unit": "× das gesamte Programm" },
+      "manhattan": { "title": "Manhattan-Projekt finanziert", "unit": "× das gesamte Programm" },
+      "hunger": { "title": "Welthunger beendet", "unit": "Jahre" },
+      "water": { "title": "Sauberes Wasser für alle", "unit": "Jahre" },
+      "malaria": { "title": "Malaria weltweit ausgerottet", "unit": "mal" },
+      "grid": { "title": "US-Stromnetz modernisiert", "unit": "Jahre" }
     },
-    "schools": {
-      "title": "Schulen in armen Ländern gebaut",
-      "unit": "Schulplätze"
+    "food-waste": {
+      "label": "Lebensmittelverschwendung {year}",
+      "rutf": {
+        "title": "Kinder wegen schwerer Unterernährung behandelt",
+        "unit": "Kinder",
+        "compareUnit": "Ein vollständiger Kurs therapeutischer Nahrung"
+      },
+      "schoolMeals": {
+        "title": "Schulmahlzeiten für ein Kind für ein Jahr",
+        "unit": "Kindjahre",
+        "compareUnit": "Ein Kind, ein Schuljahr lang versorgt"
+      },
+      "dailyMeal": {
+        "title": "Hungernde Menschen für einen Tag ernährt",
+        "unit": "Mahlzeiten",
+        "compareUnit": "Ein Tag Mahlzeiten"
+      },
+      "smallholder": {
+        "title": "Klimafinanzierungslücke für Kleinbauern geschlossen",
+        "unit": "Jahre"
+      },
+      "hunger": { "title": "Welthunger beendet", "unit": "Jahre" },
+      "water": { "title": "Sauberes Trinkwasser für alle", "unit": "Jahre" },
+      "foodSystems": { "title": "Weltweite Ernährungssysteme transformiert", "unit": "Jahre" }
     },
-    "vaccination": {
-      "title": "Jedes Kind der Welt geimpft",
-      "unit": "Jahreskampagnen"
+    "advertising": {
+      "label": "Werbeausgaben {year}",
+      "mentalHealth": {
+        "title": "Depression und Angstzustände weltweit behandelt",
+        "unit": "Jahre"
+      },
+      "education": { "title": "Globale Bildungsfinanzierungslücke geschlossen", "unit": "Jahre" },
+      "who": {
+        "title": "Gesamte Weltgesundheitsorganisation finanziert",
+        "unit": "Jahresbudgets",
+        "compareUnit": "Ein Jahr WHO-Budget"
+      },
+      "malariaRd": {
+        "title": "Alle Malariaforschung finanziert",
+        "unit": "Jahre F&E",
+        "compareUnit": "Ein Jahr globale Malariaforschung"
+      },
+      "vaccination": { "title": "Jedes Kind der Welt geimpft", "unit": "Jahre" },
+      "hunger": { "title": "Welthunger beendet", "unit": "Jahre" },
+      "water": { "title": "Sauberes Trinkwasser für alle", "unit": "Jahre" }
     },
-    "poverty": {
-      "title": "Extreme Armut beseitigt",
-      "unit": "Jahre"
-    },
-    "rainforest": {
-      "title": "Alle tropischen Wälder geschützt",
-      "unit": "mal"
-    },
-    "renewable": {
-      "title": "Solarkapazität der Welt verdoppelt",
-      "unit": "GW neue Solar"
-    },
-    "humanitarian": {
-      "title": "Alle humanitären Krisen abgedeckt",
-      "unit": "Jahre"
+    "gambling": {
+      "label": "Glücksspielverluste {year}",
+      "treatment": {
+        "title": "Ein Jahr Betreuung für Glücksspielsüchtige",
+        "unit": "Personen",
+        "compareUnit": "Eine Person, ein Jahr Betreuung"
+      },
+      "housing": {
+        "title": "Obdachlose ein Jahr lang untergebracht",
+        "unit": "Personen",
+        "compareUnit": "Eine Person, ein Jahr untergebracht"
+      },
+      "mentalHealth": {
+        "title": "Finanzierungslücke in der psychischen Gesundheit geschlossen",
+        "unit": "Jahre"
+      },
+      "lifeline": {
+        "title": "Nationale Krisentelefone betrieben",
+        "unit": "Jahre",
+        "compareUnit": "Ein Jahr einer nationalen Krisenhotline"
+      },
+      "hunger": { "title": "Welthunger beendet", "unit": "Jahre" },
+      "poverty": { "title": "Alle aus extremer Armut befreit", "unit": "Jahre" },
+      "water": { "title": "Sauberes Trinkwasser für alle", "unit": "Jahre" }
     }
   },
   "methodology": {

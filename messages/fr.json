@@ -8,49 +8,223 @@
   "transition": {
     "headline": "À la place, cet argent aurait pu…"
   },
+  "sources": {
+    "war": {
+      "label": "Guerre",
+      "caption": "Dépensé pour la guerre depuis le 1er janvier {year}",
+      "rate": "{perDay} par jour · {perSecond} par seconde",
+      "methodology": "Projection pour {year}, basée sur les données réelles de SIPRI pour {basedOnYear} et le taux de croissance moyen sur 5 ans. La mise à jour annuelle de SIPRI a été publiée le 27 avril 2026."
+    },
+    "tobacco": {
+      "label": "Tabagisme",
+      "caption": "Perdu à cause du tabagisme depuis le 1er janvier {year}",
+      "rate": "{perDay} par jour · {perSecond} par seconde",
+      "methodology": "1 400 milliards USD par an — coûts de santé et pertes de productivité liés au tabagisme, ~1,8 % du PIB mondial. Source : OMS / Goodchild et al. 2017."
+    },
+    "fossil-fuels": {
+      "label": "Combustibles fossiles",
+      "caption": "Subventionnant les combustibles fossiles depuis le 1er janvier {year}",
+      "rate": "{perDay} par jour · {perSecond} par seconde",
+      "methodology": "7 400 milliards USD par an — subventions explicites plus sous-évaluation des coûts climatiques et de pollution atmosphérique. Source : FMI Working Paper 2025/270, données 2024."
+    },
+    "ai": {
+      "label": "IA",
+      "caption": "Investi dans l'IA depuis le 1er janvier {year}",
+      "rate": "{perDay} par jour · {perSecond} par seconde",
+      "methodology": "770 milliards USD projetés pour 2026 — capex IA et centres de données des cinq grands hyperscalers (Microsoft, Amazon, Alphabet, Meta, Oracle). Source : Epoch AI."
+    },
+    "food-waste": {
+      "label": "Gaspillage alimentaire",
+      "caption": "Gaspillé en nourriture non consommée depuis le 1er janvier {year}",
+      "rate": "{perDay} par jour · {perSecond} par seconde",
+      "methodology": "1 000 milliards USD par an — valeur économique directe des aliments perdus et gaspillés dans le monde. Source : FAO Food Wastage Footprint, confirmé par le rapport de l'indice de gaspillage alimentaire du PNUE 2024."
+    },
+    "advertising": {
+      "label": "Publicité",
+      "caption": "Dépensé en publicité depuis le 1er janvier {year}",
+      "rate": "{perDay} par jour · {perSecond} par seconde",
+      "methodology": "1 300 milliards USD projetés pour 2026 — dépenses publicitaires mondiales totales. Source : WARC Global Ad Trends, décembre 2025."
+    },
+    "gambling": {
+      "label": "Jeux d'argent",
+      "caption": "Perdu aux jeux d'argent depuis le 1er janvier {year}",
+      "rate": "{perDay} par jour · {perSecond} par seconde",
+      "methodology": "573 milliards USD par an — pertes mondiales de jeux d'argent (produit brut des jeux). Source : H2 Gambling Capital, 2024."
+    }
+  },
   "categories": {
-    "military": "Dépenses militaires {year}",
     "sourcesToggle": "Voir les sources",
-    "cancer": {
-      "title": "Guéri du cancer dans le monde",
-      "unit": "personnes",
-      "compareUnit": "Un traitement contre le cancer"
+    "aiBenefitLabel": "Mais l'IA aussi",
+    "war": {
+      "label": "Dépenses militaires {year}",
+      "cancer": {
+        "title": "Guéri du cancer dans le monde",
+        "unit": "personnes",
+        "compareUnit": "Un traitement contre le cancer"
+      },
+      "malaria": { "title": "Éradiqué le paludisme mondialement", "unit": "fois" },
+      "hunger": { "title": "Mis fin à la faim dans le monde", "unit": "années" },
+      "water": { "title": "Eau potable pour tous", "unit": "années" },
+      "schools": {
+        "title": "Scolarisé des enfants",
+        "unit": "enfants scolarisés",
+        "compareUnit": "Un enfant, scolarisation complète"
+      },
+      "vaccination": { "title": "Vacciné chaque enfant sur Terre", "unit": "campagnes annuelles" },
+      "poverty": { "title": "Éliminé l'extrême pauvreté", "unit": "années" },
+      "rainforest": { "title": "Protégé toutes les forêts tropicales", "unit": "fois" },
+      "renewable": {
+        "title": "Doublé la capacité solaire mondiale",
+        "unit": "GW de nouveau solaire"
+      },
+      "humanitarian": { "title": "Couvert tous les appels humanitaires", "unit": "années" }
     },
-    "malaria": {
-      "title": "Éradiqué le paludisme mondialement",
-      "unit": "fois"
+    "tobacco": {
+      "label": "Tabagisme {year}",
+      "lungCancer": {
+        "title": "Guéri du cancer du poumon dans le monde",
+        "unit": "personnes",
+        "compareUnit": "Un traitement complet du cancer du poumon"
+      },
+      "cessation": {
+        "title": "Aidé des personnes à arrêter de fumer",
+        "unit": "personnes traitées",
+        "compareUnit": "Une tentative d'arrêt"
+      },
+      "mpower": {
+        "title": "Financé le MPOWER de l'OMS dans des pays entiers",
+        "unit": "pays-années",
+        "compareUnit": "Un pays pour un an"
+      },
+      "tb": {
+        "title": "Traité la tuberculose dans le monde",
+        "unit": "personnes",
+        "compareUnit": "Un traitement DOTS complet"
+      },
+      "copd": { "title": "Soigné des patients BPCO pendant un an", "unit": "années-patients" },
+      "vaccination": { "title": "Vacciné chaque enfant sur Terre", "unit": "campagnes annuelles" },
+      "hunger": { "title": "Mis fin à la faim dans le monde", "unit": "années" },
+      "water": { "title": "Eau potable pour tous", "unit": "années" }
     },
-    "hunger": {
-      "title": "Mis fin à la faim dans le monde",
-      "unit": "années"
+    "fossil-fuels": {
+      "label": "Subventions aux combustibles fossiles {year}",
+      "renewable": {
+        "title": "Doublé la capacité solaire mondiale",
+        "unit": "GW de nouveau solaire"
+      },
+      "rainforest": { "title": "Protégé toutes les forêts tropicales", "unit": "fois" },
+      "cleanCooking": {
+        "title": "Cuisine propre pour toute l'Afrique et l'Asie",
+        "unit": "années"
+      },
+      "adaptation": {
+        "title": "Financé l'adaptation climatique en Afrique subsaharienne",
+        "unit": "années"
+      },
+      "retrofit": {
+        "title": "Rénové les bâtiments mondiaux au zéro émission nette",
+        "unit": "années"
+      },
+      "transit": {
+        "title": "Construit des lignes de métro dans les mégapoles",
+        "unit": "lignes de métro"
+      },
+      "storage": {
+        "title": "Installé des batteries de stockage à l'échelle du réseau",
+        "unit": "× 100 GWh"
+      },
+      "hunger": { "title": "Mis fin à la faim dans le monde", "unit": "années" }
     },
-    "water": {
-      "title": "Eau potable pour tous",
-      "unit": "années"
+    "ai": {
+      "label": "Capex infrastructures IA {year}",
+      "dotcom": {
+        "title": "Répété le déploiement télécom de la bulle internet",
+        "unit": "× le déploiement complet 1996-2001"
+      },
+      "aiRevenue": {
+        "title": "Acheté tous les revenus mondiaux de l'IA",
+        "unit": "× revenus mondiaux de l'IA, 2025"
+      },
+      "apollo": { "title": "Financé le programme Apollo", "unit": "× le programme complet" },
+      "manhattan": { "title": "Financé le Projet Manhattan", "unit": "× le programme complet" },
+      "hunger": { "title": "Mis fin à la faim dans le monde", "unit": "années" },
+      "water": { "title": "Eau potable pour tous", "unit": "années" },
+      "malaria": { "title": "Éradiqué le paludisme mondialement", "unit": "fois" },
+      "grid": { "title": "Modernisé le réseau électrique américain", "unit": "années" }
     },
-    "schools": {
-      "title": "Construit des écoles dans les pays pauvres",
-      "unit": "places scolaires"
+    "food-waste": {
+      "label": "Gaspillage alimentaire {year}",
+      "rutf": {
+        "title": "Traité des enfants pour malnutrition sévère",
+        "unit": "enfants",
+        "compareUnit": "Un cycle complet d'aliments thérapeutiques"
+      },
+      "schoolMeals": {
+        "title": "Repas scolaires pour un enfant pendant un an",
+        "unit": "années-enfant",
+        "compareUnit": "Un enfant nourri pendant une année scolaire"
+      },
+      "dailyMeal": {
+        "title": "Nourri des personnes affamées pour une journée",
+        "unit": "repas",
+        "compareUnit": "Une journée de repas"
+      },
+      "smallholder": {
+        "title": "Comblé le déficit de financement climatique des agriculteurs",
+        "unit": "années"
+      },
+      "hunger": { "title": "Mis fin à la faim dans le monde", "unit": "années" },
+      "water": { "title": "Eau potable pour tous", "unit": "années" },
+      "foodSystems": { "title": "Transformé les systèmes alimentaires mondiaux", "unit": "années" }
     },
-    "vaccination": {
-      "title": "Vacciné chaque enfant sur Terre",
-      "unit": "campagnes annuelles"
+    "advertising": {
+      "label": "Dépenses publicitaires {year}",
+      "mentalHealth": {
+        "title": "Traité la dépression et l'anxiété dans le monde",
+        "unit": "années"
+      },
+      "education": {
+        "title": "Comblé le déficit mondial de financement de l'éducation",
+        "unit": "années"
+      },
+      "who": {
+        "title": "Financé l'intégralité de l'Organisation mondiale de la santé",
+        "unit": "budgets annuels",
+        "compareUnit": "Un an de budget de l'OMS"
+      },
+      "malariaRd": {
+        "title": "Financé toute la recherche sur le paludisme",
+        "unit": "années de R&D",
+        "compareUnit": "Un an de recherche mondiale sur le paludisme"
+      },
+      "vaccination": { "title": "Vacciné chaque enfant sur Terre", "unit": "années" },
+      "hunger": { "title": "Mis fin à la faim dans le monde", "unit": "années" },
+      "water": { "title": "Eau potable pour tous", "unit": "années" }
     },
-    "poverty": {
-      "title": "Éliminé l'extrême pauvreté",
-      "unit": "années"
-    },
-    "rainforest": {
-      "title": "Protégé toutes les forêts tropicales",
-      "unit": "fois"
-    },
-    "renewable": {
-      "title": "Doublé la capacité solaire mondiale",
-      "unit": "GW de nouveau solaire"
-    },
-    "humanitarian": {
-      "title": "Couvert tous les appels humanitaires",
-      "unit": "années"
+    "gambling": {
+      "label": "Pertes de jeu {year}",
+      "treatment": {
+        "title": "Un an de soins pour les joueurs problématiques",
+        "unit": "personnes",
+        "compareUnit": "Une personne, un an de soins"
+      },
+      "housing": {
+        "title": "Logé des sans-abri pendant un an",
+        "unit": "personnes",
+        "compareUnit": "Une personne logée pendant un an"
+      },
+      "mentalHealth": {
+        "title": "Comblé le déficit de financement de la santé mentale",
+        "unit": "années"
+      },
+      "lifeline": {
+        "title": "Géré des lignes de crise nationales",
+        "unit": "années",
+        "compareUnit": "Un an d'une ligne nationale"
+      },
+      "hunger": { "title": "Mis fin à la faim dans le monde", "unit": "années" },
+      "poverty": { "title": "Sorti tout le monde de l'extrême pauvreté", "unit": "années" },
+      "water": { "title": "Eau potable pour tous", "unit": "années" }
     }
   },
   "methodology": {
