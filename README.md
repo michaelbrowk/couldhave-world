@@ -18,7 +18,7 @@ A single page that:
 
 The counter projects this year's total spending for the active tab from the most recent authoritative figures, compounded by a trailing average growth rate where applicable. It ticks against the yearly total based on seconds elapsed since January 1.
 
-Each humanitarian alternative is computed from authoritative sources documented in `data/sources/<id>.json`. Each category has a minimum of two source citations with publication years and a methodology statement explaining what the unit cost represents.
+Each humanitarian alternative is computed from authoritative sources documented in `data/sources/<id>.json`. Each category cites at least one authoritative source with its publication year and carries a methodology statement explaining what the unit cost represents.
 
 All source data lives in `data/sources/`:
 

@@ -48,3 +48,6 @@ next-env.d.ts
 
 # generated at build time by scripts/generate-og.tsx
 /public/og.png
+
+# multi-agent scratch tooling (not part of the site)
+/team/
