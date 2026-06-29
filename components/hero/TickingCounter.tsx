@@ -13,7 +13,10 @@ type Props = {
 
 export function TickingCounter({ projection, currentYear, locale }: Props) {
   const reduceMotion = useReducedMotion();
-  const initial = currentSpendEstimate(projection, new Date(), currentYear);
+  // Compute once on mount (the component re-mounts per tab via the section
+  // key). Recomputing every render would let any re-render advance the value,
+  // which must stay frozen under prefers-reduced-motion.
+  const [initial] = useState(() => currentSpendEstimate(projection, new Date(), currentYear));
 
   // Target updates 10×/sec from a wall-clock probe; the spring smooths the
   // jump so the rendered integer dollar value flows at native frame rate
@@ -43,19 +46,28 @@ export function TickingCounter({ projection, currentYear, locale }: Props) {
   const formatted = formatCurrency(reduceMotion ? initial : displayed, locale);
   const yearTotalLabel = formatCurrency(projection.totalUsd, locale);
 
-  // The server renders one value (server time), the client a slightly larger
-  // value (client time, ~ms later). Suppress the hydration warning so React
-  // accepts the client value without aborting hydration of this subtree.
+  // Size the figure to its COLUMN, not the viewport. The content column is a
+  // fixed ~1056px above the md breakpoint, so a viewport unit (12vw) keeps
+  // growing on wide screens and the longest 18-digit figures spill past the
+  // column. A container-query unit tracks the column instead: the wrapper is a
+  // size container and 15.5cqw renders an 18–19 digit string with margin at
+  // any column width — so it never overflows and still scales down on mobile.
+  // No JS measurement (which raced the webfont load), no layout shift.
   return (
-    <div
-      className="font-serif text-[var(--accent)] leading-none tabular-nums tracking-tight"
-      style={{ fontSize: "clamp(40px, 12vw, 220px)" }}
-      role="status"
-      aria-live="off"
-      aria-label={yearTotalLabel}
-      suppressHydrationWarning
-    >
-      {formatted}
+    <div style={{ containerType: "inline-size" }}>
+      <div
+        className="font-serif text-[var(--accent)] leading-none tabular-nums tracking-tight"
+        style={{ fontSize: "min(220px, 15.5cqw)" }}
+        role="status"
+        aria-live="off"
+        aria-label={yearTotalLabel}
+        // The server renders one value (server time), the client a slightly
+        // larger value (client time, ~ms later). Suppress the hydration warning
+        // so React accepts the client value without aborting hydration.
+        suppressHydrationWarning
+      >
+        {formatted}
+      </div>
     </div>
   );
 }
