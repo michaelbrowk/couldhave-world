@@ -51,3 +51,8 @@ next-env.d.ts
 
 # multi-agent scratch tooling (not part of the site)
 /team/
+
+# Claude Code local dir (worktrees, scratch)
+.claude/
+/_*.mjs
+/_*.html
