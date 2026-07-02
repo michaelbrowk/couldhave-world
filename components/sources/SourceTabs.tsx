@@ -35,7 +35,7 @@ export function SourceTabs({ items, activeId, onSelect, ariaLabel }: Props) {
     <div
       role="tablist"
       aria-label={ariaLabel}
-      className="flex flex-wrap gap-x-5 gap-y-2 md:gap-8 md:flex-nowrap md:overflow-x-auto md:scrollbar-none md:border-b md:border-[var(--border-color)] mb-10 md:mb-16"
+      className="flex flex-wrap gap-2 md:gap-8 md:flex-nowrap md:overflow-x-auto md:scrollbar-none md:border-b md:border-[var(--border-color)] mb-10 md:mb-16"
     >
       {items.map((item) => {
         const isActive = item.id === activeId;
@@ -75,7 +75,7 @@ export function SourceTabs({ items, activeId, onSelect, ariaLabel }: Props) {
               "active:scale-[0.97]",
               "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--text-primary)]/70 focus-visible:rounded-full md:focus-visible:rounded-none",
               isActive
-                ? "rounded-full px-3 py-1.5 bg-[var(--text-primary)] text-[var(--bg)] md:bg-transparent md:text-[var(--text-primary)] md:rounded-none md:px-0 md:py-3 md:border-b-2 md:border-[var(--text-primary)] md:-mb-px"
+                ? "rounded-full px-3 py-1.5 bg-[var(--text-primary)] text-[var(--bg)] border border-[var(--text-primary)] md:bg-transparent md:text-[var(--text-primary)] md:rounded-none md:px-0 md:py-3 md:border-0 md:border-b-2 md:border-[var(--text-primary)] md:-mb-px"
                 : "rounded-full px-3 py-1.5 border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-primary)] md:border-0 md:border-b-2 md:border-transparent md:rounded-none md:px-0 md:py-3",
             ].join(" ")}
           >
