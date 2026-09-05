@@ -1,214 +1,313 @@
 {
   "hello": "Hello",
   "hero": {
-    "caption": "Spent on war since January 1, {year}",
+    "label": "AI",
+    "caption": "Projected hyperscaler capex since January 1, {year}",
     "rate": "{perDay} per day · {perSecond} per second",
-    "methodology": "Projected {year}, based on SIPRI {basedOnYear} actuals and a 5-year average growth rate. Actual figures are published annually in late April."
+    "methodology": "$770 billion for 2026: Epoch AI’s February 2026 projection of all Big-Five hyperscaler capital expenditure (Microsoft, Amazon, Alphabet, Meta, Oracle), including finance leases. The AI-only share is unknown; this is not measured AI spending."
   },
   "transition": {
-    "headline": "Instead, this money could have…"
+    "headline": "For scale, this amount could fund…"
   },
   "sources": {
     "war": {
       "label": "War",
-      "caption": "Spent on war since January 1, {year}",
+      "caption": "Illustrated military spending since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "Projected {year}, based on SIPRI {basedOnYear} actuals and a 5-year average growth rate. SIPRI's annual update was published 27 April 2026."
+      "methodology": "$2.887 trillion: SIPRI’s actual global military expenditure for 2025, used unchanged as an annual benchmark for this {year} illustration. Includes peacetime defence; not measured {year} spending or the cost of wars."
     },
     "tobacco": {
       "label": "Tobacco use",
-      "caption": "Lost to tobacco use since January 1, {year}",
+      "caption": "Illustrated cost of smoking since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD 1.4 trillion per year — healthcare costs and lost productivity from tobacco use, ~1.8% of global GDP. Source: WHO / Goodchild et al. 2017."
+      "methodology": "$1.436 trillion annual benchmark for healthcare costs and lost productivity in 2012, published in 2017. Held flat without inflation or growth adjustment; not measured {year} losses or a cash budget."
     },
     "fossil-fuels": {
       "label": "Fossil fuels",
-      "caption": "Subsidising fossil fuels since January 1, {year}",
+      "caption": "Illustrated fossil-fuel subsidy costs since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD 7.4 trillion per year — explicit subsidies plus underpricing of climate and air-pollution costs. Source: IMF Working Paper 2025/270, 2024 data."
+      "methodology": "$7.4 trillion annual benchmark for 2024 from IMF Working Paper 2025/270. Includes about $0.7T in explicit subsidies and $6.7T in implicit costs, including externalities and tax underpricing. Not a $7.4T government spending budget or a new {year} estimate."
     },
     "ai": {
       "label": "AI",
-      "caption": "Poured into AI since January 1, {year}",
+      "caption": "Projected hyperscaler capex since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD 770 billion projected for 2026 — Big-Five hyperscaler (Microsoft, Amazon, Alphabet, Meta, Oracle) AI/data-centre capex. Source: Epoch AI."
+      "methodology": "$770 billion for 2026: Epoch AI’s February 2026 projection of all Big-Five hyperscaler capital expenditure (Microsoft, Amazon, Alphabet, Meta, Oracle), including finance leases. The AI-only share is unknown; this is not measured AI spending."
     },
     "food-waste": {
       "label": "Food wasted",
-      "caption": "Wasted on uneaten food since January 1, {year}",
+      "caption": "Illustrated food loss and waste since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD 1 trillion per year — the direct economic value of food lost and wasted worldwide. Source: FAO Food Wastage Footprint, reaffirmed by UNEP Food Waste Index Report 2024."
+      "methodology": "$936 billion annual product-value benchmark from FAO (2014), in 2012 US dollars, using 2005–2009 food quantities. Held flat without inflation adjustment; not measured {year} losses or fully recoverable cash."
     },
     "advertising": {
       "label": "Advertising",
-      "caption": "Spent on advertising since January 1, {year}",
+      "caption": "Projected advertising spend since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD 1.3 trillion projected for 2026 — total global advertising spend. Source: WARC Global Ad Trends, December 2025."
+      "methodology": "$1.3 trillion for 2026: WARC’s December 2025 forecast of worldwide advertising expenditure, spread evenly through the year. This is a forecast, not observed spending."
     },
     "gambling": {
       "label": "Gambling",
-      "caption": "Gambled away since January 1, {year}",
+      "caption": "Illustrated gambling losses since January 1, {year}",
       "rate": "{perDay} per day · {perSecond} per second",
-      "methodology": "USD 573 billion per year — global gambling losses (gross gaming revenue). Source: H2 Gambling Capital, 2024."
+      "methodology": "$573 billion: H2 Gambling Capital’s early-2024 forecast of global gross gaming revenue for 2024. Held flat as a historical benchmark; not confirmed {year} losses, total bets or a new forecast."
     }
   },
   "categories": {
     "sourcesToggle": "See sources",
-    "aiBenefitLabel": "But AI also",
+    "aiBenefitLabel": "Documented AI example",
     "war": {
-      "label": "Military spending {year}",
+      "label": "Military benchmark · {year}",
       "cancer": {
-        "title": "Cured cancer worldwide",
-        "unit": "people",
-        "compareUnit": "One cancer treatment"
+        "title": "Initial cancer care (US)",
+        "unit": "first-year care equivalents",
+        "compareUnit": "Cancer-attributable first-year care per patient (US, 2020 USD)"
       },
-      "malaria": { "title": "Eradicated malaria globally", "unit": "times over" },
-      "hunger": { "title": "Ended world hunger", "unit": "years" },
-      "water": { "title": "Clean water for everyone", "unit": "years" },
-      "schools": {
-        "title": "Put children through school",
-        "unit": "children educated",
-        "compareUnit": "One child, full schooling"
+      "malaria": {
+        "title": "Malaria control and elimination",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year at the WHO 2030 funding target"
       },
-      "vaccination": { "title": "Vaccinated every child on Earth", "unit": "annual campaigns" },
-      "poverty": { "title": "Eliminated extreme poverty", "unit": "years" },
-      "rainforest": { "title": "Protected all tropical rainforest", "unit": "times over" },
-      "renewable": { "title": "Doubled the world's solar capacity", "unit": "GW of new solar" },
-      "humanitarian": { "title": "Funded all humanitarian appeals", "unit": "years" }
+      "hunger": {
+        "title": "Hunger reduction: Ceres2030 scenario",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of additional public funding (2020 model)"
+      },
+      "water": {
+        "title": "Safe drinking-water infrastructure",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of capital needs (2016 model, 2015 USD)"
+      },
+      "vaccination": {
+        "title": "IA2030 immunization targets",
+        "unit": "annual funding equivalents",
+        "compareUnit": "Average annual cost, 2021–2030: 14 pathogens, 194 countries (2020 USD)"
+      },
+      "renewable": {
+        "title": "Utility-scale solar capacity",
+        "unit": "GW of solar capacity",
+        "compareUnit": "One GW installed (IRENA 2024 global average, 2024 USD)"
+      },
+      "humanitarian": {
+        "title": "UN humanitarian appeal (2026)",
+        "unit": "appeal equivalents",
+        "compareUnit": "The UN’s initial 2026 humanitarian appeal"
+      }
     },
     "tobacco": {
-      "label": "Tobacco use {year}",
+      "label": "Smoking-cost benchmark · {year}",
       "lungCancer": {
-        "title": "Cured lung cancer worldwide",
-        "unit": "people",
-        "compareUnit": "One full course of lung-cancer treatment"
+        "title": "Initial lung-cancer care (US)",
+        "unit": "first-year care equivalents",
+        "compareUnit": "First-year NSCLC medical care and oral drugs (US, 2020 USD)"
       },
       "cessation": {
-        "title": "Helped people quit smoking",
-        "unit": "people treated",
-        "compareUnit": "One quit attempt"
-      },
-      "mpower": {
-        "title": "Funded WHO MPOWER in entire countries",
-        "unit": "country-years",
-        "compareUnit": "One country for a year"
+        "title": "Smoking-cessation support (US)",
+        "unit": "8-week programmes",
+        "compareUnit": "Quitline support and 8 weeks of patches (Oregon, 2004–2005 study)"
       },
       "tb": {
-        "title": "Treated tuberculosis worldwide",
-        "unit": "people",
-        "compareUnit": "One full DOTS course"
+        "title": "Drug-susceptible TB treatment",
+        "unit": "treatment-cost equivalents",
+        "compareUnit": "Median 2024 provider cost per patient (WHO 2025 report)"
       },
-      "copd": { "title": "Cared for COPD patients for a year", "unit": "patient-years" },
-      "vaccination": { "title": "Vaccinated every child on Earth", "unit": "annual campaigns" },
-      "hunger": { "title": "Ended world hunger", "unit": "years" },
-      "water": { "title": "Clean water for everyone", "unit": "years" }
+      "vaccination": {
+        "title": "IA2030 immunization targets",
+        "unit": "annual funding equivalents",
+        "compareUnit": "Average annual cost, 2021–2030: 14 pathogens, 194 countries (2020 USD)"
+      },
+      "hunger": {
+        "title": "Hunger reduction: Ceres2030 scenario",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of additional public funding (2020 model)"
+      },
+      "water": {
+        "title": "Safe drinking-water infrastructure",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of capital needs (2016 model, 2015 USD)"
+      }
     },
     "fossil-fuels": {
-      "label": "Fossil-fuel subsidies {year}",
-      "renewable": { "title": "Doubled the world's solar capacity", "unit": "GW of new solar" },
-      "rainforest": { "title": "Protected all tropical rainforest", "unit": "times over" },
-      "cleanCooking": { "title": "Clean cooking for all of Africa & Asia", "unit": "years" },
+      "label": "Fossil-subsidy benchmark · {year}",
+      "renewable": {
+        "title": "Utility-scale solar capacity",
+        "unit": "GW of solar capacity",
+        "compareUnit": "One GW installed (IRENA 2024 global average, 2024 USD)"
+      },
+      "cleanCooking": {
+        "title": "Universal clean-cooking access",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of investment in the 2023–2030 scenario"
+      },
       "adaptation": {
-        "title": "Funded climate adaptation for sub-Saharan Africa",
-        "unit": "years"
+        "title": "Climate adaptation in sub-Saharan Africa",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of adaptation needs (2025 estimate)"
       },
-      "retrofit": {
-        "title": "Retrofitted the world's buildings to net-zero",
-        "unit": "years"
+      "storage": {
+        "title": "Grid-scale battery storage",
+        "unit": "100 GWh storage equivalents",
+        "compareUnit": "100 GWh installed (IRENA 2024 average, 2024 USD)"
       },
-      "transit": { "title": "Built metro lines in megacities", "unit": "metro lines" },
-      "storage": { "title": "Installed grid-scale battery storage", "unit": "× 100 GWh" },
-      "hunger": { "title": "Ended world hunger", "unit": "years" }
+      "hunger": {
+        "title": "Hunger reduction: Ceres2030 scenario",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of additional public funding (2020 model)"
+      }
     },
     "ai": {
-      "label": "AI infrastructure capex {year}",
+      "label": "Hyperscaler capex scenario · {year}",
       "dotcom": {
-        "title": "Repeated the dotcom telecom buildout",
-        "unit": "× the entire 1996-2001 buildout"
+        "title": "Telecom investment, 1996–2001",
+        "unit": "historical benchmark equivalents",
+        "compareUnit": "$500B benchmark in nominal 1996–2001 dollars"
       },
-      "aiRevenue": {
-        "title": "Bought every dollar of global AI revenue",
-        "unit": "× annual global AI revenue, 2025"
+      "apollo": {
+        "title": "Project Apollo",
+        "unit": "programme-cost equivalents",
+        "compareUnit": "Project Apollo, 1960–1973 (2025 USD)"
       },
-      "apollo": { "title": "Funded the Apollo program", "unit": "× the entire program" },
-      "manhattan": { "title": "Funded the Manhattan Project", "unit": "× the entire program" },
-      "hunger": { "title": "Ended world hunger", "unit": "years" },
-      "water": { "title": "Clean water for everyone", "unit": "years" },
-      "malaria": { "title": "Eradicated malaria globally", "unit": "times over" },
-      "grid": { "title": "Modernised the US power grid", "unit": "years" }
+      "manhattan": {
+        "title": "Manhattan Project",
+        "unit": "programme-cost equivalents",
+        "compareUnit": "Historical cost through 1945, CPI-updated to 2024 USD"
+      },
+      "hunger": {
+        "title": "Hunger reduction: Ceres2030 scenario",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of additional public funding (2020 model)"
+      },
+      "water": {
+        "title": "Safe drinking-water infrastructure",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of capital needs (2016 model, 2015 USD)"
+      },
+      "malaria": {
+        "title": "Malaria control and elimination",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year at the WHO 2030 funding target"
+      },
+      "grid": {
+        "title": "US transmission expansion, 2021–2030",
+        "unit": "investment-plan equivalents",
+        "compareUnit": "Additional transmission investment, 2021–2030 (2018 USD)"
+      }
     },
     "food-waste": {
-      "label": "Food wasted {year}",
+      "label": "Food-waste value benchmark · {year}",
       "rutf": {
-        "title": "Treated children for severe malnutrition",
-        "unit": "children",
-        "compareUnit": "One full course of therapeutic food"
+        "title": "Therapeutic food for child malnutrition",
+        "unit": "RUTF cartons",
+        "compareUnit": "One 150-sachet RUTF carton (2024 commodity price)"
       },
       "schoolMeals": {
-        "title": "School meals for a child for a year",
-        "unit": "child-years",
-        "compareUnit": "One child fed for a school year"
+        "title": "School meals",
+        "unit": "child school-years",
+        "compareUnit": "One child’s school-year meals (WFP USA $50 fundraising benchmark)"
       },
       "dailyMeal": {
-        "title": "Fed hungry people for a day",
-        "unit": "meals",
-        "compareUnit": "One day of meals"
+        "title": "Emergency food assistance (2021)",
+        "unit": "person-days",
+        "compareUnit": "One person-day of emergency rations (WFP 2021 plan)"
       },
-      "smallholder": { "title": "Closed the farmers' climate-finance gap", "unit": "years" },
-      "hunger": { "title": "Ended world hunger", "unit": "years" },
-      "water": { "title": "Clean drinking water for everyone", "unit": "years" },
-      "foodSystems": { "title": "Transformed the world's food systems", "unit": "years" }
+      "smallholder": {
+        "title": "Small-farm climate finance",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of the estimated climate-finance gap (2024)"
+      },
+      "hunger": {
+        "title": "Hunger reduction: Ceres2030 scenario",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of additional public funding (2020 model)"
+      },
+      "water": {
+        "title": "Safe drinking-water infrastructure",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of capital needs (2016 model, 2015 USD)"
+      },
+      "foodSystems": {
+        "title": "Food-system investment target",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of the 2023–2030 investment target"
+      }
     },
     "advertising": {
-      "label": "Advertising spend {year}",
-      "mentalHealth": { "title": "Treated depression and anxiety worldwide", "unit": "years" },
-      "education": { "title": "Closed the global education funding gap", "unit": "years" },
+      "label": "Advertising projection · {year}",
+      "mentalHealth": {
+        "title": "Depression and anxiety care (36 countries)",
+        "unit": "2016–2030 care-plan equivalents",
+        "compareUnit": "2016–2030 scale-up cost (net present value, 2016 study)"
+      },
+      "education": {
+        "title": "Education funding gap (79 countries)",
+        "unit": "annual funding equivalents",
+        "compareUnit": "Average annual gap for national targets, 2023–2030"
+      },
       "who": {
-        "title": "Funded the entire World Health Organization",
-        "unit": "annual budgets",
-        "compareUnit": "One year of the WHO's budget"
+        "title": "WHO programme budget (2026–2027)",
+        "unit": "annual funding equivalents",
+        "compareUnit": "Half of the approved two-year WHO budget, 2026–2027"
       },
       "malariaRd": {
-        "title": "Funded all malaria research",
-        "unit": "years of R&D",
-        "compareUnit": "One year of global malaria R&D"
+        "title": "Malaria R&D funding target",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year at the WHO 2021–2030 R&D target"
       },
-      "vaccination": { "title": "Vaccinated every child on Earth", "unit": "years" },
-      "hunger": { "title": "Ended world hunger", "unit": "years" },
-      "water": { "title": "Clean drinking water for everyone", "unit": "years" }
+      "vaccination": {
+        "title": "IA2030 immunization targets",
+        "unit": "annual funding equivalents",
+        "compareUnit": "Average annual cost, 2021–2030: 14 pathogens, 194 countries (2020 USD)"
+      },
+      "hunger": {
+        "title": "Hunger reduction: Ceres2030 scenario",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of additional public funding (2020 model)"
+      },
+      "water": {
+        "title": "Safe drinking-water infrastructure",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of capital needs (2016 model, 2015 USD)"
+      }
     },
     "gambling": {
-      "label": "Gambling losses {year}",
-      "treatment": {
-        "title": "A year of care for problem gamblers",
-        "unit": "people",
-        "compareUnit": "One person, one year of care"
-      },
+      "label": "Gambling-loss benchmark · {year}",
       "housing": {
-        "title": "Housed homeless people for a year",
-        "unit": "people",
-        "compareUnit": "One person housed for a year"
+        "title": "Supportive housing (Los Angeles)",
+        "unit": "housing-years",
+        "compareUnit": "One occupied housing-year (2017 report; no capital/admin costs)"
       },
-      "mentalHealth": { "title": "Closed the mental-health funding gap", "unit": "years" },
+      "mentalHealth": {
+        "title": "Mental-health funding gap",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of the global funding gap (2023 estimate)"
+      },
       "lifeline": {
-        "title": "Ran national crisis lifelines",
-        "unit": "years",
-        "compareUnit": "One year of a national lifeline"
+        "title": "988 crisis-line administration award",
+        "unit": "award equivalents",
+        "compareUnit": "The May 2026 administration award (period unspecified)"
       },
-      "hunger": { "title": "Ended world hunger", "unit": "years" },
-      "poverty": { "title": "Lifted everyone out of extreme poverty", "unit": "years" },
-      "water": { "title": "Clean drinking water for everyone", "unit": "years" }
+      "hunger": {
+        "title": "Hunger reduction: Ceres2030 scenario",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of additional public funding (2020 model)"
+      },
+      "water": {
+        "title": "Safe drinking-water infrastructure",
+        "unit": "annual funding equivalents",
+        "compareUnit": "One year of capital needs (2016 model, 2015 USD)"
+      }
     }
   },
   "methodology": {
     "title": "Methodology",
-    "counter": "The counter projects this year's total global military spending based on the latest actual SIPRI figures multiplied by the 5-year average growth rate, then ticks in real time as a fraction of that yearly total based on seconds elapsed since January 1.",
-    "categories": "Each humanitarian alternative is computed from authoritative sources (WHO, World Bank, UNICEF, Gavi, UN OCHA, UNESCO, IRENA, FAO). Cost units and citations are listed in each category’s “see sources” panel.",
-    "data": "All data is open and lives in the public repository.",
+    "counter": "Each counter spreads its stated annual estimate evenly across the displayed calendar year in UTC. It is an illustration, not a live measurement. Forecasts, historical benchmarks and economic costs are identified above each counter; they are not interchangeable or additive.",
+    "categories": "Each comparison divides the counter by a cited unit cost or funding benchmark. Annual figures show equivalent years of funding, not a promise to solve a problem. Historical estimates retain their original price basis unless an inflation adjustment is explicitly documented; quantities are approximate.",
+    "data": "Economic losses and implicit subsidies are not cash budgets that can be fully redirected. These comparisons illustrate scale, not a feasible transfer of funds or guaranteed outcomes. Source notes are in English; all data and calculation code are public.",
     "updated": "Last updated: {date}",
     "repoLabel": "View data and source code on GitHub"
   },
   "footer": {
     "year": "© {year}"
-  }
+  },
+  "counterPeriodEnded": "The {year} estimate is complete. This counter is frozen until its baseline is updated."
 }

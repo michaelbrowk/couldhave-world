@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Methodology } from "@/components/layout/Methodology";
 import { SourceSwitcher, SourceSwitcherView } from "@/components/sources/SourceSwitcher";
 import type { SupportedLocale } from "@/lib/formatters";
+import { DEFAULT_SOURCE_ID } from "@/lib/site-config";
 import { CATEGORY_DICT_KEYS, getDictionary, hasLocale, type Locale } from "./dictionaries";
 
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
@@ -32,6 +33,8 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       gambling: dict.categories.gambling,
     },
     sourcesToggle: dict.categories.sourcesToggle,
+    sourceUpdatedTemplate: dict.methodology.updated,
+    counterPeriodEnded: dict.counterPeriodEnded,
     aiBenefitLabel: dict.categories.aiBenefitLabel,
     categoryDictKeys: CATEGORY_DICT_KEYS,
   };
@@ -39,7 +42,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   return (
     <main className="min-h-screen w-full">
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-20">
-        <Suspense fallback={<SourceSwitcherView {...switcherProps} activeId="ai" />}>
+        <Suspense fallback={<SourceSwitcherView {...switcherProps} activeId={DEFAULT_SOURCE_ID} />}>
           <SourceSwitcher {...switcherProps} />
         </Suspense>
 

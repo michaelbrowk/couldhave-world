@@ -44,7 +44,6 @@ export function TickingCounter({ projection, currentYear, locale }: Props) {
   }, [projection, currentYear, reduceMotion, target]);
 
   const formatted = formatCurrency(reduceMotion ? initial : displayed, locale);
-  const yearTotalLabel = formatCurrency(projection.totalUsd, locale);
 
   // Size the figure to its COLUMN, not the viewport. The content column is a
   // fixed ~1056px above the md breakpoint, so a viewport unit (12vw) keeps
@@ -57,10 +56,10 @@ export function TickingCounter({ projection, currentYear, locale }: Props) {
     <div style={{ containerType: "inline-size" }}>
       <div
         className="font-serif text-[var(--accent)] leading-none tabular-nums tracking-tight"
-        style={{ fontSize: "min(220px, 15.5cqw)" }}
+        style={{ fontSize: locale === "es" ? "min(220px, 14cqw)" : "min(220px, 15.5cqw)" }}
         role="status"
         aria-live="off"
-        aria-label={yearTotalLabel}
+        aria-label={formatted}
         // The server renders one value (server time), the client a slightly
         // larger value (client time, ~ms later). Suppress the hydration warning
         // so React accepts the client value without aborting hydration.

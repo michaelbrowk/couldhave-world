@@ -1,4 +1,8 @@
 import { expect, test } from "@playwright/test";
+import de from "../../messages/de.json";
+import en from "../../messages/en.json";
+import es from "../../messages/es.json";
+import fr from "../../messages/fr.json";
 
 /**
  * Per-locale translation of the AI source's first ledger item ("dotcom
@@ -9,12 +13,10 @@ import { expect, test } from "@playwright/test";
  * default tab changed to AI (feature/data-correction-and-new-tabs), the
  * test was updated accordingly.
  */
-const cases = [
-  { code: "en", firstCategoryTitle: "Repeated the dotcom telecom buildout" },
-  { code: "es", firstCategoryTitle: "Repetido el despliegue telecom de la burbuja puntocom" },
-  { code: "de", firstCategoryTitle: "Dotcom-Telekombuildout wiederholt" },
-  { code: "fr", firstCategoryTitle: "Répété le déploiement télécom de la bulle internet" },
-] as const;
+const cases = Object.entries({ en, es, de, fr }).map(([code, dict]) => ({
+  code,
+  firstCategoryTitle: dict.categories.ai.dotcom.title,
+}));
 
 for (const { code, firstCategoryTitle } of cases) {
   test(`${code}: hero counter and first category render`, async ({ page }) => {

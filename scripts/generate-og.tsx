@@ -1,7 +1,7 @@
 /**
  * Build-time Open Graph image generator.
  *
- * Reads the projected military spending data, computes the live current
+ * Reads the default spending source, computes the live current
  * spend at the moment of execution, renders a 1200×630 PNG via satori
  * (JSX → SVG) + @resvg/resvg-js (SVG → PNG), and writes it to public/og.png.
  *
@@ -19,6 +19,8 @@ import satori from "satori";
 import { getSource } from "../data/sources.index";
 import { formatCompact, formatCurrency } from "../lib/formatters";
 import { currentSpendEstimate } from "../lib/projection";
+import { DEFAULT_SOURCE_ID } from "../lib/site-config";
+import enDict from "../messages/en.json";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -40,7 +42,7 @@ const instrumentSerif = fs.readFileSync(
 );
 
 // ── Compute live values ──────────────────────────────────────────────────────
-const { projection, currentYear } = getSource("war");
+const { projection, currentYear } = getSource(DEFAULT_SOURCE_ID);
 const now = new Date();
 const currentSpend = currentSpendEstimate(projection, now, currentYear);
 const formatted = formatCurrency(Math.round(currentSpend), "en");
@@ -52,8 +54,13 @@ const perDayDisplay = formatCompact(perDayUsd, "en");
 const perSecondDisplay = formatCurrency(Math.round(perSecondUsd), "en");
 const rateLine = `${perDayDisplay} PER DAY  ·  ${perSecondDisplay} PER SECOND`;
 
-const captionLine = `Spent on war since January 1, ${currentYear}`;
-const methodologyLine = `Projected ${currentYear}, based on SIPRI ${projection.basedOnYear} actuals and a 5-year average growth rate. Actual figures are published annually in late April.`;
+const captionLine = enDict.sources[DEFAULT_SOURCE_ID].caption.replace(
+  "{year}",
+  String(currentYear),
+);
+const methodologyLine = enDict.sources[DEFAULT_SOURCE_ID].methodology
+  .replace("{year}", String(currentYear))
+  .replace("{basedOnYear}", String(projection.basedOnYear));
 
 // ── Render ───────────────────────────────────────────────────────────────────
 
@@ -137,7 +144,7 @@ async function main() {
             fontFamily: "Instrument Serif",
           }}
         >
-          Instead, this money could have…
+          {enDict.transition.headline}
         </div>
         <div
           style={{

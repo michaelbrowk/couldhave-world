@@ -21,8 +21,6 @@ type Props = {
   locale: SupportedLocale;
 };
 
-const MIN_BAR_PCT = 0.4;
-
 export function ComparisonBars(props: Props) {
   const {
     projection,
@@ -38,12 +36,13 @@ export function ComparisonBars(props: Props) {
   const inView = useInView(ref, { once: true, amount: 0.2 });
   const reduceMotion = useReducedMotion();
 
-  // Both bars share the SAME scale: full annual projection. This makes the
-  // military bar a literal year-progress meter (0% → 100% over the year)
-  // while the alternative stays fixed as a tiny fraction.
-  const fullYear = projection.totalUsd;
-  const militaryProgressPct = Math.min(100, (currentSpend / fullYear) * 100);
-  const altPct = Math.max((alternativeAmount / fullYear) * 100, MIN_BAR_PCT);
+  // Both bars use the same dollar scale. Include an alternative larger than
+  // the annual estimate so neither bar is clipped or given a false ratio.
+  const scale = Math.max(projection.totalUsd, alternativeAmount);
+  const militaryProgressPct = Math.min(100, (currentSpend / scale) * 100);
+  // Preserve the actual ratio even for tiny costs. A minimum visible width
+  // would turn e.g. a $60 treatment into billions of apparent dollars.
+  const altPct = (alternativeAmount / scale) * 100;
 
   const militaryDisplay = formatCompact(currentSpend, locale);
 

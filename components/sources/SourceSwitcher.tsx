@@ -6,9 +6,10 @@ import { SourceCategories } from "@/components/sources/SourceCategories";
 import { SourceHero } from "@/components/sources/SourceHero";
 import { type SourceTabItem, SourceTabs } from "@/components/sources/SourceTabs";
 import { SOURCES } from "@/data/sources.index";
-import { type SourceId } from "@/data/sources.schema";
+import type { SourceId } from "@/data/sources.schema";
 import type { SupportedLocale } from "@/lib/formatters";
 import { track } from "@/lib/mixpanel";
+import { DEFAULT_SOURCE_ID } from "@/lib/site-config";
 import { parseSourceId } from "@/lib/sources";
 
 type DictionarySourceBlock = {
@@ -29,6 +30,8 @@ export type SourceSwitcherProps = {
   sourcesDict: Record<SourceId, DictionarySourceBlock>;
   categoriesDict: Record<SourceId, DictionaryCategoryBlock>;
   sourcesToggle: string;
+  sourceUpdatedTemplate: string;
+  counterPeriodEnded: string;
   aiBenefitLabel: string;
   /** Plain mapping: sourceId → categoryId → short dict key. Serializable. */
   categoryDictKeys: Record<string, Record<string, string>>;
@@ -50,6 +53,8 @@ export function SourceSwitcherView({
   sourcesDict,
   categoriesDict,
   sourcesToggle,
+  sourceUpdatedTemplate,
+  counterPeriodEnded,
   aiBenefitLabel,
   categoryDictKeys,
 }: SourceSwitcherProps & { activeId: SourceId }) {
@@ -64,8 +69,8 @@ export function SourceSwitcherView({
   const onSelect = (id: SourceId) => {
     if (id === activeId) return;
     track("source_switch", { from: activeId, to: id, locale, via: "click" });
-    const next = id === "ai" ? "" : `?source=${id}`;
-    router.replace(`/${locale}${next}`, { scroll: false });
+    const next = id === DEFAULT_SOURCE_ID ? "" : `?source=${id}`;
+    router.replace(`/${locale}/${next}`, { scroll: false });
   };
 
   const heroStrings = {
@@ -74,6 +79,9 @@ export function SourceSwitcherView({
     methodology: sourcesDict[activeId].methodology
       .replace("{year}", String(source.currentYear))
       .replace("{basedOnYear}", String(source.projection.basedOnYear)),
+    sourcesToggle,
+    updatedTemplate: sourceUpdatedTemplate,
+    counterPeriodEnded,
   };
 
   const dictBlock = categoriesDict[activeId];
@@ -117,13 +125,13 @@ export function SourceSwitcherView({
  */
 export function SourceSwitcher(props: SourceSwitcherProps) {
   const params = useSearchParams();
-  const activeId: SourceId = parseSourceId(params.get("source")) ?? "ai";
+  const activeId: SourceId = parseSourceId(params.get("source")) ?? DEFAULT_SOURCE_ID;
 
   const fired = useRef(false);
   useEffect(() => {
     if (fired.current) return;
     fired.current = true;
-    if (params.get("source") && activeId !== "ai") {
+    if (parseSourceId(params.get("source")) && activeId !== DEFAULT_SOURCE_ID) {
       track("source_switch", { from: null, to: activeId, locale: props.locale, via: "url" });
     }
   }, [activeId, params, props.locale]);

@@ -1,4 +1,5 @@
 import "server-only";
+import { SOURCES_LIST } from "@/data/sources.index";
 import enDict from "@/messages/en.json";
 
 const dictionaries = {
@@ -57,77 +58,18 @@ export function interpolate(template: string, values: Record<string, string | nu
  * (sourceId, categoryId) pair here is required when adding a new entry to
  * any data/sources/*.json file.
  */
-export const CATEGORY_DICT_KEYS: Record<string, Record<string, string>> = {
-  war: {
-    "cancer-treatment": "cancer",
-    "malaria-eradication": "malaria",
-    "world-hunger": "hunger",
-    "clean-water": "water",
-    "schools-lmic": "schools",
-    "child-vaccination": "vaccination",
-    "extreme-poverty": "poverty",
-    "rainforest-protection": "rainforest",
-    "renewable-transition": "renewable",
-    "humanitarian-aid": "humanitarian",
-  },
-  tobacco: {
-    "lung-cancer-treatment": "lungCancer",
-    "smoking-cessation": "cessation",
-    "mpower-country": "mpower",
-    "tb-treatment": "tb",
-    "copd-care-year": "copd",
-    "child-vaccination": "vaccination",
-    "world-hunger": "hunger",
-    "clean-water": "water",
-  },
-  "fossil-fuels": {
-    "renewable-transition": "renewable",
-    "rainforest-protection": "rainforest",
-    "clean-cooking-lmic": "cleanCooking",
-    "climate-adaptation-africa": "adaptation",
-    "building-retrofit": "retrofit",
-    "public-transit-cities": "transit",
-    "grid-storage-100gwh": "storage",
-    "world-hunger": "hunger",
-  },
-  ai: {
-    "dotcom-telecom-capex": "dotcom",
-    "global-ai-revenue-2025": "aiRevenue",
-    "apollo-program": "apollo",
-    "manhattan-project": "manhattan",
-    "world-hunger": "hunger",
-    "clean-water": "water",
-    "malaria-eradication": "malaria",
-    "us-grid-modernization": "grid",
-  },
-  "food-waste": {
-    "rutf-malnutrition": "rutf",
-    "school-meals": "schoolMeals",
-    "emergency-food-ration": "dailyMeal",
-    "smallholder-climate-finance": "smallholder",
-    "world-hunger": "hunger",
-    "clean-water": "water",
-    "food-systems-transformation": "foodSystems",
-  },
-  advertising: {
-    "mental-health-care-gap": "mentalHealth",
-    "education-financing-gap": "education",
-    "who-annual-budget": "who",
-    "malaria-rd-funding": "malariaRd",
-    "child-vaccination": "vaccination",
-    "world-hunger": "hunger",
-    "clean-water": "water",
-  },
-  gambling: {
-    "gambling-disorder-treatment": "treatment",
-    "permanent-supportive-housing": "housing",
-    "mental-health-financing-gap": "mentalHealth",
-    "suicide-crisis-lifeline": "lifeline",
-    "world-hunger": "hunger",
-    "extreme-poverty": "poverty",
-    "clean-water": "water",
-  },
-};
+export const CATEGORY_DICT_KEYS: Record<string, Record<string, string>> = Object.fromEntries(
+  SOURCES_LIST.map((source) => [
+    source.id,
+    Object.fromEntries(
+      source.categories.map((category) => {
+        const key = category.titleKey.split(".")[2];
+        if (!key) throw new Error(`Invalid title key: ${category.titleKey}`);
+        return [category.id, key];
+      }),
+    ),
+  ]),
+);
 
 export function getCategoryDictKey(sourceId: string, categoryId: string): string {
   const sourceMap = CATEGORY_DICT_KEYS[sourceId];

@@ -1,5 +1,5 @@
 import { interpolate } from "@/app/[locale]/dictionaries";
-import { getSource } from "@/data/sources.index";
+import { SOURCES_LIST } from "@/data/sources.index";
 
 const REPO_URL = "https://github.com/michaelbrowk/couldhave-world";
 
@@ -16,7 +16,10 @@ type Props = {
 
 export function Methodology({ strings }: Props) {
   const updatedText = interpolate(strings.updated, {
-    date: getSource("war").lastUpdated,
+    date:
+      SOURCES_LIST.map((source) => source.lastUpdated)
+        .sort()
+        .at(-1) ?? "",
   });
 
   return (

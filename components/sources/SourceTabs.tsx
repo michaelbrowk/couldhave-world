@@ -28,7 +28,10 @@ export function SourceTabs({ items, activeId, onSelect, ariaLabel }: Props) {
   const activeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    activeRef.current?.scrollIntoView({ inline: "nearest", block: "nearest" });
+    const button = activeRef.current;
+    if (button?.id === `source-tab-${activeId}`) {
+      button.scrollIntoView({ inline: "nearest", block: "nearest" });
+    }
   }, [activeId]);
 
   return (

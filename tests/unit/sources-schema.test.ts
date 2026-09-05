@@ -32,7 +32,7 @@ describe("SourceSchema", () => {
     expect(ok.id).toBe("war");
   });
 
-  it("rejects fewer than 6 categories", () => {
+  it("rejects an empty comparison set", () => {
     expect(() =>
       SourceSchema.parse({
         id: "war",
@@ -78,26 +78,23 @@ describe("ai source", () => {
     const ai = SourceSchema.parse(aiJson);
     expect(ai.id).toBe("ai");
     expect(ai.currentYear).toBe(2026);
-    expect(ai.categories.length).toBeGreaterThanOrEqual(8);
+    expect(ai.categories.length).toBeGreaterThanOrEqual(1);
     expect(ai.projection.totalUsd).toBe(770_000_000_000);
   });
 });
 
 describe("ai aiBenefit field", () => {
-  it("every ai category has aiBenefit with text and at least one source", () => {
+  it("every retained optional AI example has text and a source", () => {
     const parsed = SourceSchema.parse(aiJson);
     for (const cat of parsed.categories) {
-      expect(cat.aiBenefit, `category ${cat.id} should have aiBenefit`).toBeDefined();
+      if (!cat.aiBenefit) continue;
       expect(cat.aiBenefit?.text.length).toBeGreaterThan(0);
       expect(cat.aiBenefit?.sources.length).toBeGreaterThanOrEqual(1);
       expect(cat.aiBenefit?.sources[0]?.url).toMatch(/^https:\/\//);
     }
   });
 
-  it("insilico benefit says Phase I, not Phase II", () => {
-    const ai = SourceSchema.parse(aiJson);
-    const m = ai.categories.find((c) => c.id === "malaria-eradication");
-    expect(m?.aiBenefit?.text).toMatch(/Phase I\b/);
-    expect(m?.aiBenefit?.text).not.toMatch(/Phase II/);
+  it("does not claim unrelated AI examples are returns on 2026 capex", () => {
+    expect(aiJson.projection.growthBasis).toContain("not returns caused");
   });
 });

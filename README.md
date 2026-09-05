@@ -1,55 +1,27 @@
 # couldhave.world
 
-A multilingual data-journalism landing page that shows seven major global spending categories in real time and translates each into verifiable humanitarian alternatives.
+A multilingual data-journalism site comparing seven spending, economic-cost and historical monetary benchmarks with documented programme costs.
 
 **Live:** [couldhave.world](https://couldhave.world)
 
-## What it is
+## Interpretation
 
-A single page that:
+The counter distributes a stated annual benchmark evenly over the displayed UTC calendar year. It is not live observed spending. Source notes identify forecasts, estimates, dates, and assumptions. Economic losses and implicit subsidies are not redirectable cash budgets; totals across tabs must not be added.
 
-- Ticks the **projected annual spend** for the selected spending category live, in real time
-- Offers **7 spending tabs**: AI infrastructure, war, tobacco, fossil fuels, food waste, advertising, gambling — each backed by SIPRI/IPCC/WHO/industry authoritative data
-- For each tab, shows **6–10 concrete humanitarian alternatives** — cure cancer, eradicate malaria, end world hunger, clean water, schools, child vaccination, eliminate extreme poverty, protect rainforest, and more — with a comparison bar, a symbol matrix, and citations
-- Available in **English, Spanish, German, French**
-- Fully static, no backend, all data open and auditable in this repo
+Comparison quantities divide that illustrated year-to-date amount by an explicit unit cost. Annual funding, multi-year programmes, commodity-only prices and historical costs are labelled separately. Money alone does not guarantee outcomes. Historical dollar figures retain their documented price basis unless an adjustment is explicitly shown. At the end of the reviewed year the counter caps at the stated total and displays a notice; it does not invent a new year's forecast.
 
-## Methodology
+## Audited data
 
-The counter projects this year's total spending for the active tab from the most recent authoritative figures, compounded by a trailing average growth rate where applicable. It ticks against the yearly total based on seconds elapsed since January 1.
+All seven datasets live in `data/sources/*.json`. The September 2026 evidence review is recorded in:
 
-Each humanitarian alternative is computed from authoritative sources documented in `data/sources/<id>.json`. Each category cites at least one authoritative source with its publication year and carries a methodology statement explaining what the unit cost represents.
+- [AI evidence and corrections](docs/audit-ai-2026-09-06.md)
+- [Other six sources and comparisons](docs/audit-non-ai-2026-09-06.md)
 
-All source data lives in `data/sources/`:
+The site ships 44 supported comparisons after removing 11 unsupported or incompatible ones. Each retained row includes its numerator/denominator context, source link and year, and interpretation limits. Source-detail prose is in English; titles, units and explanatory interface copy are translated into English, Spanish, German and French.
 
-- `data/sources/war.json` — SIPRI military spending: historical totals + projection
-- `data/sources/tobacco.json` — global tobacco industry revenue
-- `data/sources/fossil-fuels.json` — IMF-estimated fossil-fuel subsidy flows
-- `data/sources/ai.json` — Big-Five hyperscaler AI/data-centre capex (Epoch AI)
-- `data/sources/food-waste.json` — FAO/UNEP global food-loss cost estimate
-- `data/sources/advertising.json` — global ad-spend (GroupM/Magna)
-- `data/sources/gambling.json` — global gross gaming revenue (H2 Gambling Capital)
+## Stack and validation
 
-Updating a source is a single hand edit to the relevant JSON file followed by a rebuild.
-
-## Stack
-
-- **Next.js 16** (App Router) with `output: 'export'` — fully static
-- **React 19**, **TypeScript** strict mode
-- **Tailwind CSS v4** (CSS-only theme tokens)
-- **Framer Motion** — counter spring smoothing, fade-in, comparison bar reveal, symbol matrix stagger
-- **next/font** — Instrument Serif (display), Inter (body), JetBrains Mono (numbers), all self-hosted from Google Fonts
-- **Built-in dictionary i18n** — `app/[locale]/dictionaries.ts`, no external i18n library
-- **Vitest** — 121 unit tests (projection math, formatters, category metrics, data sanity across all 7 sources)
-- **Playwright** — 24 E2E tests (locales, ticking counter, source-tab switching, language switcher, axe a11y across all 4 locales)
-- **Biome** — lint + format
-- **satori + @resvg/resvg-js** — daily-refreshable Open Graph image generation at build time
-
-## Quality bars
-
-- Lighthouse desktop: **100 / 100 / 100 / 100** on all 4 locales (performance, accessibility, best practices, SEO)
-- axe WCAG 2.0 AA: **0 serious or critical violations** on all 4 locales
-- All tests green (`npm test && npm run e2e`)
+Next.js 16 static export, React 19, TypeScript, Tailwind, Framer Motion, Zod, Vitest, Playwright and Biome. There is no production Node server or database; nginx serves the export. Source-schema checks validate positive costs, distinct keys/years, date ordering and compounded projections. Regression tests cover shared denominators, all four dictionaries, mobile units, forecast boundaries and analytics attribution. Browser checks run against the exported production HTML, including hydration, instead of the development server.
 
 ## Local development
 
@@ -67,56 +39,32 @@ Open `http://localhost:3000/en/` (or `/es/`, `/de/`, `/fr/`).
 ```bash
 npm run lint     # Biome
 npm test         # Vitest unit tests
-npm run e2e      # Playwright end-to-end
 npm run build    # Static export to ./out
+npm run e2e      # Playwright against the export
 ```
 
 ## Updating data
 
-When SIPRI releases its annual fact sheet (late April), edit the relevant values in `data/sources/war.json`:
+1. Verify the primary source, publication date, period, currency/price basis, geographic coverage and cost scope.
+2. Update the relevant JSON and its source notes; do not mark a forecast as an actual. `lastUpdated` is the review date, not the observation year.
+3. Update localized summaries if the value, scope or denominator changed. Do not require a minimum number of rows beyond one supported comparison.
+4. Run `npm run lint`, `npm test`, `npm run build`, and `npm run e2e`. Browser tests require a fresh export and Playwright Chromium (`npx playwright install chromium`).
+5. Commit the reviewed change and deploy the same checked export.
 
-- `projection.basedOnYear` → the new latest actual year
-- `projection.baseAmountUsd` → the new latest actual world total in current USD
-- Optionally re-compute `projection.growthFactor` from the updated 5-year window
+## Deploy and rollback
 
-Add the new year to `historical[]`, run `npm run build`, and the projected total + per-day + per-second rates update everywhere automatically. The same pattern applies to other sources when their upstream data refreshes.
-
-## Deploy
-
-The site is deployed to a DigitalOcean droplet at `46.101.216.23`, served by nginx as static files (no Node process). Production URL: [couldhave.world](https://couldhave.world).
-
-### Initial deploy
+Build and check locally, then run:
 
 ```bash
-# Local build
-npm run build
-
-# Sync the static export to the droplet
-rsync -avz --delete out/ root@46.101.216.23:/opt/couldhave-world/out/
+bash scripts/deploy.sh couldhave-droplet
 ```
 
-The nginx vhost lives at `/etc/nginx/sites-available/couldhave-world` on the droplet, with `root /opt/couldhave-world/out` and `try_files` for the locale routes. SSL is handled by Certbot with auto-renew.
+The script uploads a new release under `/opt/couldhave-world/releases`, validates locale HTML, and switches the nginx-served `/opt/couldhave-world/out` link under a deployment lock. Failed HTTPS or served-byte checks automatically restore the prior export while the deployment lock is held. Prior exports remain on disk for rollback. The first migration of the legacy `out` directory preserves it as `out-before-<release>`. Rollback consists of pointing `out` at a verified prior release, then checking all public locale routes. Never delete the last working release during deployment.
 
-### Updating data
+The existing daily GitHub Actions workflow rebuilds both static HTML and Open Graph image, then deploys a new release. This refreshes crawler snapshots and the image cache version together. It does not retrieve or refresh the underlying research estimates. The workflow uses the existing `DROPLET_SSH_KEY` repository secret. Pull requests and main pushes run independent quality checks, including the production-export browser tests.
 
-After editing any `data/sources/*.json`, rebuild and rsync:
-
-```bash
-npm run build && rsync -avz --delete out/ root@46.101.216.23:/opt/couldhave-world/out/
-```
-
-### Daily Open Graph refresh
-
-The `og:image` meta tag points at `/og.png?v=YYYY-MM-DD`. The PNG is regenerated daily by the GitHub Actions workflow `.github/workflows/daily-og-refresh.yml` (cron `5 0 * * *` UTC), which runs only the OG generator script and rsyncs the resulting file. The site itself is not rebuilt — only the single PNG is overwritten on the droplet.
-
-The workflow needs one repo secret:
-
-| Secret | Value |
-|---|---|
-| `DROPLET_SSH_KEY` | OpenSSH private key whose public half is in `/root/.ssh/authorized_keys` on the droplet |
-
-Set it under **Settings → Secrets and variables → Actions → New repository secret**.
+Localhost previews do not send events to the production analytics project. Production explicit events honor Do Not Track; IP-based geolocation enrichment and automatic capture are disabled.
 
 ## License
 
-[MIT](./LICENSE) — do whatever you want with it. Data sources are credited in `data/sources/*.json` and on the methodology section of the page.
+[MIT](./LICENSE). Source datasets retain their original attribution and terms.

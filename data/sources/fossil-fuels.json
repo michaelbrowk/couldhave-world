@@ -6,51 +6,30 @@
     "totalUsd": 7400000000000,
     "basedOnYear": 2024,
     "baseAmountUsd": 7400000000000,
-    "growthBasis": "Annual figure used as a constant rate; not projected. IMF Working Paper 2025/270: USD 725 billion explicit subsidies (undercharging for supply costs) plus USD 6.7 trillion implicit subsidies (undercharging for environmental and air-pollution externalities), 2024 data, totalling ~6.4% of global GDP."
+    "growthBasis": "IMF 2025 update estimates approximately USD 7.4 trillion in total fossil-fuel underpricing for 2024 (6.4% of GDP): USD 725 billion explicit subsidies and approximately USD 6.7 trillion implicit subsidies. The latter value environmental damage, road-use externalities and forgone consumption taxes; they are not cash government payments. The rounded 2024 estimate is held constant as an illustrative rate, without a 2026 forecast or an assumption that this sum is directly transferable."
   },
   "source": "IMF Working Paper 2025/270 — Underpriced and Overused: Fossil Fuel Subsidies Data 2025 Update",
   "sourceUrl": "https://www.imf.org/en/publications/wp/issues/2025/12/20/underpriced-and-overused-fossil-fuel-subsidies-data-2025-update-572729",
-  "lastUpdated": "2026-04-29",
+  "lastUpdated": "2026-09-06",
   "categories": [
     {
-      "id": "renewable-transition",
+      "id": "utility-solar-gw",
       "titleKey": "categories.fossil-fuels.renewable.title",
       "unitLabelKey": "categories.fossil-fuels.renewable.unit",
       "symbol": "ray",
       "scaleHint": "perUnit",
-      "unitCostUsd": 1000000000,
+      "unitCostUsd": 691000000,
       "sources": [
         {
-          "name": "IRENA — Renewable Power Generation Costs in 2023",
-          "url": "https://www.irena.org/publications/2024/Sep/Renewable-power-generation-costs-in-2023",
-          "year": 2024
+          "name": "IRENA — Renewable Power Generation Costs in 2024",
+          "url": "https://www.irena.org/Digital-Report/Renewable-Power-Generation-Costs-in-2024",
+          "year": 2025
         }
       ],
-      "methodology": "Capital cost to install 1 GW of utility-scale solar PV. IRENA's 2023 global weighted-average was $758/kW, so ~$1B installs ~1.3 GW — enough to power ~300,000 European homes."
+      "methodology": "Illustrative installed capital cost of 1 GW of utility-scale solar PV: 1,000,000 kW × USD 691/kW, IRENA's global weighted-average total installed cost for projects commissioned in 2024, in 2024 USD. This compares nameplate generating capacity; it does not include a complete electricity system, storage, continuing operations or a fixed number of homes powered. Local project costs vary."
     },
     {
-      "id": "rainforest-protection",
-      "titleKey": "categories.fossil-fuels.rainforest.title",
-      "unitLabelKey": "categories.fossil-fuels.rainforest.unit",
-      "symbol": "leaf",
-      "scaleHint": "totalSolution",
-      "unitCostUsd": 45000000000,
-      "sources": [
-        {
-          "name": "Rainforest Trust — Cost per acre protected",
-          "url": "https://www.rainforesttrust.org/our-impact/",
-          "year": 2023
-        },
-        {
-          "name": "FAO — Global Forest Resources Assessment 2020",
-          "url": "https://www.fao.org/forest-resources-assessment/en/",
-          "year": 2020
-        }
-      ],
-      "methodology": "Total cost to place all of Earth's remaining tropical rainforest under durable legal protection (USD 25/ha × ~1.8B ha)."
-    },
-    {
-      "id": "clean-cooking-lmic",
+      "id": "clean-cooking-access",
       "titleKey": "categories.fossil-fuels.cleanCooking.title",
       "unitLabelKey": "categories.fossil-fuels.cleanCooking.unit",
       "symbol": "ray",
@@ -58,65 +37,33 @@
       "unitCostUsd": 8000000000,
       "sources": [
         {
-          "name": "IEA — A Vision for Clean Cooking Access for All",
-          "url": "https://www.iea.org/reports/a-vision-for-clean-cooking-access-for-all",
-          "year": 2024
+          "name": "IEA — A Vision for Clean Cooking Access for All, executive summary",
+          "url": "https://www.iea.org/reports/a-vision-for-clean-cooking-access-for-all/executive-summary",
+          "year": 2023
         }
       ],
-      "methodology": "Average additional annual investment needed to achieve universal access to clean cooking in low- and lower-middle-income countries by 2030 — approximately USD 8 billion per year (up from ~$2.5B today), per IEA 'A Vision for Clean Cooking Access for All'."
+      "methodology": "IEA's 2023 Access for All scenario requires about USD 8 billion per year in total investment in clean-cooking stoves, equipment and infrastructure to reach universal access by 2030, compared with around USD 2.5 billion at the time. This is total capital investment, not USD 8 billion of additional annual funding or a budget covering ongoing fuel affordability for every household."
     },
     {
-      "id": "climate-adaptation-africa",
+      "id": "climate-adaptation-ssa",
       "titleKey": "categories.fossil-fuels.adaptation.title",
       "unitLabelKey": "categories.fossil-fuels.adaptation.unit",
       "symbol": "leaf",
       "scaleHint": "annualNeed",
-      "unitCostUsd": 50000000000,
+      "unitCostUsd": 51000000000,
       "sources": [
+        {
+          "name": "UNEP Finance Initiative — Turning climate adaptation investments into real-world impact in Africa and the Middle East",
+          "url": "https://www.unepfi.org/themes/climate-change/turning-climate-adaptation-investments-into-real-world-impact-in-africa-and-the-middle-east/",
+          "year": 2026
+        },
         {
           "name": "UNEP — Adaptation Gap Report 2025",
           "url": "https://www.unep.org/resources/adaptation-gap-report-2025",
           "year": 2025
-        },
-        {
-          "name": "WMO — State of the Climate in Africa",
-          "url": "https://library.wmo.int/records/item/67582-state-of-the-climate-in-africa-2024",
-          "year": 2024
         }
       ],
-      "methodology": "Estimated annual adaptation finance required for sub-Saharan Africa — approximately USD 51 billion per year (2023 prices), per UNEP Adaptation Gap Report 2025 (SSA requires $51B/yr; wider UNEP range $30–50B/yr over 2021–2030, ~2–3% of SSA GDP)."
-    },
-    {
-      "id": "building-retrofit",
-      "titleKey": "categories.fossil-fuels.retrofit.title",
-      "unitLabelKey": "categories.fossil-fuels.retrofit.unit",
-      "symbol": "roof",
-      "scaleHint": "annualNeed",
-      "unitCostUsd": 650000000000,
-      "sources": [
-        {
-          "name": "IEA — Net Zero by 2050: A Roadmap for the Global Energy Sector",
-          "url": "https://www.iea.org/reports/net-zero-by-2050",
-          "year": 2021
-        }
-      ],
-      "methodology": "Approximate annual investment in deep retrofits and energy efficiency for the global buildings sector required to reach net-zero — approximately USD 650 billion per year (IEA NZE: buildings efficiency investment must roughly double from ~$250B in 2022 toward ~$640B+ by 2050 for deep retrofit + efficient appliances)."
-    },
-    {
-      "id": "public-transit-cities",
-      "titleKey": "categories.fossil-fuels.transit.title",
-      "unitLabelKey": "categories.fossil-fuels.transit.unit",
-      "symbol": "roof",
-      "scaleHint": "perUnit",
-      "unitCostUsd": 5000000000,
-      "sources": [
-        {
-          "name": "ITDP — BRT Planning Guide (capital-cost data)",
-          "url": "https://brtguide.itdp.org/branch/master/guide/why-brt/costs",
-          "year": 2016
-        }
-      ],
-      "methodology": "Approximate capital cost of one full metro line or BRT corridor expansion in a major city — approximately USD 5 billion covers a metro extension (~30–40 km) plus a BRT network (~50–100 km) to expand mass transit. ITDP BRT Planning Guide: BRT $6–11.5M/km, metro/HRT ~$87M/km in lower-income settings."
+      "methodology": "Estimated annual adaptation finance needs of USD 51 billion in sub-Saharan Africa, reported by UNEP Finance Initiative in April 2026 from UNEP's Adaptation Gap Report. This is a regional annual finance-needs benchmark, not all of Africa, a verified annual funding gap, or the amount that would eliminate climate damage. Actual costs vary by location, hazard and adaptation pathway."
     },
     {
       "id": "grid-storage-100gwh",
@@ -124,15 +71,15 @@
       "unitLabelKey": "categories.fossil-fuels.storage.unit",
       "symbol": "ray",
       "scaleHint": "perUnit",
-      "unitCostUsd": 20000000000,
+      "unitCostUsd": 19200000000,
       "sources": [
         {
-          "name": "BloombergNEF — 1H 2024 Battery Price Survey (turnkey utility-scale BESS)",
-          "url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-2024/",
-          "year": 2024
+          "name": "IRENA — Renewable Power Generation Costs in 2024",
+          "url": "https://www.irena.org/Digital-Report/Renewable-Power-Generation-Costs-in-2024",
+          "year": 2025
         }
       ],
-      "methodology": "Approximate all-in cost of 100 GWh of utility-scale lithium-ion battery storage — approximately USD 20 billion (100 GWh × ~$200/kWh all-in: BNEF 2024 turnkey ~$165/kWh global average, plus EPC/grid integration mark-up to ~$200/kWh)."
+      "methodology": "Illustrative installed capital cost of 100 GWh of battery storage at IRENA's 2024 global benchmark of USD 192/kWh: 100,000,000 kWh × USD 192/kWh = USD 19.2 billion. This is energy-storage capacity, not annual electricity generation or a complete grid upgrade. Costs vary by discharge duration, location and project design; operations, replacement and broader grid expansion are additional."
     },
     {
       "id": "world-hunger",
@@ -143,12 +90,12 @@
       "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature 2020",
-          "url": "https://www.nature.com/articles/d41586-020-02849-6",
+          "name": "Ceres2030 — Sustainable Solutions to End Hunger, Summary Report",
+          "url": "https://ceres2030.iisd.org/wp-content/uploads/2021/03/ceres2030_en-summary-report.pdf",
           "year": 2020
         }
       ],
-      "methodology": "Average additional annual public expenditure (~USD 33 billion) required to end hunger (SDG 2), per Ceres2030 / IFPRI."
+      "methodology": "Ceres2030's 2020 model estimated average additional public spending of USD 33 billion per year through 2030: USD 14 billion from donors plus USD 19 billion from low- and middle-income governments. The scenario combines reducing hunger, doubling small-producer incomes and limiting agricultural emissions; it assumes coordinated interventions and induced private investment. This is a historical model benchmark, not a current funding quote or a guarantee that money alone ends hunger."
     }
   ]
 }

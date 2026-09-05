@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
-import warJson from "@/data/sources/war.json";
-import tobaccoJson from "@/data/sources/tobacco.json";
-import fossilJson from "@/data/sources/fossil-fuels.json";
-import foodWasteJson from "@/data/sources/food-waste.json";
 import advertisingJson from "@/data/sources/advertising.json";
+import foodWasteJson from "@/data/sources/food-waste.json";
+import fossilJson from "@/data/sources/fossil-fuels.json";
 import gamblingJson from "@/data/sources/gambling.json";
+import tobaccoJson from "@/data/sources/tobacco.json";
+import warJson from "@/data/sources/war.json";
 import { SourceSchema } from "@/data/sources.schema";
 
 describe("data/sources/war.json", () => {
@@ -20,15 +20,16 @@ describe("data/sources/war.json", () => {
     expect(y2025?.actual).toBe(true);
   });
 
-  it("projects 2026 between $3.05T and $3.15T", () => {
+  it("uses the 2025 actual as an explicitly flat benchmark", () => {
     const parsed = SourceSchema.parse(warJson);
-    expect(parsed.projection.totalUsd).toBeGreaterThan(3_050_000_000_000);
-    expect(parsed.projection.totalUsd).toBeLessThan(3_150_000_000_000);
+    expect(parsed.projection.totalUsd).toBe(2_887_000_000_000);
+    expect(parsed.projection.basedOnYear).toBe(2025);
+    expect(parsed.projection.growthFactor).toBeUndefined();
   });
 
-  it("ships at least 10 alternative categories", () => {
+  it("ships supported alternatives", () => {
     const parsed = SourceSchema.parse(warJson);
-    expect(parsed.categories.length).toBeGreaterThanOrEqual(10);
+    expect(parsed.categories.length).toBeGreaterThanOrEqual(1);
   });
 });
 
@@ -38,16 +39,16 @@ describe("data/sources/tobacco.json", () => {
     expect(parsed.id).toBe("tobacco");
   });
 
-  it("uses a flat $1.4T/year (no growth)", () => {
+  it("uses a flat $1.436T/year (no growth)", () => {
     const parsed = SourceSchema.parse(tobaccoJson);
-    expect(parsed.projection.totalUsd).toBe(1_400_000_000_000);
+    expect(parsed.projection.totalUsd).toBe(1_436_000_000_000);
     expect(parsed.projection.totalUsd).toBe(parsed.projection.baseAmountUsd);
     expect(parsed.projection.growthFactor).toBeUndefined();
   });
 
-  it("ships at least 6 alternative categories", () => {
+  it("ships supported alternatives", () => {
     const parsed = SourceSchema.parse(tobaccoJson);
-    expect(parsed.categories.length).toBeGreaterThanOrEqual(6);
+    expect(parsed.categories.length).toBeGreaterThanOrEqual(1);
   });
 });
 
@@ -64,9 +65,9 @@ describe("data/sources/fossil-fuels.json", () => {
     expect(parsed.projection.growthFactor).toBeUndefined();
   });
 
-  it("ships at least 6 alternative categories", () => {
+  it("ships supported alternatives", () => {
     const parsed = SourceSchema.parse(fossilJson);
-    expect(parsed.categories.length).toBeGreaterThanOrEqual(6);
+    expect(parsed.categories.length).toBeGreaterThanOrEqual(1);
   });
 });
 
@@ -76,16 +77,16 @@ describe("data/sources/food-waste.json", () => {
     expect(parsed.id).toBe("food-waste");
   });
 
-  it("uses a flat $1T/year (no growth)", () => {
+  it("uses a flat $936B/year (no growth)", () => {
     const parsed = SourceSchema.parse(foodWasteJson);
-    expect(parsed.projection.totalUsd).toBe(1_000_000_000_000);
+    expect(parsed.projection.totalUsd).toBe(936_000_000_000);
     expect(parsed.projection.totalUsd).toBe(parsed.projection.baseAmountUsd);
     expect(parsed.projection.growthFactor).toBeUndefined();
   });
 
-  it("ships at least 6 alternative categories", () => {
+  it("ships supported alternatives", () => {
     const parsed = SourceSchema.parse(foodWasteJson);
-    expect(parsed.categories.length).toBeGreaterThanOrEqual(6);
+    expect(parsed.categories.length).toBeGreaterThanOrEqual(1);
   });
 });
 
@@ -102,9 +103,9 @@ describe("data/sources/advertising.json", () => {
     expect(parsed.projection.growthFactor).toBeUndefined();
   });
 
-  it("ships at least 6 alternative categories", () => {
+  it("ships supported alternatives", () => {
     const parsed = SourceSchema.parse(advertisingJson);
-    expect(parsed.categories.length).toBeGreaterThanOrEqual(6);
+    expect(parsed.categories.length).toBeGreaterThanOrEqual(1);
   });
 });
 
@@ -121,8 +122,8 @@ describe("data/sources/gambling.json", () => {
     expect(parsed.projection.growthFactor).toBeUndefined();
   });
 
-  it("ships at least 6 alternative categories", () => {
+  it("ships supported alternatives", () => {
     const parsed = SourceSchema.parse(gamblingJson);
-    expect(parsed.categories.length).toBeGreaterThanOrEqual(6);
+    expect(parsed.categories.length).toBeGreaterThanOrEqual(1);
   });
 });

@@ -1,5 +1,10 @@
+"use client";
+
 import Link from "next/link";
-import { LOCALES, type Locale } from "@/app/[locale]/dictionaries";
+import { useSearchParams } from "next/navigation";
+import type { Locale } from "@/app/[locale]/dictionaries";
+import { DEFAULT_SOURCE_ID } from "@/lib/site-config";
+import { parseSourceId, type SourceId } from "@/lib/sources";
 
 type Props = {
   currentLocale: Locale;
@@ -12,15 +17,19 @@ const LOCALE_LABELS: Record<Locale, string> = {
   fr: "FR",
 };
 
-export function LanguageSwitcher({ currentLocale }: Props) {
+export function LanguageSwitcherView({
+  currentLocale,
+  sourceId = DEFAULT_SOURCE_ID,
+}: Props & { sourceId?: SourceId }) {
+  const query = sourceId === DEFAULT_SOURCE_ID ? "" : `?source=${sourceId}`;
   return (
     <nav aria-label="Language" className="flex gap-4 font-mono text-xs uppercase tracking-[0.18em]">
-      {LOCALES.map((loc) => {
+      {(Object.keys(LOCALE_LABELS) as Locale[]).map((loc) => {
         const isCurrent = loc === currentLocale;
         return (
           <Link
             key={loc}
-            href={`/${loc}/`}
+            href={`/${loc}/${query}`}
             aria-current={isCurrent ? "page" : undefined}
             className={
               isCurrent
@@ -34,4 +43,10 @@ export function LanguageSwitcher({ currentLocale }: Props) {
       })}
     </nav>
   );
+}
+
+export function LanguageSwitcher(props: Props) {
+  const params = useSearchParams();
+  const sourceId = parseSourceId(params.get("source")) ?? DEFAULT_SOURCE_ID;
+  return <LanguageSwitcherView {...props} sourceId={sourceId} />;
 }

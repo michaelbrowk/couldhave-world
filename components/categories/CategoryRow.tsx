@@ -1,10 +1,12 @@
 "use client";
 
+import { useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import type { Category } from "@/data/sources.schema";
 import { computeCategoryMetric, computeSymbolCount, pickMatrixMode } from "@/lib/categories";
 import { formatCompact, formatCount, type SupportedLocale } from "@/lib/formatters";
 import { currentSpendEstimate, type Projection } from "@/lib/projection";
+import { CategorySymbol } from "./CategorySymbol";
 import { ComparisonBars } from "./ComparisonBars";
 import { SymbolMatrix } from "./SymbolMatrix";
 
@@ -36,19 +38,21 @@ type Props = {
  * `currentSpendEstimate(projection, now, currentYear)` — drives everything.
  */
 export function CategoryRow({ category, projection, currentYear, locale, strings }: Props) {
+  const reduceMotion = useReducedMotion();
   // Live YTD spend, ticked every 100ms to match the hero counter cadence.
-  // Seeded with a deterministic initial value so SSR and the first client
-  // render produce identical markup; the interval then takes over.
+  // The static fallback uses its build time; the URL-aware subtree mounts
+  // with the visitor's time and the interval then takes over.
   const [currentSpend, setCurrentSpend] = useState<number>(() =>
     currentSpendEstimate(projection, new Date(), currentYear),
   );
 
   useEffect(() => {
+    if (reduceMotion) return;
     const tick = () => setCurrentSpend(currentSpendEstimate(projection, new Date(), currentYear));
     tick();
     const interval = window.setInterval(tick, 100);
     return () => window.clearInterval(interval);
-  }, [projection, currentYear]);
+  }, [projection, currentYear, reduceMotion]);
 
   const metric = computeCategoryMetric(category, currentSpend);
   const mode = pickMatrixMode(metric);
@@ -59,7 +63,7 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
 
   const matrixAriaLabel =
     mode === "dense"
-      ? `${symbolCount.visibleCount} symbols, each representing ${formatCount(
+      ? `${symbolCount.visibleCount} × ${formatCount(
           symbolCount.unitsPerSymbol,
           locale,
         )} ${strings.unit}`
@@ -75,7 +79,7 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
         <span className="font-serif text-xl md:text-3xl text-[var(--text-primary)] flex-1 min-w-0 leading-tight">
           {strings.title}
         </span>
-        <span className="flex items-baseline gap-3 md:gap-4 shrink-0 max-w-[55%] sm:max-w-[60%]">
+        <span className="flex flex-col items-end sm:flex-row sm:items-baseline gap-2 sm:gap-3 md:gap-4 shrink-0 max-w-[55%] sm:max-w-[60%]">
           <span
             className="font-serif text-[var(--accent)] tabular-nums leading-none shrink-0"
             style={{ fontSize: "clamp(32px, 5vw, 72px)" }}
@@ -88,7 +92,7 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
           >
             {numberDisplay}
           </span>
-          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.12em] leading-snug text-[var(--text-secondary)] hidden sm:inline-block max-w-[14ch] md:max-w-[18ch] text-left">
+          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.12em] leading-snug text-[var(--text-secondary)] max-w-[18ch] [overflow-wrap:anywhere] text-right sm:text-left">
             {strings.unit}
           </span>
         </span>
@@ -106,13 +110,27 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
             locale={locale}
           />
         </div>
-        <SymbolMatrix symbol={category.symbol} count={symbolCount} ariaLabel={matrixAriaLabel} />
+        <div className="space-y-4">
+          <SymbolMatrix symbol={category.symbol} count={symbolCount} ariaLabel={matrixAriaLabel} />
+          <p className="flex items-center gap-2 font-mono text-xs text-[var(--text-secondary)]">
+            <span>1</span>
+            <span aria-hidden="true">
+              <CategorySymbol symbol={category.symbol} size={14} />
+            </span>
+            <span>
+              = {formatCount(symbolCount.unitsPerSymbol, locale)} {strings.unit}
+            </span>
+          </p>
+        </div>
         {category.aiBenefit ? (
           <aside className="max-w-xl border-t border-[var(--border-color)] pt-8">
             <p className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-[var(--text-primary)] mb-3">
               {strings.aiBenefitLabel}
             </p>
-            <p className="font-serif text-base md:text-lg text-[var(--text-primary)] leading-relaxed">
+            <p
+              lang="en"
+              className="font-serif text-base md:text-lg text-[var(--text-primary)] leading-relaxed"
+            >
               {category.aiBenefit.text}
             </p>
             <ul className="mt-4 space-y-1 list-none font-mono text-xs text-[var(--text-secondary)]">
@@ -152,7 +170,10 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
               </li>
             ))}
           </ul>
-          <p className="mt-3 italic text-left font-sans normal-case tracking-normal leading-relaxed">
+          <p
+            lang="en"
+            className="mt-3 italic text-left font-sans normal-case tracking-normal leading-relaxed"
+          >
             {category.methodology}
           </p>
         </details>

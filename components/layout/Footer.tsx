@@ -1,6 +1,6 @@
 import type { Locale } from "@/app/[locale]/dictionaries";
 import { interpolate } from "@/app/[locale]/dictionaries";
-import { LanguageSwitcher } from "./LanguageSwitcher";
+import { LanguageSwitcher, LanguageSwitcherView } from "./LanguageSwitcher";
 
 type Props = {
   currentLocale: Locale;
@@ -14,7 +14,11 @@ export function Footer({ currentLocale, yearTemplate }: Props) {
   return (
     <footer className="py-12 border-t border-[var(--border-color)] flex items-center justify-between gap-6 font-mono text-xs uppercase tracking-[0.18em] text-[var(--text-secondary)]">
       <span>{yearText}</span>
-      <LanguageSwitcher currentLocale={currentLocale} />
+      <Suspense fallback={<LanguageSwitcherView currentLocale={currentLocale} />}>
+        <LanguageSwitcher currentLocale={currentLocale} />
+      </Suspense>
     </footer>
   );
 }
+
+import { Suspense } from "react";

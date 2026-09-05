@@ -6,43 +6,27 @@
     "totalUsd": 573000000000,
     "basedOnYear": 2024,
     "baseAmountUsd": 573000000000,
-    "growthBasis": "Annual figure used as a constant rate; not projected. H2 Gambling Capital estimate of total global gross gaming revenue (player losses, not turnover) for 2024 (~USD 573 billion), applying ~7% growth to the confirmed 2023 actual of US$536 billion."
+    "growthBasis": "Historical publisher forecast held constant for illustration. In January 2024, H2 Gambling Capital forecast approximately USD 573 billion in 2024 global gross win for regulated white/grey gambling markets, from an estimated USD 536 billion in 2023 and approximately 7% expected growth. This is operator gross win (stakes less payouts), not turnover, a confirmed 2024 result, all illegal gambling, or a 2026 forecast."
   },
-  "source": "H2 Gambling Capital",
+  "source": "H2 Gambling Capital — January 2024 forecast for 2024 gross win",
   "sourceUrl": "https://h2gc.com/news/general/global-gambling-industry-generates-536bn-in-2023-with-7-growth-expected-in-2024",
-  "lastUpdated": "2026-06-28",
+  "lastUpdated": "2026-09-06",
   "categories": [
     {
-      "id": "gambling-disorder-treatment",
-      "titleKey": "categories.gambling.treatment.title",
-      "unitLabelKey": "categories.gambling.treatment.unit",
-      "symbol": "cross",
-      "scaleHint": "perUnit",
-      "unitCostUsd": 9000,
-      "sources": [
-        {
-          "name": "Rodriguez-Monguio et al. — Economic burden of pathological gambling (Massachusetts All-Payer Claims), J Addict Med",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/29068825/",
-          "year": 2018
-        }
-      ],
-      "methodology": "Approximate mean annual healthcare cost (~USD 9,000) for one person with a gambling (pathological gambling) disorder, from US all-payer-claims data (Massachusetts; 4-year mean ~$9,166)."
-    },
-    {
-      "id": "permanent-supportive-housing",
+      "id": "supportive-housing-la-year",
       "titleKey": "categories.gambling.housing.title",
       "unitLabelKey": "categories.gambling.housing.unit",
       "symbol": "roof",
       "scaleHint": "perUnit",
-      "unitCostUsd": 13000,
+      "unitCostUsd": 16035,
       "sources": [
         {
-          "name": "Third Door Coalition — Research and Sources (PSH unit-cost compilation: Culhane et al.; CSH)",
-          "url": "https://www.thirddoorcoalition.org/research-and-sources",
-          "year": 2023
+          "name": "RAND — Evaluation of Housing for Health Permanent Supportive Housing Program, Table 3.11 (2017)",
+          "url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RR1600/RR1694/RAND_RR1694.pdf",
+          "year": 2017
         }
       ],
-      "methodology": "Approximate annual cost (~USD 13,000) of permanent supportive housing (rent plus support services) for one chronically homeless person; documented US program operating costs run ~$10,000-$18,000/year (Culhane et al.; CSH), per the Third Door Coalition."
+      "methodology": "Historical Los Angeles Housing for Health benchmark: RAND's 2017 report lists USD 16,035 as the median annual programme cost among 890 participants in the first year after housing (Table 3.11). Covers housing subsidy and case-management services; excludes administrative costs and construction or acquisition of housing. This is a local study-era operating-cost reference, not a 2026 US or worldwide housing price."
     },
     {
       "id": "mental-health-financing-gap",
@@ -56,12 +40,17 @@
           "name": "United for Global Mental Health — US$200 billion financing gap report",
           "url": "https://unitedgmh.org/newsroom/2023-us200-billion-financing-gap-new-report-calls-for-urgent-investment-in-mental-health-on-world-mental-health-day/",
           "year": 2023
+        },
+        {
+          "name": "United for Global Mental Health — Financing of mental health: the current situation and ways forward (full report)",
+          "url": "https://unitedgmh.org/app/uploads/2024/06/Financing-of-mental-health-V2.pdf",
+          "year": 2023
         }
       ],
-      "methodology": "Estimated annual global mental-health financing gap of at least USD 200 billion — the additional yearly investment needed to meet mental-health needs worldwide — per United for Global Mental Health (2023)."
+      "methodology": "United for Global Mental Health's 2023 report estimates a global annual gap of at least USD 200 billion in domestic public financing for mental health. It compares government spending with the 2018 Lancet Commission targets: at least 5% of domestic health budgets in low- and middle-income countries and 10% in high-income countries. These budget-share targets are not country-by-country costings of all care needs. The comparison uses a historical lower-bound funding benchmark, not a precise current-year budget or a guarantee that all mental-health needs can be met."
     },
     {
-      "id": "suicide-crisis-lifeline",
+      "id": "988-administration-award",
       "titleKey": "categories.gambling.lifeline.title",
       "unitLabelKey": "categories.gambling.lifeline.unit",
       "symbol": "cross",
@@ -74,7 +63,7 @@
           "year": 2026
         }
       ],
-      "methodology": "USD 255 million — the US federal award to operate the national 988 Suicide & Crisis Lifeline administrator for roughly one year (annual budget ceiling ~$231M), per SAMHSA/HHS (2026)."
+      "methodology": "On 15 May 2026, HHS/SAMHSA announced a USD 255 million award to Vibrant Emotional Health to administer the US 988 Suicide & Crisis Lifeline. The announcement does not establish that this award equals one year of all national and local 988 costs. The comparison counts award-size funding equivalents, not years of operating the whole network or lives saved."
     },
     {
       "id": "world-hunger",
@@ -85,33 +74,12 @@
       "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature",
-          "url": "https://www.nature.com/articles/d41586-020-02849-6",
+          "name": "Ceres2030 — Sustainable Solutions to End Hunger, Summary Report",
+          "url": "https://ceres2030.iisd.org/wp-content/uploads/2021/03/ceres2030_en-summary-report.pdf",
           "year": 2020
         }
       ],
-      "methodology": "Average additional ~USD 33 billion/year ($14B donors + $19B LMIC governments) through 2030 to end hunger (SDG 2), per Ceres2030 (IFPRI/IISD/Cornell)."
-    },
-    {
-      "id": "extreme-poverty",
-      "titleKey": "categories.gambling.poverty.title",
-      "unitLabelKey": "categories.gambling.poverty.unit",
-      "symbol": "coin",
-      "scaleHint": "annualNeed",
-      "unitCostUsd": 315000000000,
-      "sources": [
-        {
-          "name": "Our World in Data — Total shortfall from extreme poverty ($3.00/day, 2021 PPP)",
-          "url": "https://ourworldindata.org/grapher/total-shortfall-from-extreme-poverty",
-          "year": 2026
-        },
-        {
-          "name": "World Bank — Poverty, Prosperity, and Planet 2024",
-          "url": "https://www.worldbank.org/en/publication/poverty-prosperity-and-planet",
-          "year": 2024
-        }
-      ],
-      "methodology": "Annual income transfer (poverty gap) to lift everyone above the USD 3.00/day international poverty line (2021 PPP), ~USD 315 billion/year per World Bank PIP / Our World in Data (the Bank retired the $2.15/day line in 2025)."
+      "methodology": "Ceres2030's 2020 model estimated average additional public spending of USD 33 billion per year through 2030: USD 14 billion from donors plus USD 19 billion from low- and middle-income governments. The scenario combines reducing hunger, doubling small-producer incomes and limiting agricultural emissions; it assumes coordinated interventions and induced private investment. This is a historical model benchmark, not a current funding quote or a guarantee that money alone ends hunger."
     },
     {
       "id": "clean-water",
@@ -122,12 +90,12 @@
       "unitCostUsd": 37600000000,
       "sources": [
         {
-          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
-          "url": "https://openknowledge.worldbank.org/handle/10986/23681",
+          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene, Summary Report",
+          "url": "https://documents1.worldbank.org/curated/en/847191468000296045/pdf/103172-PUB-Box394556B-PUBLIC-EPI-K8632-ADD-SERIES.pdf",
           "year": 2016
         }
       ],
-      "methodology": "~USD 37.6 billion/year capital investment for universal safely-managed drinking water (SDG 6.1 component), per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
+      "methodology": "World Bank 2016 baseline estimate of USD 37.6 billion per year in 2015 prices for capital investment to extend safely managed drinking-water services to unserved populations in 140 countries during 2015–2030. This is the drinking-water component only; it excludes the additional ongoing operating and maintenance budget and is not an updated 2026 estimate."
     }
   ]
 }

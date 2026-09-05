@@ -26,7 +26,7 @@ test.describe("source tabs", () => {
       "true",
     );
     // Hero copy reflects fossil-fuels methodology
-    await expect(page.getByText(/IMF Working Paper/i)).toBeVisible();
+    await expect(page.getByText(/IMF Working Paper/i).first()).toBeVisible();
   });
 
   test("clicking the active tab is a no-op", async ({ page }) => {
@@ -85,7 +85,9 @@ test.describe("source tabs", () => {
     // Hero copy reflects the AI methodology (mentions "Big-5 hyperscaler")
     await expect(page.getByText(/Big-Five hyperscaler/i)).toBeVisible();
     // First AI category renders.
-    await expect(page.getByText(/Repeated the dotcom telecom buildout/i).first()).toBeVisible();
+    await expect(
+      page.locator('details[data-category-id="dotcom-telecom-capex"] > summary'),
+    ).toBeVisible();
   });
 
   // Mobile: all 7 tabs must be visible (wrapped, not clipped/scrolled off)

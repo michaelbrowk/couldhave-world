@@ -1,4 +1,5 @@
 import type { Projection } from "@/data/sources.schema";
+
 export type { Projection };
 
 /**
@@ -24,6 +25,10 @@ function secondsInYear(year: number): number {
   const start = Date.UTC(year, 0, 1, 0, 0, 0);
   const end = Date.UTC(year + 1, 0, 1, 0, 0, 0);
   return (end - start) / 1000;
+}
+
+export function isProjectionPeriodComplete(currentYear: number, now: Date): boolean {
+  return now.getTime() >= Date.UTC(currentYear + 1, 0, 1);
 }
 
 export function currentSpendEstimate(

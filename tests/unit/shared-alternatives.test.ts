@@ -10,13 +10,13 @@ describe("canonical shared alternatives", () => {
       expect(findCat(sid, "clean-water")?.unitCostUsd, sid).toBe(37_600_000_000);
     }
   });
-  it("child-vaccination is the every-child figure ($27B) in war and tobacco", () => {
+  it("child-vaccination is the IA2030 model average ($26.98B) in war and tobacco", () => {
     for (const sid of ["war", "tobacco"]) {
-      expect(findCat(sid, "child-vaccination")?.unitCostUsd, sid).toBe(27_000_000_000);
+      expect(findCat(sid, "child-vaccination")?.unitCostUsd, sid).toBe(26_980_000_000);
     }
   });
-  it("extreme-poverty uses the $3/day shortfall ($315B) in war", () => {
-    expect(findCat("war", "extreme-poverty")?.unitCostUsd).toBe(315_000_000_000);
+  it("does not convert a PPP poverty gap directly to USD", () => {
+    expect(findCat("war", "extreme-poverty")).toBeUndefined();
   });
   it("world-hunger keeps $33B but no longer cites the wheat-yield DOI", () => {
     for (const sid of ["war", "tobacco", "fossil-fuels", "ai"]) {

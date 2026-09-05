@@ -5,8 +5,8 @@ const findCat = (sid: keyof typeof SOURCES, cid: string) =>
   SOURCES[sid].categories.find((c) => c.id === cid);
 
 describe("canonical values — food-waste tab", () => {
-  it("headline total is $1 trillion", () => {
-    expect(SOURCES["food-waste"].projection.totalUsd).toBe(1_000_000_000_000);
+  it("headline retains the historical FAO $936B benchmark", () => {
+    expect(SOURCES["food-waste"].projection.totalUsd).toBe(936_000_000_000);
   });
 
   it("clean-water is the $37.6B drinking-water-only figure", () => {
@@ -31,8 +31,8 @@ describe("canonical values — advertising tab", () => {
     expect(findCat("advertising", "world-hunger")?.unitCostUsd).toBe(33_000_000_000);
   });
 
-  it("child-vaccination is the every-child figure ($27B)", () => {
-    expect(findCat("advertising", "child-vaccination")?.unitCostUsd).toBe(27_000_000_000);
+  it("child-vaccination is the IA2030 model average ($26.98B)", () => {
+    expect(findCat("advertising", "child-vaccination")?.unitCostUsd).toBe(26_980_000_000);
   });
 });
 
@@ -49,7 +49,7 @@ describe("canonical values — gambling tab", () => {
     expect(findCat("gambling", "world-hunger")?.unitCostUsd).toBe(33_000_000_000);
   });
 
-  it("extreme-poverty uses the $3/day shortfall ($315B)", () => {
-    expect(findCat("gambling", "extreme-poverty")?.unitCostUsd).toBe(315_000_000_000);
+  it("does not treat PPP international dollars as transferable USD", () => {
+    expect(findCat("gambling", "extreme-poverty")).toBeUndefined();
   });
 });

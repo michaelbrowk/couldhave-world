@@ -1,244 +1,313 @@
 {
   "hello": "Hola",
   "hero": {
-    "caption": "Gastado en guerra desde el 1 de enero de {year}",
+    "label": "IA",
+    "caption": "Inversión prevista de los hiperescaladores desde el 1 de enero de {year}",
     "rate": "{perDay} por día · {perSecond} por segundo",
-    "methodology": "Proyección para {year}, basada en datos reales de SIPRI de {basedOnYear} y la tasa de crecimiento promedio de 5 años. Las cifras reales se publican anualmente a finales de abril."
+    "methodology": "770 mil millones USD para 2026: previsión de Epoch AI de febrero de 2026 de toda la inversión de Microsoft, Amazon, Alphabet, Meta y Oracle, incluidos arrendamientos financieros. Se desconoce la parte dedicada exclusivamente a IA."
   },
   "transition": {
-    "headline": "En su lugar, este dinero podría haber…"
+    "headline": "Para comparar, esta cantidad podría financiar…"
   },
   "sources": {
     "war": {
       "label": "Guerra",
-      "caption": "Gastado en guerra desde el 1 de enero de {year}",
+      "caption": "Gasto militar ilustrativo desde el 1 de enero de {year}",
       "rate": "{perDay} por día · {perSecond} por segundo",
-      "methodology": "Proyección para {year}, basada en datos reales de SIPRI de {basedOnYear} y la tasa de crecimiento promedio de 5 años. La actualización anual de SIPRI se publicó el 27 de abril de 2026."
+      "methodology": "2,887 billones USD: gasto militar mundial real de 2025 según SIPRI, usado sin cambios como referencia anual para esta ilustración de {year}. Incluye la defensa en tiempos de paz; no es gasto observado de {year} ni el coste de las guerras."
     },
     "tobacco": {
-      "label": "Tabaquismo",
-      "caption": "Perdido por tabaquismo desde el 1 de enero de {year}",
+      "label": "Tabaco",
+      "caption": "Coste ilustrativo del tabaquismo desde el 1 de enero de {year}",
       "rate": "{perDay} por día · {perSecond} por segundo",
-      "methodology": "1,4 billones de USD al año — costes sanitarios y pérdida de productividad por tabaquismo, ~1,8 % del PIB mundial. Fuente: OMS / Goodchild et al. 2017."
+      "methodology": "Referencia anual de 1,436 billones USD de costes sanitarios y pérdidas de productividad en 2012, publicada en 2017. Valor constante, sin inflación ni crecimiento; no son pérdidas medidas de {year} ni un presupuesto disponible."
     },
     "fossil-fuels": {
       "label": "Combustibles fósiles",
-      "caption": "Subsidiando combustibles fósiles desde el 1 de enero de {year}",
+      "caption": "Coste ilustrativo de las subvenciones fósiles desde el 1 de enero de {year}",
       "rate": "{perDay} por día · {perSecond} por segundo",
-      "methodology": "7,4 billones de USD al año — subvenciones explícitas más la infravaloración de los costes climáticos y de contaminación atmosférica. Fuente: FMI Working Paper 2025/270, datos de 2024."
+      "methodology": "Referencia anual de 7,4 billones USD para 2024, del documento de trabajo del FMI 2025/270: unos 0,7 billones explícitos y 6,7 implícitos, incluidos daños y fiscalidad insuficiente. No es gasto público por 7,4 billones ni una nueva estimación de {year}."
     },
     "ai": {
       "label": "IA",
-      "caption": "Invertido en IA desde el 1 de enero de {year}",
+      "caption": "Inversión prevista de los hiperescaladores desde el 1 de enero de {year}",
       "rate": "{perDay} por día · {perSecond} por segundo",
-      "methodology": "770.000 millones de USD proyectados para 2026 — capex en IA y centros de datos de los cinco grandes hyperscalers (Microsoft, Amazon, Alphabet, Meta, Oracle). Fuente: Epoch AI."
+      "methodology": "770 mil millones USD para 2026: previsión de Epoch AI de febrero de 2026 de toda la inversión de Microsoft, Amazon, Alphabet, Meta y Oracle, incluidos arrendamientos financieros. Se desconoce la parte dedicada exclusivamente a IA."
     },
     "food-waste": {
-      "label": "Alimentos desperdiciados",
-      "caption": "Desperdiciado en alimentos no consumidos desde el 1 de enero de {year}",
+      "label": "Alimentos perdidos",
+      "caption": "Pérdidas y desperdicio alimentarios ilustrativos desde el 1 de enero de {year}",
       "rate": "{perDay} por día · {perSecond} por segundo",
-      "methodology": "1 billón de USD al año — valor económico directo de los alimentos perdidos y desperdiciados en el mundo. Fuente: FAO Food Wastage Footprint, confirmado por el Informe del Índice de Desperdicio Alimentario del PNUMA 2024."
+      "methodology": "Referencia anual de 936.000 millones USD del valor de los productos según la FAO (2014), en USD de 2012 y con cantidades alimentarias de 2005–2009. Sin ajuste de inflación; no son pérdidas medidas de {year} ni dinero totalmente recuperable."
     },
     "advertising": {
       "label": "Publicidad",
-      "caption": "Gastado en publicidad desde el 1 de enero de {year}",
+      "caption": "Gasto publicitario previsto desde el 1 de enero de {year}",
       "rate": "{perDay} por día · {perSecond} por segundo",
-      "methodology": "1,3 billones de USD proyectados para 2026 — gasto publicitario mundial total. Fuente: WARC Global Ad Trends, diciembre de 2025."
+      "methodology": "1,3 billones USD para 2026: previsión mundial de WARC de diciembre de 2025, distribuida uniformemente durante el año. Es una previsión, no gasto observado."
     },
     "gambling": {
-      "label": "Juego",
-      "caption": "Perdido en apuestas desde el 1 de enero de {year}",
+      "label": "Apuestas",
+      "caption": "Pérdidas ilustrativas en apuestas desde el 1 de enero de {year}",
       "rate": "{perDay} por día · {perSecond} por segundo",
-      "methodology": "573.000 millones de USD al año — pérdidas globales de juego (ingresos brutos del juego). Fuente: H2 Gambling Capital, 2024."
+      "methodology": "573 mil millones USD: previsión de H2 Gambling Capital realizada a principios de 2024 para los ingresos brutos del juego de 2024. Referencia histórica constante; no son pérdidas confirmadas de {year}, apuestas totales ni una nueva previsión."
     }
   },
   "categories": {
     "sourcesToggle": "Ver fuentes",
-    "aiBenefitLabel": "Pero la IA también",
+    "aiBenefitLabel": "Ejemplo documentado de IA",
     "war": {
-      "label": "Gasto militar {year}",
+      "label": "Referencia militar · {year}",
       "cancer": {
-        "title": "Curado el cáncer en todo el mundo",
-        "unit": "personas",
-        "compareUnit": "Un tratamiento contra el cáncer"
+        "title": "Atención inicial del cáncer (EE. UU.)",
+        "unit": "equivalentes de atención del primer año",
+        "compareUnit": "Atención atribuible al cáncer por paciente, primer año (EE. UU., USD de 2020)"
       },
-      "malaria": { "title": "Erradicada la malaria globalmente", "unit": "veces" },
-      "hunger": { "title": "Acabado con el hambre mundial", "unit": "años" },
-      "water": { "title": "Agua potable para todos", "unit": "años" },
-      "schools": {
-        "title": "Escolarizados niños y niñas",
-        "unit": "niños escolarizados",
-        "compareUnit": "Un niño, escolarización completa"
+      "malaria": {
+        "title": "Control y eliminación de la malaria",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año al nivel del objetivo financiero de la OMS para 2030"
+      },
+      "hunger": {
+        "title": "Reducción del hambre: escenario Ceres2030",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de financiación pública adicional (modelo de 2020)"
+      },
+      "water": {
+        "title": "Infraestructura de agua potable",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de inversión (modelo de 2016, USD de 2015)"
       },
       "vaccination": {
-        "title": "Vacunado a todos los niños del mundo",
-        "unit": "campañas anuales"
+        "title": "Objetivos de vacunación IA2030",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Coste anual medio, 2021–2030: 14 patógenos, 194 países (USD de 2020)"
       },
-      "poverty": { "title": "Eliminada la pobreza extrema", "unit": "años" },
-      "rainforest": { "title": "Protegidos todos los bosques tropicales", "unit": "veces" },
-      "renewable": { "title": "Duplicada la capacidad solar mundial", "unit": "GW de nueva solar" },
-      "humanitarian": { "title": "Cubiertas todas las crisis humanitarias", "unit": "años" }
+      "renewable": {
+        "title": "Capacidad solar a gran escala",
+        "unit": "GW de capacidad solar",
+        "compareUnit": "Un GW instalado (media mundial IRENA 2024, USD de 2024)"
+      },
+      "humanitarian": {
+        "title": "Llamamiento humanitario de la ONU (2026)",
+        "unit": "equivalentes del llamamiento",
+        "compareUnit": "El llamamiento humanitario inicial de la ONU para 2026"
+      }
     },
     "tobacco": {
-      "label": "Tabaquismo {year}",
+      "label": "Referencia de tabaquismo · {year}",
       "lungCancer": {
-        "title": "Curado el cáncer de pulmón en todo el mundo",
-        "unit": "personas",
-        "compareUnit": "Un tratamiento completo de cáncer de pulmón"
+        "title": "Atención inicial del cáncer de pulmón (EE. UU.)",
+        "unit": "equivalentes de atención del primer año",
+        "compareUnit": "Atención y fármacos orales, primer año de CPNM (EE. UU., USD de 2020)"
       },
       "cessation": {
-        "title": "Ayudado a personas a dejar de fumar",
-        "unit": "personas tratadas",
-        "compareUnit": "Un intento de abandono"
-      },
-      "mpower": {
-        "title": "Financiado el MPOWER de la OMS en países enteros",
-        "unit": "país-años",
-        "compareUnit": "Un país durante un año"
+        "title": "Apoyo para dejar de fumar (EE. UU.)",
+        "unit": "programas de 8 semanas",
+        "compareUnit": "Apoyo telefónico y parches durante 8 semanas (Oregón, estudio 2004–2005)"
       },
       "tb": {
-        "title": "Tratada la tuberculosis en todo el mundo",
-        "unit": "personas",
-        "compareUnit": "Un tratamiento DOTS completo"
+        "title": "Tratamiento de TB sensible a fármacos",
+        "unit": "equivalentes del coste de tratamiento",
+        "compareUnit": "Coste mediano de atención por paciente en 2024 (informe OMS 2025)"
       },
-      "copd": { "title": "Cuidado a pacientes con EPOC durante un año", "unit": "años-paciente" },
       "vaccination": {
-        "title": "Vacunado a todos los niños del mundo",
-        "unit": "campañas anuales"
+        "title": "Objetivos de vacunación IA2030",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Coste anual medio, 2021–2030: 14 patógenos, 194 países (USD de 2020)"
       },
-      "hunger": { "title": "Acabado con el hambre mundial", "unit": "años" },
-      "water": { "title": "Agua potable para todos", "unit": "años" }
+      "hunger": {
+        "title": "Reducción del hambre: escenario Ceres2030",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de financiación pública adicional (modelo de 2020)"
+      },
+      "water": {
+        "title": "Infraestructura de agua potable",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de inversión (modelo de 2016, USD de 2015)"
+      }
     },
     "fossil-fuels": {
-      "label": "Subsidios a combustibles fósiles {year}",
-      "renewable": { "title": "Duplicada la capacidad solar mundial", "unit": "GW de nueva solar" },
-      "rainforest": { "title": "Protegidos todos los bosques tropicales", "unit": "veces" },
-      "cleanCooking": { "title": "Cocina limpia para toda África y Asia", "unit": "años" },
+      "label": "Referencia de subsidios fósiles · {year}",
+      "renewable": {
+        "title": "Capacidad solar a gran escala",
+        "unit": "GW de capacidad solar",
+        "compareUnit": "Un GW instalado (media mundial IRENA 2024, USD de 2024)"
+      },
+      "cleanCooking": {
+        "title": "Acceso universal a cocina limpia",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de inversión del escenario 2023–2030"
+      },
       "adaptation": {
-        "title": "Financiada la adaptación climática en el África subsahariana",
-        "unit": "años"
-      },
-      "retrofit": {
-        "title": "Rehabilitados los edificios del mundo a cero emisiones netas",
-        "unit": "años"
-      },
-      "transit": {
-        "title": "Construidas líneas de metro en megalópolis",
-        "unit": "líneas de metro"
+        "title": "Adaptación climática en África subsahariana",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de necesidades de adaptación (estimación de 2025)"
       },
       "storage": {
-        "title": "Instalado almacenamiento de baterías a escala de red",
-        "unit": "× 100 GWh"
+        "title": "Baterías de almacenamiento para la red",
+        "unit": "equivalentes de 100 GWh",
+        "compareUnit": "100 GWh instalados (media IRENA 2024, USD de 2024)"
       },
-      "hunger": { "title": "Acabado con el hambre mundial", "unit": "años" }
+      "hunger": {
+        "title": "Reducción del hambre: escenario Ceres2030",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de financiación pública adicional (modelo de 2020)"
+      }
     },
     "ai": {
-      "label": "Capex en infraestructura de IA {year}",
+      "label": "Escenario de inversión tecnológica · {year}",
       "dotcom": {
-        "title": "Repetido el despliegue telecom de la burbuja puntocom",
-        "unit": "× el despliegue completo 1996-2001"
+        "title": "Inversión en telecomunicaciones, 1996–2001",
+        "unit": "equivalentes de la referencia histórica",
+        "compareUnit": "Referencia de 500.000 millones USD nominales de 1996–2001"
       },
-      "aiRevenue": {
-        "title": "Comprados todos los ingresos globales de IA",
-        "unit": "× ingresos globales de IA, 2025"
+      "apollo": {
+        "title": "Proyecto Apolo",
+        "unit": "equivalentes del coste del programa",
+        "compareUnit": "Proyecto Apolo, 1960–1973 (USD de 2025)"
       },
-      "apollo": { "title": "Financiado el programa Apolo", "unit": "× el programa completo" },
       "manhattan": {
-        "title": "Financiado el Proyecto Manhattan",
-        "unit": "× el programa completo"
+        "title": "Proyecto Manhattan",
+        "unit": "equivalentes del coste del programa",
+        "compareUnit": "Coste histórico hasta 1945, actualizado por IPC a USD de 2024"
       },
-      "hunger": { "title": "Acabado con el hambre mundial", "unit": "años" },
-      "water": { "title": "Agua potable para todos", "unit": "años" },
-      "malaria": { "title": "Erradicada la malaria globalmente", "unit": "veces" },
-      "grid": { "title": "Modernizada la red eléctrica de EE. UU.", "unit": "años" }
+      "hunger": {
+        "title": "Reducción del hambre: escenario Ceres2030",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de financiación pública adicional (modelo de 2020)"
+      },
+      "water": {
+        "title": "Infraestructura de agua potable",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de inversión (modelo de 2016, USD de 2015)"
+      },
+      "malaria": {
+        "title": "Control y eliminación de la malaria",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año al nivel del objetivo financiero de la OMS para 2030"
+      },
+      "grid": {
+        "title": "Ampliación de la transmisión eléctrica en EE. UU., 2021–2030",
+        "unit": "equivalentes del plan de inversión",
+        "compareUnit": "Inversión adicional en transmisión, 2021–2030 (USD de 2018)"
+      }
     },
     "food-waste": {
-      "label": "Alimentos desperdiciados {year}",
+      "label": "Referencia del valor alimentario perdido · {year}",
       "rutf": {
-        "title": "Tratados niños por desnutrición severa",
-        "unit": "niños",
-        "compareUnit": "Un ciclo completo de alimentos terapéuticos"
+        "title": "Alimentos terapéuticos para la desnutrición infantil",
+        "unit": "cajas de ATLU",
+        "compareUnit": "Una caja de ATLU de 150 sobres (precio del producto de 2024)"
       },
       "schoolMeals": {
-        "title": "Comidas escolares para un niño durante un año",
-        "unit": "años-niño",
-        "compareUnit": "Un niño alimentado durante el año escolar"
+        "title": "Comidas escolares",
+        "unit": "años escolares por niño",
+        "compareUnit": "Comidas de un niño durante un curso (referencia WFP USA: 50 USD)"
       },
       "dailyMeal": {
-        "title": "Alimentadas personas hambrientas durante un día",
-        "unit": "comidas",
-        "compareUnit": "Un día de comidas"
+        "title": "Ayuda alimentaria de emergencia (2021)",
+        "unit": "días-persona",
+        "compareUnit": "Un día de raciones de emergencia por persona (plan PMA 2021)"
       },
       "smallholder": {
-        "title": "Cerrada la brecha de financiación climática para agricultores",
-        "unit": "años"
+        "title": "Financiación climática para pequeñas explotaciones",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año del déficit estimado de financiación climática (2024)"
       },
-      "hunger": { "title": "Acabado con el hambre mundial", "unit": "años" },
-      "water": { "title": "Agua potable para todos", "unit": "años" },
+      "hunger": {
+        "title": "Reducción del hambre: escenario Ceres2030",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de financiación pública adicional (modelo de 2020)"
+      },
+      "water": {
+        "title": "Infraestructura de agua potable",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de inversión (modelo de 2016, USD de 2015)"
+      },
       "foodSystems": {
-        "title": "Transformados los sistemas alimentarios mundiales",
-        "unit": "años"
+        "title": "Objetivo de inversión en sistemas alimentarios",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año del objetivo de inversión 2023–2030"
       }
     },
     "advertising": {
-      "label": "Gasto en publicidad {year}",
+      "label": "Proyección publicitaria · {year}",
       "mentalHealth": {
-        "title": "Tratada la depresión y ansiedad en todo el mundo",
-        "unit": "años"
+        "title": "Atención a depresión y ansiedad (36 países)",
+        "unit": "equivalentes del plan 2016–2030",
+        "compareUnit": "Coste de ampliación 2016–2030 (valor actual neto, estudio de 2016)"
       },
       "education": {
-        "title": "Cerrada la brecha de financiación educativa global",
-        "unit": "años"
+        "title": "Déficit de financiación educativa (79 países)",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Déficit anual medio para objetivos nacionales, 2023–2030"
       },
       "who": {
-        "title": "Financiada la Organización Mundial de la Salud al completo",
-        "unit": "presupuestos anuales",
-        "compareUnit": "Un año del presupuesto de la OMS"
+        "title": "Presupuesto de programas de la OMS (2026–2027)",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "La mitad del presupuesto bienal aprobado de la OMS, 2026–2027"
       },
       "malariaRd": {
-        "title": "Financiada toda la investigación sobre malaria",
-        "unit": "años de I+D",
-        "compareUnit": "Un año de investigación global sobre malaria"
+        "title": "Objetivo de financiación de I+D sobre malaria",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año al nivel del objetivo de I+D de la OMS 2021–2030"
       },
-      "vaccination": { "title": "Vacunado a todos los niños del mundo", "unit": "años" },
-      "hunger": { "title": "Acabado con el hambre mundial", "unit": "años" },
-      "water": { "title": "Agua potable para todos", "unit": "años" }
+      "vaccination": {
+        "title": "Objetivos de vacunación IA2030",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Coste anual medio, 2021–2030: 14 patógenos, 194 países (USD de 2020)"
+      },
+      "hunger": {
+        "title": "Reducción del hambre: escenario Ceres2030",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de financiación pública adicional (modelo de 2020)"
+      },
+      "water": {
+        "title": "Infraestructura de agua potable",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de inversión (modelo de 2016, USD de 2015)"
+      }
     },
     "gambling": {
-      "label": "Pérdidas por juego {year}",
-      "treatment": {
-        "title": "Un año de atención para jugadores problemáticos",
-        "unit": "personas",
-        "compareUnit": "Una persona, un año de atención"
-      },
+      "label": "Referencia de pérdidas en apuestas · {year}",
       "housing": {
-        "title": "Personas sin hogar alojadas durante un año",
-        "unit": "personas",
-        "compareUnit": "Una persona alojada durante un año"
+        "title": "Vivienda con apoyo (Los Ángeles)",
+        "unit": "años de alojamiento",
+        "compareUnit": "Un año de vivienda ocupada (informe 2017; sin inversión ni administración)"
       },
       "mentalHealth": {
-        "title": "Cerrada la brecha de financiación en salud mental",
-        "unit": "años"
+        "title": "Déficit de financiación en salud mental",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año del déficit mundial de financiación (estimación 2023)"
       },
       "lifeline": {
-        "title": "Líneas de crisis nacionales en funcionamiento",
-        "unit": "años",
-        "compareUnit": "Un año de una línea nacional"
+        "title": "Asignación para administrar la línea de crisis 988",
+        "unit": "equivalentes de la asignación",
+        "compareUnit": "La asignación de mayo de 2026 (sin periodo especificado)"
       },
-      "hunger": { "title": "Acabado con el hambre mundial", "unit": "años" },
-      "poverty": { "title": "Sacada a todos de la pobreza extrema", "unit": "años" },
-      "water": { "title": "Agua potable para todos", "unit": "años" }
+      "hunger": {
+        "title": "Reducción del hambre: escenario Ceres2030",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de financiación pública adicional (modelo de 2020)"
+      },
+      "water": {
+        "title": "Infraestructura de agua potable",
+        "unit": "equivalentes de financiación anual",
+        "compareUnit": "Un año de inversión (modelo de 2016, USD de 2015)"
+      }
     }
   },
   "methodology": {
     "title": "Metodología",
-    "counter": "El contador proyecta el gasto militar mundial total de este año a partir de las últimas cifras reales de SIPRI multiplicadas por la tasa de crecimiento promedio de 5 años, y avanza en tiempo real como una fracción de ese total anual según los segundos transcurridos desde el 1 de enero.",
-    "categories": "Cada alternativa humanitaria se calcula a partir de fuentes autorizadas (OMS, Banco Mundial, UNICEF, Gavi, UN OCHA, UNESCO, IRENA, FAO). Los costos unitarios y las citas están en el panel «ver fuentes» de cada categoría.",
-    "data": "Todos los datos son abiertos y se encuentran en el repositorio público.",
+    "counter": "Cada contador distribuye su estimación anual de manera uniforme durante el año indicado, en UTC. Es una ilustración, no una medición en directo. Las previsiones, referencias históricas y costes económicos se identifican encima de cada contador; no son intercambiables ni se deben sumar.",
+    "categories": "Cada comparación divide el contador entre un coste unitario o una referencia de financiación citados. Las cifras anuales representan años equivalentes de financiación, no una promesa de resolver un problema. Las estimaciones históricas conservan su base de precios salvo ajuste de inflación documentado; las cantidades son aproximadas.",
+    "data": "Las pérdidas económicas y las subvenciones implícitas no son presupuestos que se puedan reasignar por completo. Se compara la escala, sin garantizar transferencias ni resultados. Las notas de las fuentes están en inglés; los datos y el código de cálculo son públicos.",
     "updated": "Actualizado: {date}",
     "repoLabel": "Ver datos y código fuente en GitHub"
   },
   "footer": {
     "year": "© {year}"
-  }
+  },
+  "counterPeriodEnded": "La estimación de {year} está completa. El contador queda congelado hasta actualizar su base."
 }
