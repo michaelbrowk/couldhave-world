@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { initMixpanel, track } from "@/lib/mixpanel";
+import { DEFAULT_SOURCE_ID } from "@/lib/site-config";
 import { parseSourceId } from "@/lib/sources";
 
 type Props = {
@@ -10,7 +11,7 @@ type Props = {
 
 function readActiveSource(target: HTMLElement | null): string {
   const el = target?.closest("[data-source]") as HTMLElement | null;
-  return el?.dataset.source ?? "war";
+  return el?.dataset.source ?? DEFAULT_SOURCE_ID;
 }
 
 export function Analytics({ locale }: Props) {
@@ -18,7 +19,7 @@ export function Analytics({ locale }: Props) {
     initMixpanel();
 
     const url = new URL(window.location.href);
-    const initialSource = parseSourceId(url.searchParams.get("source")) ?? "war";
+    const initialSource = parseSourceId(url.searchParams.get("source")) ?? DEFAULT_SOURCE_ID;
     track("page_view", {
       locale,
       path: url.pathname,

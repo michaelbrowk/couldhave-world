@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Analytics } from "@/components/analytics/Analytics";
-import { getSource } from "@/data/sources.index";
-import { ogImageUrl, SITE_NAME, SITE_URL } from "@/lib/site-config";
+import { getSource, SOURCES_LIST } from "@/data/sources.index";
+import { DEFAULT_SOURCE_ID, ogImageUrl, SITE_NAME, SITE_URL } from "@/lib/site-config";
 import "../globals.css";
 import { getDictionary, hasLocale, interpolate, LOCALES, type Locale } from "./dictionaries";
 
@@ -42,13 +42,13 @@ export async function generateMetadata({
   if (!hasLocale(locale)) return {};
 
   const dict = await getDictionary(locale);
-  const warSource = getSource("war");
-  const { currentYear, projection } = warSource;
+  const defaultSource = getSource(DEFAULT_SOURCE_ID);
+  const { currentYear, projection } = defaultSource;
 
   // Title is the transition headline ("Instead, this money could have…").
   // Description is the live methodology line with year + basedOnYear filled in.
   const title = dict.transition.headline;
-  const description = interpolate(dict.hero.methodology, {
+  const description = interpolate(dict.sources[DEFAULT_SOURCE_ID].methodology, {
     year: currentYear,
     basedOnYear: projection.basedOnYear,
   });
@@ -116,15 +116,15 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   if (!hasLocale(locale)) notFound();
 
   const dict = await getDictionary(locale);
-  const warSource = getSource("war");
-  const { currentYear, projection } = warSource;
-  const description = interpolate(dict.hero.methodology, {
+  const defaultSource = getSource(DEFAULT_SOURCE_ID);
+  const { currentYear, projection } = defaultSource;
+  const description = interpolate(dict.sources[DEFAULT_SOURCE_ID].methodology, {
     year: currentYear,
     basedOnYear: projection.basedOnYear,
   });
 
   // Schema.org JSON-LD: declare the page as a WebSite, link to all locale
-  // alternates, and credit SIPRI as the upstream data source. Helps Google
+  // alternates, and credit the datasets used by all spending sources. Helps Google
   // generate richer search results and connect the four locale pages as
   // translations of one work.
   const jsonLd = {
@@ -136,15 +136,11 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
     inLanguage: locale,
     isAccessibleForFree: true,
     license: "https://opensource.org/license/mit/",
-    isBasedOn: {
+    isBasedOn: SOURCES_LIST.map((source) => ({
       "@type": "Dataset",
-      name: "SIPRI Military Expenditure Database",
-      url: warSource.sourceUrl,
-      creator: {
-        "@type": "Organization",
-        name: "Stockholm International Peace Research Institute",
-      },
-    },
+      name: source.source,
+      url: source.sourceUrl,
+    })),
   };
 
   return (

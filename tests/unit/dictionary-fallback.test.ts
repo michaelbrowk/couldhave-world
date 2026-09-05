@@ -57,7 +57,7 @@ describe("ai dictionary", () => {
     expect(typeof ai.methodology).toBe("string");
   });
 
-  it("has categories.ai with label and 8 short keys, each with title and unit strings", () => {
+  it("has categories.ai with label and supported short keys, each with title and unit strings", () => {
     const ai = (
       enDict as {
         categories: {
@@ -73,7 +73,6 @@ describe("ai dictionary", () => {
 
     const shortKeys = [
       "dotcom",
-      "aiRevenue",
       "apollo",
       "manhattan",
       "hunger",

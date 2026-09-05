@@ -55,17 +55,48 @@ const HistoricalEntrySchema = z.object({
   actual: z.boolean(),
 });
 
-export const SourceSchema = z.object({
-  id: z.enum(SOURCE_IDS),
-  labelKey: z.string().min(1),
-  currentYear: z.number().int(),
-  projection: ProjectionSchema,
-  historical: z.array(HistoricalEntrySchema).optional(),
-  source: z.string().min(1),
-  sourceUrl: z.string().url(),
-  lastUpdated: z.string().date(),
-  categories: z.array(CategorySchema).min(6),
-});
+export const SourceSchema = z
+  .object({
+    id: z.enum(SOURCE_IDS),
+    labelKey: z.string().min(1),
+    currentYear: z.number().int(),
+    projection: ProjectionSchema,
+    historical: z.array(HistoricalEntrySchema).optional(),
+    source: z.string().min(1),
+    sourceUrl: z.string().url(),
+    lastUpdated: z.string().date(),
+    categories: z.array(CategorySchema).min(1),
+  })
+  .superRefine((source, ctx) => {
+    const issue = (path: (string | number)[], message: string) =>
+      ctx.addIssue({ code: "custom", path, message });
+    if (source.projection.basedOnYear > source.currentYear) {
+      issue(["projection", "basedOnYear"], "Baseline cannot follow the displayed year");
+    }
+    const ids = source.categories.map((category) => category.id);
+    if (new Set(ids).size !== ids.length) {
+      issue(["categories"], "Category identifiers must be unique within a source");
+    }
+    const years = (source.historical ?? []).map((entry) => entry.year);
+    if (new Set(years).size !== years.length) {
+      issue(["historical"], "Historical years must be unique");
+    }
+    for (const [index, entry] of (source.historical ?? []).entries()) {
+      if (entry.actual && entry.year >= Number(source.lastUpdated.slice(0, 4))) {
+        issue(["historical", index], "A completed annual actual must precede the review year");
+      }
+    }
+    const { totalUsd, baseAmountUsd, growthFactor, basedOnYear } = source.projection;
+    if (growthFactor !== undefined) {
+      const expected = baseAmountUsd * growthFactor ** (source.currentYear - basedOnYear);
+      if (Math.abs(totalUsd - expected) / expected > 0.001) {
+        issue(
+          ["projection", "totalUsd"],
+          "Total must match the documented compounded baseline within 0.1%",
+        );
+      }
+    }
+  });
 
 export type Source = z.infer<typeof SourceSchema>;
 export type Category = z.infer<typeof CategorySchema>;

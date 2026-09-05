@@ -3,30 +3,30 @@
   "labelKey": "sources.tobacco.label",
   "currentYear": 2026,
   "projection": {
-    "totalUsd": 1400000000000,
+    "totalUsd": 1436000000000,
     "basedOnYear": 2012,
-    "baseAmountUsd": 1400000000000,
-    "growthBasis": "Annual figure used as a constant rate; not projected. WHO estimate (Goodchild et al. 2017, 2012 data): ~USD 1.4 trillion/year in healthcare costs and lost productivity, equivalent to 1.8% of global GDP."
+    "baseAmountUsd": 1436000000000,
+    "growthBasis": "Historical 2012 cost-of-illness estimate held constant for illustration: USD 422 billion in smoking-attributable health expenditure plus USD 1.014 trillion in lost productivity, totalling USD 1.436 trillion. Goodchild et al. studied 152 countries, representing 97% of smokers; published online 2017, journal issue 2018. This is economic burden, not tobacco sales or a recoverable cash budget. It has not been inflated or re-estimated for 2026 and excludes second-hand smoke and smokeless tobacco."
   },
-  "source": "WHO / Goodchild, Nargis & d'Espaignet, Tobacco Control 2017 (2012 data)",
-  "sourceUrl": "https://www.who.int/health-topics/tobacco",
-  "lastUpdated": "2026-04-29",
+  "source": "Goodchild, Nargis & d'Espaignet — Global economic cost of smoking-attributable diseases (2012 data; online 2017)",
+  "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5801657/",
+  "lastUpdated": "2026-09-06",
   "categories": [
     {
-      "id": "lung-cancer-treatment",
+      "id": "nsclc-initial-care-year",
       "titleKey": "categories.tobacco.lungCancer.title",
       "unitLabelKey": "categories.tobacco.lungCancer.unit",
       "symbol": "cross",
       "scaleHint": "perUnit",
-      "unitCostUsd": 150000,
+      "unitCostUsd": 70895.9,
       "sources": [
         {
-          "name": "Patel et al. — Real-world costs of non-small-cell lung cancer treatment in the US (PMC11940980)",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11940980/",
-          "year": 2024
+          "name": "NCI Cancer Trends Progress Report — Financial Burden of Cancer Care (Mariotto et al. 2020)",
+          "url": "https://progressreport.cancer.gov/after/economic_burden",
+          "year": 2020
         }
       ],
-      "methodology": "Approximate full-course cost of treating one patient with non-small-cell lung cancer (NSCLC) in a US/high-income setting (surgery + platinum-based chemotherapy + immunotherapy + radiotherapy + follow-up). Real-world US data (PMC11940980) shows multimodal NSCLC courses including immunotherapy run ~$150,000–$300,000+; $150,000 is a conservative lower-bound for the full immunotherapy-inclusive regimen."
+      "methodology": "NCI annualized average initial-year cancer-attributable costs for non-small-cell lung carcinoma: USD 67,148.1 medical services plus USD 3,747.8 oral prescription drugs, totalling USD 70,895.9 in 2020 USD. Derived from 2007–2013 US Medicare claims. This is a first-year care benchmark, not the cost of a full modern immunotherapy course or a guaranteed cure, and has not been inflated to 2026."
     },
     {
       "id": "smoking-cessation",
@@ -34,7 +34,7 @@
       "unitLabelKey": "categories.tobacco.cessation.unit",
       "symbol": "drop",
       "scaleHint": "perUnit",
-      "unitCostUsd": 300,
+      "unitCostUsd": 275.4,
       "sources": [
         {
           "name": "CDC Preventing Chronic Disease — Cost-effectiveness of community-based tobacco treatment (2019)",
@@ -42,28 +42,7 @@
           "year": 2019
         }
       ],
-      "methodology": "Cost per smoker treated / per quit attempt using an evidence-based cessation program: nicotine replacement therapy (NRT) plus brief behavioural counselling, US public-health pricing (~$180–$200 OTC NRT course + brief counselling). CDC Preventing Chronic Disease 2019 cost review confirms ~$200–$400 per person treated."
-    },
-    {
-      "id": "mpower-country",
-      "titleKey": "categories.tobacco.mpower.title",
-      "unitLabelKey": "categories.tobacco.mpower.unit",
-      "symbol": "roof",
-      "scaleHint": "totalSolution",
-      "unitCostUsd": 5000000,
-      "sources": [
-        {
-          "name": "WHO FCTC — The Global Case for Investment in Tobacco Control",
-          "url": "https://fctc.who.int/docs/librariesprovider12/investment-fund-documents/the-global-case-for-investment-in-tobacco-control.pdf",
-          "year": 2021
-        },
-        {
-          "name": "Ngo et al. — FCTC investment cases in 21 LMICs (BMJ/Tobacco Control 2024, PMC11103323)",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11103323/",
-          "year": 2024
-        }
-      ],
-      "methodology": "Annual cost for one low/middle-income country to implement WHO MPOWER best-buy demand-reduction measures — approximately USD 5 million per year (WHO FCTC investment cases across 21 LMICs: $4–61M over 15 years annualised; WHO best-buy per-capita rate ~$0.11/person/year ≈ $5M for a ~45M-population country)."
+      "methodology": "Historical programme benchmark: USD 275.40 per participant for eight weeks of nicotine patches plus telephone counselling and a mailed quit kit in the Oregon Free Patch Initiative (2004–2005; McAfee et al. 2008), reproduced in Table 2 of the cited 2019 systematic review. These are study-era US costs, not a 2026 quote or the cost per successful quit; the programme did not make every participant stop smoking."
     },
     {
       "id": "tb-treatment",
@@ -71,36 +50,15 @@
       "unitLabelKey": "categories.tobacco.tb.unit",
       "symbol": "drop",
       "scaleHint": "perUnit",
-      "unitCostUsd": 600,
+      "unitCostUsd": 797,
       "sources": [
         {
-          "name": "WHO — Global Tuberculosis Report",
-          "url": "https://www.who.int/teams/global-tuberculosis-programme/tb-reports",
-          "year": 2024
-        },
-        {
-          "name": "Stop TB Partnership — Global Plan to End TB",
-          "url": "https://www.stoptb.org/global-plan-to-end-tb",
-          "year": 2023
+          "name": "WHO Global Tuberculosis Report 2025 — Financing for TB prevention, diagnostic and treatment services",
+          "url": "https://www.who.int/teams/global-programme-on-tuberculosis-and-lung-health/tb-reports/global-tuberculosis-report-2025/tb-financing/4-1-financing-for-tb-prevention--diagnostic-and-treatment-services",
+          "year": 2025
         }
       ],
-      "methodology": "Per-patient cost of a full DOTS course of TB treatment in low- and middle-income settings (drugs + diagnosis + supervised delivery). $600 is a rounded mid-range across LMIC provider costs (low-income ~$260, lower-middle ~$275, upper-middle ~$840 per Laurence 2015 systematic review; WHO Global TB Report 2024 global median ~$780)."
-    },
-    {
-      "id": "copd-care-year",
-      "titleKey": "categories.tobacco.copd.title",
-      "unitLabelKey": "categories.tobacco.copd.unit",
-      "symbol": "cross",
-      "scaleHint": "annualNeed",
-      "unitCostUsd": 5000,
-      "sources": [
-        {
-          "name": "Blanchette et al. — COPD direct costs in US commercially-insured patients by severity (PubMed 30698096)",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/30698096/",
-          "year": 2019
-        }
-      ],
-      "methodology": "Annual cost of evidence-based COPD care for one moderate-severity patient (inhaled therapy + exacerbation management + pulmonary rehabilitation) in a high-income setting. US cost-of-illness data (PubMed 30698096) reports ~$4,000–$6,000/year for commercially-insured COPD patients by severity; $5,000 is the mid-range for moderate severity."
+      "methodology": "WHO reports a median provider cost of USD 797 per person treated for drug-susceptible TB in 2024 across 117 reporting countries with at least 100 first-line patients. Includes drugs, laboratory inputs, programme costs, patient support and inpatient/outpatient care. This is a country median, not a population-weighted global price, a drug-resistant TB regimen or a guarantee of successful treatment; household costs are separate."
     },
     {
       "id": "child-vaccination",
@@ -108,20 +66,20 @@
       "unitLabelKey": "categories.tobacco.vaccination.unit",
       "symbol": "drop",
       "scaleHint": "annualNeed",
-      "unitCostUsd": 27000000000,
+      "unitCostUsd": 26980000000,
       "sources": [
         {
-          "name": "Sriudomporn, Watts, Sim et al. — Achieving Immunization Agenda 2030 coverage targets for 14 pathogens: Projected product and immunization delivery costs for 194 Countries, 2021–2030 (Vaccine: X 2022)",
+          "name": "Sriudomporn et al. — Achieving Immunization Agenda 2030 coverage targets for 14 pathogens, Vaccine: X (2023 issue; online 2022)",
           "url": "https://www.sciencedirect.com/science/article/pii/S2590136222001164",
-          "year": 2022
+          "year": 2023
         },
         {
-          "name": "Gavi, The Vaccine Alliance — Resource Mobilisation Process",
-          "url": "https://www.gavi.org/investing-gavi/funding/resource-mobilisation-process",
-          "year": 2024
+          "name": "Sriudomporn et al. — IA2030 cost study, full text (Europe PMC)",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9850055/fullTextXML",
+          "year": 2023
         }
       ],
-      "methodology": "Estimated ~USD 27 billion per year — the full annual cost of delivering a routine immunisation schedule against 14 pathogens to every child across 194 countries (~USD 269.8 billion total over 2021-2030, vaccine product plus delivery), per Sriudomporn et al., 'Achieving Immunization Agenda 2030 coverage targets', Vaccine X 2022."
+      "methodology": "Illustrative annual average of the study's USD 269.8 billion total in 2020 USD for 2021–2030, divided by 10 years: USD 26.98 billion. Covers vaccine products, routine delivery, and included campaigns and stockpiles for IA2030 coverage targets against 14 pathogens in 194 countries. It is the modelled total programme cost, not the incremental funding gap, universal vaccination of every child, or a verified 2026 budget. Costs and coverage vary by year and country."
     },
     {
       "id": "world-hunger",
@@ -132,12 +90,12 @@
       "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature 2020",
-          "url": "https://www.nature.com/articles/d41586-020-02849-6",
+          "name": "Ceres2030 — Sustainable Solutions to End Hunger, Summary Report",
+          "url": "https://ceres2030.iisd.org/wp-content/uploads/2021/03/ceres2030_en-summary-report.pdf",
           "year": 2020
         }
       ],
-      "methodology": "Average additional annual public expenditure (~USD 33 billion) required from donors and low/middle-income governments through 2030 to end hunger (SDG 2), per IFPRI models published in Nature Food."
+      "methodology": "Ceres2030's 2020 model estimated average additional public spending of USD 33 billion per year through 2030: USD 14 billion from donors plus USD 19 billion from low- and middle-income governments. The scenario combines reducing hunger, doubling small-producer incomes and limiting agricultural emissions; it assumes coordinated interventions and induced private investment. This is a historical model benchmark, not a current funding quote or a guarantee that money alone ends hunger."
     },
     {
       "id": "clean-water",
@@ -148,12 +106,12 @@
       "unitCostUsd": 37600000000,
       "sources": [
         {
-          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
-          "url": "https://openknowledge.worldbank.org/handle/10986/23681",
+          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene, Summary Report",
+          "url": "https://documents1.worldbank.org/curated/en/847191468000296045/pdf/103172-PUB-Box394556B-PUBLIC-EPI-K8632-ADD-SERIES.pdf",
           "year": 2016
         }
       ],
-      "methodology": "Annual capital investment of ~USD 37.6 billion needed through 2030 for universal safely-managed drinking water (SDG 6.1 component), per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
+      "methodology": "World Bank 2016 baseline estimate of USD 37.6 billion per year in 2015 prices for capital investment to extend safely managed drinking-water services to unserved populations in 140 countries during 2015–2030. This is the drinking-water component only; it excludes the additional ongoing operating and maintenance budget and is not an updated 2026 estimate."
     }
   ]
 }

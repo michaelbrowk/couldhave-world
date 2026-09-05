@@ -3,35 +3,30 @@
   "labelKey": "sources.food-waste.label",
   "currentYear": 2026,
   "projection": {
-    "totalUsd": 1000000000000,
-    "basedOnYear": 2024,
-    "baseAmountUsd": 1000000000000,
-    "growthBasis": "Annual figure used as a constant rate; not projected. FAO 'Food Wastage Footprint: Full-Cost Accounting' puts the direct economic cost of food lost and wasted at ~USD 1 trillion/year, reaffirmed by UNEP's Food Waste Index Report 2024 (1.05 billion tonnes wasted in 2022)."
+    "totalUsd": 936000000000,
+    "basedOnYear": 2012,
+    "baseAmountUsd": 936000000000,
+    "growthBasis": "Historical monetary benchmark from FAO Food Wastage Footprint: Full-Cost Accounting (2014), Table 19: USD 936 billion in annual product value lost or wasted, expressed in 2012 USD using 2005–2009 price inputs. Includes food loss along supply chains as well as consumer waste; excludes separately estimated subsidies, environmental damage and social costs. Held constant for illustration, not an estimate of actual 2026 losses. UNEP's 2024 report repeats an approximately USD 1 trillion scale but does not establish a new monetary time series."
   },
-  "source": "FAO Food Wastage Footprint; UNEP Food Waste Index Report 2024",
-  "sourceUrl": "https://www.unep.org/resources/publication/food-waste-index-report-2024",
-  "lastUpdated": "2026-06-28",
+  "source": "FAO — Food Wastage Footprint: Full-Cost Accounting (2014; 2012 USD)",
+  "sourceUrl": "https://www.fao.org/4/i3991e/i3991e.pdf",
+  "lastUpdated": "2026-09-06",
   "categories": [
     {
-      "id": "rutf-malnutrition",
+      "id": "rutf-carton",
       "titleKey": "categories.food-waste.rutf.title",
       "unitLabelKey": "categories.food-waste.rutf.unit",
       "symbol": "cross",
       "scaleHint": "perUnit",
-      "unitCostUsd": 80,
+      "unitCostUsd": 46.7,
       "sources": [
         {
-          "name": "UNICEF Supply Division — Ready-to-use therapeutic food (RUTF)",
-          "url": "https://www.unicef.org/supply/ready-use-therapeutic-food-rutf",
+          "name": "UNICEF Supply Division — Ready-to-Use Therapeutic Food Market and Supply Update, December 2025",
+          "url": "https://www.unicef.org/supply/media/24596/file/RUTF-Market-and-Supply-Update-2025.pdf",
           "year": 2025
-        },
-        {
-          "name": "Eleanor Crook Foundation — Ready-to-Use Therapeutic Food",
-          "url": "https://eleanorcrookfoundation.org/evidence-matters/ready-to-use-therapeutic-food",
-          "year": 2024
         }
       ],
-      "methodology": "Approximate full-course cost (~USD 80) to treat one child for severe acute malnutrition with a 6-8 week outpatient course of ready-to-use therapeutic food plus delivery; the RUTF commodity alone is ~USD 45 (UNICEF 2024 weighted-average $46.70/carton of 150 sachets)."
+      "methodology": "UNICEF's weighted-average procurement price in 2024 was USD 46.70 per carton of ready-to-use therapeutic food containing 150 sachets. The comparison is for the food commodity only. It excludes programme staffing, diagnosis, delivery and other medical care; cartons are not interchangeable with children cured or lives saved. Prices depend on UNICEF's procurement terms and scale."
     },
     {
       "id": "school-meals",
@@ -42,17 +37,12 @@
       "unitCostUsd": 50,
       "sources": [
         {
-          "name": "World Food Programme USA — School Meals",
+          "name": "World Food Program USA — School Meals (undated page, accessed September 2026)",
           "url": "https://wfpusa.org/work/programs/school-meals/",
-          "year": 2024
-        },
-        {
-          "name": "WFP — The State of School Feeding Worldwide 2024",
-          "url": "https://www.wfp.org/publications/state-school-feeding-worldwide",
-          "year": 2024
+          "year": 2026
         }
       ],
-      "methodology": "WFP USA cost to give one child school meals for an entire school year (~USD 50), consistent with WFP's State of School Feeding Worldwide."
+      "methodology": "World Food Program USA's undated public fundraising page states that USD 50 can provide one child with school meals for a school year. Used as a programme illustration, not a universal audited unit cost or the cost of all food a child needs for a calendar year. School calendars, meal composition, programme coverage and delivery costs vary; the source does not specify a price year."
     },
     {
       "id": "emergency-food-ration",
@@ -68,7 +58,7 @@
           "year": 2021
         }
       ],
-      "methodology": "WFP's average cost to provide one person one meal a day in famine-risk countries (~USD 0.43, 2021), covering procurement, transport, storage, distribution and monitoring."
+      "methodology": "Historical 2021 WFP emergency-plan benchmark: USD 0.43 per person per day, averaged across 43 famine-risk countries, to provide one basic daily meal. The USD 6.6 billion plan aimed to support about 42 million people for one year and included programme delivery costs. This is not a current global meal price or the cost of a complete nutritious daily diet."
     },
     {
       "id": "smallholder-climate-finance",
@@ -84,7 +74,7 @@
           "year": 2024
         }
       ],
-      "methodology": "IFAD's ~USD 75 billion/year shortfall between current climate finance and what small-scale farmers — who grow about a third of the world's food — need to adapt."
+      "methodology": "A 2024 IFAD opinion piece estimates an approximately USD 75 billion annual climate-finance gap for small-scale farmers. The author explicitly calls it a ballpark: it allocates agrifood climate-finance needs by small farms' 35% share of food production and includes adaptation and mitigation. This is an assumption-dependent benchmark, not a bottom-up costing or an established bill for protecting every farmer."
     },
     {
       "id": "world-hunger",
@@ -95,12 +85,12 @@
       "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature",
-          "url": "https://www.nature.com/articles/d41586-020-02849-6",
+          "name": "Ceres2030 — Sustainable Solutions to End Hunger, Summary Report",
+          "url": "https://ceres2030.iisd.org/wp-content/uploads/2021/03/ceres2030_en-summary-report.pdf",
           "year": 2020
         }
       ],
-      "methodology": "Average additional ~USD 33 billion/year ($14B donors + $19B LMIC governments) through 2030 to end hunger (SDG 2), per Ceres2030 (IFPRI/IISD/Cornell)."
+      "methodology": "Ceres2030's 2020 model estimated average additional public spending of USD 33 billion per year through 2030: USD 14 billion from donors plus USD 19 billion from low- and middle-income governments. The scenario combines reducing hunger, doubling small-producer incomes and limiting agricultural emissions; it assumes coordinated interventions and induced private investment. This is a historical model benchmark, not a current funding quote or a guarantee that money alone ends hunger."
     },
     {
       "id": "clean-water",
@@ -111,12 +101,12 @@
       "unitCostUsd": 37600000000,
       "sources": [
         {
-          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
-          "url": "https://openknowledge.worldbank.org/handle/10986/23681",
+          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene, Summary Report",
+          "url": "https://documents1.worldbank.org/curated/en/847191468000296045/pdf/103172-PUB-Box394556B-PUBLIC-EPI-K8632-ADD-SERIES.pdf",
           "year": 2016
         }
       ],
-      "methodology": "~USD 37.6 billion/year capital investment for universal safely-managed drinking water (SDG 6.1 component), per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
+      "methodology": "World Bank 2016 baseline estimate of USD 37.6 billion per year in 2015 prices for capital investment to extend safely managed drinking-water services to unserved populations in 140 countries during 2015–2030. This is the drinking-water component only; it excludes the additional ongoing operating and maintenance budget and is not an updated 2026 estimate."
     },
     {
       "id": "food-systems-transformation",
@@ -132,7 +122,7 @@
           "year": 2023
         }
       ],
-      "methodology": "IFAD's estimate of ~USD 400 billion/year additional investment to make global food systems sustainable, equitable and resilient (inaction could cost ~USD 12 trillion/year)."
+      "methodology": "IFAD's July 2023 statement describes a global ambition to mobilise as much as USD 400 billion each year until 2030 from governments, the private sector and development partners for food-system transformation. This is a financing target and order-of-magnitude comparison, not an audited additional funding gap, a current 2026 cost estimate or a guarantee of sustainable food systems."
     }
   ]
 }

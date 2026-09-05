@@ -3,8 +3,11 @@
  * Imported by layout metadata, sitemap, robots, and the OG image generator.
  */
 
+import type { SourceId } from "@/data/sources.schema";
+
 export const SITE_URL = "https://couldhave.world";
 export const SITE_NAME = "couldhave.world";
+export const DEFAULT_SOURCE_ID: SourceId = "ai";
 
 /**
  * Mixpanel project token for the "Couldhave" project (id 4012175, US region).

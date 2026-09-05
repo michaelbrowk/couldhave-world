@@ -5,21 +5,35 @@
   "projection": {
     "totalUsd": 770000000000,
     "basedOnYear": 2025,
-    "baseAmountUsd": 445000000000,
-    "growthFactor": 1.7303,
-    "growthBasis": "Year-over-year growth from basedOnYear (2025) to currentYear (2026) based on Epoch AI exponential-growth model fitted to quarterly SEC filing data. Aggregate Big-5 capex (Microsoft, Amazon, Alphabet, Meta, Oracle) of approximately USD 770 billion projected for 2026, the vast majority directed at AI compute, data centres, and networking. Source: Epoch AI. Historical entries reflect aggregate Big-5 hyperscaler capital expenditure derived from company 10-K filings."
+    "baseAmountUsd": 448232000000,
+    "growthFactor": 1.7178603937246784,
+    "growthBasis": "Epoch AI's February 2026 trend scenario projects USD 770 billion of 2026 capital expenditure across Alphabet, Amazon, Meta, Microsoft and Oracle. It extrapolates the quarterly trend since Q2 2023 and is not a realised annual total or current company guidance. The measure includes cash purchases of property, plant and equipment plus new finance leases across all business activities; the AI-specific share is not disclosed. Historical totals sum Epoch's published calendar-quarter data (Oracle quarters are mapped to the calendar quarter with greatest overlap). The growthFactor is the ratio of the displayed 2026 scenario to the 2025 historical total, not a separately estimated growth rate. AI examples below describe individual achievements from their cited years, not returns caused by this projected expenditure."
   },
   "historical": [
-    { "year": 2025, "totalUsd": 445000000000, "actual": true },
-    { "year": 2024, "totalUsd": 259000000000, "actual": true },
-    { "year": 2023, "totalUsd": 148000000000, "actual": true },
-    { "year": 2022, "totalUsd": 162000000000, "actual": true },
-    { "year": 2021, "totalUsd": 130000000000, "actual": true },
-    { "year": 2020, "totalUsd": 95000000000, "actual": true }
+    {
+      "year": 2025,
+      "totalUsd": 448232000000,
+      "actual": true
+    },
+    {
+      "year": 2024,
+      "totalUsd": 260353000000,
+      "actual": true
+    },
+    {
+      "year": 2023,
+      "totalUsd": 161286000000,
+      "actual": true
+    },
+    {
+      "year": 2022,
+      "totalUsd": 162273000000,
+      "actual": true
+    }
   ],
-  "source": "Epoch AI — Hyperscaler capex has quadrupled since GPT-4's release",
+  "source": "Epoch AI — Hyperscaler capex trend scenario (published February 2026)",
   "sourceUrl": "https://epoch.ai/data-insights/hyperscaler-capex-trend",
-  "lastUpdated": "2026-05-09",
+  "lastUpdated": "2026-09-06",
   "categories": [
     {
       "id": "dotcom-telecom-capex",
@@ -30,48 +44,12 @@
       "unitCostUsd": 500000000000,
       "sources": [
         {
-          "name": "Telecoms crash — Wikipedia",
-          "url": "https://en.wikipedia.org/wiki/Telecoms_crash",
-          "year": 2024
+          "name": "Brookings — The Telecommunications Crash: What To Do Now?",
+          "url": "https://www.brookings.edu/articles/the-telecommunications-crash-what-to-do-now/",
+          "year": 2002
         }
       ],
-      "methodology": "Aggregate US telecom-equipment capital investment 1996-2001 — approximately USD 500 billion in nominal dollars, financed largely with debt. The buildout that preceded the 2001 telecom bust.",
-      "aiBenefit": {
-        "text": "After the bust, only 2.7% of laid fibre was actually in use (≈90% sat dark, ~10% lit). The 'dark fibre' glut became the backbone of broadband, cloud, and video streaming for the next 20 years.",
-        "sources": [
-          {
-            "name": "Dark fibre — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Dark_fibre",
-            "year": 2024
-          }
-        ]
-      }
-    },
-    {
-      "id": "global-ai-revenue-2025",
-      "titleKey": "categories.ai.aiRevenue.title",
-      "unitLabelKey": "categories.ai.aiRevenue.unit",
-      "symbol": "coin",
-      "scaleHint": "annualNeed",
-      "unitCostUsd": 50000000000,
-      "sources": [
-        {
-          "name": "Statista Market Forecast — Generative AI worldwide revenue 2025",
-          "url": "https://www.statista.com/outlook/tmo/artificial-intelligence/generative-ai/worldwide/",
-          "year": 2025
-        }
-      ],
-      "methodology": "Estimated 2025 global generative-AI software/app-layer revenue — order-of-magnitude approximately USD 50 billion (analyst estimates range ~$22B–$104B across Grand View, Statista ~$67B, MarketsAndMarkets, Fortune Business Insights). Capex-to-revenue ratio is one of the most cited single bubble indicators.",
-      "aiBenefit": {
-        "text": "The generative-AI market is projected to grow at 42% CAGR through 2032 — faster than any prior technology wave.",
-        "sources": [
-          {
-            "name": "Statista Market Forecast — Generative AI worldwide revenue",
-            "url": "https://www.statista.com/outlook/tmo/artificial-intelligence/generative-ai/worldwide/",
-            "year": 2025
-          }
-        ]
-      }
+      "methodology": "Brookings reported more than USD 500 billion invested in fibre, switches and wireless networks during the five years after the 1996 US Telecommunications Act. USD 500 billion is a rounded lower-bound historical benchmark in nominal 1996–2001 dollars, without inflation adjustment. The displayed ratio compares monetary scale only; it is not the cost of rebuilding those networks today."
     },
     {
       "id": "apollo-program",
@@ -79,7 +57,7 @@
       "unitLabelKey": "categories.ai.apollo.unit",
       "symbol": "ray",
       "scaleHint": "totalSolution",
-      "unitCostUsd": 338000000000,
+      "unitCostUsd": 309000000000,
       "sources": [
         {
           "name": "The Planetary Society — How much did the Apollo program cost?",
@@ -87,9 +65,9 @@
           "year": 2025
         }
       ],
-      "methodology": "Total cumulative cost of the Apollo lunar effort (1960-1973) including Project Apollo, Gemini predecessor programme, and robotic lunar programmes — approximately USD 338 billion in 2025 USD, per The Planetary Society inflation adjustment using NASA New Start Index. (Project Apollo alone = ~$309B in 2025 USD.)",
+      "methodology": "The Planetary Society's reconstruction of NASA budget records reports USD 25.8 billion for Project Apollo, 1960–1973, or approximately USD 309 billion in 2025 dollars using NASA's New Start Index. This excludes Gemini and robotic lunar programmes, whose inclusion would bring the broader lunar effort to USD 338 billion. It is a historical programme-cost comparison, not a present-day mission quote.",
       "aiBenefit": {
-        "text": "DeepMind's AlphaFold has predicted 214M+ protein structures, free for all researchers — solving a 50-year biology grand challenge.",
+        "text": "The AlphaFold database paper for 2024 documented over 214 million predicted protein structures, freely accessible to researchers. These are computational predictions with varying confidence, not 214 million experimentally verified structures.",
         "sources": [
           {
             "name": "AlphaFold Protein Structure Database in 2024 — Nucleic Acids Research",
@@ -105,17 +83,22 @@
       "unitLabelKey": "categories.ai.manhattan.unit",
       "symbol": "ray",
       "scaleHint": "totalSolution",
-      "unitCostUsd": 30000000000,
+      "unitCostUsd": 43100000000,
       "sources": [
         {
           "name": "Brookings Institution — The Costs of the Manhattan Project (Atomic Audit, Stephen I. Schwartz)",
           "url": "https://www.brookings.edu/the-costs-of-the-manhattan-project/",
           "year": 1998
+        },
+        {
+          "name": "US Bureau of Labor Statistics — Historical CPI-U, December 2024",
+          "url": "https://www.bls.gov/cpi/tables/supplemental-files/historical-cpi-u-202412.pdf",
+          "year": 2025
         }
       ],
-      "methodology": "Total cost of the Manhattan Project (1942-1945) — USD 1.9 billion nominal ($1,889,604,000) per Brookings Atomic Audit (Schwartz, 1998); inflation-adjusted to approximately USD 30 billion in 2024 USD (independent CPI calculation; Brookings itself reports $21.6B in constant 1996 dollars).",
+      "methodology": "Brookings' Atomic Audit reports cumulative Manhattan Project costs through December 1945 of USD 1,889,604,000 nominal, equivalent to USD 21,570,821,000 in its constant-1996-dollar series. Updating that published 1996-dollar figure with BLS annual-average CPI-U (156.9 in 1996; 313.689 in 2024) gives USD 43.126 billion, rounded here to USD 43.1 billion in 2024 dollars. This is an explicit CPI update of the source's adjusted estimate, not a reconstruction of each wartime expenditure or a current programme quote.",
       "aiBenefit": {
-        "text": "DeepMind's reinforcement-learning agent controlled superheated plasma inside a tokamak in real time — a step towards fusion energy.",
+        "text": "DeepMind and EPFL demonstrated reinforcement-learning control of plasma shapes in the TCV research tokamak in 2022. This was an advance in experimental plasma control, not a demonstration of commercial fusion power.",
         "sources": [
           {
             "name": "Magnetic control of tokamak plasmas through deep reinforcement learning — Nature",
@@ -134,14 +117,14 @@
       "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature 2020",
-          "url": "https://www.nature.com/articles/d41586-020-02849-6",
+          "name": "Ceres2030 — Sustainable Solutions to End Hunger, Summary Report",
+          "url": "https://ceres2030.iisd.org/wp-content/uploads/2021/03/ceres2030_en-summary-report.pdf",
           "year": 2020
         }
       ],
-      "methodology": "Average additional annual public expenditure (approximately USD 33 billion) required from donors and low/middle-income governments through 2030 to end hunger (SDG 2), per Ceres2030 / IFPRI models published in Nature Food.",
+      "methodology": "Ceres2030's 2020 model estimated average additional public spending of USD 33 billion per year through 2030: USD 14 billion from donors plus USD 19 billion from low- and middle-income governments. The scenario combines reducing hunger, doubling small-producer incomes and limiting agricultural emissions; it assumes coordinated interventions and induced private investment. This is a historical model benchmark, not a current funding quote or a guarantee that money alone ends hunger.",
       "aiBenefit": {
-        "text": "The UN World Food Programme's HungerMap LIVE uses machine learning to predict food crises up to 90 days ahead, across 50+ countries.",
+        "text": "WFP reported in April 2026 that HungerMap Live covers more than 50 countries, with AI-assisted forecasts for 16 designated Hunger Hotspots. Forecast coverage is narrower than overall platform coverage.",
         "sources": [
           {
             "name": "WFP — HungerMap LIVE press release",
@@ -160,61 +143,61 @@
       "unitCostUsd": 37600000000,
       "sources": [
         {
-          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
-          "url": "https://openknowledge.worldbank.org/handle/10986/23681",
+          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene, Summary Report",
+          "url": "https://documents1.worldbank.org/curated/en/847191468000296045/pdf/103172-PUB-Box394556B-PUBLIC-EPI-K8632-ADD-SERIES.pdf",
           "year": 2016
         }
       ],
-      "methodology": "Annual capital investment of ~USD 37.6 billion needed through 2030 for universal safely-managed drinking water (SDG 6.1 component), per the World Bank's SDG 6 costing study (Hutton & Varughese 2016).",
+      "methodology": "World Bank 2016 baseline estimate of USD 37.6 billion per year in 2015 prices for capital investment to extend safely managed drinking-water services to unserved populations in 140 countries during 2015–2030. This is the drinking-water component only; it excludes the additional ongoing operating and maintenance budget and is not an updated 2026 estimate.",
       "aiBenefit": {
-        "text": "UK utilities deploying AI satellite leak-detection (Origin Tech) have prevented over 3 billion litres of water loss across 12 water companies.",
+        "text": "In May 2026, Thames Water announced AI-assisted satellite leak detection targeting savings of 100 million litres a day. This is an expected project outcome, not an independently verified realised saving.",
         "sources": [
           {
-            "name": "Smart Water Magazine — Thames Water signs AI satellite deal",
-            "url": "https://smartwatermagazine.com/news/smart-water-magazine/thames-water-signs-ai-satellite-deal-plug-100-million-litres-daily-leaks",
-            "year": 2024
+            "name": "Thames Water — Leak-detection contract with Origin Tech",
+            "url": "https://www.thameswater.co.uk/news/2026/apr/thames-water-signs-landmark-leak-detection-contract-with-origin-tech-to-save-over-100-million-litres-of-water-per-day",
+            "year": 2026
           }
         ]
       }
     },
     {
-      "id": "malaria-eradication",
+      "id": "malaria-control",
       "titleKey": "categories.ai.malaria.title",
       "unitLabelKey": "categories.ai.malaria.unit",
       "symbol": "drop",
-      "scaleHint": "totalSolution",
-      "unitCostUsd": 90000000000,
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 10300000000,
       "sources": [
         {
-          "name": "Gates & Chambers — From Aspiration to Action: What Will It Take to End Malaria? (2015)",
-          "url": "https://www.gatesfoundation.org/ideas/publications/2015/10/from-aspiration-to-action",
-          "year": 2015
-        },
-        {
-          "name": "WHO — Global Technical Strategy for Malaria 2016–2030 (2021 update)",
+          "name": "WHO — Global Technical Strategy for Malaria 2016–2030, 2021 update",
           "url": "https://www.who.int/publications/i/item/9789240031357",
           "year": 2021
+        },
+        {
+          "name": "WHO Africa — Bridging the funding gap to defeat malaria in Africa",
+          "url": "https://www.afro.who.int/news/bridging-funding-gap-defeat-malaria-africa",
+          "year": 2023
         }
       ],
-      "methodology": "Total additional investment to eradicate malaria (~USD 90-120B), per Gates & Chambers 2015 'From Aspiration to Action' and WHO Global Technical Strategy; WHO targets eradication by 2050.",
+      "methodology": "WHO's 2021 Global Technical Strategy estimated USD 10.3 billion of annual funding for malaria prevention, diagnosis, treatment and programme delivery by 2030. This is the total annual funding target, not the additional funding gap or the cost of global eradication. It excludes the separate estimated USD 0.85 billion per year for research and development. The strategy targets at least a 90% reduction in incidence and mortality by 2030, not eradication by 2050.",
       "aiBenefit": {
-        "text": "Insilico's Pharma.AI took a novel pan-fibrotic drug from idea to Phase I clinical trials in under 30 months — historically a 5+ year process.",
+        "text": "AI-assisted drug discovery produced rentosertib, which was tested in a 71-person Phase 2a lung-fibrosis trial reported in 2025. Larger, longer studies are needed to assess benefits and risks; this is not a malaria treatment.",
         "sources": [
           {
-            "name": "Insilico Medicine — First Generative AI Drug Begins Phase II Trials",
-            "url": "https://insilico.com/blog/first_phase2",
-            "year": 2023
+            "name": "Xu et al. — A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis: a randomized phase 2a trial, Nature Medicine",
+            "url": "https://www.nature.com/articles/s41591-025-03743-2",
+            "year": 2025
           }
         ]
       }
     },
     {
-      "id": "us-grid-modernization",
+      "id": "us-transmission-expansion",
       "titleKey": "categories.ai.grid.title",
       "unitLabelKey": "categories.ai.grid.unit",
       "symbol": "ray",
-      "scaleHint": "annualNeed",
-      "unitCostUsd": 167000000000,
+      "scaleHint": "totalSolution",
+      "unitCostUsd": 310000000000,
       "sources": [
         {
           "name": "Princeton — Net-Zero America Final Report Summary (2021)",
@@ -222,9 +205,9 @@
           "year": 2021
         }
       ],
-      "methodology": "Estimated annual capital investment required to modernise the US power grid (transmission upgrades, distribution hardening, interconnection-queue clearing) — approximately USD 167 billion per year over 30 years toward a net-zero-aligned grid, per Princeton REPEAT and DOE Grid Deployment Office estimates.",
+      "methodology": "Princeton's 2021 Net-Zero America final summary, page 75, estimates USD 310 billion in additional electricity-transmission capital invested or committed during 2021–2030 in the high-electrification E+ pathway relative to the reference case, in 2018 dollars. The source rounds to the nearest USD 10 billion and includes capital committed to projects entering service after 2030. This is a modelled decade of transmission investment, not an annual cost or a complete grid-modernisation budget.",
       "aiBenefit": {
-        "text": "DeepMind's machine-learning system (deep neural networks) cut Google data-centre cooling energy by up to 40% — the same approach is now being applied to grid optimisation.",
+        "text": "DeepMind reported in 2016 that its system reduced cooling energy at a Google data centre by up to 40%. The result concerns cooling, not a 40% reduction in total electricity use or a measured improvement across the power grid.",
         "sources": [
           {
             "name": "DeepMind blog — Reduces Google Data Centre Cooling Bill by 40%",

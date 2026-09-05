@@ -3,31 +3,29 @@
   "labelKey": "sources.war.label",
   "currentYear": 2026,
   "projection": {
-    "totalUsd": 3113052100000,
+    "totalUsd": 2887000000000,
     "basedOnYear": 2025,
     "baseAmountUsd": 2887000000000,
-    "growthFactor": 1.0783,
-    "growthBasis": "5-data-point geometric mean of annual nominal growth, SIPRI 2020-2025 (5 compounding years), then compounded 1 year from basedOnYear (2025) to currentYear (2026). SIPRI Trends in World Military Expenditure, 2025 was published on 2026-04-27. (2025 nominal growth decelerated to ~6.2%, so this geometric-mean extrapolation is upper-leaning)."
+    "growthBasis": "SIPRI estimates world military expenditure at USD 2.887 trillion in current US dollars for 2025, published April 2026. This latest completed-year estimate is held constant as an illustrative annual rate for the 2026 counter. No growth forecast is applied, and the counter is not a measurement of actual 2026 spending. Military expenditure includes more than expenditure on active wars."
   },
   "historical": [
-    { "year": 2025, "totalUsd": 2887000000000, "actual": true },
-    { "year": 2024, "totalUsd": 2718000000000, "actual": true },
-    { "year": 2023, "totalUsd": 2443000000000, "actual": true },
-    { "year": 2022, "totalUsd": 2240000000000, "actual": true },
-    { "year": 2021, "totalUsd": 2113000000000, "actual": true },
-    { "year": 2020, "totalUsd": 1981000000000, "actual": true }
+    {
+      "year": 2025,
+      "totalUsd": 2887000000000,
+      "actual": true
+    }
   ],
   "source": "SIPRI Trends in World Military Expenditure, 2025",
   "sourceUrl": "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025",
-  "lastUpdated": "2026-04-29",
+  "lastUpdated": "2026-09-06",
   "categories": [
     {
-      "id": "cancer-treatment",
+      "id": "cancer-initial-care-year",
       "titleKey": "categories.war.cancer.title",
       "unitLabelKey": "categories.war.cancer.unit",
       "symbol": "cross",
       "scaleHint": "perUnit",
-      "unitCostUsd": 60000,
+      "unitCostUsd": 45390,
       "sources": [
         {
           "name": "NCI Cancer Trends Progress Report — Financial Burden of Cancer Care (Mariotto et al. 2020)",
@@ -35,28 +33,28 @@
           "year": 2020
         }
       ],
-      "methodology": "Approximate per-patient cost of a full first-course cancer treatment (surgery, chemotherapy, radiotherapy and follow-up) in a US/high-income setting. NCI Cancer Trends Progress Report (Mariotto et al. 2020) reports initial-phase per-patient cost of ~$45,400 in 2020 USD; rounded to ~$60,000 in 2026 USD to capture the full multimodal course including follow-up."
+      "methodology": "NCI annualized average cancer-attributable costs in the first year after diagnosis: USD 43,516.1 for medical services plus USD 1,873.9 for oral prescription drugs, totalling USD 45,390 in 2020 USD. Based on 2007–2013 US Medicare claims, averaging cancer sites and subtracting matched controls without cancer. This is an initial-care cost benchmark, not a complete treatment course, a cure, a global price or an inflation-adjusted 2026 quote."
     },
     {
-      "id": "malaria-eradication",
+      "id": "malaria-control",
       "titleKey": "categories.war.malaria.title",
       "unitLabelKey": "categories.war.malaria.unit",
       "symbol": "drop",
-      "scaleHint": "totalSolution",
-      "unitCostUsd": 90000000000,
+      "scaleHint": "annualNeed",
+      "unitCostUsd": 10300000000,
       "sources": [
         {
-          "name": "Gates & Chambers — From Aspiration to Action: What Will It Take to End Malaria? (2015)",
-          "url": "https://www.gatesfoundation.org/ideas/publications/2015/10/from-aspiration-to-action",
-          "year": 2015
-        },
-        {
-          "name": "WHO — Global Technical Strategy for Malaria 2016–2030 (2021 update)",
+          "name": "WHO — Global Technical Strategy for Malaria 2016–2030, 2021 update",
           "url": "https://www.who.int/publications/i/item/9789240031357",
           "year": 2021
+        },
+        {
+          "name": "WHO Africa — Bridging the funding gap to defeat malaria in Africa",
+          "url": "https://www.afro.who.int/news/bridging-funding-gap-defeat-malaria-africa",
+          "year": 2023
         }
       ],
-      "methodology": "Total additional investment to eradicate malaria (~USD 90-120B), per Gates & Chambers 2015 'From Aspiration to Action' and WHO Global Technical Strategy; WHO targets eradication by 2050."
+      "methodology": "WHO's 2021 Global Technical Strategy estimated USD 10.3 billion of annual funding for malaria prevention, diagnosis, treatment and programme delivery by 2030. This is the total annual funding target, not the additional funding gap or the cost of global eradication. It excludes the separate estimated USD 0.85 billion per year for research and development. The strategy targets at least a 90% reduction in incidence and mortality by 2030, not eradication by 2050."
     },
     {
       "id": "world-hunger",
@@ -67,12 +65,12 @@
       "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "Laborde et al. — Ending hunger: science must stop neglecting smallholder farmers, Nature 2020",
-          "url": "https://www.nature.com/articles/d41586-020-02849-6",
+          "name": "Ceres2030 — Sustainable Solutions to End Hunger, Summary Report",
+          "url": "https://ceres2030.iisd.org/wp-content/uploads/2021/03/ceres2030_en-summary-report.pdf",
           "year": 2020
         }
       ],
-      "methodology": "Average additional annual public expenditure (approximately USD 33 billion) required from donors and low/middle-income governments through 2030 to end hunger (SDG 2), per Ceres2030 / IFPRI models published in Nature Food."
+      "methodology": "Ceres2030's 2020 model estimated average additional public spending of USD 33 billion per year through 2030: USD 14 billion from donors plus USD 19 billion from low- and middle-income governments. The scenario combines reducing hunger, doubling small-producer incomes and limiting agricultural emissions; it assumes coordinated interventions and induced private investment. This is a historical model benchmark, not a current funding quote or a guarantee that money alone ends hunger."
     },
     {
       "id": "clean-water",
@@ -83,28 +81,12 @@
       "unitCostUsd": 37600000000,
       "sources": [
         {
-          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene",
-          "url": "https://openknowledge.worldbank.org/handle/10986/23681",
+          "name": "World Bank — The Costs of Meeting the 2030 SDG Targets on Drinking Water, Sanitation, and Hygiene, Summary Report",
+          "url": "https://documents1.worldbank.org/curated/en/847191468000296045/pdf/103172-PUB-Box394556B-PUBLIC-EPI-K8632-ADD-SERIES.pdf",
           "year": 2016
         }
       ],
-      "methodology": "Annual capital investment of ~USD 37.6 billion needed through 2030 for universal safely-managed drinking water (SDG 6.1 component), per the World Bank's SDG 6 costing study (Hutton & Varughese 2016)."
-    },
-    {
-      "id": "schools-lmic",
-      "titleKey": "categories.war.schools.title",
-      "unitLabelKey": "categories.war.schools.unit",
-      "symbol": "roof",
-      "scaleHint": "perUnit",
-      "unitCostUsd": 5900,
-      "sources": [
-        {
-          "name": "UNESCO Global Education Monitoring Report — Pricing the right to education (2015)",
-          "url": "https://unesdoc.unesco.org/ark:/48223/pf0000232197",
-          "year": 2015
-        }
-      ],
-      "methodology": "Total cost of putting one child through a complete 13-year schooling cycle (pre-primary to upper-secondary) in a low- or lower-middle-income country — approximately USD 5,900 (~$1.25/day × 365 × 13 years), per UNESCO GEM 'Pricing the right to education' (2015). This covers both recurrent and capital costs for one child's full education."
+      "methodology": "World Bank 2016 baseline estimate of USD 37.6 billion per year in 2015 prices for capital investment to extend safely managed drinking-water services to unserved populations in 140 countries during 2015–2030. This is the drinking-water component only; it excludes the additional ongoing operating and maintenance budget and is not an updated 2026 estimate."
     },
     {
       "id": "child-vaccination",
@@ -112,83 +94,36 @@
       "unitLabelKey": "categories.war.vaccination.unit",
       "symbol": "drop",
       "scaleHint": "annualNeed",
-      "unitCostUsd": 27000000000,
+      "unitCostUsd": 26980000000,
       "sources": [
         {
-          "name": "Sriudomporn, Watts, Sim et al. — Achieving Immunization Agenda 2030 coverage targets for 14 pathogens: Projected product and immunization delivery costs for 194 Countries, 2021–2030 (Vaccine: X 2022)",
+          "name": "Sriudomporn et al. — Achieving Immunization Agenda 2030 coverage targets for 14 pathogens, Vaccine: X (2023 issue; online 2022)",
           "url": "https://www.sciencedirect.com/science/article/pii/S2590136222001164",
-          "year": 2022
-        },
-        {
-          "name": "Gavi, The Vaccine Alliance — Resource Mobilisation Process",
-          "url": "https://www.gavi.org/investing-gavi/funding/resource-mobilisation-process",
-          "year": 2024
-        }
-      ],
-      "methodology": "Estimated ~USD 27 billion per year — the full annual cost of delivering a routine immunisation schedule against 14 pathogens to every child across 194 countries (~USD 269.8 billion total over 2021-2030, vaccine product plus delivery), per Sriudomporn et al., 'Achieving Immunization Agenda 2030 coverage targets', Vaccine X 2022."
-    },
-    {
-      "id": "extreme-poverty",
-      "titleKey": "categories.war.poverty.title",
-      "unitLabelKey": "categories.war.poverty.unit",
-      "symbol": "coin",
-      "scaleHint": "annualNeed",
-      "unitCostUsd": 315000000000,
-      "sources": [
-        {
-          "name": "Our World in Data — Total shortfall from the $3/day poverty line",
-          "url": "https://ourworldindata.org/grapher/total-shortfall-poverty-line",
-          "year": 2024
-        },
-        {
-          "name": "World Bank — Poverty, Prosperity, and Planet 2024",
-          "url": "https://www.worldbank.org/en/publication/poverty-prosperity-and-planet",
-          "year": 2024
-        }
-      ],
-      "methodology": "Annual income transfer (poverty gap) to lift everyone above the USD 3.00/day international poverty line (2021 PPP), ~USD 315 billion/year per World Bank PIP / Our World in Data."
-    },
-    {
-      "id": "rainforest-protection",
-      "titleKey": "categories.war.rainforest.title",
-      "unitLabelKey": "categories.war.rainforest.unit",
-      "symbol": "leaf",
-      "scaleHint": "totalSolution",
-      "unitCostUsd": 45000000000,
-      "sources": [
-        {
-          "name": "Rainforest Trust — Cost per acre protected",
-          "url": "https://www.rainforesttrust.org/our-impact/",
           "year": 2023
         },
         {
-          "name": "FAO — Global Forest Resources Assessment (tropical forest area)",
-          "url": "https://www.fao.org/forest-resources-assessment/2020/en",
-          "year": 2020
+          "name": "Sriudomporn et al. — IA2030 cost study, full text (Europe PMC)",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9850055/fullTextXML",
+          "year": 2023
         }
       ],
-      "methodology": "Total cost to place all of Earth's remaining tropical rainforest under durable legal protection. Computed as USD 25 per hectare (Rainforest Trust per-acre averages scaled to a hectare) multiplied by approximately 1.8 billion hectares of remaining tropical forest (FAO Global Forest Resources Assessment 2020)."
+      "methodology": "Illustrative annual average of the study's USD 269.8 billion total in 2020 USD for 2021–2030, divided by 10 years: USD 26.98 billion. Covers vaccine products, routine delivery, and included campaigns and stockpiles for IA2030 coverage targets against 14 pathogens in 194 countries. It is the modelled total programme cost, not the incremental funding gap, universal vaccination of every child, or a verified 2026 budget. Costs and coverage vary by year and country."
     },
     {
-      "id": "renewable-transition",
+      "id": "utility-solar-gw",
       "titleKey": "categories.war.renewable.title",
       "unitLabelKey": "categories.war.renewable.unit",
       "symbol": "ray",
       "scaleHint": "perUnit",
-      "unitCostUsd": 1000000000,
+      "unitCostUsd": 691000000,
       "sources": [
         {
-          "name": "IRENA — Renewable Power Generation Costs in 2023",
-          "url": "https://www.irena.org/Publications/2024/Sep/Renewable-power-generation-costs-in-2023",
-          "year": 2024
-        },
-        {
-          "name": "IEA — Renewables 2023 Analysis and Forecast to 2028",
-          "url": "https://www.iea.org/reports/renewables-2023",
-          "year": 2023
+          "name": "IRENA — Renewable Power Generation Costs in 2024",
+          "url": "https://www.irena.org/Digital-Report/Renewable-Power-Generation-Costs-in-2024",
+          "year": 2025
         }
       ],
-      "methodology": "Capital cost to install 1 GW of utility-scale solar PV. IRENA's 2023 global weighted-average was $758/kW, so ~$1B installs ~1.3 GW — enough to power ~300,000 European homes."
+      "methodology": "Illustrative installed capital cost of 1 GW of utility-scale solar PV: 1,000,000 kW × USD 691/kW, IRENA's global weighted-average total installed cost for projects commissioned in 2024, in 2024 USD. This compares nameplate generating capacity; it does not include a complete electricity system, storage, continuing operations or a fixed number of homes powered. Local project costs vary."
     },
     {
       "id": "humanitarian-aid",
@@ -199,12 +134,12 @@
       "unitCostUsd": 33000000000,
       "sources": [
         {
-          "name": "UN OCHA — Global Humanitarian Overview 2026",
-          "url": "https://humanitarianaction.info/document/global-humanitarian-overview-2026",
+          "name": "UN — Humanitarians launch USD 33 billion appeal for 2026 (8 December 2025)",
+          "url": "https://un.dk/humanitarians-launch-33-billion-appeal-for-2026/",
           "year": 2025
         }
       ],
-      "methodology": "Total funding requirement of the UN-coordinated Global Humanitarian Appeal for 2026: USD 33 billion to reach 135 million of the 239 million people in need, per UN OCHA Global Humanitarian Overview 2026 (launched December 2025). The 2026 appeal was deliberately pared back via hyper-prioritisation after the 2025 funding collapse."
+      "methodology": "Approximately USD 33 billion requested in the December 2025 launch of the UN-coordinated Global Humanitarian Overview 2026, targeting 135 million people; USD 23 billion for 87 million people was identified as the immediate priority. This is a launch appeal budget, not the cost of meeting every humanitarian need or the remaining funding gap. Requirements and coverage may be revised during 2026."
     }
   ]
 }
