@@ -92,7 +92,7 @@ export function CategoryRow({ category, projection, currentYear, locale, strings
           >
             {numberDisplay}
           </span>
-          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.12em] leading-snug text-[var(--text-secondary)] max-w-[18ch] [overflow-wrap:anywhere] text-right sm:text-left">
+          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.12em] leading-snug text-[var(--text-secondary)] max-w-[24ch] [overflow-wrap:anywhere] text-right sm:text-left">
             {strings.unit}
           </span>
         </span>
