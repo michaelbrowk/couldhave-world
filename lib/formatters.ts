@@ -1,7 +1,20 @@
 export type SupportedLocale = "en" | "es" | "de" | "fr";
 
+// Reuse ICU formatters: counters and category rows format values on every tick.
+// Constructing them repeatedly was needless work on the browser's main thread.
+const formatterCache = new Map<string, Intl.NumberFormat>();
+function formatter(locale: SupportedLocale, kind: string, options: Intl.NumberFormatOptions) {
+  const key = `${locale}:${kind}`;
+  let cached = formatterCache.get(key);
+  if (!cached) {
+    cached = new Intl.NumberFormat(locale, options);
+    formatterCache.set(key, cached);
+  }
+  return cached;
+}
+
 export function formatCurrency(amount: number, locale: SupportedLocale): string {
-  return new Intl.NumberFormat(locale, {
+  return formatter(locale, "currency", {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 0,
@@ -9,29 +22,22 @@ export function formatCurrency(amount: number, locale: SupportedLocale): string 
 }
 
 export function formatCount(count: number, locale: SupportedLocale): string {
-  // Small metrics (years of funding, "X times over") need decimal precision so
-  // the live ticker can show gradual accumulation instead of jumping integers.
   if (count < 100) {
-    return new Intl.NumberFormat(locale, {
+    return formatter(locale, "small-count", {
       minimumFractionDigits: 1,
       maximumFractionDigits: 1,
     }).format(count);
   }
-  // Larger metrics (people treated, school places) show full integer with
-  // thousand separators — the rendered value ticks visibly at ~1-20/sec
-  // depending on unit cost, which would not read as a change if we rounded
-  // to the nearest million.
-  return new Intl.NumberFormat(locale, {
-    maximumFractionDigits: 0,
-  }).format(count);
+  return formatter(locale, "large-count", { maximumFractionDigits: 0 }).format(count);
 }
 
 export function formatCompact(amount: number, locale: SupportedLocale): string {
-  return new Intl.NumberFormat(locale, {
+  return formatter(locale, "compact", {
     notation: "compact",
     compactDisplay: "short",
     style: "currency",
     currency: "USD",
+    minimumFractionDigits: 0,
     maximumFractionDigits: 1,
   }).format(amount);
 }
